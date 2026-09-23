@@ -1,3 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#8B4A2B">
+<meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icono-192.png">
+<link rel="apple-touch-icon" href="icono-192.png">
+<meta name="apple-mobile-web-app-title" content="Pedidos Trigales">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+  :root{ color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+  body{ margin:0; font:14px system-ui, sans-serif; background:#F2EDE3; }
+  img{ max-width:100%; }
+  [hidden]{ display:none !important; }
+</style>
 <title>Pedidos Trigales</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -186,6 +204,27 @@
   .btn:disabled{background:var(--linea); color:var(--tinta2)}
   .btn.fantasma{background:transparent; color:var(--tinta); border:1.5px solid var(--linea2)}
 
+  /* ---------- GUARDARLO EN LA PANTALLA ---------- */
+  .guardarlo{
+    margin:0 16px 104px; padding:13px 14px;
+    background:var(--papel2); border:1.5px solid var(--linea2); border-radius:10px;
+  }
+  .guardarlo .gTexto{display:flex; flex-direction:column; gap:3px}
+  .guardarlo .gTexto b{font-family:Archivo,sans-serif; font-size:14px}
+  .guardarlo .gTexto span{font-size:12.5px; color:var(--tinta2); line-height:1.45}
+  .gBotones{display:flex; gap:8px; margin-top:11px}
+  .gBotones button{
+    border-radius:7px; padding:9px 13px; font-size:13px; font-weight:700;
+    background:var(--sello); color:var(--sello-t); border:0;
+  }
+  .gBotones button#gNo{background:transparent; color:var(--tinta2); border:1px solid var(--linea2); font-weight:500}
+  .gCalma{
+    margin:11px 0 0; font-size:12.5px; color:var(--tinta2); line-height:1.55;
+    border-top:1px solid var(--linea); padding-top:10px;
+  }
+  .gCalma b{color:var(--tinta)}
+  .gCalma span{display:block; margin-top:7px}
+
   /* ---------- HOJA DEL PEDIDO ---------- */
   .velo{position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:40}
   .hoja{
@@ -218,6 +257,9 @@
     @keyframes sube{from{transform:translateY(14px);opacity:.6}to{transform:none;opacity:1}}
   }
 </style>
+</head>
+<body>
+
 
 <header>
   <div class="marca">
@@ -238,6 +280,23 @@
   <div class="cuenta"><b id="cuenta">Tu pedido está vacío</b><span id="subcuenta">Buscá un artículo y tocá +</span></div>
   <button class="btn" id="verPedido" type="button" disabled>Ver pedido</button>
 </div>
+
+<section class="guardarlo" id="guardarlo" hidden>
+  <div class="gTexto">
+    <b>¿Lo tenés a mano?</b>
+    <span>Guardalo en la pantalla de tu celular y entrás de un toque, sin buscar el link.</span>
+  </div>
+  <div class="gBotones">
+    <button type="button" id="gComo">Cómo se hace</button>
+    <button type="button" id="gNo">No, gracias</button>
+  </div>
+  <p class="gCalma" id="gCalma" hidden>
+    <b>No se instala nada en tu teléfono.</b> Es un acceso directo, como guardar un contacto:
+    queda un iconito en tu pantalla que abre esta misma página. No pide permisos, no ocupa
+    lugar, y lo borrás cuando quieras manteniéndolo apretado.
+    <span id="gPasos"></span>
+  </p>
+</section>
 
 <div class="velo" id="velo" hidden></div>
 <section class="hoja" id="hoja" hidden aria-label="Tu pedido">
@@ -781,5 +840,66 @@ $("#refrescar").onclick = async (e) => {
 if (Object.keys(veces).length === 0) {
   $("#leyendaFav").textContent = "A medida que vayas haciendo pedidos, los artículos que más pedís van a aparecer primero, sin que tengas que buscarlos.";
 }
+/* ---------------------------------------------------------------------------
+   GUARDARLO EN LA PANTALLA DEL CELULAR.
+
+   Se ofrece UNA vez y con la verdad adelante. El dueno fue claro: "si
+   desconfia que algo se le va a instalar, que tenga la opcion de seguir con el
+   link". Asi que hay un "No, gracias" de verdad -- se acuerda y no vuelve a
+   aparecer.
+--------------------------------------------------------------------------- */
+let cartelAndroid = null;   // lo manda el propio telefono, solo en Android
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  cartelAndroid = e;
+  verSiOfrecerlo();
+});
+
+function yaEstaGuardada() {
+  // Si ya la abrio desde la pantalla de inicio, no tiene sentido ofrecerselo.
+  try {
+    return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  } catch (e) { return false; }
+}
+
+function verSiOfrecerlo() {
+  if (yaEstaGuardada()) return;
+  if (leer("tds_noGuardar", false)) return;   // dijo que no
+  const esIphone = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  if (!cartelAndroid && !esIphone) return;    // en la computadora no molesta
+  $("#guardarlo").hidden = false;
+}
+
+$("#gNo").onclick = () => {
+  guardar("tds_noGuardar", true);
+  $("#guardarlo").hidden = true;
+};
+
+$("#gComo").onclick = async () => {
+  const calma = $("#gCalma");
+  calma.hidden = false;
+  if (cartelAndroid) {
+    // Android tiene su propio cartel: se usa ese, que es el que el telefono
+    // reconoce como seguro.
+    $("#gPasos").textContent = "Toc\u00e1 Instalar en el cartel que te va a mostrar el tel\u00e9fono.";
+    try {
+      cartelAndroid.prompt();
+      const r = await cartelAndroid.userChoice;
+      if (r && r.outcome === "accepted") $("#guardarlo").hidden = true;
+    } catch (e) {}
+    cartelAndroid = null;
+  } else {
+    // iPhone no tiene cartel: hay que decirle los dos toques.
+    $("#gPasos").textContent =
+      "En el iPhone: toc\u00e1 el bot\u00f3n de Compartir (el cuadradito con la flecha para arriba), "
+      + "baj\u00e1 hasta \"Agregar a inicio\" y toc\u00e1 Agregar.";
+  }
+};
+
 arrancar();
+setTimeout(verSiOfrecerlo, 1200);
 </script>
+
+</body>
+</html>
