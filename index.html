@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="21">
+<meta name="tds-pagina" content="22">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -117,19 +117,27 @@
      vieja del dueno: si su PC esta apagada, un cartel de error lo unico
      que lograria es que el cliente no se anime a mandar el pedido. Cuando
      falla dice "seguis con la ultima", que es la verdad y no asusta. */
-  /* EL ESTADO DE LA LISTA VIVE EN EL BOTON, no en un cartel al lado.
+  /* EL BOTON DE ACTUALIZAR SE PINTA, y el cartel al lado ya no existe.
 
      Primero puse un cartelito "al dia" que titilaba. El dueno propuso algo
      mejor: que titile EL PROPIO BOTON y quede verde. Es un elemento en vez de
      dos, y de paso se termina el problema de que el cartel le pisara el
-     nombre -- no habia lugar para los dos en 375 px.
+     nombre: no habia lugar para los dos en 375 px.
 
-     DORADO = estas viendo la lista guardada en el telefono.
-     VERDE  = bajo la de hoy.
+     QUE QUIERE DECIR CADA COLOR -- ojo, esto NO es "lista vieja / lista
+     nueva", es lo que HIZO EL:
 
-     El verde NO espera a que lo toque: la pagina intenta bajar la lista sola
-     al abrirse, y si lo logro, quedarse en dorado seria mentirle. El toque es
-     para cuando quiere asegurarse, o cuando la automatica no anduvo.
+       DORADO = toca para buscar la lista de hoy.
+       VERDE  = listo, la buscaste. Y queda verde hasta que cierre la pagina.
+
+     ARRANCA SIEMPRE EN DORADO, aunque la lista se haya bajado sola. Yo la
+     habia hecho arrancar en verde cuando la automatica funcionaba, con el
+     argumento de que quedarse en dorado seria mentirle. El dueno me corrigio
+     y tiene razon: "si el cliente no ve que hizo ese efecto, no se da cuenta.
+     Que arranque amarillo, lo toque, vea el efecto completo y se le quede
+     verde". Un boton que se pinta solo antes de que lo toquen no ensena nada.
+     Y no es mentira porque el color habla de la ACCION, no del dato: la lista
+     se sigue bajando sola al abrir, en silencio, como siempre.
 
      Cuando NO se puede bajar no pasa nada: se queda dorado y no dice error.
      Regla vieja del dueno -- si su PC esta apagada, un cartel de error solo
@@ -1719,7 +1727,9 @@ function abrirWhatsApp(texto) {
 async function arrancar() {
   cargarLista(RESPALDO, RESPALDO_DE);
   dibujar();
-  if (await bajarLista()) { dibujar(); pintarRefrescar(true); }
+  // La lista se baja igual al abrir, en silencio. Lo que NO se hace es
+  // pintar el boton: ver el comentario de pintarRefrescar().
+  if (await bajarLista()) dibujar();
 }
 
 /* EL BOTON SE PINTA SEGUN COMO ESTA LA LISTA.
@@ -1729,7 +1739,7 @@ function pintarRefrescar(alDia) {
   const b = $("#refrescar");
   const estaba = b.classList.contains("aldia");
   b.classList.toggle("aldia", !!alDia);
-  b.title = alDia ? "La lista es la de hoy" : "Buscar la lista de hoy";
+  b.title = alDia ? "Ya buscaste la lista de hoy" : "Buscar la lista de hoy";
   b.setAttribute("aria-label", b.title);
   // Titila SOLO cuando cambia de verdad. Si titilara cada vez que se
   // toca sin que cambie nada, el parpadeo dejaria de querer decir algo.
