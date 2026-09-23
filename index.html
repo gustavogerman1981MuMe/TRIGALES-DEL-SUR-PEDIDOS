@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="27">
+<meta name="tds-pagina" content="28">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -770,7 +770,17 @@ const DE_DOS_PALABRAS = ["DOBLE", "SEGUNDA", "MASTER"];
 
 /* Estas NO son marcas: son productos sueltos que empiezan con lo que vende.
    Siguen apareciendo al buscarlos por nombre; lo unico que no hacen es
-   ensuciar el menu de marcas. */
+   ensuciar el menu de marcas.
+
+   Lo confirmo el dueno el 2026-09-23: no tiene marca propia de azucar, y
+   "HARINA 000 / 0000 X 5 KG" y el azucar de kilo se venden en el mostrador
+   y no se piden -- los va a sacar de la lista publicada el mismo, con la
+   casilla "No publicar" de Articulos. Cuando lo haga, estas dos lineas
+   quedan sin efecto y no molestan: son la red por si queda alguno.
+
+   OJO, lo que NO va aca: ARGENFRUT y LODISER SI son marcas. "MICRO" es
+   otra cosa (micro cereales) y "ALPINO" es una marca que pertenece a
+   LODISER, por eso aparecen siempre juntos. Los dos son de UNA palabra. */
 const NO_SON_MARCA = ["PAPELERA", "AZUCAR", "HARINA"];
 
 function ponerlesLaMarca(lista) {
