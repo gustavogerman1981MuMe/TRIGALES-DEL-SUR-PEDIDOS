@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="13">
+<meta name="tds-pagina" content="17">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -23,8 +23,13 @@
   :root{
     --papel:#F2EDE3; --papel2:#FBF8F2; --linea:#DCD2C1; --linea2:#C9BDA8;
     --tinta:#231F1A; --tinta2:#6B6358;
-    --sello:#1D5183; --sello-t:#FFFFFF; --sello-suave:#E3EBF3;
-    --hay:#3D6B39; --nohay:#8B8377; --trigo:#A9741A; --trigo-suave:#F5E9D2;
+    /* EL COLOR QUE MANDA ES EL DEL PROGRAMA, no uno propio de la pagina.
+       De dia el marron y de noche el dorado: son `--crust` de DepositoApp.jsx,
+       el mismo que tienen todos los botones del programa. Antes la pagina usaba
+       un celeste que no existia en ningun otro lado. (2026-09-23, pedido del
+       dueno: "que el celular mantenga el diseno que tiene la app".) */
+    --sello:#8B4A2B; --sello-t:#F7F2E7; --sello-suave:#F1E4D6;
+    --hay:#5C7A4E; --nohay:#8B8377; --trigo:#A9741A; --trigo-suave:#F5E9D2;
     --brasa:#9A3412;
     --ladrillo:#A63D2F;   /* el mismo ladrillo del programa */
     color-scheme:light;
@@ -33,8 +38,8 @@
     :root:not([data-theme="light"]){
       --papel:#1A1714; --papel2:#232019; --linea:#3A342B; --linea2:#4C4438;
       --tinta:#F0E9DD; --tinta2:#A79D8D;
-      --sello:#7FB2E5; --sello-t:#0F1A26; --sello-suave:#1E2C3B;
-      --hay:#7FB877; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519;
+      --sello:#D9A94A; --sello-t:#1B1815; --sello-suave:#2E2519;
+      --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519;
       --brasa:#E0764A;
       --ladrillo:#E77A69;   /* su version de noche, la del programa */
       color-scheme:dark;
@@ -43,8 +48,8 @@
   :root[data-theme="dark"]{
     --papel:#1A1714; --papel2:#232019; --linea:#3A342B; --linea2:#4C4438;
     --tinta:#F0E9DD; --tinta2:#A79D8D;
-    --sello:#7FB2E5; --sello-t:#0F1A26; --sello-suave:#1E2C3B;
-    --hay:#7FB877; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519;
+    --sello:#D9A94A; --sello-t:#1B1815; --sello-suave:#2E2519;
+    --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519;
     --brasa:#E0764A;
     --ladrillo:#E77A69;
     color-scheme:dark;
@@ -78,17 +83,53 @@
   /* DIA Y NOCHE A MANO. La pagina ya sigue sola lo que tenga el telefono;
      esto es para el que quiere lo contrario. (2026-09-23.) */
   .btnTema.copiado{ color:var(--sello); border-color:var(--sello); font-size:15px }
+  /* Los tres botones de arriba, todos con la misma caja. El ICONO va en el
+     color del programa; el marco queda gris, porque si el marco tambien
+     fuera dorado los tres le competirian a la oferta. */
   .btnTema{
-    flex:0 0 auto; width:27px; height:27px; padding:0; margin-right:1px;
+    flex:0 0 auto; width:27px; height:27px; padding:0;
     border:1px solid var(--linea2); border-radius:8px;
-    background:var(--papel); color:var(--tinta2); font-size:14px; line-height:1;
+    background:var(--papel); color:var(--sello); font-size:14px; line-height:1;
+    display:grid; place-items:center;
   }
-  .marca{display:flex; align-items:baseline; justify-content:space-between; gap:10px}
-  .marca b{font-size:14px; letter-spacing:.12em; color:var(--ladrillo); white-space:nowrap; flex:0 0 auto}
-  .marca span{font-size:11px; color:var(--tinta2)}
-  .estadoLista{display:flex; flex-direction:column; align-items:flex-end; gap:1px; text-align:right; min-width:0; flex:1 1 auto}
-  .estadoLista #refrescar{background:none; border:0; padding:0; font-size:11px; color:var(--sello); text-decoration:underline; text-underline-offset:2px}
-  .estadoLista #refrescar:disabled{color:var(--tinta2); text-decoration:none}
+  .btnTema svg{display:block}
+  .btnTema:disabled{color:var(--nohay)}
+  /* LA BARRA DE ARRIBA: TRES BOTONES Y EL NOMBRE EN EL MEDIO.
+
+     Antes el compartir quedaba mas alto que el sol (uno alineaba por la
+     base del texto y el otro por la caja), y la fecha de la lista ocupaba
+     un bloque fijo a la derecha. Ahora los tres botones miden lo mismo y
+     se alinean por el centro, y el nombre queda centrado de verdad porque
+     los dos costados ocupan lo mismo. (2026-09-23, pedido del dueno.) */
+  .marca{display:flex; align-items:center; justify-content:space-between; gap:8px}
+  .marca b{font-size:16px; letter-spacing:.07em; color:var(--ladrillo); white-space:nowrap; flex:0 0 auto}
+  .ladoBarra{flex:1 1 0; display:flex; gap:6px; align-items:center; min-width:0}
+  .ladoBarra.der{justify-content:flex-end}
+
+  /* EL CARTELITO NO QUEDA FIJO: aparece al actualizarse y se va.
+     ("al dia, que no quede fijo, titila al actualizarse y listo".)
+
+     Y NUNCA DICE ERROR, ni cuando no se pudo bajar la lista. Esa es regla
+     vieja del dueno: si su PC esta apagada, un cartel de error lo unico
+     que lograria es que el cliente no se anime a mandar el pedido. Cuando
+     falla dice "seguis con la ultima", que es la verdad y no asusta. */
+  /* VA FLOTANDO, NO EN EL RENGLON. Puesto al lado del boton le pisaba el
+     nombre: "Trigales del Sur" no se puede achicar y el cartelito tampoco,
+     asi que uno de los dos tenia que salirse. Y meterlo en su propio
+     renglon seria peor: aparece y desaparece, o sea que empujaria la
+     pantalla dos veces cada vez que se actualiza la lista, que es
+     justo lo que no tiene que pasar. Flotando no mueve nada. */
+  .cartelito{
+    position:absolute; right:16px; top:calc(44px + env(safe-area-inset-top,0px));
+    z-index:2; pointer-events:none;
+    font-size:10px; font-weight:700; letter-spacing:.04em; white-space:nowrap;
+    color:var(--hay); background:var(--papel2);
+    padding:1px 5px; border-radius:5px;
+    animation:titila 2.4s ease-in-out;
+  }
+  .cartelito.igual{color:var(--tinta2); font-weight:500}
+  @keyframes titila{ 0%{opacity:0} 12%,62%{opacity:1} 100%{opacity:0} }
+  @media (prefers-reduced-motion:reduce){ .cartelito{animation:none} }
   h1{font-family:Archivo,sans-serif; font-weight:800; font-size:21px; margin:2px 0 0; letter-spacing:-.01em; text-wrap:balance}
   /* EL BUSCADOR, DESPEGADO. Antes se confundia con el beige del fondo y todo
      parecia un solo bloque. (2026-09-23: "tiene que estar un poquito despegado
@@ -118,14 +159,64 @@
      falta para ver productos. (2026-09-23.) */
   .barraPedido{ display:flex; gap:8px; margin-top:12px }
   .barraPedido button{
-    flex:1; height:36px; border-radius:9px; font-size:13px; font-weight:700;
+    height:36px; border-radius:9px; font-size:13px; font-weight:700;
     font-family:inherit; border:1.5px solid var(--linea2);
     background:var(--papel); color:var(--tinta);
   }
-  .barraPedido .btnAnteriores.abierto{
+  /* Tres cuartos y un cuarto: "Marcas" no merece medio renglon. */
+  .barraPedido .btnNuevo{ flex:3 }
+  .barraPedido .btnMarcas{ flex:1 }
+  .barraPedido .btnMarcas.abierto{
     background:var(--sello); border-color:var(--sello); color:var(--sello-t);
   }
   .barraPedido:empty{ display:none }
+
+  /* EL BUSCADOR DE MARCAS. Es el mismo que el de nombre a proposito: si se
+     usan igual tienen que verse igual. Antes las marcas eran 30 cajitas
+     desparramadas que ocupaban media pantalla y que nadie leia.
+     (2026-09-23: "las marcas, como en el buscar, un buscador igual, y que se
+     despliega un menu para abajo cuando escribis la marca".) */
+  .buscador + .buscador{ margin-top:8px }
+  .menuMarcas{
+    border:1.5px solid var(--sello); border-radius:9px;
+    background:var(--papel2); overflow:hidden auto; margin-top:8px;
+    max-height:46vh;
+  }
+  .menuMarcas button{
+    display:flex; width:100%; justify-content:space-between; align-items:center; gap:10px;
+    padding:9px 13px; border:0; border-top:1px solid var(--linea);
+    background:none; color:var(--tinta); font-family:inherit;
+    font-size:13px; font-weight:600; text-align:left;
+  }
+  .menuMarcas button:first-child{border-top:0}
+  .menuMarcas .cuantos{color:var(--tinta2); font-size:11px; font-weight:400; flex:0 0 auto}
+
+
+  /* MIENTRAS ESCRIBE, LA PANTALLA ES TODA PARA LA LISTA.
+
+     Este era EL problema: con el teclado abierto, entre la oferta y las
+     teclas quedaba un renglon y medio, y habia que tocar Enter para bajar el
+     teclado y recien ahi ver lo que se habia buscado.
+
+     Se van la oferta, el titulo, el OTRO buscador y los botones del pedido.
+     Vuelven todos solos al limpiar o al agregar el articulo. La oferta el la
+     quiere y se queda: solo se aparta mientras hace falta el lugar.
+     (2026-09-23, pedido del dueno.) */
+  body[data-buscando] h1,
+  body[data-buscando] #ofertaArriba,
+  body[data-buscando] .barraPedido{ display:none }
+
+  body[data-buscando] .buscador{ margin-top:0 }
+
+  /* EL ROTULO ES EL BOTON. Se toca el titulo de la seccion y se abre o se
+     cierra; no hace falta un boton aparte que gaste otro renglon.
+     (2026-09-23: "lo que mas piden, en un boton de mostrar y ocultar".) */
+  .rotulo.tocable{
+    width:100%; background:none; border:0; padding:0; font-family:inherit;
+    color:var(--tinta); font-weight:700; text-align:left;
+  }
+  .rotulo .flecha{color:var(--sello); font-size:11px; letter-spacing:0; flex:0 0 auto}
+  .rotulo .cuantos{color:var(--tinta2); font-weight:400; letter-spacing:0; flex:0 0 auto}
 
   /* ---------- LISTA ---------- */
   main{flex:1; overflow-y:auto; padding:6px 16px 0; padding-bottom:104px; -webkit-overflow-scrolling:touch}
@@ -135,12 +226,16 @@
   }
   .rotulo::after{content:""; flex:1; height:1px; background:var(--linea)}
 
+  /* EL RENGLON, MAS BAJO. Cada pixel que se saca aca es medio articulo mas
+     en pantalla, y con el teclado abierto eso es la diferencia entre ver
+     uno y ver cinco. (2026-09-23: "que el boton elegir sea un poquitito mas
+     chico para que entren un poco mas de articulos".) */
   .fila{
-    display:flex; align-items:center; gap:11px;
-    padding:11px 0; border-bottom:1px solid var(--linea);
+    display:flex; align-items:center; gap:10px;
+    padding:8px 0; border-bottom:1px solid var(--linea);
   }
   .fila .txt{flex:1; min-width:0}
-  .fila .nom{font-size:15px; font-weight:500; line-height:1.3; overflow-wrap:anywhere}
+  .fila .nom{font-size:14.5px; font-weight:500; line-height:1.25; overflow-wrap:anywhere}
   .fila .pie{display:flex; align-items:center; gap:7px; margin-top:3px; font-size:11.5px; color:var(--tinta2)}
   .estrella{color:var(--trigo)}
   .yaEsta{color:var(--hay); font-weight:700}
@@ -159,13 +254,13 @@
   .sinChip{color:var(--nohay); border-color:var(--nohay)}
 
   .mas{
-    flex:0 0 auto; width:42px; height:42px; border-radius:9px;
+    flex:0 0 auto; width:37px; height:37px; border-radius:9px;
     background:var(--sello); color:var(--sello-t); border:0;
     font-size:23px; font-weight:700; line-height:1; display:grid; place-items:center;
   }
   .mas{
-    padding:0 13px; width:auto; min-width:84px; height:42px;
-    font-size:13.5px; font-weight:700; letter-spacing:.01em;
+    padding:0 12px; width:auto; min-width:74px; height:37px;
+    font-size:12.5px; font-weight:700; letter-spacing:.01em;
   }
   .mas:disabled{background:transparent; color:var(--nohay); border:1.5px dashed var(--linea2); font-size:11px; font-weight:700; letter-spacing:.06em}
 
@@ -174,15 +269,15 @@
     flex:0 0 auto; display:flex; align-items:center; gap:7px;
   }
   .ponerCant input{
-    width:66px; height:42px; text-align:center;
+    width:58px; height:37px; text-align:center;
     border:2px solid var(--sello); border-radius:8px;
     background:var(--papel2); color:var(--tinta);
-    font-family:"IBM Plex Mono",monospace; font-size:17px; font-weight:600; padding:0;
+    font-family:"IBM Plex Mono",monospace; font-size:15px; font-weight:700; padding:0;
   }
   .okCant{
-    height:42px; padding:0 14px; border:0; border-radius:8px;
+    height:37px; padding:0 12px; border:0; border-radius:8px;
     background:var(--sello); color:var(--sello-t);
-    font-size:13.5px; font-weight:700; white-space:nowrap;
+    font-size:12.5px; font-weight:700; white-space:nowrap;
   }
   .fila.eligiendo{
     border-left:3px solid var(--sello); margin-left:-10px; padding-left:7px;
@@ -343,6 +438,12 @@
     background:var(--sello); color:var(--sello-t); white-space:nowrap;
   }
   .btn:disabled{background:var(--linea); color:var(--tinta2)}
+  /* SIN PANADERIA NO SE MANDA. Antes el campo era opcional: si no lo
+     llenaba, el pedido llegaba al negocio sin saber de quien era y habia
+     que adivinar por el numero de WhatsApp. El boton apagado SIN decir por
+     que es peor que no tenerlo, asi que el motivo va ahi al lado.
+     (2026-09-23, pedido del dueno.) */
+  .faltaQuien{font-size:11.5px; color:var(--ladrillo); font-weight:600; margin:0}
   .btn.fantasma{background:transparent; color:var(--tinta); border:1.5px solid var(--linea2)}
 
   /* ---------- GUARDARLO EN LA PANTALLA ---------- */
@@ -404,22 +505,37 @@
 
 <header>
   <div class="marca">
-    <button id="tema" type="button" class="btnTema" aria-label="Cambiar entre claro y oscuro"></button>
-    <button id="compartir" type="button" class="btnTema" aria-label="Compartir" title="Compartir">
-      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 3v13"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
-      </svg>
-    </button>
+    <div class="ladoBarra">
+      <button id="tema" type="button" class="btnTema" aria-label="Cambiar entre claro y oscuro"></button>
+      <!-- EL ICONO DE COMPARTIR DE SIEMPRE: los tres puntos unidos. Antes habia
+           una flecha hacia arriba, que se lee como "subir algo", no como
+           compartir. (2026-09-23, el dueno mando la imagen del que queria.) -->
+      <button id="compartir" type="button" class="btnTema" aria-label="Compartir" title="Compartir">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/>
+          <line x1="8.3" y1="13.3" x2="15.7" y2="17.7"/><line x1="15.7" y1="6.3" x2="8.3" y2="10.7"/>
+        </svg>
+      </button>
+    </div>
     <b class="sello">Trigales del Sur</b>
-    <span class="estadoLista"><span id="fecha">…</span><button id="refrescar" type="button">actualizar lista</button></span>
+    <div class="ladoBarra der">
+      <span id="fecha" class="cartelito" hidden></span>
+      <button id="refrescar" type="button" class="btnTema" aria-label="Buscar la lista de hoy" title="Buscar la lista de hoy">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 11a8 8 0 10-2.3 5.7"/><path d="M20 4v7h-7"/>
+        </svg>
+      </button>
+    </div>
   </div>
   <h1>Armá tu pedido</h1>
   <div id="ofertaArriba"></div>
-  <div class="buscador">
-    <input id="q" type="search" autocomplete="off" placeholder="Buscar: harina, dulce de leche, papelera…" aria-label="Buscar un artículo">
+  <div class="buscador" id="cajaNombre">
+    <input id="q" type="search" autocomplete="off" placeholder="Buscar: harina, Ledevit, bandeja…" aria-label="Buscar un artículo o una marca">
     <button class="limpiar" id="limpiar" type="button" aria-label="Borrar la búsqueda" hidden>×</button>
   </div>
   <div class="barraPedido" id="barraPedido"></div>
+  <!-- El menu cuelga DEBAJO del boton que lo abre, no arriba. -->
+  <div id="menuMarcas"></div>
 </header>
 
 <main id="main"></main>
@@ -458,6 +574,7 @@
       <label for="quien">¿De parte de quién? (tu panadería)</label>
       <input id="quien" type="text" autocomplete="organization" placeholder="Ej: Panadería La Esquina">
     </div>
+    <p class="faltaQuien" id="faltaQuien" hidden>Poné de qué panadería es para poder enviarlo.</p>
     <button class="btn" id="enviar" type="button">Enviar el pedido por WhatsApp</button>
     <p class="aviso" id="avisoEnvio">Se abre WhatsApp con el pedido ya escrito, al <span class="num">+54 9 11 5163-0039</span>. Vos solo tocás enviar.</p>
   </div>
@@ -700,7 +817,8 @@ let demoSinStock = false;                        // para VER cómo queda algo si
 let verParecidosDe = null;
 let eligiendo = null;      // el articulo que se esta por agregar
 let cuantoPongo = "";      // lo que se escribio; vacio = 1 (ver confirmar())
-let marcaAbierta = null;
+let marcaAbierta = null;   // la marca que el toco a mano en el menu
+let plegados = leer("tds_plegados", { favoritos: false, historial: true });
 let plegado = leer("tds_plegado", false);
 
 const $ = (s) => document.querySelector(s);
@@ -758,10 +876,21 @@ function filaArticulo(a) {
   nom.textContent = a.nombre;
   const pie = document.createElement("div");
   pie.className = "pie";
-  const chip = document.createElement("span");
-  chip.className = "marcaChip" + (noHay ? " sinChip" : "");
-  chip.textContent = noHay ? "sin stock" : a.marca;
-  pie.appendChild(chip);
+  /* LA MARCA NO SE REPITE SI YA LA PUSO EL. Si busco "azucar", ver AZUCAR
+     debajo de cada renglon no suma nada; y si pidio ver LEDEVIT, menos.
+     Ese renglon que se ahorra es medio articulo mas en pantalla.
+     (2026-09-23: "para que necesitamos que diga la marca si ya pusimos la
+     marca".)
+
+     El "sin stock" SI se queda siempre, aunque viva en el mismo lugar: es
+     la unica etiqueta que no se puede perder. */
+  const yaSabeLaMarca = q.value.trim() !== "" || marcaEfectiva() !== null;
+  if (noHay || !yaSabeLaMarca) {
+    const chip = document.createElement("span");
+    chip.className = "marcaChip" + (noHay ? " sinChip" : "");
+    chip.textContent = noHay ? "sin stock" : a.marca;
+    pie.appendChild(chip);
+  }
   if (cant != null) {
     // Marca que YA esta adentro del pedido. Sin esto, un renglon con el
     // contador se parecia demasiado a uno sin cargar.
@@ -781,7 +910,10 @@ function filaArticulo(a) {
     vp.onclick = () => { verParecidosDe = verParecidosDe === a.id ? null : a.id; dibujar(); };
     pie.appendChild(vp);
   }
-  txt.append(nom, pie);
+  // Si no quedo nada adentro, el pie no se cuelga: si no, deja su margen
+  // arriba y el renglon crece sin que se vea por que.
+  txt.appendChild(nom);
+  if (pie.childNodes.length) txt.appendChild(pie);
   fila.appendChild(txt);
 
   if (noHay) {
@@ -889,6 +1021,27 @@ function rotulo(texto) {
   return d;
 }
 
+/* EL MISMO ROTULO, PERO QUE SE TOCA. El titulo de la seccion ES el boton de
+   mostrar/ocultar: no gasta un renglon aparte, que era el problema de los
+   botones sueltos. Y se acuerda de como lo dejo. */
+function rotuloPlegable(clave, texto, cuantos) {
+  const abierto = !plegados[clave];
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "rotulo sello tocable";
+  b.setAttribute("aria-expanded", String(abierto));
+  const f = document.createElement("span");
+  f.className = "flecha"; f.textContent = abierto ? "▾" : "▸";
+  const t = document.createElement("span"); t.textContent = texto;
+  const c = document.createElement("span"); c.className = "cuantos"; c.textContent = cuantos;
+  b.append(f, t, c);
+  b.onclick = () => {
+    plegados[clave] = abierto;
+    guardar("tds_plegados", plegados);
+    dibujar();
+  };
+  return { boton: b, abierto };
+}
+
 /* LA LISTA QUE VA ARMANDO, SIEMPRE A LA VISTA.
    Una linea por articulo, chiquita, arriba de todo y pegada mientras scrollea.
    Es para MIRAR mientras sigue buscando; la hoja de "Ver pedido" sigue siendo
@@ -957,8 +1110,69 @@ function dibujarLoQueVaPidiendo() {
   main.appendChild(caja);
 }
 
+/* LAS MARCAS: UN SOLO BUSCADOR, Y UN MENU PARA EL QUE NO SE ACUERDA.
+
+   Primero puse un SEGUNDO buscador solo para marcas. Estaba de mas, y el
+   dueno lo marco: "para que genero otro buscador si el mismo puede buscar por
+   marca". Tenia razon, y el motivo esta en cargarLista(): la marca es LA
+   PRIMERA PALABRA del nombre del articulo. O sea que el buscador de siempre ya
+   encontraba las marcas -- escribir "ledevit" devuelve los 22 de LEDEVIT,
+   exactamente los mismos que devolvia el buscador de marcas. Era la misma
+   busqueda escrita dos veces.
+
+   Lo UNICO que las cajitas daban de verdad era acordarse de como se llamaban.
+   Eso es lo que quedo: un boton "Marcas" que abre la lista, y al tocar una se
+   escribe en el buscador de siempre. Un solo camino, no dos.
+   (2026-09-23, idea del dueno.) */
+let menuMarcasAbierto = false;
+
+function todasLasMarcas() {
+  const cuenta = {};
+  ART.forEach(a => { if (a.marca) cuenta[a.marca] = (cuenta[a.marca] || 0) + 1; });
+  return Object.entries(cuenta).filter(([, n]) => n >= 3).sort((x, y) => y[1] - x[1]);
+}
+
+/* La marca que se esta mirando: solo si lo escrito ES el nombre de una marca.
+   Sirve para no repetir la marca en cada renglon cuando ya la puso el. */
+function marcaEfectiva() {
+  const t = norm(q.value);
+  if (!t) return null;
+  const m = todasLasMarcas().find(([m]) => norm(m) === t);
+  return m ? m[0] : null;
+}
+
+function dibujarMenuMarcas() {
+  const caja = $("#menuMarcas");
+  caja.innerHTML = "";
+  caja.className = menuMarcasAbierto ? "menuMarcas" : "";
+  if (!menuMarcasAbierto) return;
+  todasLasMarcas().forEach(([m, n]) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    const nom = document.createElement("span"); nom.textContent = m;
+    const c = document.createElement("span"); c.className = "cuantos";
+    c.textContent = n;
+    b.append(nom, c);
+    // Se escribe en el buscador de siempre: un solo camino.
+    b.onclick = () => { q.value = m; menuMarcasAbierto = false; dibujar(); window.scrollTo(0, 0); };
+    caja.appendChild(b);
+  });
+}
+
+/* QUE PANTALLA SE HACE LUGAR. Si esta escribiendo -- o si ya escribio algo y
+   todavia no lo borro -- se aparta todo lo que no sea la lista. Se mira el
+   TEXTO y no solo el foco: al tocar "Elegir" el campo pierde el foco, y si
+   por eso volviera la oferta, la lista se le moveria justo abajo del dedo. */
+function acomodarPantalla() {
+  const buscando = q.value.trim() !== "" || document.activeElement === q;
+  if (buscando) document.body.setAttribute("data-buscando", "nombre");
+  else document.body.removeAttribute("data-buscando");
+}
+
 function dibujar() {
+  acomodarPantalla();
   dibujarArriba();
+  dibujarMenuMarcas();
   main.innerHTML = "";
   dibujarLoQueVaPidiendo();
   const texto = q.value.trim();
@@ -1201,7 +1415,6 @@ function dibujarArriba() {
   barra.innerHTML = "";
 
   const hayAlgo = Object.keys(carrito).length > 0;
-  const guardados = (historial || []).filter(h => h && h.items && Object.keys(h.items).length);
 
   const nuevo = document.createElement("button");
   nuevo.type = "button";
@@ -1217,14 +1430,24 @@ function dibujarArriba() {
   };
   barra.appendChild(nuevo);
 
-  if (guardados.length) {
-    const ant = document.createElement("button");
-    ant.type = "button";
-    ant.className = "btnAnteriores" + (verHistorial ? " abierto" : "");
-    ant.textContent = (verHistorial ? "Ocultar anteriores" : "Pedidos anteriores") + " (" + guardados.length + ")";
-    ant.onclick = () => { verHistorial = !verHistorial; dibujar(); };
-    barra.appendChild(ant);
-  }
+  /* "Pedidos anteriores" ya NO esta aca: paso a ser un titulo que se toca,
+     adentro de la lista, junto con "Lo que mas pedis". Si quedara tambien
+     aca serian dos botones para lo mismo. */
+
+  /* MARCAS. Comparte el renglon con "Nuevo pedido" y se queda con un cuarto
+     -- idea del dueno, y es la correcta: no gasta un renglon propio.
+
+     No es un buscador: la marca es la primera palabra del nombre, asi que
+     el buscador de arriba ya las encuentra. Esto es para el que NO se
+     acuerda como se escribe, o para ver que marcas se trabajan. Al tocar
+     una, se escribe en el buscador de siempre. */
+  const mar = document.createElement("button");
+  mar.type = "button";
+  mar.className = "btnMarcas" + (menuMarcasAbierto ? " abierto" : "");
+  mar.setAttribute("aria-expanded", String(menuMarcasAbierto));
+  mar.textContent = "Marcas";
+  mar.onclick = () => { menuMarcasAbierto = !menuMarcasAbierto; dibujar(); };
+  barra.appendChild(mar);
 }
 
 /* Se pregunta de verdad, con los botones de la pagina: `confirm()` no se ve en
@@ -1241,62 +1464,35 @@ function dibujarInicio() {
   const aviso = avisoAMedias();
   if (aviso) main.appendChild(aviso);
 
-  /* Los pedidos viejos aparecen SOLO si se toca "Pedidos anteriores": si no,
-     se comen la pantalla que hace falta para ver productos. (2026-09-23.) */
-  if (verHistorial) {
-    const hist = cajaDeHistorial();
-    if (hist) main.appendChild(hist);
-  }
-
-  const favs = ART.filter(a => (veces[a.id] || 0) > 0)
+  /* LO QUE MAS PIDE. Esta lista se va armando sola con lo que va pidiendo,
+     y es lo que hace que la segunda vez sea rapida: el dueno pidio
+     expresamente que NO se saque. Se puede plegar, pero arranca abierta
+     -- si arrancara cerrada nadie la tocaria nunca y dejaria de servir. */
+  const favs = ART.filter(a => (veces[a.id] || 0) > 0 && carrito[a.id] == null)
                   .sort((x, y) => veces[y.id] - veces[x.id]).slice(0, 12);
-  const enCarrito = ART.filter(a => carrito[a.id] != null);
-
-  // Los que ya estan en el pedido NO se repiten aca: ya se ven arriba, en la
-  // lista que va armando.
   if (favs.length) {
-    main.appendChild(rotulo("Lo que más pedís"));
-    favs.forEach(a => { if (carrito[a.id] == null) main.appendChild(filaArticulo(a)); });
+    const r = rotuloPlegable("favoritos", "Lo que más pedís", favs.length);
+    main.appendChild(r.boton);
+    if (r.abierto) favs.forEach(a => main.appendChild(filaArticulo(a)));
   }
 
-  main.appendChild(rotulo(marcaAbierta ? marcaAbierta : "O buscá por marca"));
-  if (marcaAbierta) {
-    const volver = document.createElement("button");
-    volver.className = "parecidos"; volver.type = "button";
-    volver.textContent = "← ver todas las marcas";
-    volver.style.margin = "0 0 8px";
-    volver.onclick = () => { marcaAbierta = null; dibujar(); };
-    main.appendChild(volver);
-    ART.filter(a => a.marca === marcaAbierta)
-       .sort((x, y) => x.nombre.localeCompare(y.nombre))
-       .forEach(a => {
-         if (carrito[a.id] != null) return;
-         main.appendChild(filaArticulo(a));
-         if (verParecidosDe === a.id) main.appendChild(bloqueParecidos(a));
-       });
-  } else {
-    const cuenta = {};
-    ART.forEach(a => { cuenta[a.marca] = (cuenta[a.marca] || 0) + 1; });
-    const cont = document.createElement("div");
-    cont.className = "marcas";
-    Object.entries(cuenta).filter(([, n]) => n >= 3)
-      .sort((x, y) => y[1] - x[1])
-      .forEach(([m, n]) => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.innerHTML = "";
-        b.append(document.createTextNode(m + " "));
-        const s = document.createElement("b"); s.textContent = n;
-        b.appendChild(s);
-        b.onclick = () => { marcaAbierta = m; window.scrollTo(0, 0); main.scrollTop = 0; dibujar(); };
-        cont.appendChild(b);
-      });
-    main.appendChild(cont);
-    const p = document.createElement("p");
-    p.className = "nota";
-    p.textContent = "Tenemos " + ART.length + " artículos. Escribí arriba lo que buscás — alcanza con una palabra.";
-    main.appendChild(p);
+  /* Los pedidos viejos, con el MISMO gesto. Arrancan cerrados: a ese se
+     entra a proposito. */
+  const viejos = (historial || []).filter(h => h && h.items && Object.keys(h.items).length);
+  if (viejos.length) {
+    const r = rotuloPlegable("historial", "Pedidos anteriores", viejos.length);
+    main.appendChild(r.boton);
+    if (r.abierto) {
+      const hist = cajaDeHistorial();
+      if (hist) main.appendChild(hist);
+    }
   }
+
+  /* ACA ABAJO ESTABAN LAS MARCAS DESPARRAMADAS -- 30 y pico de cajitas que se
+     comian media pantalla -- y una leyenda que decia cuantos articulos hay.
+     Las cajitas las reemplazo el buscador de marcas de arriba, y la leyenda
+     la saco el dueno: no es una accion, es un dato que no sirve para pedir.
+     (2026-09-23.) */
 
   /* Aca abajo habia dos leyendas -- "lo que no tenemos queda en gris" y "los
      que mas pedis aparecen primero" -- mas un boton que mostraba como se ve un
@@ -1313,10 +1509,11 @@ function dibujarInicio() {
 /* Deja el buscador en blanco despues de agregar algo, para que lo siguiente
    se escriba encima sin tener que borrar. Si estaba vacio no hace nada. */
 function limpiarBuscador() {
+  // Ojo: NO se limpia la marca. Si estaba mirando una marca y agrega un
+  // articulo, tiene que seguir viendo esa marca para seguir cargando.
   if (!q.value) return;
   q.value = "";
   verParecidosDe = null;
-  marcaAbierta = null;
 }
 
 function actualizarBarra() {
@@ -1343,6 +1540,7 @@ function persistir() {
 
 /* ---------- LA HOJA DEL PEDIDO ---------- */
 function abrirHoja() {
+  setTimeout(mirarSiPuedeEnviar, 0);
   const cuerpo = $("#hojaCuerpo");
   cuerpo.innerHTML = "";
   ART.filter(a => carrito[a.id] != null).forEach(a => {
@@ -1376,13 +1574,33 @@ function armarMensaje() {
 $("#verPedido").onclick = abrirHoja;
 $("#cerrarHoja").onclick = cerrarHoja;
 $("#velo").onclick = cerrarHoja;
-$("#quien").oninput = (e) => { quien = e.target.value; guardar("tds_quien", quien); };
+$("#quien").oninput = (e) => { quien = e.target.value; guardar("tds_quien", quien); mirarSiPuedeEnviar(); };
 $("#limpiar").onclick = () => { q.value = ""; q.focus(); dibujar(); };
-q.oninput = () => { verParecidosDe = null; eligiendo = null; dibujar(); };
+q.oninput = () => {
+  verParecidosDe = null; eligiendo = null;
+  // Escribir cierra el menu de marcas: ya esta buscando, no eligiendo.
+  if (q.value) menuMarcasAbierto = false;
+  dibujar();
+};
+
+/* Al entrar o salir del buscador la pantalla se acomoda sola. */
+q.addEventListener("focus", () => { menuMarcasAbierto = false; acomodarPantalla(); window.scrollTo(0, 0); });
+q.addEventListener("blur", acomodarPantalla);
+
+/* El boton se prende solo cuando hay pedido Y hay panaderia. */
+function mirarSiPuedeEnviar() {
+  const hayPedido = Object.keys(carrito).length > 0;
+  const hayQuien = $("#quien").value.trim() !== "";
+  $("#enviar").disabled = !hayPedido || !hayQuien;
+  $("#faltaQuien").hidden = !hayPedido || hayQuien;
+}
 
 $("#enviar").onclick = async () => {
   const items = ART.filter(a => carrito[a.id] != null);
   if (!items.length) return;
+  // Cinturon y tirantes: el boton ya esta apagado, pero si alguna vez algo
+  // lo prendiera de mas, el pedido NO sale sin nombre.
+  if (!$("#quien").value.trim()) { mirarSiPuedeEnviar(); $("#quien").focus(); return; }
   items.forEach(a => { veces[a.id] = (veces[a.id] || 0) + 1; });
   guardar("tds_veces", veces);
 
@@ -1445,24 +1663,34 @@ function abrirWhatsApp(texto) {
 async function arrancar() {
   cargarLista(RESPALDO, RESPALDO_DE);
   dibujar();
-  if (await bajarLista()) dibujar();
-  mostrarEstadoLista();
+  if (await bajarLista()) { dibujar(); avisarLista(true); }
 }
 
-function mostrarEstadoLista() {
-  $("#fecha").textContent = textoDeLaLista();
+/* EL CARTELITO DE LA LISTA. Aparece, titila y se va: no queda nada fijo
+   ocupando lugar arriba. Antes habia una fecha permanente ("Lista de hoy,
+   04:42 p.m.") que ademas obligaba a hacer la cuenta mental de si eso era
+   viejo o no. */
+let avisoLista = null;
+function avisarLista(ok) {
+  const c = $("#fecha");
+  c.className = "cartelito" + (ok ? "" : " igual");
+  // NUNCA dice error. Ver el comentario del CSS y textoDeLaLista().
+  c.textContent = ok ? "✓ al día" : "seguís con la última";
+  c.hidden = false;
+  // Se reinicia la animacion aunque se toque dos veces seguidas.
+  c.style.animation = "none"; void c.offsetWidth; c.style.animation = "";
+  clearTimeout(avisoLista);
+  avisoLista = setTimeout(() => { c.hidden = true; }, 2500);
 }
+
 
 $("#refrescar").onclick = async (e) => {
   const b = e.currentTarget;
-  b.disabled = true; b.textContent = "buscando…";
+  b.disabled = true;
   const hubo = await bajarLista();
   dibujar();
-  mostrarEstadoLista();
   b.disabled = false;
-  // Ni cuando falla se dice "error": se le avisa que sigue con la que tiene.
-  b.textContent = hubo ? "lista al día ✓" : "seguís con la última";
-  setTimeout(() => { b.textContent = "actualizar lista"; }, 2600);
+  avisarLista(hubo);
 };
 /* ---------------------------------------------------------------------------
    GUARDARLO EN LA PANTALLA DEL CELULAR.
