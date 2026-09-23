@@ -1,0 +1,2799 @@
+{
+  "version": 1,
+  "generado": "2026-09-23T02:24:01.233Z",
+  "negocio": "Trigales del Sur",
+  "telefono": "",
+  "conPrecio": false,
+  "articulos": [
+    {
+      "id": "art_csv_1",
+      "nombre": "ADITIVO MAGICO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_4",
+      "nombre": "AGUILA BOMBON BLANCO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_3",
+      "nombre": "AGUILA BOMBON SEMI/AMARGO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_11",
+      "nombre": "AGUILA COBERTURA BLANCA X 10 KG CAJA",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_7",
+      "nombre": "AGUILA DROPS BLANCO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_8",
+      "nombre": "AGUILA DROPS SEMIAMARGO  X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_6",
+      "nombre": "AGUILA MEDALLON BLANCO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_2",
+      "nombre": "AGUILA MEDALLON SEMI AMARGO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_5",
+      "nombre": "AGUILA ROCKLETS X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_10",
+      "nombre": "AGUILA TABLETA SEMIAMARGO X 150 GS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_12",
+      "nombre": "AGUILA/ARCOR PASTA DE MANI BON O BON X 290 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_13",
+      "nombre": "AGUILA/ARCOR SNACK (9324) BON O BON X 800 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_9",
+      "nombre": "AGUILATABLETA BLANCO X 150 GS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_14",
+      "nombre": "ALBERTINA HARINA 000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_15",
+      "nombre": "ALMENDRA USA  X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_17",
+      "nombre": "ANANA X 0.800 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_18",
+      "nombre": "ANIS EN GRANO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_21",
+      "nombre": "ARGENFRUT MICRO CEREAL BLANCO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_22",
+      "nombre": "ARGENFRUT MICRO CEREAL MULTICOLOR X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_23",
+      "nombre": "ARGENFRUT MICRO CEREAL NEGRO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1789125724382",
+      "nombre": "ARRAYANES RELLENO SABOR DULCE DE LECHE X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_255",
+      "nombre": "AVENA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_28",
+      "nombre": "AZUCAR COMUN PACK X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_27",
+      "nombre": "AZUCAR COMUN X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_29",
+      "nombre": "AZUCAR COMUN X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_31",
+      "nombre": "AZUCAR TAXONERA GRANULADA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_33",
+      "nombre": "BALLINA PASTA CUBRE TORTA F H X 0.500 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_34",
+      "nombre": "BALLINA PASTA CUBRE TORTA F H X 3 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_35",
+      "nombre": "BARI CEREZA X 3.1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_36",
+      "nombre": "BARI FRUTA ESCURRIDA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_37",
+      "nombre": "BARI FRUTA ESCURRIDA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_38",
+      "nombre": "BARI GUINDAS ROJAS X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_39",
+      "nombre": "BARI JALEA FANTASIA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_40",
+      "nombre": "BARI MERMELADA DE BATATA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_41",
+      "nombre": "BARI MERMELADA DE MEMBRILLO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_42",
+      "nombre": "BLANCURA HARINA 000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_43",
+      "nombre": "BLANCURA HARINA 0000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_46",
+      "nombre": "CALSA FLOR ESENCIA ALMENDRA X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_47",
+      "nombre": "CALSA FLOR ESENCIA COCO X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_48",
+      "nombre": "CALSA FLOR ESENCIA LIMON X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_49",
+      "nombre": "CALSA FLOR ESENCIA MANTECA X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_50",
+      "nombre": "CALSA FLOR ESENCIA NARANJA X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_51",
+      "nombre": "CALSA FLOR ESENCIA PAN DULCE X 2 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_52",
+      "nombre": "CALSA FLOR ESENCIA VAINILLA X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_53",
+      "nombre": "CALSA FLOR ESENCIA VAINILLA X 5 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_54",
+      "nombre": "CALSA FORMULA 1",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_55",
+      "nombre": "CALSA GARCIA RICOTA X 3 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_57",
+      "nombre": "CALSA KOLAROMA CHOCOLATE X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_58",
+      "nombre": "CALSA KOLAROMA FRUTILLA X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_59",
+      "nombre": "CALSA KOLAROMA LIMON X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_60",
+      "nombre": "CALSA KOLAROMA MANTECA X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_61",
+      "nombre": "CALSA KOLAROMA NARANJA X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_62",
+      "nombre": "CALSA KOLAROMA VAINILLA X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_63",
+      "nombre": "CALSA LEVADURA VIRGEN X 0.500 GS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_64",
+      "nombre": "CALSA MAX FN X 1.5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_65",
+      "nombre": "CALSA MTK MASA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_66",
+      "nombre": "CALSA POLVO PARA HORNEAR X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_67",
+      "nombre": "CALSA PREMEZCLA PAN DE QUESO X 2 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_68",
+      "nombre": "CALSA SUPER HOJALDRE X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_69",
+      "nombre": "CAMI PASCUALINA CRIOLLA",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_71",
+      "nombre": "CAMI TAPA PASTELITOS X 2,5 DOCENAS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_70",
+      "nombre": "CAMI TAPAS COPETIN X 5 DOCENAS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_72",
+      "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_73",
+      "nombre": "CAMI TAPAS DE EMPANADAS FAMILIAR CRIOLLAS X 5 DOC",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_74",
+      "nombre": "CAMI TAPAS DE EMPANADAS HOJALDRADAS X 5 DOC",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_75",
+      "nombre": "CAMPOS LARGOS ACEITE X 4 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_76",
+      "nombre": "CAÑUELA ACEITE X 5 LT",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_79",
+      "nombre": "CARLETI CEREZA X 3100 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_80",
+      "nombre": "CASTAÑA DE CAJU X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_81",
+      "nombre": "CAVIWA GRANA DE MANI X 1KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_83",
+      "nombre": "CAVIWA MANI CROCANTE CON CHOCOLATE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_82",
+      "nombre": "CAVIWA MANI CROCANTE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_84",
+      "nombre": "CAVIWA MANI FILETEADO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_85",
+      "nombre": "CAVIWA PASTA DE MANI RELLENO X 0,440 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_86",
+      "nombre": "CAVIWA PASTA DE MANI TIPO ARABE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_87",
+      "nombre": "CAYFAR MERMELADA DE BATATA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_88",
+      "nombre": "CAYFAR MERMELADA DE MEMBRILLO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_89",
+      "nombre": "CAYFAR TOMATE BOTELLA X 900 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_90",
+      "nombre": "CAYFAR TOMATE TRITURADO X 8 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_92",
+      "nombre": "CHACABUCO 00 PIZZA NAPOLITANA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_93",
+      "nombre": "CHACABUCO 00 PIZZA NAPOLITANA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_94",
+      "nombre": "CHACABUCO HARINA 000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_95",
+      "nombre": "CHACABUCO HARINA 0000 X 25",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_96",
+      "nombre": "CHACABUCO HARINA INTEGRAL X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_97",
+      "nombre": "CHACABUCO HARINA INTEGRAL X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_98",
+      "nombre": "CHACABUCO MASA MADRE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_100",
+      "nombre": "CHI DIBA BLANCO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_101",
+      "nombre": "CHI DISA SEMIAMARGO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1789394321012",
+      "nombre": "CHI DROPS BLANCO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_102",
+      "nombre": "CHI EME- 2 S/A X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_103",
+      "nombre": "CHI EME- B BLANCO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_104",
+      "nombre": "CHI EME- JO S/A X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_106",
+      "nombre": "CHI EME- L LECHE X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_105",
+      "nombre": "CHI M2 - G DROPS S/A X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_107",
+      "nombre": "CHOCLO CREMOSO X 0,800 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_108",
+      "nombre": "CHOCLO GRANO AMARILLO X 0,800 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_109",
+      "nombre": "CLUCELAT MANTECA X 2,5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_110",
+      "nombre": "CLUCELAT MANTECA X 200 GS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_111",
+      "nombre": "COCO RALLADO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_112",
+      "nombre": "CONFITES MINI ROCKLETS X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_113",
+      "nombre": "CORDOBEZA LEVADURA X 0,5OO GS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_114",
+      "nombre": "CUMANA ATUN LOMITO X 1.8 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_115",
+      "nombre": "CURICO CEREZA AL MARRASCHINO CON CABO X 3.1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_116",
+      "nombre": "DALOMO ACEITE DE OLIVA X 500 CC",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1789137475431",
+      "nombre": "DANICA BIZCOCHUELO VAINILLA DANMIX X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1788115800350",
+      "nombre": "DANICA GRASA PRIMOR REFINADA X 20",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_117",
+      "nombre": "DANICA LEVADURA FRESCA X 500 G",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_118",
+      "nombre": "DANICA MARGARINA HOJALDRE PRIMOR X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_119",
+      "nombre": "DANICA MARGARINA MASA MANTERINA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_120",
+      "nombre": "DANICA MARGARINA MASA PRIMOR VEGETAL X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_121",
+      "nombre": "DANICA MAYONESA ORIGINAL",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_122",
+      "nombre": "DELANTALES",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_123",
+      "nombre": "DEWEY AZUCAR IMPALPABLE HOLRAY X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_124",
+      "nombre": "DEWEY AZUCAR NEGRA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_126",
+      "nombre": "DEWEY ESENCIA DE ALMENDRA X 1 L",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_127",
+      "nombre": "DEWEY IMPALPABLE TALCO X 1KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_125",
+      "nombre": "DEWEY MERMELADA DE BATATAX 10KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_128",
+      "nombre": "DEWEY MERMELADA DE MEMBRILLO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_129",
+      "nombre": "DEWEY POLVO PARA HORNEAR X 3 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_130",
+      "nombre": "DOBLE VIA SAL ENTREFINA X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_131",
+      "nombre": "DOBLE VIA SAL FINA SECA X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_132",
+      "nombre": "DOBLE VIA SAL GRUESA LAVADA Y SECA X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_133",
+      "nombre": "DOBLE VIA SAL GRUESA X 25",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_134",
+      "nombre": "DOS ANCLAS SAL FINA X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_135",
+      "nombre": "DURAZNO X 0,800 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_136",
+      "nombre": "EGRAMAR ELEVOL MARGARINA HOJALDRE X 5KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_137",
+      "nombre": "EGRAMAR ELEVOL MARGARINA MASA X 5KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_138",
+      "nombre": "EGRAMAR GRASA CRISTALINA SACHET X 0.5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_139",
+      "nombre": "EGRAMAR GRASA GUSTAGRAS REFINADA X 20 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_140",
+      "nombre": "EGRAMAR GRASA GUSTAGRAS REFINADA X10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_141",
+      "nombre": "EGRAMAR MARGARINA MASA ORO SACHET X 0.5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_142",
+      "nombre": "EL ALJIBE ( 1010) JAMON 266 X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_143",
+      "nombre": "EL ALJIBE (1009) PATA DE CERDO MASTER X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_145",
+      "nombre": "EL MUNDO DULCE DE LECHE ALFAJORERO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_146",
+      "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO BALDE X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_147",
+      "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_148",
+      "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_149",
+      "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_151",
+      "nombre": "EMETH ADITIVO MEJORADOR X 0.500 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_152",
+      "nombre": "EMETH AZUCAR IMPALPABLE X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_153",
+      "nombre": "EMETH AZUCAR NEGRA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_154",
+      "nombre": "EMETH BAÑO DE REPOSTERIA BOTON BLANCO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_155",
+      "nombre": "EMETH BAÑO DE REPOSTERIA BOTON NEGRO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_150",
+      "nombre": "EMETH CARAMELO LIQUIDO X 1 1/4 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_157",
+      "nombre": "EMETH COLORANTE AMARILLO X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_158",
+      "nombre": "EMETH COLORANTE CARAMELO PURO X 5 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_159",
+      "nombre": "EMETH COLORANTE CARAMELO X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_156",
+      "nombre": "EMETH COLORANTE ROJO X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_160",
+      "nombre": "EMETH CONSERVANTE SORBATO DE POTACIO X 1/2 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_161",
+      "nombre": "EMETH ESENCIA ACIDO ACETICO X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_162",
+      "nombre": "EMETH ESENCIA AGUA DE AZAHAR X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_163",
+      "nombre": "EMETH ESENCIA ALMENDRA X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_164",
+      "nombre": "EMETH ESENCIA BANANA X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_165",
+      "nombre": "EMETH ESENCIA COCO X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_166",
+      "nombre": "EMETH ESENCIA COMPLEMENTO X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_167",
+      "nombre": "EMETH ESENCIA LIMON X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_168",
+      "nombre": "EMETH ESENCIA MANTECA X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_169",
+      "nombre": "EMETH ESENCIA MANTECA X 5 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_170",
+      "nombre": "EMETH ESENCIA NARANJA X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_171",
+      "nombre": "EMETH ESENCIA PAN DULCE X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_172",
+      "nombre": "EMETH ESENCIA QUESO X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_173",
+      "nombre": "EMETH ESENCIA VAINILLA X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_174",
+      "nombre": "EMETH ESENCIA VAINILLA X 2 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_175",
+      "nombre": "EMETH ESENCIA VAINILLA X 5 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_176",
+      "nombre": "EMETH EXTRACTO DE MALTA X 6 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_199",
+      "nombre": "EMETH GLUCOSA X 6 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_177",
+      "nombre": "EMETH HARINA DE MALTA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_178",
+      "nombre": "EMETH JALEA FANTASIA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_206",
+      "nombre": "EMETH JALEA USO DIRECTO X 1L",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_179",
+      "nombre": "EMETH MERMELADA DE MEMBRILLO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_lista_180",
+      "nombre": "EMETH MIEL X 6 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_181",
+      "nombre": "EMETH POLVO PARA HORNEAR X 3 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_182",
+      "nombre": "FAINALIND X 200 GS.",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_183",
+      "nombre": "FAINALIND X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_184",
+      "nombre": "FEMAG FECULA DE MANDIOCA X 25",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_185",
+      "nombre": "FEMAG FECULA DE MANDIOCA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_187",
+      "nombre": "FINCA DE SANTIAGO TOMATE TRITURADO SACHET X 2 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_188",
+      "nombre": "FLOR DE CAMPO MIEL 14KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_189",
+      "nombre": "FRUTOS MENDOCINOS ACEITE DE GIRASOL X 5 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_191",
+      "nombre": "GELBRIX ESENCIA MANTECA X 5 L",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_192",
+      "nombre": "GELBRIX ESENCIA VAINILLA X 5 L",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_190",
+      "nombre": "GELBRIX JALEA FANTASIA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_194",
+      "nombre": "GELBRIX PAN DE QUESO X 3KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_195",
+      "nombre": "GELBRIX PASTELERA X 3 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_196",
+      "nombre": "GELBRIX POLVO PARA HORNEAR X 3 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_197",
+      "nombre": "GHELCO BAÑO DE REPOSTERIA BLANCO X 1 KG (3600)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_198",
+      "nombre": "GHELCO BAÑO DE REPOSTERIA SEMIAMARGO X 1 KG (3450)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1789132704523",
+      "nombre": "HARINA 000 PEQUEÑA EMA 000",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_200",
+      "nombre": "HARINA 000 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_201",
+      "nombre": "HARINA 0000 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_204",
+      "nombre": "INTY MANTECA X 2.5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_205",
+      "nombre": "INTY MANTECA X 500 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_207",
+      "nombre": "JULIAN ACEITUNA 00 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_208",
+      "nombre": "JULIAN ACEITUNAS NEGRAS EN ACEITE X 2 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1789385062556",
+      "nombre": "JULIAN ACEITUNAS NEGRAS NUMERO 1 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_209",
+      "nombre": "JULIAN ACEITUNAS VERDE DESCAROZADA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_210",
+      "nombre": "JULIAN ACEITUNAS VERDE DESCAROZADA X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_211",
+      "nombre": "JULIAN ACEITUNAS VERDE EN RODAJAS X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_212",
+      "nombre": "JULIAN ACEITUNAS VERDE EN RODAJAS X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_214",
+      "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_215",
+      "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 2 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_213",
+      "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_216",
+      "nombre": "JULIAN ACEITUNAS VERDE NUMERO 3 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1788115864404",
+      "nombre": "JULIAN ACEITUNAS VERDES NUMERO 00 X 5KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1788115900883",
+      "nombre": "JULIAN ACEITUNAS VERDES NUMERO 1 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_217",
+      "nombre": "JULIAN ACEITUNAS VERDES NUMERO 4 X 5KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_218",
+      "nombre": "LA TARANTELLA TYBO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_219",
+      "nombre": "LAGOMARSINO CONCEPCION HARINA 000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_220",
+      "nombre": "LAGOMARSINO CONCEPCION HARINA 0000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_221",
+      "nombre": "LAGOMARSINO HARINA CARLOS CASARES 000 X 25",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_222",
+      "nombre": "LAGOMARSINO HARINA CARLOS CASARES 0000 X 25",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_223",
+      "nombre": "LAGOMARSINO PREMEZCLA PAN DE VIENA X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_224",
+      "nombre": "LAGOMARSINO SALVADO X 20 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_225",
+      "nombre": "LANFIELD DULCE DE LECHE REPOSTERO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_227",
+      "nombre": "LEDEVIT BROWNIE X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_228",
+      "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_229",
+      "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_230",
+      "nombre": "LEDEVIT CREMA CHANTILLY X 4.7 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_231",
+      "nombre": "LEDEVIT CREMA CHOCOLATE X 0.500 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_232",
+      "nombre": "LEDEVIT CREMA CHOCOLATE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_233",
+      "nombre": "LEDEVIT CREMA CHOCOLATE X 4,5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_234",
+      "nombre": "LEDEVIT CREMA FRUTILLA X 0.500 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_235",
+      "nombre": "LEDEVIT CREMA PARIS X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_236",
+      "nombre": "LEDEVIT CREMA VAINILA X 0.500 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_237",
+      "nombre": "LEDEVIT CREMA VAINILLA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_238",
+      "nombre": "LEDEVIT CREMA VAINILLA X 4,7 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_239",
+      "nombre": "LEDEVIT DESTELLO FRUTILLA X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_241",
+      "nombre": "LEDEVIT DESTELLO NEUTRO X 310 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_240",
+      "nombre": "LEDEVIT DESTELLO NEUTRO X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_242",
+      "nombre": "LEDEVIT DULCE DE LECHE REPOSTERO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_243",
+      "nombre": "LEDEVIT PREMEZCLA CREMA PASTELERA X 250 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_244",
+      "nombre": "LEDEVIT PREMEZCLA CREMA PASTELERA X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_245",
+      "nombre": "LEDEVIT PREMEZCLA MERENGUE X 250 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_246",
+      "nombre": "LEDEVIT PREMEZCLA MOUSSE CHANTILLY X 250 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_247",
+      "nombre": "LEDEVIT PREMEZCLA MOUSSE CHOCOLATE X 250 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_248",
+      "nombre": "LEDEVIT PREMEZCLA MOUSSE DE FRUTILLA X 250 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1789125659132",
+      "nombre": "LEITE DULCE DE LECHE X 10KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_249",
+      "nombre": "LEOPARDO LONGANIZA X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787598090761",
+      "nombre": "LEVEX LEVADURA SECA DISPLAY",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_250",
+      "nombre": "LICOR MARRASCHINO X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_251",
+      "nombre": "LICOR RON X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_252",
+      "nombre": "LOCOCO ADOBO PARA PIZZA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_253",
+      "nombre": "LOCOCO AHUMADO PIMENTON X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_254",
+      "nombre": "LOCOCO AJI MOLIDO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_256",
+      "nombre": "LOCOCO COMINO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_257",
+      "nombre": "LOCOCO OREGANO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_258",
+      "nombre": "LOCOCO PIMENTON X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_259",
+      "nombre": "LOCOCO PIMIENTA BLANCA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_260",
+      "nombre": "LOCOCO PROVENZAL X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_261",
+      "nombre": "LOCOCO SESAMO NEGRO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_263",
+      "nombre": "LODISER ALPINO LECHE X 0,500 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_262",
+      "nombre": "LODISER ALPINO TABLETA BLANCO X 0,500 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_264",
+      "nombre": "LODISER ALPINO TABLETA SEMIAMARGO X 0,500 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_265",
+      "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_267",
+      "nombre": "LUGO MUZZARELLA PLANCHA PIEDRA X 20 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_266",
+      "nombre": "LUGO MUZZARELLA PLANCHA X 20 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_268",
+      "nombre": "LUGO MUZZARELLA X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_269",
+      "nombre": "LUGO QUESO AZUL",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_270",
+      "nombre": "MAPLE DE HUEVO NUMERO 1",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_271",
+      "nombre": "MAPLE DE HUEVO NUMERO 2",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_272",
+      "nombre": "MARIMIL RICOTA X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_273",
+      "nombre": "MASTER BAKERY BIZCOCHUELO CHOCOLATE X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_274",
+      "nombre": "MASTER BAKERY BIZCOCHUELO VAINILLA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_275",
+      "nombre": "MASTER BAKERY PAN DE QUESO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_276",
+      "nombre": "MAYANA BICARBONATO DE AMONIO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_278",
+      "nombre": "MAYANA CACAO AMARGO ALCALINO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_277",
+      "nombre": "MAYANA CACAO AMARGO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_279",
+      "nombre": "MAYANA GELATINA SIN SABOR X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_280",
+      "nombre": "MAYANA GRANA FANTASIA AMARILLO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_281",
+      "nombre": "MAYANA GRANA FANTASIA AZUL X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_282",
+      "nombre": "MAYANA GRANA FANTASIA BLANCA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_283",
+      "nombre": "MAYANA GRANA FANTASIA CELESTE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_284",
+      "nombre": "MAYANA GRANA FANTASIA CHOCOLATE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_285",
+      "nombre": "MAYANA GRANA FANTASIA LILA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_286",
+      "nombre": "MAYANA GRANA FANTASIA MARRON X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_287",
+      "nombre": "MAYANA GRANA FANTASIA MULTICOLOR X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_288",
+      "nombre": "MAYANA GRANA FANTASIA NARANJA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_289",
+      "nombre": "MAYANA GRANA FANTASIA NEGRA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_290",
+      "nombre": "MAYANA GRANA FANTASIA PLATEADA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_291",
+      "nombre": "MAYANA GRANA FANTASIA ROJO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_292",
+      "nombre": "MAYANA GRANA FANTASIA ROSA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_293",
+      "nombre": "MAYANA GRANA FANTASIA VERDE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_294",
+      "nombre": "MILKAULT MANTECA X 200 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_296",
+      "nombre": "MILKAUT CHEDDAR 48 FETAS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_295",
+      "nombre": "MILKAUT CHEDDAR DOYPACK X 1.5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_297",
+      "nombre": "MILKAUT CHEDDAR POUCH X 3.5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_298",
+      "nombre": "MILKAUT CREMA 330 CC",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_299",
+      "nombre": "MILKAUT CREMA AL 39% SACHET X 5 LT",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_300",
+      "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_301",
+      "nombre": "MILKAUT CREMATTO BALANCE 445 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_304",
+      "nombre": "MILKAUT MANTECA X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_305",
+      "nombre": "MILKAUT MANTECA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_306",
+      "nombre": "MILKAUT PROVOLONE X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_307",
+      "nombre": "MILKAUT QUESO CREMA CREMATTO DOYPACK X 1.5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_308",
+      "nombre": "MILKAUT QUESO CREMA CREMATTO POUCH X 3.5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_309",
+      "nombre": "MISKY ALMIDON DE MAIZ X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_310",
+      "nombre": "MIX ALMENDRA-NUEZ-CAJU-AVELLANA",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_311",
+      "nombre": "MIX MEDITERRANEO FRUTOS SECOS/ PASAS X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_312",
+      "nombre": "MORANDO ACEITUNA 00 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_313",
+      "nombre": "MORANDO ACEITUNA NEGRA X 2 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_314",
+      "nombre": "MORANDO ACEITUNAS RODAJA X4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_315",
+      "nombre": "MORANDO ACEITUNAS VERDE DESCAROZADA X800 G",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_316",
+      "nombre": "MORANDO ACEITUNAS VERDE NUMERO 2 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_317",
+      "nombre": "MORANDO ACEITUNAS VERDE NUMERO 3 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_318",
+      "nombre": "MORANDO ANCHOAS FILET",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_319",
+      "nombre": "MORANDO CONDIMENTADA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_320",
+      "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_321",
+      "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_322",
+      "nombre": "MUUUME DULCE DE LECHE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_323",
+      "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_324",
+      "nombre": "MUUUME MUZZARELLA PLANCHA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_327",
+      "nombre": "NATURA MAYONESA X 2900 CC",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_328",
+      "nombre": "NUECES CUARTOS X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_329",
+      "nombre": "NUECES ENTERAS EXTRA LIGHT X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_330",
+      "nombre": "ORESTE SALSA EN BIDON X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_331",
+      "nombre": "OSTRAMAR ATUN X !KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_332",
+      "nombre": "PALMITO EN RODAJA",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_333",
+      "nombre": "PALMITO ENTERO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_334",
+      "nombre": "PAMPERO MIEL 14 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_335",
+      "nombre": "PAMPERO MIEL X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1788455604448",
+      "nombre": "PAPELEA CARTUCHO  SULFITO N 4A",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1788455630726",
+      "nombre": "PAPELEA CARTUCHO  SULFITO N 6L",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_337",
+      "nombre": "PAPELERA BANDEJA EXPANDIDO 618 X 50 (1022/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_338",
+      "nombre": "PAPELERA BANDEJA EXPANDIDO 621 X 50 KG (102/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_339",
+      "nombre": "PAPELERA BANDEJA MICRO 102 (1652)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_340",
+      "nombre": "PAPELERA BANDEJA MICRO 103 (1653)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_341",
+      "nombre": "PAPELERA BANDEJA MICRO 105 O (1654/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_342",
+      "nombre": "PAPELERA BANDEJA MICRO 107 R (1657)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_343",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 1 (1/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_344",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 13",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_345",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 13,5",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_346",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 2 (2/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_347",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 3 (3/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_348",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 4 (4/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_349",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 5 (5/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_350",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 6 (6/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_351",
+      "nombre": "PAPELERA BLONDA BLANCA NUMERO 28 ( 1879 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_352",
+      "nombre": "PAPELERA BLONDA BLANCA NUMERO 30 ( 1880)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_353",
+      "nombre": "PAPELERA BLONDA BLANCA NUMERO 32 (1881)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_354",
+      "nombre": "PAPELERA BOLSA CAMISETA DE 30 X 40 ( 230/2 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_355",
+      "nombre": "PAPELERA BOLSA CAMISETA DE 40 X 50 ( 250/5 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_356",
+      "nombre": "PAPELERA BOLSA CAMISETA DE 45 X 60 ( 233 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_357",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 15 X 20 (170/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_358",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 20X 30 (180/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_359",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 25 X 35 ( 181/1 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_360",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 30 X 40 ( 182/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_361",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 35 X 45 (183/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_362",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 40 X 50 (184/2)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_363",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 50 X 70 (33180)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_364",
+      "nombre": "PAPELERA BOLSA DE CONSORCIO DE 60 X 90 ( 281/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_365",
+      "nombre": "PAPELERA BOLSA DE CONSORCIO DE 90 X 1.2 ( 1296 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_366",
+      "nombre": "PAPELERA BOLSA PP DE 15 X 30 ( 819 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_367",
+      "nombre": "PAPELERA BOLSA PP DE 15 X 35 ( 820 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_368",
+      "nombre": "PAPELERA BOLSA PP DE 20 X 30 ( 826 ) (40 PAQ)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_369",
+      "nombre": "PAPELERA BOLSA PP DE 30 X 40 ( 836 ) (20 PAQ)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1788455390007",
+      "nombre": "PAPELERA BOLSAS DE ARRANQUE 60X90",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_370",
+      "nombre": "PAPELERA CAJAS PARA PIZZA X 50 UNIDADES (319)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_371",
+      "nombre": "PAPELERA CAMISETAS USO INTERNO ( 251/6 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_372",
+      "nombre": "PAPELERA CARTUCHOS NUMERO 4A ( 127 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_373",
+      "nombre": "PAPELERA CARTUCHOS NUMERO 6 ( 129 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_374",
+      "nombre": "PAPELERA CARTUCHOS NUMERO 7 ( 131 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_375",
+      "nombre": "PAPELERA CINTA ADHESIVA ( 1348 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_336",
+      "nombre": "PAPELERA CINTA DE PAPEL RAPIFIX 48 X 50 ( 351 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_376",
+      "nombre": "PAPELERA FAJAS TIRA SATINADA 70 CM X KG (337/3)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_377",
+      "nombre": "PAPELERA FILM 300 MTS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_378",
+      "nombre": "PAPELERA FONDO PIZZERO X KG (410/2)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_379",
+      "nombre": "PAPELERA HILO DE ALGODON DE 3 HEBRAS ( 390 ) 300GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_380",
+      "nombre": "PAPELERA LAMINAS FOLEX DE 20 X 25 X 1 KG ( 270/1 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_381",
+      "nombre": "PAPELERA MOLDE DE BUDIN ALUMINIO DE 1/2 KG X 10 UNIDADES (104/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_382",
+      "nombre": "PAPELERA MOLDE DE BUDIN PAPEL X 10 UNIDADES ( 384 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_383",
+      "nombre": "PAPELERA PAPEL ALUMINIO ROLLO 40 CM X 1 KG (102)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_384",
+      "nombre": "PAPELERA PAPEL FILM ECONOMICO X 38 CM ( 767 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_385",
+      "nombre": "PAPELERA PAPEL MANTECA ROLLO X 1 KG ( 765 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_386",
+      "nombre": "PAPELERA PAPEL MANTECA ROLLO X 5 METROS ( 1765 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_387",
+      "nombre": "PAPELERA PAPEL SUELTO (409/3 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_388",
+      "nombre": "PAPELERA PLATO DE ALUMINIO P23 X 10 UNIDADES (109/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_389",
+      "nombre": "PAPELERA PLATO DE ALUMINIO P26 X 10 UNIDADES (110/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_390",
+      "nombre": "PAPELERA PRECINTOS DE 6 CM ( 611 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_391",
+      "nombre": "PAPELERA TACOS DE COLORES ( 613 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_392",
+      "nombre": "PAPELERA TRIPODES",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_393",
+      "nombre": "PASAS DE UVA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_394",
+      "nombre": "PASAS DE UVA X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787492078727",
+      "nombre": "PEQUEÑA EMA HARINA 000 X 25KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_398",
+      "nombre": "PRODUCTOS VARIOS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_399",
+      "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT BLANCO X 0.800 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_400",
+      "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT LECHE X 0.800 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_401",
+      "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT PISTACHO X 0.800 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_402",
+      "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT SEMIAMARGO X 0.800 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_404",
+      "nombre": "PURATOS MEJORADOR TOUPAN X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_405",
+      "nombre": "PURATOS PREMEZCLA (BUDIN) TEGRAL SATIN CHOCOLATE X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_406",
+      "nombre": "PURATOS PREMEZCLA (BUDIN) TEGRAL SATIN VAINILLA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_407",
+      "nombre": "PURATOS PREMEZCLA EASY FACTURA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787488935989",
+      "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_408",
+      "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787489473487",
+      "nombre": "RDC GRASA REFINADA X 20KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1788115971998",
+      "nombre": "RDC MARGARINA HOJALDRE BELTRAN PLACA X 2 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_409",
+      "nombre": "RDC MARGARINA HOJALDRE BELTRAN X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_410",
+      "nombre": "RDC MARGARINA MASA BELTRAN X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_411",
+      "nombre": "RDC MARGARINA MASA REVECA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_412",
+      "nombre": "REFIGRAS BUTTERINA MARGARINA HOJALDRE X 10KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_416",
+      "nombre": "REFIGRAS LAMINATTA MARGARINA MASA X10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787875024663",
+      "nombre": "REGITECA FILOMENA HOJALDRE X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787875043846",
+      "nombre": "REGITECA FILOMENA MASA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787874894968",
+      "nombre": "REGITECA GRASA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787874876231",
+      "nombre": "REGITECA GRASA X 20 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1788967922508",
+      "nombre": "REGITECA MATILDA GRASA PRIMER JUGO X 20 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787874953948",
+      "nombre": "REGITECA ROLINA HOJALDRE X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_417",
+      "nombre": "REY DE REYES MORRON",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_422",
+      "nombre": "SALVITA MORRON",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_423",
+      "nombre": "SAN IGNACIO DULCE DE LECHE HELADERO X 1O KG ((300-167))",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_424",
+      "nombre": "SAN IGNACIO DULCE DE LECHE PARA SEMBRAR X 1O KG ((300-266))",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_425",
+      "nombre": "SAN IGNACIO DULCE DE LECHE REPOSTERO X 10 KG ((300-203))",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_426",
+      "nombre": "SAN SIMON CEREZA X 3.1KILOS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_427",
+      "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_428",
+      "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 4 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_430",
+      "nombre": "SEGUNDA COLONIA HARINA 000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_431",
+      "nombre": "SEGUNDA COLONIA HARINA 0000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_429",
+      "nombre": "SEGUNDA COLONIA SEMOLIN X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_432",
+      "nombre": "SEMILLAS MIX X 5 K",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_433",
+      "nombre": "SILVIA CREMOSO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787508781215",
+      "nombre": "SILVIA LECHE LARGA VIDA X 1 LT",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_435",
+      "nombre": "SILVIA QUESO AZUL X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_436",
+      "nombre": "SILVIA QUESO TYBO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_437",
+      "nombre": "SILVIA RICOTA X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_438",
+      "nombre": "SILVIA SARDO X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_439",
+      "nombre": "TAXONERA ADITIVO CONCENTRADO X 1/2 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_440",
+      "nombre": "TAXONERA AZUCAR GRANULADA X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_441",
+      "nombre": "TAXONERA AZUCAR IMPALPABLE ANTIHUMEDAD X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_442",
+      "nombre": "TAXONERA BANYGEL SABOR FRUTILLA X 5 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_443",
+      "nombre": "TAXONERA BANYGEL SABOR NEUTRO X 5 LITROS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_444",
+      "nombre": "TAXONERA COMPLEMENTO 1/2 LT",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_445",
+      "nombre": "TAXONERA EMULSIONANTE EN PASTA X 3.75",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_446",
+      "nombre": "TAXONERA GEL FRIO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_447",
+      "nombre": "TAXONERA GUINDA ROJAS X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_448",
+      "nombre": "TAXONERA GUINDAS VERDES X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_449",
+      "nombre": "TAXONERA HIGO EN ALMIBAR X 3.1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_450",
+      "nombre": "TAXONERA JALEA FANTASIA X 14 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_451",
+      "nombre": "TAXONERA MEMBRILLO MIX X10KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_452",
+      "nombre": "TAXONERA MERMELADA DE ARANDANOS X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_453",
+      "nombre": "TAXONERA MERMELADA DE BATATA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_454",
+      "nombre": "TAXONERA MERMELADA DE DURAZNO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_455",
+      "nombre": "TAXONERA MERMELADA DE FRAMBUESA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_456",
+      "nombre": "TAXONERA MERMELADA DE FRUTILLA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_457",
+      "nombre": "TAXONERA MERMELADA DE MANZANA X 10KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_458",
+      "nombre": "TAXONERA MERMELADA DE MANZANA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_459",
+      "nombre": "TAXONERA MERMELADA DE MEMBRILLO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_460",
+      "nombre": "TAXONERA MERMELADA FRUTO DEL BOSQUE X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_468",
+      "nombre": "UAILE ALMIDON DE MAIZ X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_19",
+      "nombre": "UAILE ANTIMOHO X 2 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_469",
+      "nombre": "UAILE AZUCAR IMPALPABLE X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_470",
+      "nombre": "UAILE AZUCAR IMPALPABLE X 1O KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_471",
+      "nombre": "UAILE AZUCAR NEGRA X 1",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_472",
+      "nombre": "UAILE AZUCAR NEGRA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_461",
+      "nombre": "UAILE BICARBONATO DE AMONIO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_462",
+      "nombre": "UAILE BICARBONATO DE SODIO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_463",
+      "nombre": "UAILE CACAO AMARGO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_473",
+      "nombre": "UAILE ESENCIA ALMENDRA X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_464",
+      "nombre": "UAILE GELATINA SIN SABOR X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_474",
+      "nombre": "UAILE LECHE EN POLVO X 25KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_475",
+      "nombre": "UAILE LECHE EN POLVO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_465",
+      "nombre": "UAILE POLVO PARA HORNEAR X 1KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_466",
+      "nombre": "UAILE SESAMO BLANCO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_467",
+      "nombre": "UAILE SESAMO NEGRO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_482",
+      "nombre": "VICTORIA HARINA 000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_483",
+      "nombre": "VINAGRE X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    }
+  ]
+}
