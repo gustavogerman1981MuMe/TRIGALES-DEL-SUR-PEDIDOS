@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="11">
+<meta name="tds-pagina" content="12">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -1149,10 +1149,20 @@ function cajaDeHistorial() {
 
     const rep = document.createElement("button");
     rep.type = "button"; rep.className = "histRepetir";
-    rep.textContent = "Repetir";
+    rep.textContent = "Repetir y editar";
     rep.onclick = () => {
+      /* REEMPLAZA, no suma. Antes los articulos del pedido viejo se le
+         agregaban arriba de lo que ya estaba armando, y quedaban DOS
+         pedidos mezclados en uno: nadie entendia que estaba mandando.
+         Ahora siempre hay UN SOLO pedido armandose -- se carga este, se
+         le saca lo que no va, y ese es el que se manda. (2026-09-23,
+         pedido del dueno: "que sea lo mas intuitiva posible... que tenga
+         uno solo precargado".) */
+      if (Object.keys(carrito).length && !confirmarReemplazar()) return;
+      carrito = {};
       hay.forEach(id => { carrito[id] = h.items[id]; });
       quedoAMedias = false;
+      verHistorial = false;
       persistir(); avisarQueEntro(); dibujar();
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
@@ -1219,6 +1229,10 @@ function dibujarArriba() {
 
 /* Se pregunta de verdad, con los botones de la pagina: `confirm()` no se ve en
    algunos celulares y en el visor de Claude directamente no existe. */
+function confirmarReemplazar() {
+  return window.confirm("Tenés un pedido a medio armar. ¿Lo reemplazás por este?");
+}
+
 function confirmarVaciar() {
   return window.confirm("Ten\u00e9s un pedido a medio armar. \u00bfLo borr\u00e1s y empez\u00e1s de nuevo?");
 }
