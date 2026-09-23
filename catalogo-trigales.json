@@ -1,15 +1,15 @@
 {
   "version": 1,
-  "generado": "2026-09-23T17:37:40.728Z",
+  "generado": "2026-09-23T17:47:07.024Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
   "articulos": [
     {
       "id": "art_csv_1",
-      "nombre": "ADITIVO MAGICO X 1 KG",
+      "nombre": "ADITIVO PARA PANIFICADOS X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_4",
