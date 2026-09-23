@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="7">
+<meta name="tds-pagina" content="8">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -46,6 +46,7 @@
     --sello:#7FB2E5; --sello-t:#0F1A26; --sello-suave:#1E2C3B;
     --hay:#7FB877; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519;
     --brasa:#E0764A;
+    --ladrillo:#E77A69;
     color-scheme:dark;
   }
 
@@ -74,10 +75,17 @@
     padding:14px 16px 12px; padding-top:calc(14px + env(safe-area-inset-top,0px));
     position:sticky; top:0; z-index:20;
   }
+  /* DIA Y NOCHE A MANO. La pagina ya sigue sola lo que tenga el telefono;
+     esto es para el que quiere lo contrario. (2026-09-23.) */
+  .btnTema{
+    flex:0 0 auto; width:27px; height:27px; padding:0; margin-right:1px;
+    border:1px solid var(--linea2); border-radius:8px;
+    background:var(--papel); color:var(--tinta2); font-size:14px; line-height:1;
+  }
   .marca{display:flex; align-items:baseline; justify-content:space-between; gap:10px}
-  .marca b{font-size:14px; letter-spacing:.18em; color:var(--ladrillo)}
+  .marca b{font-size:14px; letter-spacing:.12em; color:var(--ladrillo); white-space:nowrap; flex:0 0 auto}
   .marca span{font-size:11px; color:var(--tinta2)}
-  .estadoLista{display:flex; flex-direction:column; align-items:flex-end; gap:1px; text-align:right}
+  .estadoLista{display:flex; flex-direction:column; align-items:flex-end; gap:1px; text-align:right; min-width:0; flex:1 1 auto}
   .estadoLista #refrescar{background:none; border:0; padding:0; font-size:11px; color:var(--sello); text-decoration:underline; text-underline-offset:2px}
   .estadoLista #refrescar:disabled{color:var(--tinta2); text-decoration:none}
   h1{font-family:Archivo,sans-serif; font-weight:800; font-size:21px; margin:2px 0 0; letter-spacing:-.01em; text-wrap:balance}
@@ -404,6 +412,7 @@
 
 <header>
   <div class="marca">
+    <button id="tema" type="button" class="btnTema" aria-label="Cambiar entre claro y oscuro"></button>
     <b class="sello">Trigales del Sur</b>
     <span class="estadoLista"><span id="fecha">…</span><button id="refrescar" type="button">actualizar lista</button></span>
   </div>
@@ -607,6 +616,37 @@ function casiIgual(a, b) {
   }
   return fallas + (a.length - i) + (b.length - j) <= 1;
 }
+
+/* DIA Y NOCHE.
+
+   Sin tocar nada, la pagina sigue lo que tenga puesto el telefono. Este boton
+   es para el que quiere lo contrario: queda guardado y se respeta hasta que
+   lo cambie. (2026-09-23, pedido del dueno.)
+
+   Se aplica apenas arranca el script, antes de dibujar nada, para que no se
+   vea el fogonazo del tema equivocado. */
+function temaGuardado() {
+  try { return localStorage.getItem("tds_tema") || ""; } catch (e) { return ""; }
+}
+function aplicarTema(t) {
+  const raiz = document.documentElement;
+  if (t === "dark" || t === "light") raiz.setAttribute("data-theme", t);
+  else raiz.removeAttribute("data-theme");
+  const b = document.getElementById("tema");
+  if (!b) return;
+  // Muestra a donde va a ir, no donde esta: es lo que se entiende de un toque.
+  const oscuroAhora = t === "dark" || (t !== "light" && window.matchMedia("(prefers-color-scheme:dark)").matches);
+  b.textContent = oscuroAhora ? "☀" : "☽";
+  b.title = oscuroAhora ? "Verla clara" : "Verla oscura";
+}
+aplicarTema(temaGuardado());
+document.getElementById("tema").onclick = () => {
+  const oscuroAhora = document.documentElement.getAttribute("data-theme") === "dark"
+    || (!document.documentElement.hasAttribute("data-theme") && window.matchMedia("(prefers-color-scheme:dark)").matches);
+  const nuevo = oscuroAhora ? "light" : "dark";
+  try { localStorage.setItem("tds_tema", nuevo); } catch (e) {}
+  aplicarTema(nuevo);
+};
 
 const guardar = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
 const leer = (k, x) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : x; } catch (e) { return x; } };
