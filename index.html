@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="10">
+<meta name="tds-pagina" content="11">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -214,6 +214,10 @@
     color:var(--sello); line-height:1.15;
   }
   .ofertaCond{ font-size:11.5px; opacity:.8 }
+  .ofertaSolo{
+    font-size:11px; font-weight:700; color:var(--sello);
+    text-transform:uppercase; letter-spacing:.06em; margin-top:2px;
+  }
   .ofertaBoton{
     flex:0 0 auto; height:38px; padding:0 15px; border:0; border-radius:9px;
     background:var(--sello); color:var(--sello-t); font-size:14px; font-weight:700;
@@ -1049,6 +1053,17 @@ function cajaDeOferta() {
     c.textContent = o.texto;
     izq.appendChild(c);
   }
+
+  /* ES SOLO PARA EL QUE PIDE POR ACA, y hay que decirlo: el programa
+     aplica el precio de oferta unicamente a los pedidos que llegan desde
+     esta pagina (ver oferta-de-la-semana.js). El que lo dicta por telefono
+     o lo pide en el mostrador paga el precio de lista. Si no se aclarara,
+     el cliente se enteraria en el mostrador -- el peor lugar. (2026-09-23,
+     pedido del dueno.) */
+  const solo = document.createElement("div");
+  solo.className = "ofertaSolo";
+  solo.textContent = "Solo pidiendo desde acá";
+  izq.appendChild(solo);
   abajo.appendChild(izq);
 
   /* EL BOTON AGREGA Y SE TERMINA: LA CAJA NO SE TRANSFORMA.
