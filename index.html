@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="22">
+<meta name="tds-pagina" content="25">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -30,6 +30,7 @@
        dueno: "que el celular mantenga el diseno que tiene la app".) */
     --sello:#8B4A2B; --sello-t:#F7F2E7; --sello-suave:#F1E4D6;
     --hay:#5C7A4E; --nohay:#8B8377; --trigo:#A9741A; --trigo-suave:#F5E9D2;
+    --hay-suave:#E9EFE5;
     --brasa:#9A3412;
     --ladrillo:#A63D2F;   /* el mismo ladrillo del programa */
     color-scheme:light;
@@ -39,7 +40,7 @@
       --papel:#1A1714; --papel2:#232019; --linea:#3A342B; --linea2:#4C4438;
       --tinta:#F0E9DD; --tinta2:#A79D8D;
       --sello:#D9A94A; --sello-t:#1B1815; --sello-suave:#2E2519;
-      --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519;
+      --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519; --hay-suave:#1F261B;
       --brasa:#E0764A;
       --ladrillo:#E77A69;   /* su version de noche, la del programa */
       color-scheme:dark;
@@ -49,7 +50,7 @@
     --papel:#1A1714; --papel2:#232019; --linea:#3A342B; --linea2:#4C4438;
     --tinta:#F0E9DD; --tinta2:#A79D8D;
     --sello:#D9A94A; --sello-t:#1B1815; --sello-suave:#2E2519;
-    --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519;
+    --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519; --hay-suave:#1F261B;
     --brasa:#E0764A;
     --ladrillo:#E77A69;
     color-scheme:dark;
@@ -262,12 +263,28 @@
   .fila .pie{display:flex; align-items:center; gap:7px; margin-top:3px; font-size:11.5px; color:var(--tinta2)}
   .estrella{color:var(--trigo)}
   .yaEsta{color:var(--hay); font-weight:700}
+  /* EL RENGLON QUE YA ESTA EN EL PEDIDO.
+
+     Antes esto era un DEGRADADO que se desvanecia a la mitad del renglon.
+     Sobre el beige del modo dia casi no se notaba, pero sobre el negro un
+     color que se apaga a la mitad se lee como una MANCHA, no como un
+     marcador -- parece que la pantalla se dibujo mal. El dueno lo marco:
+     "queda como que es una falla y se ve borroneado". (2026-09-23.)
+
+     Ahora es un tono PAREJO y del mismo verde que la barrita de la
+     izquierda: verde = ya lo tenes en el pedido, y es el mismo verde que
+     dice "en tu pedido" dos renglones mas abajo. Un tono plano no se puede
+     confundir con un error de dibujo; un degradado si.
+
+     No se saca del todo a proposito -- el tambien dijo "estaba bueno
+     porque asi no queda tan soso". Lo que molestaba era el desvanecido,
+     no que el renglon estuviera marcado. */
   .fila.cargada{
     border-left:3px solid var(--hay); margin-left:-10px; padding-left:7px;
-    background:linear-gradient(90deg, var(--sello-suave), transparent 55%);
+    background:var(--hay-suave);
   }
   .barra.entro{animation:entro .5s ease-out}
-  @keyframes entro{0%{background:var(--sello-suave)}100%{background:var(--papel2)}}
+  @keyframes entro{0%{background:var(--hay-suave)}100%{background:var(--papel2)}}
   @media (prefers-reduced-motion:reduce){ .barra.entro{animation:none} }
   .fila.sinStock .nom{color:var(--nohay)}
   .marcaChip{
@@ -493,12 +510,27 @@
     background:var(--sello); color:var(--sello-t); white-space:nowrap;
   }
   .btn:disabled{background:var(--linea); color:var(--tinta2)}
-  /* SIN PANADERIA NO SE MANDA. Antes el campo era opcional: si no lo
-     llenaba, el pedido llegaba al negocio sin saber de quien era y habia
-     que adivinar por el numero de WhatsApp. El boton apagado SIN decir por
-     que es peor que no tenerlo, asi que el motivo va ahi al lado.
-     (2026-09-23, pedido del dueno.) */
-  .faltaQuien{font-size:11.5px; color:var(--ladrillo); font-weight:600; margin:0}
+  /* SIN PANADERIA NO SE MANDA. Antes el campo era opcional: si no lo llenaba,
+     el pedido llegaba al negocio sin saber de quien era y habia que adivinar
+     por el numero de WhatsApp. El boton queda apagado hasta que lo escriba.
+     No hay leyenda: el dueno saco el rotulo de arriba y el aviso de abajo
+     -- eran tres textos para un solo dato, y el boton apagado ya se entiende.
+
+     EL VERDE ES EL DE WHATSAPP, a proposito: ese boton abre WhatsApp y nada
+     mas. La letra va OSCURA y no blanca: el blanco sobre #25D366 se lee mal
+     (WhatsApp lo usa para iconos, no para texto). Asi pasa de 2,3 a 9 de
+     contraste y se sigue viendo el mismo verde. (2026-09-23.)
+
+     Ojo: en la lista el verde quiere decir "ya esta en tu pedido". No se
+     pisan porque este es MUCHO mas saturado y vive en otra pantalla -- la
+     hoja del pedido -- donde no hay ningun otro verde. */
+  .btn.esWhatsApp{
+    background:#25D366; color:#0A1F13;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+  }
+  .btn.esWhatsApp:disabled{ background:var(--linea); color:var(--tinta2) }
+  .btn.esWhatsApp svg{flex:0 0 auto}
+  .btn.esWhatsApp:disabled svg{opacity:.5}
   .btn.fantasma{background:transparent; color:var(--tinta); border:1.5px solid var(--linea2)}
 
   /* ---------- GUARDARLO EN LA PANTALLA ---------- */
@@ -542,6 +574,22 @@
     padding:11px 12px; font-size:16px; border:1.5px solid var(--linea2); border-radius:8px;
     background:var(--papel2); color:var(--tinta); width:100%;
   }
+  /* ADENTRO DE LA HOJA DEL PEDIDO, NADA DE ESTO VA.
+
+     El verde y el "en tu pedido" existen para marcar, EN LA LISTA GRANDE,
+     cual de todos los articulos ya cargaste. Pero adentro de "Tu pedido"
+     estan TODOS los que cargaste: marcarlos a todos no dice nada, y en
+     modo noche tres renglones verdes seguidos con los "quitar" naranjas
+     encima se leen como si la pantalla se hubiera dibujado mal.
+     (2026-09-23, lo marco el dueno.)
+
+     La regla que queda: un marcador solo sirve donde hay algo que
+     distinguir. Donde son todos iguales, molesta. */
+  .hojaCuerpo .fila.cargada{
+    background:none; border-left:0; margin-left:0; padding-left:0;
+  }
+  .hojaCuerpo .yaEsta{ display:none }
+
   .quitar{background:none; border:0; color:var(--brasa); font-size:12px; padding:6px 0 0; text-decoration:underline; text-underline-offset:2px}
   .aviso{font-size:12.5px; color:var(--tinta2); line-height:1.45}
   .aviso.ok{color:var(--hay); font-weight:700}
@@ -625,11 +673,18 @@
   <div class="hojaCuerpo" id="hojaCuerpo"></div>
   <div class="hojaPie">
     <div class="campo">
-      <label for="quien">¿De parte de quién? (tu panadería)</label>
-      <input id="quien" type="text" autocomplete="organization" placeholder="Ej: Panadería La Esquina">
+      <!-- SIN ROTULO ARRIBA NI LEYENDA ABAJO: lo dice el propio campo.
+           Eran tres textos para un solo dato. Lo que avisa que falta es el
+           boton apagado, que ya se entiende solo. (2026-09-23.) -->
+      <input id="quien" type="text" autocomplete="organization" placeholder="¿De qué panadería es?">
     </div>
-    <p class="faltaQuien" id="faltaQuien" hidden>Poné de qué panadería es para poder enviarlo.</p>
-    <button class="btn" id="enviar" type="button">Enviar el pedido por WhatsApp</button>
+    <button class="btn esWhatsApp" id="enviar" type="button">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
+        <path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4z"/>
+        <path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/>
+      </svg>
+      <span>Enviar el pedido por WhatsApp</span>
+    </button>
     <p class="aviso" id="avisoEnvio">Se abre WhatsApp con el pedido ya escrito, al <span class="num">+54 9 11 5163-0039</span>. Vos solo tocás enviar.</p>
   </div>
 </section>
@@ -1656,7 +1711,6 @@ function mirarSiPuedeEnviar() {
   const hayPedido = Object.keys(carrito).length > 0;
   const hayQuien = $("#quien").value.trim() !== "";
   $("#enviar").disabled = !hayPedido || !hayQuien;
-  $("#faltaQuien").hidden = !hayPedido || hayQuien;
 }
 
 $("#enviar").onclick = async () => {
