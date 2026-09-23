@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-09-23T16:46:40.212Z",
+  "generado": "2026-09-23T17:37:40.728Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -9,7 +9,7 @@
       "id": "art_csv_1",
       "nombre": "ADITIVO MAGICO X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_4",
