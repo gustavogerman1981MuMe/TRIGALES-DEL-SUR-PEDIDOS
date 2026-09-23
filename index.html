@@ -138,6 +138,27 @@
   }
   .mas:disabled{background:transparent; color:var(--nohay); border:1.5px dashed var(--linea2); font-size:11px; font-weight:700; letter-spacing:.06em}
 
+  /* PASO 2: el campo de cantidad y el boton de confirmar. */
+  .ponerCant{
+    flex:0 0 auto; display:flex; align-items:center; gap:7px;
+  }
+  .ponerCant input{
+    width:66px; height:42px; text-align:center;
+    border:2px solid var(--sello); border-radius:8px;
+    background:var(--papel2); color:var(--tinta);
+    font-family:"IBM Plex Mono",monospace; font-size:17px; font-weight:600; padding:0;
+  }
+  .okCant{
+    height:42px; padding:0 14px; border:0; border-radius:8px;
+    background:var(--sello); color:var(--sello-t);
+    font-size:13.5px; font-weight:700; white-space:nowrap;
+  }
+  .fila.eligiendo{
+    border-left:3px solid var(--sello); margin-left:-10px; padding-left:7px;
+    background:linear-gradient(90deg, var(--sello-suave), transparent 60%);
+  }
+  .fila.eligiendo .nom{font-weight:700}
+
   .paso{display:flex; align-items:center; gap:0; border:1.5px solid var(--sello); border-radius:9px; overflow:hidden; flex:0 0 auto}
   .paso button{width:36px; height:40px; background:var(--sello-suave); color:var(--sello); border:0; font-size:19px; font-weight:700; line-height:1}
   .paso input{
@@ -176,13 +197,23 @@
   .loQueVaTop .flecha{font-size:11px; opacity:.8; text-decoration:underline; text-underline-offset:2px}
   .loQueVaFila{
     display:flex; align-items:center; gap:9px;
-    padding:6px 12px; border-top:1px solid rgba(29,81,131,.18);
+    padding:7px 10px 7px 12px; border-top:1px solid rgba(29,81,131,.18);
     font-size:13px; color:var(--tinta);
   }
-  .loQueVaFila .cant{
-    flex:0 0 auto; min-width:34px; text-align:right; font-weight:600; color:var(--sello);
+  .pasoChico{
+    flex:0 0 auto; display:flex; align-items:center;
+    border:1.5px solid var(--sello); border-radius:7px; overflow:hidden; background:var(--papel2);
   }
-  .loQueVaFila .nm{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .pasoChico button{
+    width:30px; height:32px; background:var(--sello-suave); color:var(--sello);
+    border:0; font-size:17px; font-weight:700; line-height:1; padding:0;
+  }
+  .pasoChico input{
+    width:44px; height:32px; text-align:center; border:0; padding:0;
+    background:var(--papel2); color:var(--tinta);
+    font-family:"IBM Plex Mono",monospace; font-size:14px; font-weight:600;
+  }
+  .loQueVaFila .nm{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:12.5px}
   .loQueVaFila .x{
     flex:0 0 auto; background:none; border:0; padding:2px 4px;
     font-size:17px; line-height:1; color:var(--tinta2);
@@ -284,7 +315,7 @@
 <section class="guardarlo" id="guardarlo" hidden>
   <div class="gTexto">
     <b>¿Lo tenés a mano?</b>
-    <span>Guardalo en la pantalla de tu celular y entrás de un toque, sin buscar el link.</span>
+    <span>Guardalo en la pantalla de tu celular y entrás de un toque, sin buscar el link. Te lo preguntamos solo hoy.</span>
   </div>
   <div class="gBotones">
     <button type="button" id="gComo">Cómo se hace</button>
@@ -449,6 +480,8 @@ let veces = leer("tds_veces", {});               // id -> cuántas veces se pidi
 let quien = leer("tds_quien", "");
 let demoSinStock = false;                        // para VER cómo queda algo sin stock
 let verParecidosDe = null;
+let eligiendo = null;      // el articulo que se esta por agregar
+let cuantoPongo = "1";     // lo que se escribio en el campo de cantidad
 let marcaAbierta = null;
 let plegado = leer("tds_plegado", false);
 
@@ -537,14 +570,40 @@ function filaArticulo(a) {
     const b = document.createElement("button");
     b.className = "mas"; b.type = "button"; b.disabled = true; b.textContent = "no hay";
     fila.appendChild(b);
+  } else if (eligiendo === a.id) {
+    // PASO 2: ya lo eligio. Escribe cuanto y toca Agregar.
+    fila.classList.add("eligiendo");
+    const caja = document.createElement("div");
+    caja.className = "ponerCant";
+
+    const inp = document.createElement("input");
+    inp.type = "text"; inp.inputMode = "decimal"; inp.value = cuantoPongo;
+    inp.id = "campoCantidad";
+    inp.setAttribute("aria-label", "Cuánto de " + a.nombre);
+    inp.oninput = () => { cuantoPongo = inp.value; };
+    inp.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); confirmar(); } };
+
+    const ok = document.createElement("button");
+    ok.type = "button"; ok.className = "okCant"; ok.textContent = "Agregar";
+
+    function confirmar() {
+      const n = parseFloat(String(cuantoPongo).replace(",", "."));
+      if (!isFinite(n) || n <= 0) { inp.focus(); inp.select(); return; }
+      carrito[a.id] = Math.round(n * 100) / 100;
+      eligiendo = null; cuantoPongo = "1";
+      persistir(); avisarQueEntro(); dibujar();
+    }
+    ok.onclick = confirmar;
+
+    caja.append(inp, ok);
+    fila.appendChild(caja);
   } else if (cant == null) {
+    // PASO 1: todavia no lo eligio.
     const b = document.createElement("button");
     b.className = "mas"; b.type = "button";
-    // DICE "AGREGAR", no un "+" pelado: el dueno lo probo y buscaba un boton
-    // que dijera cargar. Un simbolo solo no dice que va a pasar. (2026-09-23.)
-    b.textContent = "Agregar";
-    b.setAttribute("aria-label", "Agregar " + a.nombre + " al pedido");
-    b.onclick = () => { carrito[a.id] = 1; persistir(); avisarQueEntro(); dibujar(); };
+    b.textContent = "Elegir";
+    b.setAttribute("aria-label", "Elegir " + a.nombre);
+    b.onclick = () => { eligiendo = a.id; cuantoPongo = "1"; dibujar(); enfocarCantidad(); };
     fila.appendChild(b);
   } else {
     fila.appendChild(stepper(a));
@@ -577,6 +636,16 @@ function stepper(a) {
   mas.onclick = () => { carrito[a.id] = Math.round((Number(carrito[a.id]) + 1) * 100) / 100; persistir(); dibujar(); };
   cont.append(menos, inp, mas);
   return cont;
+}
+
+/* Despues de dibujar, el campo de cantidad se lleva el foco y queda con el
+   texto seleccionado: si quiere 1 toca Agregar de una, y si quiere 5 escribe
+   5 sin borrar nada. */
+function enfocarCantidad() {
+  setTimeout(() => {
+    const i = document.getElementById("campoCantidad");
+    if (i) { i.focus(); i.select(); }
+  }, 30);
 }
 
 function rotulo(texto) {
@@ -612,16 +681,41 @@ function dibujarLoQueVaPidiendo() {
     items.forEach((a) => {
       const l = document.createElement("div");
       l.className = "loQueVaFila";
-      const c = document.createElement("span");
-      c.className = "num cant";
-      c.textContent = String(carrito[a.id]).replace(".", ",");
       const nm = document.createElement("span");
       nm.className = "nm"; nm.textContent = a.nombre;
+
+      // EL CONTADOR, ACA MISMO. Es donde uno mira lo que lleva, asi que es
+      // donde tiene que poder corregirlo. (2026-09-23, pedido del dueno.)
+      const cont = document.createElement("div");
+      cont.className = "pasoChico";
+      const menos = document.createElement("button");
+      menos.type = "button"; menos.textContent = "\u2212";
+      menos.setAttribute("aria-label", "Menos " + a.nombre);
+      menos.onclick = () => {
+        const n2 = Math.round((Number(carrito[a.id]) - 1) * 100) / 100;
+        if (n2 <= 0) delete carrito[a.id]; else carrito[a.id] = n2;
+        persistir(); dibujar();
+      };
+      const inp = document.createElement("input");
+      inp.type = "text"; inp.inputMode = "decimal";
+      inp.value = String(carrito[a.id]).replace(".", ",");
+      inp.setAttribute("aria-label", "Cantidad de " + a.nombre);
+      inp.onchange = () => {
+        const n2 = parseFloat(String(inp.value).replace(",", "."));
+        if (!isFinite(n2) || n2 <= 0) delete carrito[a.id]; else carrito[a.id] = n2;
+        persistir(); dibujar();
+      };
+      const mas = document.createElement("button");
+      mas.type = "button"; mas.textContent = "+";
+      mas.setAttribute("aria-label", "M\u00e1s " + a.nombre);
+      mas.onclick = () => { carrito[a.id] = Math.round((Number(carrito[a.id]) + 1) * 100) / 100; persistir(); dibujar(); };
+      cont.append(menos, inp, mas);
+
       const x = document.createElement("button");
       x.type = "button"; x.className = "x"; x.textContent = "\u00d7";
       x.setAttribute("aria-label", "Quitar " + a.nombre);
       x.onclick = () => { delete carrito[a.id]; persistir(); dibujar(); };
-      l.append(c, nm, x);
+      l.append(nm, cont, x);
       caja.appendChild(l);
     });
   }
@@ -738,7 +832,7 @@ function actualizarBarra() {
   const ids = Object.keys(carrito);
   const n = ids.length;
   $("#cuenta").textContent = n ? (n === 1 ? "1 artículo" : n + " artículos") : "Tu pedido está vacío";
-  $("#subcuenta").textContent = n ? "Seguí agregando, o revisalo y enviá" : "Buscá un artículo y tocá Agregar";
+  $("#subcuenta").textContent = n ? "Seguí agregando, o revisalo y enviá" : "Buscá, tocá Elegir y poné cuánto";
   $("#verPedido").disabled = !n;
 }
 
@@ -793,7 +887,7 @@ $("#cerrarHoja").onclick = cerrarHoja;
 $("#velo").onclick = cerrarHoja;
 $("#quien").oninput = (e) => { quien = e.target.value; guardar("tds_quien", quien); };
 $("#limpiar").onclick = () => { q.value = ""; q.focus(); dibujar(); };
-q.oninput = () => { verParecidosDe = null; dibujar(); };
+q.oninput = () => { verParecidosDe = null; eligiendo = null; dibujar(); };
 
 $("#enviar").onclick = async () => {
   const items = ART.filter(a => carrito[a.id] != null);
@@ -863,9 +957,26 @@ function yaEstaGuardada() {
   } catch (e) { return false; }
 }
 
+/* EL CARTEL VIVE UN DIA Y DESPUES SE CALLA. (2026-09-23, pedido del dueno:
+   "que el cartel no desaparezca el primer dia, que le salga un cartel, no
+   preguntar mas".)
+
+   El primer dia que el cliente entra, el cartel esta -- y si recarga la pagina
+   sigue estando, asi que no lo pierde por cerrar sin querer. A partir del dia
+   siguiente no aparece nunca mas, lo haya tocado o no. Se ofrece una vez, con
+   respeto, y se termina el tema. */
+function elPrimerDia() {
+  const hoy = new Date().toISOString().slice(0, 10);
+  const guardado = leer("tds_primerDia", null);
+  if (!guardado) { guardar("tds_primerDia", hoy); return hoy; }
+  return guardado;
+}
+
 function verSiOfrecerlo() {
-  if (yaEstaGuardada()) return;
+  if (yaEstaGuardada()) return;               // ya la tiene en su pantalla
   if (leer("tds_noGuardar", false)) return;   // dijo que no
+  const hoy = new Date().toISOString().slice(0, 10);
+  if (elPrimerDia() !== hoy) return;          // ya paso su primer dia
   const esIphone = /iphone|ipad|ipod/i.test(navigator.userAgent);
   if (!cartelAndroid && !esIphone) return;    // en la computadora no molesta
   $("#guardarlo").hidden = false;
