@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="12">
+<meta name="tds-pagina" content="13">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -1401,13 +1401,43 @@ $("#enviar").onclick = async () => {
   dibujar();
   const aviso = $("#avisoEnvio");
   try { await navigator.clipboard.writeText(texto); } catch (e) {}
-  const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
-  const a = document.createElement("a");
-  a.href = url; a.target = "_blank"; a.rel = "noopener";
-  document.body.appendChild(a); a.click(); a.remove();
+  abrirWhatsApp(texto);
   aviso.className = "aviso ok";
   aviso.textContent = "Listo. Se abrió WhatsApp con el pedido escrito — y también quedó copiado, por si preferís pegarlo.";
 };
+
+/* ABRIR WHATSAPP, QUE NO ES LO MISMO EN CADA TELEFONO.
+
+   `https://wa.me/...` es una direccion WEB. En el iPhone, Safari la reconoce
+   y se la pasa a la app -- por eso ahi siempre anduvo. En ANDROID, con la
+   pagina instalada como aplicacion (manifest `display: standalone`), ese link
+   se abre en el navegador interno de la propia app, y un navegador con `wa.me`
+   hace lo unico que puede hacer: mostrar WHATSAPP WEB. El cliente ve un QR
+   para escanear y no manda nada. (2026-09-23, pasado en la casa de un cliente
+   con Android.)
+
+   En Android hay que pedir LA APP, no la direccion web. Eso es un `intent://`,
+   que ademas trae su propia red de seguridad: `browser_fallback_url`. Si el
+   telefono no tiene WhatsApp instalado, Android solo abre esa direccion, que es
+   el `wa.me` de siempre. O sea: nunca queda peor que antes.
+
+   NO se le pone `package=com.whatsapp` a proposito: asi tambien lo agarra
+   WhatsApp Business, que muchos clientes usan como unico WhatsApp.
+
+   Y el pedido queda SIEMPRE copiado antes de todo esto, asi que aunque no se
+   abra nada el cliente lo puede pegar a mano. */
+function abrirWhatsApp(texto) {
+  const web = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
+  if (/Android/i.test(navigator.userAgent || "")) {
+    const datos = "send?phone=" + encodeURIComponent(WHATSAPP) + "&text=" + encodeURIComponent(texto);
+    location.href = "intent://" + datos + "#Intent;scheme=whatsapp;S.browser_fallback_url="
+                  + encodeURIComponent(web) + ";end";
+    return;
+  }
+  const a = document.createElement("a");
+  a.href = web; a.target = "_blank"; a.rel = "noopener";
+  document.body.appendChild(a); a.click(); a.remove();
+}
 
 /* ARRANQUE. Primero se dibuja con el respaldo, para que el cliente vea la
    lista al instante y no una pantalla en blanco. Despues, en segundo plano, se
