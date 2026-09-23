@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-09-23T17:47:07.024Z",
+  "generado": "2026-09-23T18:23:51.627Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -276,20 +276,8 @@
       "hay": true
     },
     {
-      "id": "art_csv_54",
-      "nombre": "CALSA FORMULA 1",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_55",
       "nombre": "CALSA GARCIA RICOTA X 3 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_56",
-      "nombre": "CALSA KOLAROMA CAFE X1 LITRO",
       "familia": "GENERAL",
       "hay": true
     },
