@@ -178,6 +178,44 @@
   .ofertaCond{ font-size:12px; opacity:.8; margin-bottom:2px; }
   .ofertaCaja .fila{ border-top:1px solid rgba(29,81,131,.22); margin-top:8px; }
 
+  /* LOS ULTIMOS PEDIDOS. Discretos: son una ayuda, no el protagonista. */
+  .histCaja{
+    border:1px solid rgba(29,81,131,.25); border-radius:10px;
+    padding:9px 10px 4px; margin:0 0 14px;
+  }
+  .histTitulo{
+    font-size:10.5px; font-weight:800; letter-spacing:1.2px; text-transform:uppercase;
+    color:var(--sello); margin-bottom:5px; opacity:.9;
+  }
+  .histFila{
+    display:flex; align-items:center; gap:10px;
+    padding:7px 0; border-top:1px solid rgba(29,81,131,.14);
+  }
+  .histFila:first-of-type{border-top:0}
+  .histDato{flex:1; min-width:0; display:flex; flex-direction:column; gap:1px}
+  .histDato b{font-size:13px}
+  .histDato span{
+    font-size:11.5px; opacity:.72;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .histRepetir{
+    flex:0 0 auto; height:34px; padding:0 13px; border:1.5px solid var(--sello);
+    border-radius:8px; background:transparent; color:var(--sello);
+    font-size:13px; font-weight:700;
+  }
+
+  /* EL PEDIDO A MEDIO ARMAR. */
+  .aMedias{
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    border:1px dashed var(--sello); border-radius:10px;
+    padding:9px 11px; margin:0 0 14px; background:var(--sello-suave);
+  }
+  .aMedias span{flex:1; min-width:150px; font-size:12.5px}
+  .aMedias button{
+    flex:0 0 auto; height:32px; padding:0 12px; border:0; border-radius:8px;
+    background:var(--sello); color:var(--sello-t); font-size:12.5px; font-weight:700;
+  }
+
   .paso{display:flex; align-items:center; gap:0; border:1.5px solid var(--sello); border-radius:9px; overflow:hidden; flex:0 0 auto}
   .paso button{width:36px; height:40px; background:var(--sello-suave); color:var(--sello); border:0; font-size:19px; font-weight:700; line-height:1}
   .paso input{
@@ -386,7 +424,7 @@ const RESPALDO = [["art_csv_1","ADITIVO MAGICO X 1 KG",1],["art_csv_4","AGUILA B
 const ARCHIVO_LISTA = "catalogo-trigales.json";
 // De cuando es la lista que va pegada como respaldo. Se pone sola al armar
 // la pagina, para que SIEMPRE se pueda decir que version se esta usando.
-const RESPALDO_DE = "2026-09-23T13:45:37.818Z";
+const RESPALDO_DE = "2026-09-23T16:46:40.212Z";
 let ART = [];
 let listaDe = null;      // cuando se genero la lista que estamos viendo
 let listaPropia = false; // true si se pudo bajar la de verdad
@@ -521,6 +559,12 @@ const leer = (k, x) => { try { const v = localStorage.getItem(k); return v ? JSO
 
 let carrito = leer("tds_carrito", {});           // id -> cantidad
 let veces = leer("tds_veces", {});               // id -> cuántas veces se pidió
+/* LOS ULTIMOS 5 PEDIDOS ENVIADOS. Cada uno: { fecha: ISO, items: {id: cant} }.
+   Sirven para repetir sin volver a buscar todo. (2026-09-23.) */
+let historial = leer("tds_historial", []);
+/* Si al abrir ya hay cosas en el carrito, es un pedido que quedo A MEDIO ARMAR:
+   el enviado se vacia solo. Se avisa una vez, para que no crea que ya lo mando. */
+let quedoAMedias = Object.keys(carrito).length > 0;
 let quien = leer("tds_quien", "");
 let demoSinStock = false;                        // para VER cómo queda algo sin stock
 let verParecidosDe = null;
@@ -864,9 +908,90 @@ function cajaDeOferta() {
   return caja;
 }
 
+/* "hoy", "ayer", "hace 3 dias", "el 12 de sept": como lo diria una persona. */
+function cuandoFue(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return "";
+  const hoy = new Date();
+  const dias = Math.round((new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate())
+                         - new Date(d.getFullYear(), d.getMonth(), d.getDate())) / 86400000);
+  if (dias <= 0) return "hoy";
+  if (dias === 1) return "ayer";
+  if (dias < 7) return "hace " + dias + " días";
+  return "el " + d.toLocaleDateString("es-AR", { day: "numeric", month: "short" });
+}
+
+/* LOS ULTIMOS PEDIDOS, con su boton para repetirlos enteros. */
+function cajaDeHistorial() {
+  const vivos = (historial || []).filter(h => h && h.items && Object.keys(h.items).length);
+  if (!vivos.length) return null;
+
+  const caja = document.createElement("section");
+  caja.className = "histCaja";
+  const t = document.createElement("div");
+  t.className = "histTitulo";
+  t.textContent = vivos.length === 1 ? "Tu último pedido" : "Tus últimos pedidos";
+  caja.appendChild(t);
+
+  vivos.forEach((h) => {
+    const ids = Object.keys(h.items);
+    // Los que ya no estan en la lista no se cuentan ni se cargan: el catalogo
+    // pudo cambiar desde que lo pidio.
+    const hay = ids.filter(id => ART.some(a => a.id === id));
+    if (!hay.length) return;
+
+    const fila = document.createElement("div");
+    fila.className = "histFila";
+
+    const izq = document.createElement("div");
+    izq.className = "histDato";
+    const cuando = document.createElement("b");
+    cuando.textContent = cuandoFue(h.fecha);
+    const que = document.createElement("span");
+    const nombres = hay.map(id => (ART.find(a => a.id === id) || {}).nombre).filter(Boolean);
+    que.textContent = hay.length + (hay.length === 1 ? " artículo" : " artículos") + " \u00b7 " + nombres.slice(0, 2).join(", ") + (nombres.length > 2 ? "\u2026" : "");
+    izq.append(cuando, que);
+
+    const rep = document.createElement("button");
+    rep.type = "button"; rep.className = "histRepetir";
+    rep.textContent = "Repetir";
+    rep.onclick = () => {
+      hay.forEach(id => { carrito[id] = h.items[id]; });
+      quedoAMedias = false;
+      persistir(); avisarQueEntro(); dibujar();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    fila.append(izq, rep);
+    caja.appendChild(fila);
+  });
+
+  return caja.querySelector(".histFila") ? caja : null;
+}
+
+/* EL PEDIDO QUE QUEDO A MEDIO ARMAR. Solo la primera vez que vuelve. */
+function avisoAMedias() {
+  if (!quedoAMedias || !Object.keys(carrito).length) return null;
+  const d = document.createElement("div");
+  d.className = "aMedias";
+  const txt = document.createElement("span");
+  txt.textContent = "Esto es lo que habías empezado a armar y todavía no mandaste.";
+  const b = document.createElement("button");
+  b.type = "button"; b.textContent = "Empezar de nuevo";
+  b.onclick = () => { carrito = {}; quedoAMedias = false; persistir(); dibujar(); };
+  d.append(txt, b);
+  return d;
+}
+
 function dibujarInicio() {
+  const aviso = avisoAMedias();
+  if (aviso) main.appendChild(aviso);
+
   const caja = cajaDeOferta();
   if (caja) main.appendChild(caja);
+
+  const hist = cajaDeHistorial();
+  if (hist) main.appendChild(hist);
 
   const favs = ART.filter(a => (veces[a.id] || 0) > 0)
                   .sort((x, y) => veces[y.id] - veces[x.id]).slice(0, 12);
@@ -996,6 +1121,18 @@ $("#enviar").onclick = async () => {
   guardar("tds_veces", veces);
 
   const texto = armarMensaje();
+
+  /* EL PEDIDO PASA AL HISTORIAL Y EL CARRITO SE VACIA.
+     Antes el carrito quedaba armado: al otro dia el cliente lo veia y lo
+     mandaba de nuevo sin darse cuenta. Ahora queda guardado para repetirlo
+     cuando el quiera, que es distinto de que quede puesto. */
+  historial.unshift({ fecha: new Date().toISOString(), items: { ...carrito } });
+  historial = historial.slice(0, 5);
+  guardar("tds_historial", historial);
+  carrito = {};
+  quedoAMedias = false;
+  persistir();
+  dibujar();
   const aviso = $("#avisoEnvio");
   try { await navigator.clipboard.writeText(texto); } catch (e) {}
   const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
