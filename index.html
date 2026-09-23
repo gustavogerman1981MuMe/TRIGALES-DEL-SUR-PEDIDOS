@@ -89,7 +89,7 @@
     position:absolute; right:5px; top:50%; transform:translateY(-50%);
     background:none; border:0; padding:8px 10px; font-size:19px; line-height:1; color:var(--tinta2);
   }
-  .avisoFav{
+  .avisoFav{margin-top:16px;
     display:flex; gap:8px; align-items:flex-start;
     font-size:12.5px; color:var(--tinta2); line-height:1.4;
     padding:9px 0 12px;
@@ -161,22 +161,40 @@
 
   /* LA OFERTA DE LA SEMANA. Es lo primero que se ve y tiene que gritar un
      poco, pero sin salirse del papel madera del resto de la pagina. */
+  /* LA OFERTA: chica, arriba de todo, sin comerse la pantalla. */
   .ofertaCaja{
-    border:2px solid var(--sello); border-radius:12px;
-    background:linear-gradient(180deg, var(--sello-suave), transparent);
-    padding:12px 12px 6px; margin:0 0 14px;
+    border:2px solid var(--sello); border-radius:10px;
+    background:var(--sello-suave);
+    padding:8px 10px 9px; margin:0 0 12px;
   }
   .ofertaTitulo{
-    font-size:10.5px; font-weight:800; letter-spacing:1.4px; text-transform:uppercase;
-    color:var(--sello); margin-bottom:5px;
+    display:flex; align-items:baseline; justify-content:space-between; gap:8px;
+    font-size:10px; font-weight:800; letter-spacing:1.3px; text-transform:uppercase;
+    color:var(--sello); margin-bottom:2px;
   }
-  .ofertaNombre{ font-size:15px; font-weight:700; line-height:1.25; }
+  .ofertaHasta{ font-weight:600; letter-spacing:.4px; opacity:.75; white-space:nowrap }
+  .ofertaNombre{ font-size:14px; font-weight:700; line-height:1.25 }
+  .ofertaAbajo{
+    display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:4px;
+  }
+  .ofertaIzq{ min-width:0 }
   .ofertaPrecio{
-    font-family:"IBM Plex Mono",monospace; font-size:27px; font-weight:700;
-    color:var(--sello); line-height:1.1; margin:3px 0 1px;
+    font-family:"IBM Plex Mono",monospace; font-size:22px; font-weight:700;
+    color:var(--sello); line-height:1.15;
   }
-  .ofertaCond{ font-size:12px; opacity:.8; margin-bottom:2px; }
-  .ofertaCaja .fila{ border-top:1px solid rgba(29,81,131,.22); margin-top:8px; }
+  .ofertaCond{ font-size:11.5px; opacity:.8 }
+  .ofertaBoton{
+    flex:0 0 auto; height:38px; padding:0 15px; border:0; border-radius:9px;
+    background:var(--sello); color:var(--sello-t); font-size:14px; font-weight:700;
+  }
+  .ofertaBoton:disabled{
+    background:transparent; color:var(--sello); border:1.5px solid var(--sello);
+    opacity:.75; font-size:12.5px;
+  }
+  .ofertaSinStock{
+    flex:0 0 auto; font-size:12px; opacity:.7; border:1px dashed currentColor;
+    border-radius:7px; padding:5px 10px;
+  }
 
   /* LOS ULTIMOS PEDIDOS. Discretos: son una ayuda, no el protagonista. */
   .histCaja{
@@ -359,7 +377,6 @@
     <input id="q" type="search" autocomplete="off" placeholder="Buscar: harina, dulce de leche, papelera…" aria-label="Buscar un artículo">
     <button class="limpiar" id="limpiar" type="button" aria-label="Borrar la búsqueda" hidden>×</button>
   </div>
-  <p class="avisoFav"><i>★</i><span id="leyendaFav">A medida que vayas haciendo pedidos, los artículos que más pedís van a aparecer primero.</span></p>
 </header>
 
 <main id="main"></main>
@@ -424,7 +441,7 @@ const RESPALDO = [["art_csv_1","ADITIVO MAGICO X 1 KG",1],["art_csv_4","AGUILA B
 const ARCHIVO_LISTA = "catalogo-trigales.json";
 // De cuando es la lista que va pegada como respaldo. Se pone sola al armar
 // la pagina, para que SIEMPRE se pueda decir que version se esta usando.
-const RESPALDO_DE = "2026-09-23T16:46:40.212Z";
+const RESPALDO_DE = "2026-09-23T13:45:37.818Z";
 let ART = [];
 let listaDe = null;      // cuando se genero la lista que estamos viendo
 let listaPropia = false; // true si se pudo bajar la de verdad
@@ -873,38 +890,81 @@ function cajaDeOferta() {
   const caja = document.createElement("section");
   caja.className = "ofertaCaja";
 
+  /* EL ROTULO Y LA FECHA, EN UN SOLO RENGLON. */
   const titulo = document.createElement("div");
   titulo.className = "ofertaTitulo";
-  titulo.textContent = "Oferta de la semana";
+  const rot = document.createElement("span");
+  rot.textContent = "Oferta de la semana";
+  titulo.appendChild(rot);
+  if (o.hasta) {
+    const pp = String(o.hasta).split("-");
+    if (pp.length === 3) {
+      const f = document.createElement("span");
+      f.className = "ofertaHasta";
+      f.textContent = "hasta el " + pp[2] + "/" + pp[1];
+      titulo.appendChild(f);
+    }
+  }
   caja.appendChild(titulo);
 
+  /* EL NOMBRE, UNA SOLA VEZ. Antes salia dos veces: aca como titulo y otra vez
+     adentro de la fila del articulo. */
   const nom = document.createElement("div");
   nom.className = "ofertaNombre";
   nom.textContent = o.nombre;
   caja.appendChild(nom);
 
+  /* PRECIO, CONDICION Y BOTON, TODO EN UN RENGLON. */
+  const abajo = document.createElement("div");
+  abajo.className = "ofertaAbajo";
+
+  const izq = document.createElement("div");
+  izq.className = "ofertaIzq";
   const precio = document.createElement("div");
   precio.className = "ofertaPrecio";
   precio.textContent = "$" + Number(o.precio).toLocaleString("es-AR");
-  caja.appendChild(precio);
-
-  const cond = [];
-  if (o.texto) cond.push(o.texto);
-  if (o.hasta) {
-    const p = String(o.hasta).split("-");
-    if (p.length === 3) cond.push("hasta el " + p[2] + "/" + p[1]);
-  }
-  if (cond.length) {
+  izq.appendChild(precio);
+  if (o.texto) {
     const c = document.createElement("div");
     c.className = "ofertaCond";
-    c.textContent = cond.join(" · ");
-    caja.appendChild(c);
+    c.textContent = o.texto;
+    izq.appendChild(c);
+  }
+  abajo.appendChild(izq);
+
+  /* EL BOTON AGREGA Y SE TERMINA: LA CAJA NO SE TRANSFORMA.
+
+     Antes adentro iba la fila del articulo de verdad, asi que al elegirlo la
+     caja se llenaba de contadores y tildes -- el "efecto" que el dueno no
+     quiso (2026-09-23): "que sea como un articulo mas en una lista, que se va
+     sumando al pedido". Ahora el articulo aparece sumado arriba, en "TU
+     PEDIDO", como cualquier otro.
+
+     Y entra DE UNA la cantidad minima: si la oferta dice "llevando 5 o mas" y
+     entrara 1, el cliente se llevaria una sola creyendo que le hacen el precio
+     de oferta, y se entera en el mostrador. */
+  if (art && art.hay) {
+    const cuantos = Math.max(1, Number(o.desdeCuantos) || 1);
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "ofertaBoton";
+    const yaEsta = carrito[art.id] != null;
+    b.textContent = yaEsta ? "Ya está en tu pedido" : (cuantos > 1 ? "Agregar " + cuantos : "Agregar");
+    b.disabled = yaEsta;
+    b.onclick = () => {
+      carrito[art.id] = cuantos;
+      eligiendo = null;
+      persistir(); avisarQueEntro(); dibujar();
+    };
+    abajo.appendChild(b);
+  } else if (art) {
+    const sin = document.createElement("span");
+    sin.className = "ofertaSinStock";
+    sin.textContent = "sin stock";
+    abajo.appendChild(sin);
   }
 
-  // El articulo puede no estar en la lista publicada (quedo no activo despues
-  // de subir la oferta). La caja igual se muestra: el precio y la condicion son
-  // la informacion que importa, y el cliente puede preguntar.
-  if (art) caja.appendChild(filaArticulo(art));
+  caja.appendChild(abajo);
   return caja;
 }
 
@@ -1051,6 +1111,19 @@ function dibujarInicio() {
   b.onclick = () => { demoSinStock = !demoSinStock; verParecidosDe = null; dibujar(); };
   pie.append(document.createTextNode("Lo que no tenemos no desaparece de la lista: queda en gris, para que sepas que lo seguimos trabajando. "), b);
   main.appendChild(pie);
+
+  /* EL AVISO DE LOS FAVORITOS, ACA ABAJO. Arriba se comia tres renglones de
+     pantalla para contar algo que pasa solo, y con la oferta y los ultimos
+     pedidos ahi no quedaba lugar para ver productos. (2026-09-23, pedido del
+     dueno: "de ultima que este abajo, como la leyenda de los stocks".) */
+  const fav = document.createElement("p");
+  fav.className = "avisoFav";
+  const estrella = document.createElement("i");
+  estrella.textContent = "★";
+  const txtFav = document.createElement("span");
+  txtFav.textContent = "A medida que vayas haciendo pedidos, los artículos que más pedís van a aparecer primero.";
+  fav.append(estrella, txtFav);
+  main.appendChild(fav);
 }
 
 function actualizarBarra() {
@@ -1168,9 +1241,6 @@ $("#refrescar").onclick = async (e) => {
   b.textContent = hubo ? "lista al día ✓" : "seguís con la última";
   setTimeout(() => { b.textContent = "actualizar lista"; }, 2600);
 };
-if (Object.keys(veces).length === 0) {
-  $("#leyendaFav").textContent = "A medida que vayas haciendo pedidos, los artículos que más pedís van a aparecer primero, sin que tengas que buscarlos.";
-}
 /* ---------------------------------------------------------------------------
    GUARDARLO EN LA PANTALLA DEL CELULAR.
 
