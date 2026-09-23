@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="28">
+<meta name="tds-pagina" content="30">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -765,8 +765,30 @@ function ofertaDeHoy() {
 /* Palabras que NUNCA son una marca solas: con estas siempre van dos. */
 const NUNCA_SOLAS = ["EL", "LA", "LOS", "LAS", "DON", "DOÑA", "SANTA", "SAN"];
 
-/* Marcas de dos palabras. Si aparece una nueva, se agrega aca. */
-const DE_DOS_PALABRAS = ["DOBLE", "SEGUNDA", "MASTER"];
+/* MARCAS DE VARIAS PALABRAS, escritas enteras.
+
+   Antes esto era una lista de PRIMERAS palabras ("DOBLE", "SEGUNDA"...) y
+   siempre tomaba dos. No alcanzaba: FLOR DE CAMPO son TRES. Ahora se
+   escribe la marca completa y se compara contra el principio del nombre,
+   asi da lo mismo cuantas palabras tenga.
+
+   Se prueban de la mas larga a la mas corta, por si alguna vez una marca
+   empieza igual que otra. */
+const MARCAS_LARGAS = [
+  "FINCA DE SANTIAGO",
+  "FRUTOS MENDOCINOS",
+  "SEGUNDA COLONIA",
+  "LA TARANTELLA",
+  "CAMPOS LARGOS",
+  "MASTER BAKERY",
+  "FLOR DE CAMPO",
+  "REY DE REYES",
+  "PEQUENA EMA",
+  "PEQUEÑA EMA",
+  "SANTA MARIA",
+  "DOS ANCLAS",
+  "DOBLE VIA",
+].sort((a, b) => b.length - a.length);
 
 /* Estas NO son marcas: son productos sueltos que empiezan con lo que vende.
    Siguen apareciendo al buscarlos por nombre; lo unico que no hacen es
@@ -783,13 +805,47 @@ const DE_DOS_PALABRAS = ["DOBLE", "SEGUNDA", "MASTER"];
    LODISER, por eso aparecen siempre juntos. Los dos son de UNA palabra. */
 const NO_SON_MARCA = ["PAPELERA", "AZUCAR", "HARINA"];
 
+/* MARCAS QUE ENTRAN AL MENU AUNQUE TENGAN POCOS ARTICULOS.
+
+   El menu corta en 3 a proposito: abajo de eso se llena de primeras
+   palabras que no son marcas (ANANA, DURAZNO, NUEZ, ALMENDRA...). Pero hay
+   marcas de verdad con uno o dos articulos que se quedan afuera por el
+   mismo corte.
+
+   LA REGLA LA FIJO EL DUENO el 2026-09-23: "el 3 lo pusiste vos, deja la
+   regla; yo te digo que es marca". O sea: el corte automatico no se toca,
+   y las excepciones se agregan aca cuando el las nombra. Ninguna se
+   adivina. */
+const SIEMPRE_EN_EL_MENU = [
+  "FAINALIND",
+  "FEMAG",
+  "GHELCO",
+  "FLOR DE CAMPO",
+  "INTY",
+  "LANFIELD",
+  "PAMPERO",
+  "MISKY",
+  "CAMPOS LARGOS",
+  "DOS ANCLAS",
+  "FINCA DE SANTIAGO",
+  "FRUTOS MENDOCINOS",
+  "LA TARANTELLA",
+  "PEQUEÑA EMA",
+  "REY DE REYES",
+  "SANTA MARIA",
+];
+
 function ponerlesLaMarca(lista) {
   lista.forEach((a) => {
-    const p = String(a.nombre || "").trim().split(/\s+/);
-    const uno = (p[0] || "").toUpperCase();
-    const dos = (p[1] || "").toUpperCase();
-    const vanDos = NUNCA_SOLAS.indexOf(uno) !== -1 || DE_DOS_PALABRAS.indexOf(uno) !== -1;
-    a.marca = vanDos && dos ? uno + " " + dos : uno;
+    const entero = String(a.nombre || "").trim().toUpperCase();
+    // 1. Una marca escrita entera gana sobre todo lo demas.
+    const larga = MARCAS_LARGAS.find((m) => entero === m || entero.indexOf(m + " ") === 0);
+    if (larga) { a.marca = larga; return; }
+    // 2. Las palabras que nunca son marca solas se llevan la que sigue.
+    const p = entero.split(/\s+/);
+    const uno = p[0] || "";
+    const dos = p[1] || "";
+    a.marca = NUNCA_SOLAS.indexOf(uno) !== -1 && dos ? uno + " " + dos : uno;
   });
 }
 function cargarLista(datos, generado) {
@@ -1299,7 +1355,7 @@ function todasLasMarcas() {
   const cuenta = {};
   ART.forEach(a => { if (a.marca) cuenta[a.marca] = (cuenta[a.marca] || 0) + 1; });
   return Object.entries(cuenta)
-    .filter(([m, n]) => n >= 3 && NO_SON_MARCA.indexOf(m) === -1)
+    .filter(([m, n]) => (n >= 3 || SIEMPRE_EN_EL_MENU.indexOf(m) !== -1) && NO_SON_MARCA.indexOf(m) === -1)
     .sort((x, y) => y[1] - x[1]);
 }
 
