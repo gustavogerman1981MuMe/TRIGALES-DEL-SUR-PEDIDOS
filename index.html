@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="25">
+<meta name="tds-pagina" content="27">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -738,11 +738,56 @@ function ofertaDeHoy() {
   return o;
 }
 
+/* LA MARCA DE CADA ARTICULO.
+
+   OJO: EL PROGRAMA NO MANDA LA MARCA. De cada articulo viajan el codigo, el
+   nombre y si hay o no hay -- nada mas. La marca la deduce esta pagina del
+   NOMBRE, porque el dueno los carga empezando por la marca.
+
+   Con la primera palabra sola no alcanza: hay marcas de DOS palabras y
+   quedaban cortadas al medio -- "SAN" por SAN IGNACIO, "DOBLE" por DOBLE
+   VIA, "SEGUNDA" por SEGUNDA COLONIA, "MASTER" por MASTER BAKERY, y "EL"
+   mezclando EL ALJIBE con EL MUNDO. (2026-09-23.)
+
+   PRIMERO LO HICE SOLO Y SALIO MAL. La regla era "si todos los articulos que
+   empiezan igual comparten la segunda palabra, la marca son las dos". Acerto
+   en cinco pero invento dos: ARGENFRUT MICRO y LODISER ALPINO, donde la marca
+   es ARGENFRUT y LODISER y pasa que todos sus articulos son del mismo
+   producto. Con tres o cuatro articulos esa coincidencia es facil.
+
+   Asi que no se adivina: son dos listas cortas y a la vista. Cuesta agregar
+   una linea cuando aparezca una marca nueva de dos palabras, pero nunca
+   inventa una marca que no existe -- y eso es peor que quedarse corto.
+
+   Esto es un PARCHE. La solucion de verdad es un campo de marca en el
+   programa; hasta que exista, esto alcanza. */
+
+/* Palabras que NUNCA son una marca solas: con estas siempre van dos. */
+const NUNCA_SOLAS = ["EL", "LA", "LOS", "LAS", "DON", "DOÑA", "SANTA", "SAN"];
+
+/* Marcas de dos palabras. Si aparece una nueva, se agrega aca. */
+const DE_DOS_PALABRAS = ["DOBLE", "SEGUNDA", "MASTER"];
+
+/* Estas NO son marcas: son productos sueltos que empiezan con lo que vende.
+   Siguen apareciendo al buscarlos por nombre; lo unico que no hacen es
+   ensuciar el menu de marcas. */
+const NO_SON_MARCA = ["PAPELERA", "AZUCAR", "HARINA"];
+
+function ponerlesLaMarca(lista) {
+  lista.forEach((a) => {
+    const p = String(a.nombre || "").trim().split(/\s+/);
+    const uno = (p[0] || "").toUpperCase();
+    const dos = (p[1] || "").toUpperCase();
+    const vanDos = NUNCA_SOLAS.indexOf(uno) !== -1 || DE_DOS_PALABRAS.indexOf(uno) !== -1;
+    a.marca = vanDos && dos ? uno + " " + dos : uno;
+  });
+}
 function cargarLista(datos, generado) {
   ART = datos.map((x) => {
     const [id, nombre, hay] = Array.isArray(x) ? x : [x.id, x.nombre, x.hay ? 1 : 0];
-    return { id, nombre, hay: hay === 1, marca: String(nombre).split(" ")[0] };
+    return { id, nombre, hay: hay === 1, marca: "" };
   });
+  ponerlesLaMarca(ART);
   ART.forEach((a) => { a.b = norm(a.nombre); a.s = suena(a.nombre); a.sp = a.s.split(" ").filter(Boolean); });
   listaDe = generado || null;
 }
@@ -985,19 +1030,24 @@ function filaArticulo(a) {
   nom.textContent = a.nombre;
   const pie = document.createElement("div");
   pie.className = "pie";
-  /* LA MARCA NO SE REPITE SI YA LA PUSO EL. Si busco "azucar", ver AZUCAR
-     debajo de cada renglon no suma nada; y si pidio ver LEDEVIT, menos.
-     Ese renglon que se ahorra es medio articulo mas en pantalla.
-     (2026-09-23: "para que necesitamos que diga la marca si ya pusimos la
-     marca".)
+  /* LA ETIQUETA DE LA MARCA NO EXISTE MAS.
 
-     El "sin stock" SI se queda siempre, aunque viva en el mismo lugar: es
-     la unica etiqueta que no se puede perder. */
-  const yaSabeLaMarca = q.value.trim() !== "" || marcaEfectiva() !== null;
-  if (noHay || !yaSabeLaMarca) {
+     Primero la escondia solo cuando el habia buscado por marca. Estaba a
+     medias: la marca ES LA PRIMERA PALABRA DEL NOMBRE, asi que el renglon
+     decia "AGUILA/ARCOR PASTA DE MANI..." y abajo, otra vez, "AGUILA/ARCOR".
+     Nunca suma nada, se busque como se busque. El dueno lo marco mirando la
+     hoja del pedido: "para que lo pusiste si ya en el nombre dice que marca
+     es". (2026-09-23.)
+
+     Sacarla ademas achica el renglon en toda la pagina, que es lo que mas
+     falta hace con el teclado abierto.
+
+     El "sin stock" SI se queda: vive en el mismo lugar pero dice otra cosa,
+     y es la unica etiqueta que no se puede perder. */
+  if (noHay) {
     const chip = document.createElement("span");
-    chip.className = "marcaChip" + (noHay ? " sinChip" : "");
-    chip.textContent = noHay ? "sin stock" : a.marca;
+    chip.className = "marcaChip sinChip";
+    chip.textContent = "sin stock";
     pie.appendChild(chip);
   }
   if (cant != null) {
@@ -1238,7 +1288,9 @@ let menuMarcasAbierto = false;
 function todasLasMarcas() {
   const cuenta = {};
   ART.forEach(a => { if (a.marca) cuenta[a.marca] = (cuenta[a.marca] || 0) + 1; });
-  return Object.entries(cuenta).filter(([, n]) => n >= 3).sort((x, y) => y[1] - x[1]);
+  return Object.entries(cuenta)
+    .filter(([m, n]) => n >= 3 && NO_SON_MARCA.indexOf(m) === -1)
+    .sort((x, y) => y[1] - x[1]);
 }
 
 /* La marca que se esta mirando: solo si lo escrito ES el nombre de una marca.
