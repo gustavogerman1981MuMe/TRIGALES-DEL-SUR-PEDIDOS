@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-09-23T02:24:01.233Z",
+  "generado": "2026-09-23T13:45:37.818Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -284,6 +284,12 @@
     {
       "id": "art_csv_55",
       "nombre": "CALSA GARCIA RICOTA X 3 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_56",
+      "nombre": "CALSA KOLAROMA CAFE X1 LITRO",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2795,5 +2801,14 @@
       "familia": "GENERAL",
       "hay": true
     }
-  ]
+  ],
+  "oferta": {
+    "articuloId": "art_csv_408",
+    "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
+    "precio": 61000,
+    "desdeCuantos": 5,
+    "texto": "",
+    "hasta": "2026-09-26",
+    "hay": true
+  }
 }
