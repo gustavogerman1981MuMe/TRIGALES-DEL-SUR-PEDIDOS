@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="2">
+<meta name="tds-pagina" content="3">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -69,7 +69,7 @@
   /* ---------- ENCABEZADO ---------- */
   header{
     background:var(--papel2); border-bottom:1.5px solid var(--linea2);
-    padding:14px 16px 0; padding-top:calc(14px + env(safe-area-inset-top,0px));
+    padding:14px 16px 12px; padding-top:calc(14px + env(safe-area-inset-top,0px));
     position:sticky; top:0; z-index:20;
   }
   .marca{display:flex; align-items:baseline; justify-content:space-between; gap:10px}
@@ -79,12 +79,17 @@
   .estadoLista #refrescar{background:none; border:0; padding:0; font-size:11px; color:var(--sello); text-decoration:underline; text-underline-offset:2px}
   .estadoLista #refrescar:disabled{color:var(--tinta2); text-decoration:none}
   h1{font-family:Archivo,sans-serif; font-weight:800; font-size:21px; margin:2px 0 0; letter-spacing:-.01em; text-wrap:balance}
-  .buscador{position:relative; margin:11px 0 0}
+  /* EL BUSCADOR, DESPEGADO. Antes se confundia con el beige del fondo y todo
+     parecia un solo bloque. (2026-09-23: "tiene que estar un poquito despegado
+     del fondo, porque esta todo muy pegado".) */
+  .buscador{position:relative; margin:14px 0 0}
   .buscador input{
-    width:100%; padding:13px 40px 13px 14px; font-size:16.5px;
+    width:100%; padding:14px 40px 14px 14px; font-size:16.5px;
     background:var(--papel); color:var(--tinta);
-    border:1.5px solid var(--linea2); border-radius:9px;
+    border:2px solid var(--linea2); border-radius:11px;
+    box-shadow:0 1px 0 rgba(0,0,0,.04);
   }
+  .buscador input:focus{ border-color:var(--sello); outline:none }
   .buscador input::placeholder{color:var(--tinta2)}
   .limpiar{
     position:absolute; right:5px; top:50%; transform:translateY(-50%);
@@ -97,8 +102,22 @@
   }
   .avisoFav i{color:var(--trigo); font-style:normal; font-size:14px; line-height:1.2}
 
+  /* LOS DOS BOTONES DEL PEDIDO. Los pedidos viejos viven detras de uno de
+     ellos: si estuvieran siempre a la vista se comerian la pantalla que hace
+     falta para ver productos. (2026-09-23.) */
+  .barraPedido{ display:flex; gap:8px; margin-top:12px }
+  .barraPedido button{
+    flex:1; height:36px; border-radius:9px; font-size:13px; font-weight:700;
+    font-family:inherit; border:1.5px solid var(--linea2);
+    background:var(--papel); color:var(--tinta);
+  }
+  .barraPedido .btnAnteriores.abierto{
+    background:var(--sello); border-color:var(--sello); color:var(--sello-t);
+  }
+  .barraPedido:empty{ display:none }
+
   /* ---------- LISTA ---------- */
-  main{flex:1; overflow-y:auto; padding:0 16px; padding-bottom:104px; -webkit-overflow-scrolling:touch}
+  main{flex:1; overflow-y:auto; padding:6px 16px 0; padding-bottom:104px; -webkit-overflow-scrolling:touch}
   .rotulo{
     display:flex; align-items:center; gap:9px;
     font-size:11px; color:var(--tinta2); margin:18px 0 7px;
@@ -166,7 +185,7 @@
   .ofertaCaja{
     border:2px solid var(--sello); border-radius:10px;
     background:var(--sello-suave);
-    padding:8px 10px 9px; margin:0 0 12px;
+    padding:8px 10px 9px; margin:12px 0 0;
   }
   .ofertaTitulo{
     display:flex; align-items:baseline; justify-content:space-between; gap:8px;
@@ -374,10 +393,12 @@
     <span class="estadoLista"><span id="fecha">…</span><button id="refrescar" type="button">actualizar lista</button></span>
   </div>
   <h1>Armá tu pedido</h1>
+  <div id="ofertaArriba"></div>
   <div class="buscador">
     <input id="q" type="search" autocomplete="off" placeholder="Buscar: harina, dulce de leche, papelera…" aria-label="Buscar un artículo">
     <button class="limpiar" id="limpiar" type="button" aria-label="Borrar la búsqueda" hidden>×</button>
   </div>
+  <div class="barraPedido" id="barraPedido"></div>
 </header>
 
 <main id="main"></main>
@@ -583,6 +604,7 @@ let historial = leer("tds_historial", []);
 /* Si al abrir ya hay cosas en el carrito, es un pedido que quedo A MEDIO ARMAR:
    el enviado se vacia solo. Se avisa una vez, para que no crea que ya lo mando. */
 let quedoAMedias = Object.keys(carrito).length > 0;
+let verHistorial = false;   // los pedidos viejos se muestran solo si se piden
 let quien = leer("tds_quien", "");
 let demoSinStock = false;                        // para VER cómo queda algo sin stock
 let verParecidosDe = null;
@@ -837,6 +859,7 @@ function dibujarLoQueVaPidiendo() {
 }
 
 function dibujar() {
+  dibujarArriba();
   main.innerHTML = "";
   dibujarLoQueVaPidiendo();
   const texto = q.value.trim();
@@ -1044,15 +1067,61 @@ function avisoAMedias() {
   return d;
 }
 
+/* LA OFERTA Y LOS DOS BOTONES VIVEN EN EL ENCABEZADO, no en la lista: asi la
+   oferta es lo primero que se ve y los pedidos viejos no comen pantalla.
+   (2026-09-23, pedido del dueno.) */
+function dibujarArriba() {
+  const hueco = $("#ofertaArriba");
+  hueco.innerHTML = "";
+  const caja = cajaDeOferta();
+  if (caja) hueco.appendChild(caja);
+
+  const barra = $("#barraPedido");
+  barra.innerHTML = "";
+
+  const hayAlgo = Object.keys(carrito).length > 0;
+  const guardados = (historial || []).filter(h => h && h.items && Object.keys(h.items).length);
+
+  const nuevo = document.createElement("button");
+  nuevo.type = "button";
+  nuevo.className = "btnNuevo";
+  nuevo.textContent = hayAlgo ? "Empezar de nuevo" : "Nuevo pedido";
+  nuevo.onclick = () => {
+    /* Nunca se tira un pedido a medio armar sin preguntar. */
+    if (Object.keys(carrito).length && !confirmarVaciar()) return;
+    carrito = {};
+    quedoAMedias = false;
+    verHistorial = false;
+    persistir(); dibujar();
+  };
+  barra.appendChild(nuevo);
+
+  if (guardados.length) {
+    const ant = document.createElement("button");
+    ant.type = "button";
+    ant.className = "btnAnteriores" + (verHistorial ? " abierto" : "");
+    ant.textContent = (verHistorial ? "Ocultar anteriores" : "Pedidos anteriores") + " (" + guardados.length + ")";
+    ant.onclick = () => { verHistorial = !verHistorial; dibujar(); };
+    barra.appendChild(ant);
+  }
+}
+
+/* Se pregunta de verdad, con los botones de la pagina: `confirm()` no se ve en
+   algunos celulares y en el visor de Claude directamente no existe. */
+function confirmarVaciar() {
+  return window.confirm("Ten\u00e9s un pedido a medio armar. \u00bfLo borr\u00e1s y empez\u00e1s de nuevo?");
+}
+
 function dibujarInicio() {
   const aviso = avisoAMedias();
   if (aviso) main.appendChild(aviso);
 
-  const caja = cajaDeOferta();
-  if (caja) main.appendChild(caja);
-
-  const hist = cajaDeHistorial();
-  if (hist) main.appendChild(hist);
+  /* Los pedidos viejos aparecen SOLO si se toca "Pedidos anteriores": si no,
+     se comen la pantalla que hace falta para ver productos. (2026-09-23.) */
+  if (verHistorial) {
+    const hist = cajaDeHistorial();
+    if (hist) main.appendChild(hist);
+  }
 
   const favs = ART.filter(a => (veces[a.id] || 0) > 0)
                   .sort((x, y) => veces[y.id] - veces[x.id]).slice(0, 12);
@@ -1201,7 +1270,7 @@ $("#enviar").onclick = async () => {
      mandaba de nuevo sin darse cuenta. Ahora queda guardado para repetirlo
      cuando el quiera, que es distinto de que quede puesto. */
   historial.unshift({ fecha: new Date().toISOString(), items: { ...carrito } });
-  historial = historial.slice(0, 5);
+  historial = historial.slice(0, 3);   // los ultimos TRES (2026-09-23)
   guardar("tds_historial", historial);
   carrito = {};
   quedoAMedias = false;
