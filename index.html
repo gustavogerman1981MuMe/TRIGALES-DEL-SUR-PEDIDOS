@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="17">
+<meta name="tds-pagina" content="21">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -65,7 +65,11 @@
   *{box-sizing:border-box}
   [hidden]{display:none !important}
   button{font:inherit; color:inherit; cursor:pointer}
-  input{font:inherit}
+  /* NINGUN CAMPO DE LA PAGINA PUEDE TENER LETRA MENOR A 16px: el iPhone hace
+     zoom solo al tocarlo. Esta regla es la red por si alguna vez se agrega uno
+     nuevo y se olvida. No usa !important a proposito, para que se pueda poner
+     MAS grande donde haga falta. */
+  input{font:inherit; font-size:16px}
   :focus-visible{outline:2.5px solid var(--sello); outline-offset:2px; border-radius:4px}
 
   .sello{
@@ -113,23 +117,29 @@
      vieja del dueno: si su PC esta apagada, un cartel de error lo unico
      que lograria es que el cliente no se anime a mandar el pedido. Cuando
      falla dice "seguis con la ultima", que es la verdad y no asusta. */
-  /* VA FLOTANDO, NO EN EL RENGLON. Puesto al lado del boton le pisaba el
-     nombre: "Trigales del Sur" no se puede achicar y el cartelito tampoco,
-     asi que uno de los dos tenia que salirse. Y meterlo en su propio
-     renglon seria peor: aparece y desaparece, o sea que empujaria la
-     pantalla dos veces cada vez que se actualiza la lista, que es
-     justo lo que no tiene que pasar. Flotando no mueve nada. */
-  .cartelito{
-    position:absolute; right:16px; top:calc(44px + env(safe-area-inset-top,0px));
-    z-index:2; pointer-events:none;
-    font-size:10px; font-weight:700; letter-spacing:.04em; white-space:nowrap;
-    color:var(--hay); background:var(--papel2);
-    padding:1px 5px; border-radius:5px;
-    animation:titila 2.4s ease-in-out;
-  }
-  .cartelito.igual{color:var(--tinta2); font-weight:500}
-  @keyframes titila{ 0%{opacity:0} 12%,62%{opacity:1} 100%{opacity:0} }
-  @media (prefers-reduced-motion:reduce){ .cartelito{animation:none} }
+  /* EL ESTADO DE LA LISTA VIVE EN EL BOTON, no en un cartel al lado.
+
+     Primero puse un cartelito "al dia" que titilaba. El dueno propuso algo
+     mejor: que titile EL PROPIO BOTON y quede verde. Es un elemento en vez de
+     dos, y de paso se termina el problema de que el cartel le pisara el
+     nombre -- no habia lugar para los dos en 375 px.
+
+     DORADO = estas viendo la lista guardada en el telefono.
+     VERDE  = bajo la de hoy.
+
+     El verde NO espera a que lo toque: la pagina intenta bajar la lista sola
+     al abrirse, y si lo logro, quedarse en dorado seria mentirle. El toque es
+     para cuando quiere asegurarse, o cuando la automatica no anduvo.
+
+     Cuando NO se puede bajar no pasa nada: se queda dorado y no dice error.
+     Regla vieja del dueno -- si su PC esta apagada, un cartel de error solo
+     lograria que el cliente no se anime a mandar el pedido. */
+  #refrescar.aldia{ color:var(--hay); border-color:var(--hay) }
+  #refrescar.reciencambio{ animation:titila 1.6s ease-in-out 2 }
+  @keyframes titila{ 0%,100%{opacity:1} 50%{opacity:.25} }
+  @media (prefers-reduced-motion:reduce){ #refrescar.reciencambio{animation:none} }
+  #refrescar:disabled{ opacity:.45 }
+
   h1{font-family:Archivo,sans-serif; font-weight:800; font-size:21px; margin:2px 0 0; letter-spacing:-.01em; text-wrap:balance}
   /* EL BUSCADOR, DESPEGADO. Antes se confundia con el beige del fondo y todo
      parecia un solo bloque. (2026-09-23: "tiene que estar un poquito despegado
@@ -166,6 +176,8 @@
   /* Tres cuartos y un cuarto: "Marcas" no merece medio renglon. */
   .barraPedido .btnNuevo{ flex:3 }
   .barraPedido .btnMarcas{ flex:1 }
+  /* Solo: se queda con el renglon entero. */
+  .barraPedido .btnMarcas:only-child{ flex:1 1 100% }
   .barraPedido .btnMarcas.abierto{
     background:var(--sello); border-color:var(--sello); color:var(--sello-t);
   }
@@ -206,7 +218,10 @@
   body[data-buscando] #ofertaArriba,
   body[data-buscando] .barraPedido{ display:none }
 
-  body[data-buscando] .buscador{ margin-top:0 }
+  /* Al escribir, el buscador sube -- pero NO pegado al nombre. Con el margen
+     en cero quedaba practicamente tocando "Trigales del Sur" y casi tapaba
+     los botones. Queda la mitad del aire, no cero. (2026-09-23.) */
+  body[data-buscando] .buscador{ margin-top:9px }
 
   /* EL ROTULO ES EL BOTON. Se toca el titulo de la seccion y se abre o se
      cierra; no hace falta un boton aparte que gaste otro renglon.
@@ -268,17 +283,40 @@
   .ponerCant{
     flex:0 0 auto; display:flex; align-items:center; gap:7px;
   }
+  /* EL CAMPO DE LA CANTIDAD. Tres cosas que NO se pueden cambiar:
+
+     1) LA LETRA VA EN 16px O MAS. Abajo de 16, el iPhone HACE ZOOM SOLO al
+        tocar el campo: se agranda toda la pagina, se corre el encabezado y
+        parece que el programa se rompio. Yo la habia bajado a 15 para ganar
+        altura y rompi esto. El dueno lo vio enseguida: "cuando pones elegir
+        se hace como un zoom y se corta toda la pantalla". (2026-09-23.)
+
+     2) EL BORDE NO ES DORADO. Al lado esta "Agregar", que es dorado y
+        relleno; con el campo tambien dorado quedaban DOS marcos dorados
+        peleandose. El dorado marca UNA cosa: la que se toca.
+
+     3) EL NUMERO ES BLANCO. Con todo el resto dorado, el blanco es lo unico
+        distinto de la pantalla, y es justo lo que escribe el.
+        (Idea del dueno.) */
   .ponerCant input{
-    width:58px; height:37px; text-align:center;
-    border:2px solid var(--sello); border-radius:8px;
+    width:52px; height:37px; text-align:center;
+    border:1.5px solid var(--linea2); border-radius:8px;
     background:var(--papel2); color:var(--tinta);
-    font-family:"IBM Plex Mono",monospace; font-size:15px; font-weight:700; padding:0;
+    font-family:"IBM Plex Mono",monospace; font-size:16px; font-weight:700; padding:0;
   }
+  .ponerCant input:focus{ border-color:var(--sello); outline:none }
   .okCant{
-    height:37px; padding:0 12px; border:0; border-radius:8px;
+    height:37px; padding:0 10px; border:0; border-radius:8px;
     background:var(--sello); color:var(--sello-t);
     font-size:12.5px; font-weight:700; white-space:nowrap;
   }
+  /* MIENTRAS PONE LA CANTIDAD, EL NOMBRE NO SE PARTE EN DOS.
+     Los controles le sacan ancho al nombre y los nombres largos se iban a
+     dos renglones: el renglon no crecia (el boton ya medía eso) pero el
+     nombre se desbordaba y se veia cortado. En una sola linea con puntos
+     suspensivos nada se mueve -- y el nombre entero vuelve apenas agrega.
+     El acaba de tocar ESE articulo: no necesita volver a leerlo entero. */
+  .fila.eligiendo .nom{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
   .fila.eligiendo{
     border-left:3px solid var(--sello); margin-left:-10px; padding-left:7px;
     background:linear-gradient(90deg, var(--sello-suave), transparent 60%);
@@ -366,9 +404,16 @@
 
   .paso{display:flex; align-items:center; gap:0; border:1.5px solid var(--sello); border-radius:9px; overflow:hidden; flex:0 0 auto}
   .paso button{width:36px; height:40px; background:var(--sello-suave); color:var(--sello); border:0; font-size:19px; font-weight:700; line-height:1}
+  /* OJO CON LA LETRA DE ESTOS CAMPOS: 16px ES EL MINIMO.
+     Abajo de 16, el iPhone HACE ZOOM SOLO al tocar el campo -- se agranda
+     toda la pagina, se corre el encabezado, aparecen los puntitos azules
+     de seleccion encima y parece que los botones + y - no anduvieran.
+     Estos dos estaban en 15 y en 14 desde antes. (2026-09-23, lo vio el
+     dueno: "los botones de mas y menos no funcionan, es como que le haces
+     un zoom a la pantalla y se seleccionan con los puntitos azules".) */
   .paso input{
     width:52px; height:40px; text-align:center; border:0; background:var(--papel2); color:var(--tinta);
-    font-family:"IBM Plex Mono",monospace; font-size:15px; font-weight:600; padding:0;
+    font-family:"IBM Plex Mono",monospace; font-size:16px; font-weight:700; padding:0;
   }
 
   .parecidos{background:none; border:0; padding:0; font-size:11.5px; color:var(--sello); text-decoration:underline; text-underline-offset:2px}
@@ -409,14 +454,16 @@
     flex:0 0 auto; display:flex; align-items:center;
     border:1.5px solid var(--sello); border-radius:7px; overflow:hidden; background:var(--papel2);
   }
+  /* Los + y - un poco mas grandes: en 30x32 el dedo pegaba en el campo del
+     medio en vez del boton, y parecia que el boton no funcionaba. */
   .pasoChico button{
-    width:30px; height:32px; background:var(--sello-suave); color:var(--sello);
+    width:34px; height:34px; background:var(--sello-suave); color:var(--sello);
     border:0; font-size:17px; font-weight:700; line-height:1; padding:0;
   }
   .pasoChico input{
-    width:44px; height:32px; text-align:center; border:0; padding:0;
+    width:46px; height:34px; text-align:center; border:0; padding:0;
     background:var(--papel2); color:var(--tinta);
-    font-family:"IBM Plex Mono",monospace; font-size:14px; font-weight:600;
+    font-family:"IBM Plex Mono",monospace; font-size:16px; font-weight:700;
   }
   .loQueVaFila .nm{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:12.5px}
   .loQueVaFila .x{
@@ -519,7 +566,6 @@
     </div>
     <b class="sello">Trigales del Sur</b>
     <div class="ladoBarra der">
-      <span id="fecha" class="cartelito" hidden></span>
       <button id="refrescar" type="button" class="btnTema" aria-label="Buscar la lista de hoy" title="Buscar la lista de hoy">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M20 11a8 8 0 10-2.3 5.7"/><path d="M20 4v7h-7"/>
@@ -1416,19 +1462,29 @@ function dibujarArriba() {
 
   const hayAlgo = Object.keys(carrito).length > 0;
 
-  const nuevo = document.createElement("button");
-  nuevo.type = "button";
-  nuevo.className = "btnNuevo";
-  nuevo.textContent = hayAlgo ? "Empezar de nuevo" : "Nuevo pedido";
-  nuevo.onclick = () => {
-    /* Nunca se tira un pedido a medio armar sin preguntar. */
-    if (Object.keys(carrito).length && !confirmarVaciar()) return;
-    carrito = {};
-    quedoAMedias = false;
-    verHistorial = false;
-    persistir(); dibujar();
-  };
-  barra.appendChild(nuevo);
+  /* "EMPEZAR DE NUEVO" SOLO SI HAY ALGO QUE BORRAR.
+
+     Antes estaba siempre, y con el pedido vacio era un boton MUERTO: lo
+     tocabas y no pasaba nada, porque no habia nada que vaciar. Un boton
+     que no hace nada ensena que los botones no hacen nada.
+     (2026-09-23, lo marco el dueno.)
+
+     Y se llama por lo que hace: vaciar lo cargado. "Nuevo pedido" con el
+     pedido ya vacio no queria decir nada. */
+  if (hayAlgo) {
+    const nuevo = document.createElement("button");
+    nuevo.type = "button";
+    nuevo.className = "btnNuevo";
+    nuevo.textContent = "Empezar de nuevo";
+    nuevo.onclick = () => {
+      /* Nunca se tira un pedido a medio armar sin preguntar. */
+      if (!confirmarVaciar()) return;
+      carrito = {};
+      quedoAMedias = false;
+      persistir(); dibujar();
+    };
+    barra.appendChild(nuevo);
+  }
 
   /* "Pedidos anteriores" ya NO esta aca: paso a ser un titulo que se toca,
      adentro de la lista, junto con "Lo que mas pedis". Si quedara tambien
@@ -1663,24 +1719,25 @@ function abrirWhatsApp(texto) {
 async function arrancar() {
   cargarLista(RESPALDO, RESPALDO_DE);
   dibujar();
-  if (await bajarLista()) { dibujar(); avisarLista(true); }
+  if (await bajarLista()) { dibujar(); pintarRefrescar(true); }
 }
 
-/* EL CARTELITO DE LA LISTA. Aparece, titila y se va: no queda nada fijo
-   ocupando lugar arriba. Antes habia una fecha permanente ("Lista de hoy,
-   04:42 p.m.") que ademas obligaba a hacer la cuenta mental de si eso era
-   viejo o no. */
-let avisoLista = null;
-function avisarLista(ok) {
-  const c = $("#fecha");
-  c.className = "cartelito" + (ok ? "" : " igual");
-  // NUNCA dice error. Ver el comentario del CSS y textoDeLaLista().
-  c.textContent = ok ? "✓ al día" : "seguís con la última";
-  c.hidden = false;
-  // Se reinicia la animacion aunque se toque dos veces seguidas.
-  c.style.animation = "none"; void c.offsetWidth; c.style.animation = "";
-  clearTimeout(avisoLista);
-  avisoLista = setTimeout(() => { c.hidden = true; }, 2500);
+/* EL BOTON SE PINTA SEGUN COMO ESTA LA LISTA.
+   Dorado = la guardada en el telefono. Verde = la de hoy.
+   Ver el comentario largo del CSS. */
+function pintarRefrescar(alDia) {
+  const b = $("#refrescar");
+  const estaba = b.classList.contains("aldia");
+  b.classList.toggle("aldia", !!alDia);
+  b.title = alDia ? "La lista es la de hoy" : "Buscar la lista de hoy";
+  b.setAttribute("aria-label", b.title);
+  // Titila SOLO cuando cambia de verdad. Si titilara cada vez que se
+  // toca sin que cambie nada, el parpadeo dejaria de querer decir algo.
+  if (!!alDia !== estaba) {
+    b.classList.remove("reciencambio");
+    void b.offsetWidth;
+    b.classList.add("reciencambio");
+  }
 }
 
 
@@ -1690,7 +1747,8 @@ $("#refrescar").onclick = async (e) => {
   const hubo = await bajarLista();
   dibujar();
   b.disabled = false;
-  avisarLista(hubo);
+  // Si no se pudo bajar, se queda dorado y NO dice nada. Nunca error.
+  if (hubo) pintarRefrescar(true);
 };
 /* ---------------------------------------------------------------------------
    GUARDARLO EN LA PANTALLA DEL CELULAR.
