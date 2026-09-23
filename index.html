@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="5">
+<meta name="tds-pagina" content="6">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -26,6 +26,7 @@
     --sello:#1D5183; --sello-t:#FFFFFF; --sello-suave:#E3EBF3;
     --hay:#3D6B39; --nohay:#8B8377; --trigo:#A9741A; --trigo-suave:#F5E9D2;
     --brasa:#9A3412;
+    --ladrillo:#A63D2F;   /* el mismo ladrillo del programa */
     color-scheme:light;
   }
   @media (prefers-color-scheme:dark){
@@ -35,6 +36,7 @@
       --sello:#7FB2E5; --sello-t:#0F1A26; --sello-suave:#1E2C3B;
       --hay:#7FB877; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519;
       --brasa:#E0764A;
+      --ladrillo:#E77A69;   /* su version de noche, la del programa */
       color-scheme:dark;
     }
   }
@@ -73,7 +75,7 @@
     position:sticky; top:0; z-index:20;
   }
   .marca{display:flex; align-items:baseline; justify-content:space-between; gap:10px}
-  .marca b{font-size:11.5px; letter-spacing:.2em; color:var(--tinta2)}
+  .marca b{font-size:14px; letter-spacing:.18em; color:var(--ladrillo)}
   .marca span{font-size:11px; color:var(--tinta2)}
   .estadoLista{display:flex; flex-direction:column; align-items:flex-end; gap:1px; text-align:right}
   .estadoLista #refrescar{background:none; border:0; padding:0; font-size:11px; color:var(--sello); text-decoration:underline; text-underline-offset:2px}
@@ -374,6 +376,19 @@
   .quitar{background:none; border:0; color:var(--brasa); font-size:12px; padding:6px 0 0; text-decoration:underline; text-underline-offset:2px}
   .aviso{font-size:12.5px; color:var(--tinta2); line-height:1.45}
   .aviso.ok{color:var(--hay); font-weight:700}
+
+  /* PASALE LA PAGINA A OTRO. Cierra la lista con algo para hacer, no con una
+     explicacion. (2026-09-23.) */
+  .compartirCaja{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    border-top:1px solid var(--linea); margin-top:22px; padding:16px 0 10px;
+    font-size:13px; color:var(--tinta2);
+  }
+  .compartirBoton{
+    flex:0 0 auto; height:38px; padding:0 16px; border:1.5px solid var(--sello);
+    border-radius:9px; background:transparent; color:var(--sello);
+    font-size:13.5px; font-weight:700; font-family:inherit;
+  }
 
   .pieDoc{padding:22px 0 8px; border-top:1px solid var(--linea); margin-top:20px; font-size:11.5px; color:var(--tinta2); line-height:1.6}
   .pieDoc button{background:none; border:0; padding:0; font-size:11.5px; color:var(--sello); text-decoration:underline; text-underline-offset:2px}
@@ -1186,9 +1201,60 @@ function dibujarInicio() {
   /* Aca abajo habia dos leyendas -- "lo que no tenemos queda en gris" y "los
      que mas pedis aparecen primero" -- mas un boton que mostraba como se ve un
      articulo sin stock. Las dos EXPLICABAN algo que ya se ve solo, y el boton
-     era para mostrar la pagina, no para pedir. Las saco el dueno el 2026-09-23:
-     "si es relleno o leyenda que no esta de mas, sacalo; ya el cliente se va a
-     dar cuenta cuando un articulo esta en gris que no hay". */
+     era para mostrar la pagina, no para pedir. Las saco el dueno el 2026-09-23.
+
+     Lo que SI quedo es una ACCION, no una explicacion: pasarle la pagina a
+     otro. (2026-09-23, pedido del dueno: "pone el boton de compartir para que
+     los clientes se lo pasen entre ellos".) */
+  main.appendChild(bloqueCompartir());
+}
+
+/* PASALE LA PAGINA A OTRO.
+
+   Usa el compartir del propio celular -- el mismo cuadro que les sale para
+   mandar algo por WhatsApp -- asi el cliente la manda por donde quiera sin que
+   la pagina tenga que saber nada de el.
+
+   Si el telefono no lo tiene (o esta abierta en una computadora), copia el
+   link al portapapeles. Y si ni eso se puede, muestra el link entero para que
+   lo copie a mano: nunca se queda sin darle una forma de pasarlo. */
+function bloqueCompartir() {
+  const caja = document.createElement('div');
+  caja.className = 'compartirCaja';
+
+  const txt = document.createElement('span');
+  txt.textContent = 'Pasale la pagina a otro'.replace('pagina', 'página');
+  caja.appendChild(txt);
+
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'compartirBoton';
+  b.textContent = 'Compartir';
+  b.onclick = async () => {
+    // Sin la parte de ?v=... que le agrega el navegador al refrescar.
+    const url = location.origin + location.pathname;
+    const datos = {
+      title: 'Pedidos Trigales del Sur',
+      text: 'Armá tu pedido de Trigales del Sur desde el celular:',
+      url,
+    };
+    if (navigator.share) {
+      try { await navigator.share(datos); return; }
+      catch (e) { return; }   // cerro el cuadro: no se le insiste con nada
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      b.textContent = 'Link copiado ✓';
+      setTimeout(() => { b.textContent = 'Compartir'; }, 2600);
+    } catch (e) {
+      // Ni compartir ni copiar: al menos que lo vea para copiarlo a mano.
+      txt.textContent = url;
+      txt.style.wordBreak = 'break-all';
+      b.hidden = true;
+    }
+  };
+  caja.appendChild(b);
+  return caja;
 }
 
 /* Deja el buscador en blanco despues de agregar algo, para que lo siguiente
