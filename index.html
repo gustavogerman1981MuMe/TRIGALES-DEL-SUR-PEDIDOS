@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="9">
+<meta name="tds-pagina" content="10">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -386,19 +386,6 @@
   .aviso{font-size:12.5px; color:var(--tinta2); line-height:1.45}
   .aviso.ok{color:var(--hay); font-weight:700}
 
-  /* PASALE LA PAGINA A OTRO. Cierra la lista con algo para hacer, no con una
-     explicacion. (2026-09-23.) */
-  .compartirCaja{
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-    border-top:1px solid var(--linea); margin-top:22px; padding:16px 0 10px;
-    font-size:13px; color:var(--tinta2);
-  }
-  .compartirBoton{
-    flex:0 0 auto; height:38px; padding:0 16px; border:1.5px solid var(--sello);
-    border-radius:9px; background:transparent; color:var(--sello);
-    font-size:13.5px; font-weight:700; font-family:inherit;
-  }
-
   .pieDoc{padding:22px 0 8px; border-top:1px solid var(--linea); margin-top:20px; font-size:11.5px; color:var(--tinta2); line-height:1.6}
   .pieDoc button{background:none; border:0; padding:0; font-size:11.5px; color:var(--sello); text-decoration:underline; text-underline-offset:2px}
 
@@ -414,7 +401,7 @@
 <header>
   <div class="marca">
     <button id="tema" type="button" class="btnTema" aria-label="Cambiar entre claro y oscuro"></button>
-    <button id="compartir" type="button" class="btnTema" aria-label="Compartir la página" title="Pasale la página a otro">
+    <button id="compartir" type="button" class="btnTema" aria-label="Compartir" title="Compartir">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M12 3v13"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
       </svg>
@@ -1292,53 +1279,7 @@ function dibujarInicio() {
      los clientes se lo pasen entre ellos".) */
 }
 
-/* PASALE LA PAGINA A OTRO.
 
-   Usa el compartir del propio celular -- el mismo cuadro que les sale para
-   mandar algo por WhatsApp -- asi el cliente la manda por donde quiera sin que
-   la pagina tenga que saber nada de el.
-
-   Si el telefono no lo tiene (o esta abierta en una computadora), copia el
-   link al portapapeles. Y si ni eso se puede, muestra el link entero para que
-   lo copie a mano: nunca se queda sin darle una forma de pasarlo. */
-function _bloqueCompartirViejo() {
-  const caja = document.createElement('div');
-  caja.className = 'compartirCaja';
-
-  const txt = document.createElement('span');
-  txt.textContent = 'Pasale la pagina a otro'.replace('pagina', 'página');
-  caja.appendChild(txt);
-
-  const b = document.createElement('button');
-  b.type = 'button';
-  b.className = 'compartirBoton';
-  b.textContent = 'Compartir';
-  b.onclick = async () => {
-    // Sin la parte de ?v=... que le agrega el navegador al refrescar.
-    const url = location.origin + location.pathname;
-    const datos = {
-      title: 'Pedidos Trigales del Sur',
-      text: 'Armá tu pedido de Trigales del Sur desde el celular:',
-      url,
-    };
-    if (navigator.share) {
-      try { await navigator.share(datos); return; }
-      catch (e) { return; }   // cerro el cuadro: no se le insiste con nada
-    }
-    try {
-      await navigator.clipboard.writeText(url);
-      b.textContent = 'Link copiado ✓';
-      setTimeout(() => { b.textContent = 'Compartir'; }, 2600);
-    } catch (e) {
-      // Ni compartir ni copiar: al menos que lo vea para copiarlo a mano.
-      txt.textContent = url;
-      txt.style.wordBreak = 'break-all';
-      b.hidden = true;
-    }
-  };
-  caja.appendChild(b);
-  return caja;
-}
 
 /* Deja el buscador en blanco despues de agregar algo, para que lo siguiente
    se escriba encima sin tener que borrar. Si estaba vacio no hace nada. */
