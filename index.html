@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="44">
+<meta name="tds-pagina" content="45">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -426,6 +426,11 @@
      horizontal es nuestro. Sin esto el navegador se queda con los dos y el
      arrastre no se siente. */
   .ofertaVentana{ overflow:hidden; touch-action:pan-y; cursor:grab }
+  /* NADA DE LO QUE PASE ADENTRO PUEDE EMPUJAR LO DE ABAJO. `contain` le dice
+     al navegador que el tamano de esta caja no depende de lo que se mueva
+     adentro, asi que un arrastre no puede correr los botones que siguen.
+     (2026-09-24, el dueno vio los botones corriendose con un arrastre.) */
+  .ofertaCarrusel{ contain:layout paint }
   .ofertaVentana.arrastrando{ cursor:grabbing; user-select:none }
   .ofertaPista{
     display:flex; align-items:stretch;
@@ -1732,6 +1737,11 @@ function cajaDeOferta() {
       if (Math.abs(dx) > 6 && !arrastrando) {
         arrastrando = true;
         ventana.classList.add("arrastrando");
+        // EL GESTO PASA A SER NUESTRO Y SE LO SACAMOS AL NAVEGADOR. Sin esto
+        // el navegador puede seguir tratandolo como un desplazamiento suyo
+        // ademas de moverse la fila, y se ve raro: cosas de abajo corriendose
+        // solas. (2026-09-24, lo reporto el dueno con un arrastre cortito.)
+        ventana.style.touchAction = "none";
         // Con el mouse, sin esto el navegador arranca a "arrastrar el texto".
         if (ventana.setPointerCapture && e.pointerId != null) {
           try { ventana.setPointerCapture(e.pointerId); } catch (err) {}
@@ -1741,6 +1751,7 @@ function cajaDeOferta() {
       // En las puntas el arrastre va a la mitad: se siente el tope sin trabarse.
       const enLaPunta = (ofertaMirando === 0 && dx > 0) || (ofertaMirando === lista.length - 1 && dx < 0);
       const corrido = enLaPunta ? dx / 2 : dx;
+      if (e.cancelable) e.preventDefault();
       pista.style.transform = "translateX(calc(" + (-ofertaMirando * 100) + "% + " + corrido + "px))";
     });
 
@@ -1748,6 +1759,7 @@ function cajaDeOferta() {
       const estaba = arrastrando;
       x0 = null; arrastrando = false;
       ventana.classList.remove("arrastrando");
+      ventana.style.touchAction = "";   // se lo devolvemos al navegador
       pista.style.transition = "";
       if (!estaba || dx == null) { acomodarPista(true); return; }
       // Un cuarto del ancho alcanza para pasar: pedir la mitad se siente duro.
