@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="30">
+<meta name="tds-pagina" content="31">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -970,7 +970,21 @@ function aplicarTema(t) {
   if (!b) return;
   // Muestra a donde va a ir, no donde esta: es lo que se entiende de un toque.
   const oscuroAhora = t === "dark" || (t !== "light" && window.matchMedia("(prefers-color-scheme:dark)").matches);
-  b.textContent = oscuroAhora ? "☀" : "☽";
+  // EL SOL NO SE TOCA: es el caracter de siempre y se ve perfecto.
+  //
+  // LA LUNA SI. Era el caracter "☽", un contorno finito que casi no se
+  // distingue -- el dueno lo marco: "cuando esta la luna ni se entiende que
+  // es para poner noche y dia". Ahora es una luna DIBUJADA Y RELLENA, del
+  // mismo tamano. Nunca se ven las dos juntas, asi que no hay mezcla rara.
+  // (2026-09-23: "que la luna se entienda un poquito mas, pero no me
+  // modifiques el sol, ni el tamano, ni nada".)
+  if (oscuroAhora) {
+    b.textContent = "☀";
+  } else {
+    b.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">'
+      + '<path d="M20.7 14.3A8.6 8.6 0 019.7 3.3a1 1 0 00-1.3-1.2 10 10 0 1013.5 13.5 1 1 0 00-1.2-1.3z"/>'
+      + '</svg>';
+  }
   b.title = oscuroAhora ? "Verla clara" : "Verla oscura";
 }
 aplicarTema(temaGuardado());
@@ -1351,6 +1365,23 @@ function dibujarLoQueVaPidiendo() {
    (2026-09-23, idea del dueno.) */
 let menuMarcasAbierto = false;
 
+/* LA MARCA QUE ELIGIO DEL MENU.
+
+   No alcanza con escribirla en el buscador. Al tocar CAMI se escribia
+   "CAMI" y se hacia la busqueda de siempre, que busca el texto EN CUALQUIER
+   PARTE del nombre -- asi que entre los 6 de CAMI aparecian los
+   "PAPELERA CAMISETA 30X40". El dueno lo marco: "si pongo la marca CAMI no
+   me pongas cuatro articulos de papelera porque empiezan con cami; si pongo
+   marca, arranca con la palabra la marca que tiene". (2026-09-23.)
+
+   Entonces son dos caminos distintos y esta bien que lo sean:
+     - ESCRIBIR "cami"  -> busqueda de siempre, perdona la ortografia y
+                           encuentra la camiseta. Esta bien que confunda.
+     - TOCAR la marca   -> SOLO los articulos de esa marca. Nada mas.
+
+   Se borra apenas toca una letra: ahi volvio a buscar a mano. */
+let marcaElegida = null;
+
 function todasLasMarcas() {
   const cuenta = {};
   ART.forEach(a => { if (a.marca) cuenta[a.marca] = (cuenta[a.marca] || 0) + 1; });
@@ -1362,10 +1393,9 @@ function todasLasMarcas() {
 /* La marca que se esta mirando: solo si lo escrito ES el nombre de una marca.
    Sirve para no repetir la marca en cada renglon cuando ya la puso el. */
 function marcaEfectiva() {
-  const t = norm(q.value);
-  if (!t) return null;
-  const m = todasLasMarcas().find(([m]) => norm(m) === t);
-  return m ? m[0] : null;
+  // Si toco una del menu, esa manda -- mientras el texto siga siendo ella.
+  if (marcaElegida && norm(q.value) === norm(marcaElegida)) return marcaElegida;
+  return null;
 }
 
 function dibujarMenuMarcas() {
@@ -1381,7 +1411,7 @@ function dibujarMenuMarcas() {
     c.textContent = n;
     b.append(nom, c);
     // Se escribe en el buscador de siempre: un solo camino.
-    b.onclick = () => { q.value = m; menuMarcasAbierto = false; dibujar(); window.scrollTo(0, 0); };
+    b.onclick = () => { marcaElegida = m; q.value = m; menuMarcasAbierto = false; dibujar(); window.scrollTo(0, 0); };
     caja.appendChild(b);
   });
 }
@@ -1404,6 +1434,21 @@ function dibujar() {
   dibujarLoQueVaPidiendo();
   const texto = q.value.trim();
   $("#limpiar").hidden = !texto;
+
+  /* SI TOCO UNA MARCA, la lista es solo de esa marca: se compara la marca
+     del articulo, no el texto de su nombre. */
+  const marca = marcaEfectiva();
+  if (marca) {
+    const suyos = ART.filter(a => a.marca === marca)
+                     .sort((x, y) => x.nombre.localeCompare(y.nombre, "es", { sensitivity: "base" }));
+    main.appendChild(rotulo(marca + " · " + suyos.length + (suyos.length === 1 ? " artículo" : " artículos")));
+    suyos.forEach(a => {
+      main.appendChild(filaArticulo(a));
+      if (verParecidosDe === a.id) main.appendChild(bloqueParecidos(a));
+    });
+    actualizarBarra();
+    return;
+  }
 
   if (texto) {
     const res = buscar(texto);
@@ -1815,7 +1860,9 @@ $("#quien").oninput = (e) => { quien = e.target.value; guardar("tds_quien", quie
 $("#limpiar").onclick = () => { q.value = ""; q.focus(); dibujar(); };
 q.oninput = () => {
   verParecidosDe = null; eligiendo = null;
-  // Escribir cierra el menu de marcas: ya esta buscando, no eligiendo.
+  // Escribir cierra el menu de marcas y suelta la marca elegida: ya esta
+  // buscando a mano, no mirando una marca.
+  marcaElegida = null;
   if (q.value) menuMarcasAbierto = false;
   dibujar();
 };
