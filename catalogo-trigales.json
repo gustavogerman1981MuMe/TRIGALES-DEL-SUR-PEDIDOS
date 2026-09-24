@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-09-24T02:25:55.529Z",
+  "generado": "2026-09-24T02:29:09.183Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2780,7 +2780,7 @@
       "nombre": "AZUCAR COMUN PACK X 10 KG",
       "precio": 10900,
       "desdeCuantos": 10,
-      "texto": "",
+      "texto": "LLEVANDO 10 O MAS",
       "hasta": "2026-10-01",
       "hay": true,
       "vencida": false
