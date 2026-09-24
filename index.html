@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="52">
+<meta name="tds-pagina" content="53">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -680,6 +680,12 @@
     background:#25D366; color:#0A1F13;
     display:flex; align-items:center; justify-content:center; gap:8px;
   }
+  /* EL TEXTO DEL BOTON NO SE PARTE EN DOS RENGLONES.
+     "Pedir el presupuesto por WhatsApp" es mas largo que "Enviar el pedido
+     por WhatsApp": si en un telefono angosto uno envuelve y el otro no, el
+     boton cambia de alto al tocar la tecla y vuelve el salto. Con nowrap las
+     dos medidas son iguales siempre. */
+  .btn.esWhatsApp span{white-space:nowrap}
   .btn.esWhatsApp:disabled{ background:var(--linea); color:var(--tinta2) }
   .btn.esWhatsApp svg{flex:0 0 auto}
   .btn.esWhatsApp:disabled svg{opacity:.5}
@@ -737,8 +743,6 @@
   }
   .llaves button.on{background:var(--sello); color:var(--sello-t)}
   .llaves button.onPres{background:var(--trigo); color:#241C0B}
-  .aclaraPres{margin:0 2px; font-size:11.5px; color:var(--tinta2); line-height:1.4}
-  .aclaraPres b{color:var(--tinta)}
   /* El presupuesto NO sale por el verde de WhatsApp: el verde es el pedido
      de verdad, el que mueve mercaderia. Un color, un significado. */
   .btn.esWhatsApp.pres{background:var(--trigo); color:#241C0B}
@@ -872,7 +876,6 @@
       <button type="button" id="esPedido" class="on">Un pedido</button>
       <button type="button" id="esPresupuesto">Un presupuesto</button>
     </div>
-    <p class="aclaraPres" id="aclaraPres" hidden>Te pasamos los precios. <b>No se prepara ni se manda nada</b> hasta que lo confirmes.</p>
     <button class="btn esWhatsApp" id="enviar" type="button">
       <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
         <path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4z"/>
@@ -2413,7 +2416,6 @@ let esPresupuesto = false;
 function pintarModoEnvio() {
   $("#esPedido").className = esPresupuesto ? "" : "on";
   $("#esPresupuesto").className = esPresupuesto ? "onPres" : "";
-  $("#aclaraPres").hidden = !esPresupuesto;
   const b = $("#enviar");
   b.classList.toggle("pres", esPresupuesto);
   b.querySelector("span").textContent = esPresupuesto
