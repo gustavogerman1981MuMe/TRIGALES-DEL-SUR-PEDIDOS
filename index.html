@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="33">
+<meta name="tds-pagina" content="37">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -99,6 +99,13 @@
   }
   .btnTema svg{display:block}
   .btnTema:disabled{color:var(--nohay)}
+  /* La estrella va en su amarillo de siempre, no en el color de los otros:
+     en toda la pagina el amarillo quiere decir "lo pedis seguido". */
+  #favoritos{ color:var(--trigo) }
+  #favoritos.abierto{ background:var(--trigo); border-color:var(--trigo); color:var(--sello-t) }
+  /* Sin favoritos todavia, el boton no hace nada: se muestra apagado en vez
+     de mentir. Un boton que no hace nada ensena que los botones no sirven. */
+  #favoritos:disabled{ color:var(--linea2); background:none; border-color:var(--linea) }
   /* LA BARRA DE ARRIBA: TRES BOTONES Y EL NOMBRE EN EL MEDIO.
 
      Antes el compartir quedaba mas alto que el sol (uno alineaba por la
@@ -265,11 +272,21 @@
   .fila .nom{font-size:14.5px; font-weight:500; line-height:1.25; overflow-wrap:anywhere}
   .fila .pie{display:flex; align-items:center; gap:7px; margin-top:3px; font-size:11.5px; color:var(--tinta2)}
   .estrella{color:var(--trigo)}
-  /* Adentro de "Lo que mas pedis" son TODOS los que pedis seguido, asi que
-     la estrella no distingue nada: marca donde son todos iguales es ruido.
-     Afuera (en una busqueda) si sirve. Mismo criterio que la etiqueta de
-     marca y el verde del pedido. (2026-09-23.) */
+  /* LA ESTRELLA, ADELANTE DEL NOMBRE.
+
+     Adentro de "Lo que mas pedis" el renglon entero "★ lo pedis seguido"
+     no distingue nada -- son todos -- y ademas gasta un renglon. Pero el
+     dueno la queria igual: "no esta mal que este con amarillito, queda como
+     resaltado". Tiene razon: ahi no informa, DECORA, y eso tambien sirve.
+
+     Asi que la leyenda se va y queda la estrella sola, pegada al nombre,
+     como un favorito de toda la vida. No ocupa un renglon y se ve de lejos.
+     (2026-09-23.) */
   .enFavoritos .estrella{ display:none }
+  .enFavoritos .nom::before{
+    content:"★"; color:var(--trigo); margin-right:6px;
+    font-size:12px; line-height:1;
+  }
   .yaEsta{color:var(--hay); font-weight:700}
   /* EL RENGLON QUE YA ESTA EN EL PEDIDO.
 
@@ -630,6 +647,11 @@
     </div>
     <b class="sello">Trigales del Sur</b>
     <div class="ladoBarra der">
+      <!-- LA ESTRELLA: abre "Lo que mas pedis" y lleva la pantalla ahi. No es
+           una lista aparte -- es la MISMA seccion de abajo, para no tener dos
+           caminos que hagan lo mismo. Y de paso empareja la barra: dos
+           botones de cada lado. (2026-09-23, idea del dueno.) -->
+      <button id="favoritos" type="button" class="btnTema" aria-label="Lo que más pedís" title="Lo que más pedís">★</button>
       <button id="refrescar" type="button" class="btnTema" aria-label="Buscar la lista de hoy" title="Buscar la lista de hoy">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M20 11a8 8 0 10-2.3 5.7"/><path d="M20 4v7h-7"/>
@@ -1043,6 +1065,25 @@ function avisarCopiado(b) {
   b.classList.add("copiado");
   setTimeout(() => { b.innerHTML = antes; b.classList.remove("copiado"); }, 1800);
 }
+
+/* Tocar la estrella abre "Lo que mas pedis" y lleva la pantalla ahi. Es la
+   MISMA seccion que se toca desde su titulo: un solo estado, dos formas de
+   llegar -- igual que el menu de marcas, que escribe en el buscador de
+   siempre en vez de filtrar por su cuenta. */
+// Ojo: aca arriba todavia no existe el atajo `$` (se define mas abajo).
+document.getElementById("favoritos").onclick = () => {
+  if (!losQueMasPide().length) return;
+  // Si estaba mirando una busqueda o una marca, se sale de ahi: si no, la
+  // seccion se abriria en una pantalla donde no se ve.
+  q.value = ""; marcaElegida = null; menuMarcasAbierto = false;
+  plegados.favoritos = !plegados.favoritos;
+  guardar("tds_plegados", plegados);
+  dibujar();
+  if (!plegados.favoritos) {
+    const r = main.querySelector(".rotulo.tocable");
+    if (r) r.scrollIntoView({ block: "start", behavior: "smooth" });
+  }
+};
 
 document.getElementById("tema").onclick = () => {
   const oscuroAhora = document.documentElement.getAttribute("data-theme") === "dark"
@@ -1701,6 +1742,18 @@ function dibujarArriba() {
   const caja = cajaDeOferta();
   if (caja) hueco.appendChild(caja);
 
+  /* LA ESTRELLA DE ARRIBA refleja la seccion de abajo: es el mismo estado.
+     Prendida = la seccion esta abierta. Apagada del todo = todavia no hay
+     nada que mostrar. */
+  const estrella = $("#favoritos");
+  const cuantos = losQueMasPide().length;
+  estrella.disabled = cuantos === 0;
+  estrella.classList.toggle("abierto", cuantos > 0 && !plegados.favoritos);
+  estrella.title = cuantos === 0
+    ? "Cuando pidas algo dos veces va a aparecer acá"
+    : (plegados.favoritos ? "Ver lo que más pedís (" + cuantos + ")" : "Ocultar lo que más pedís");
+  estrella.setAttribute("aria-label", estrella.title);
+
   const barra = $("#barraPedido");
   barra.innerHTML = "";
 
@@ -1760,6 +1813,14 @@ function confirmarVaciar() {
   return window.confirm("Ten\u00e9s un pedido a medio armar. \u00bfLo borr\u00e1s y empez\u00e1s de nuevo?");
 }
 
+/* LO QUE MAS PIDE. Una sola lista, que usan la seccion de abajo Y el boton de
+   la estrella de arriba: si cada uno armara la suya, un dia dirian cosas
+   distintas. */
+function losQueMasPide() {
+  return ART.filter(a => (veces[a.id] || 0) >= VECES_PARA_SER_FAVORITO && carrito[a.id] == null)
+            .sort((x, y) => veces[y.id] - veces[x.id]).slice(0, 12);
+}
+
 function dibujarInicio() {
   const aviso = avisoAMedias();
   if (aviso) main.appendChild(aviso);
@@ -1768,8 +1829,7 @@ function dibujarInicio() {
      y es lo que hace que la segunda vez sea rapida: el dueno pidio
      expresamente que NO se saque. Se puede plegar, pero arranca abierta
      -- si arrancara cerrada nadie la tocaria nunca y dejaria de servir. */
-  const favs = ART.filter(a => (veces[a.id] || 0) >= VECES_PARA_SER_FAVORITO && carrito[a.id] == null)
-                  .sort((x, y) => veces[y.id] - veces[x.id]).slice(0, 12);
+  const favs = losQueMasPide();
   if (favs.length) {
     const r = rotuloPlegable("favoritos", "Lo que más pedís", favs.length);
     main.appendChild(r.boton);
