@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="40">
+<meta name="tds-pagina" content="42">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -405,10 +405,39 @@
   /* LA OFERTA DE LA SEMANA. Es lo primero que se ve y tiene que gritar un
      poco, pero sin salirse del papel madera del resto de la pagina. */
   /* LA OFERTA: chica, arriba de todo, sin comerse la pantalla. */
-  /* EL CARRUSEL DE OFERTAS. Una caja a la vez y tres puntitos abajo.
+  /* EL CARRUSEL: LAS TRES EN FILA Y LA FILA SE CORRE.
+
+     TODAS MIDEN LO MISMO porque estan en la misma fila: el `align-items`
+     por defecto de flex las estira a la mas alta. Antes cambiaba el
+     contenido de UNA sola caja y saltaba de tamano en cada paso -- pasa
+     igual aunque esten las tres frases cargadas, porque los nombres tienen
+     largos distintos y unos se parten en dos renglones.
+
+     Y la fila se ARRASTRA: sigue al dedo y se acomoda al soltar.
      (2026-09-23, pedido del dueno.) */
   .ofertaCarrusel{ margin-top:10px }
-  .ofertaCarrusel .ofertaCaja{ margin-top:0 }
+  .ofertaVentana{ overflow:hidden }
+  .ofertaPista{
+    display:flex; align-items:stretch;
+    transition:transform .28s cubic-bezier(.22,.61,.36,1);
+    will-change:transform;
+  }
+  @media (prefers-reduced-motion:reduce){ .ofertaPista{ transition:none } }
+  /* Cada caja ocupa la ventana entera, ni un pixel mas. */
+  .ofertaPista > .ofertaCaja{
+    flex:0 0 100%; width:100%; max-width:100%; margin-top:0;
+    display:flex; flex-direction:column;
+  }
+  /* Lo de abajo (precio, condicion y boton) se pega al piso de la caja, asi
+     los botones de las tres quedan a la misma altura aunque un nombre ocupe
+     dos renglones y otro uno. */
+  .ofertaPista > .ofertaCaja .ofertaAbajo{
+    margin-top:auto;
+    /* Lo de la derecha se apoya en el PISO, no en el medio: si no, el boton
+       de una caja y el cartel "ya terminó" de otra quedan a alturas
+       distintas y se nota al pasar de una a la otra. */
+    align-items:flex-end;
+  }
   .ofertaPuntos{ display:flex; justify-content:center; gap:7px; padding:8px 0 0 }
   .ofertaPunto{
     width:7px; height:7px; padding:0; border-radius:50%;
@@ -792,7 +821,7 @@ const RESPALDO = [["art_csv_1","ADITIVO PARA PANIFICADOS X 1 KG",1],["art_csv_4"
 const ARCHIVO_LISTA = "catalogo-trigales.json";
 // De cuando es la lista que va pegada como respaldo. Se pone sola al armar
 // la pagina, para que SIEMPRE se pueda decir que version se esta usando.
-const RESPALDO_DE = "2026-09-24T00:49:51.320Z";
+const RESPALDO_DE = "2026-09-24T02:29:09.183Z";
 let ART = [];
 let listaDe = null;      // cuando se genero la lista que estamos viendo
 let listaPropia = false; // true si se pudo bajar la de verdad
@@ -1623,13 +1652,30 @@ function bloqueParecidos(a) {
 
 /* LA CAJA DE LA OFERTA. Adentro va la fila del articulo tal cual, con su
    boton Elegir: se agrega igual que cualquier otro, sin ningun camino nuevo. */
-/* EL CARRUSEL. Una caja a la vez, se corre con el dedo, y tres puntitos
-   abajo con el de la que se esta viendo prendido. Al llegar a la ultima,
-   vuelve a la primera. (2026-09-23, pedido del dueno: "como noticias, que es
-   lo que se puede leer hoy en cualquier pagina web".)
+/* EL CARRUSEL: LAS TRES CAJAS EN FILA, Y LA FILA SE CORRE.
 
-   Con UNA sola oferta no hay puntitos ni nada que correr: se ve la caja de
-   siempre. */
+   La primera version cambiaba el CONTENIDO de una sola caja. Dos problemas,
+   los dos los marco el dueno el 2026-09-23:
+
+     1. "Las cajas cambian de tamano" -- claro: cada oferta tiene un nombre y
+        una condicion de largo distinto, asi que la caja crecia y se achicaba
+        en cada paso.
+     2. "El efecto de navegacion no me gusta, no se nota ni que le cambias el
+        contenido" -- tampoco habia efecto: el contenido aparecia de golpe.
+
+   Las dos se arreglan igual: se dibujan LAS TRES, una al lado de la otra, y
+   lo que se mueve es la fila entera.
+
+     - TODAS MIDEN LO MISMO. Al estar en la misma fila, la mas alta manda y
+       las otras se estiran solas. Nada salta.
+     - SE ARRASTRA CON EL DEDO. La fila sigue al dedo mientras lo movas, y al
+       soltar se acomoda sola a la que corresponda. Si soltaste antes de la
+       mitad, vuelve a la que estaba.
+
+   (2026-09-23, pedido del dueno: "que sea como un arrastre, que las vamos
+   corriendo y corren para atras y para adelante".) */
+let pistaDeOfertas = null;
+
 function cajaDeOferta() {
   const lista = ofertasDeHoy();
   if (!lista.length) return null;
@@ -1637,23 +1683,47 @@ function cajaDeOferta() {
 
   const envoltura = document.createElement("div");
   envoltura.className = "ofertaCarrusel";
-  envoltura.appendChild(unaOferta(lista[ofertaMirando]));
+
+  const ventana = document.createElement("div");
+  ventana.className = "ofertaVentana";
+  const pista = document.createElement("div");
+  pista.className = "ofertaPista";
+  lista.forEach((o) => pista.appendChild(unaOferta(o)));
+  ventana.appendChild(pista);
+  envoltura.appendChild(ventana);
+  pistaDeOfertas = pista;
+  acomodarPista(false);
 
   if (lista.length > 1) {
-    // SE CORRE CON EL DEDO. Se mira solo el movimiento horizontal: si el
-    // dedo bajo mas de lo que se movio al costado, estaba scrolleando la
-    // pagina y no hay que robarle ese gesto.
-    let x0 = null, y0 = null;
-    envoltura.addEventListener("touchstart", (e) => {
-      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+    /* EL ARRASTRE. Se mira solo el movimiento horizontal: si el dedo bajo mas
+       de lo que se movio al costado, estaba scrolleando la pagina y no hay
+       que robarle ese gesto. */
+    let x0 = null, y0 = null, arrastrando = false;
+    ventana.addEventListener("touchstart", (e) => {
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; arrastrando = false;
+      pista.style.transition = "none";
     }, { passive: true });
-    envoltura.addEventListener("touchend", (e) => {
+    ventana.addEventListener("touchmove", (e) => {
       if (x0 == null) return;
+      const dx = e.touches[0].clientX - x0;
+      const dy = e.touches[0].clientY - y0;
+      if (!arrastrando && Math.abs(dx) < Math.abs(dy)) { x0 = null; pista.style.transition = ""; return; }
+      if (Math.abs(dx) > 6) arrastrando = true;
+      if (!arrastrando) return;
+      // En las puntas el arrastre va a la mitad: se siente el tope sin trabarse.
+      const enLaPunta = (ofertaMirando === 0 && dx > 0) || (ofertaMirando === lista.length - 1 && dx < 0);
+      const corrido = enLaPunta ? dx / 2 : dx;
+      pista.style.transform = "translateX(calc(" + (-ofertaMirando * 100) + "% + " + corrido + "px))";
+    }, { passive: true });
+    ventana.addEventListener("touchend", (e) => {
+      pista.style.transition = "";
+      if (x0 == null || !arrastrando) { x0 = null; acomodarPista(true); return; }
       const dx = e.changedTouches[0].clientX - x0;
-      const dy = e.changedTouches[0].clientY - y0;
       x0 = null;
-      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
-      irAOferta(ofertaMirando + (dx < 0 ? 1 : -1));
+      // Un cuarto del ancho alcanza para pasar: pedir la mitad se siente duro.
+      const salto = ventana.getBoundingClientRect().width / 4;
+      if (Math.abs(dx) > salto) irAOferta(ofertaMirando + (dx < 0 ? 1 : -1));
+      else acomodarPista(true);
     }, { passive: true });
 
     const puntos = document.createElement("div");
@@ -1671,12 +1741,25 @@ function cajaDeOferta() {
   return envoltura;
 }
 
+/* Pone la fila donde corresponde. Con `suave` va animado; sin, de una (al
+   dibujar de nuevo, para que no se vea deslizar sola). */
+function acomodarPista(suave) {
+  if (!pistaDeOfertas) return;
+  pistaDeOfertas.style.transition = suave ? "" : "none";
+  pistaDeOfertas.style.transform = "translateX(" + (-ofertaMirando * 100) + "%)";
+  if (!suave) { void pistaDeOfertas.offsetWidth; pistaDeOfertas.style.transition = ""; }
+}
+
 /* Da la vuelta sola: de la ultima vuelve a la primera y al reves. */
 function irAOferta(i) {
   const n = ofertasDeHoy().length;
   if (!n) return;
   ofertaMirando = ((i % n) + n) % n;
-  dibujarArriba();
+  acomodarPista(true);
+  // Los puntitos se actualizan sin volver a dibujar todo: si se redibujara,
+  // la fila se armaria de nuevo y no se veria el deslizamiento.
+  const ps = document.querySelectorAll(".ofertaPunto");
+  ps.forEach((p, k) => p.classList.toggle("esta", k === ofertaMirando));
 }
 
 function unaOferta(o) {
