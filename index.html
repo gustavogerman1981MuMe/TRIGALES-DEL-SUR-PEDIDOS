@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="39">
+<meta name="tds-pagina" content="40">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -405,6 +405,29 @@
   /* LA OFERTA DE LA SEMANA. Es lo primero que se ve y tiene que gritar un
      poco, pero sin salirse del papel madera del resto de la pagina. */
   /* LA OFERTA: chica, arriba de todo, sin comerse la pantalla. */
+  /* EL CARRUSEL DE OFERTAS. Una caja a la vez y tres puntitos abajo.
+     (2026-09-23, pedido del dueno.) */
+  .ofertaCarrusel{ margin-top:10px }
+  .ofertaCarrusel .ofertaCaja{ margin-top:0 }
+  .ofertaPuntos{ display:flex; justify-content:center; gap:7px; padding:8px 0 0 }
+  .ofertaPunto{
+    width:7px; height:7px; padding:0; border-radius:50%;
+    border:0; background:var(--linea2);
+  }
+  .ofertaPunto.esta{ background:var(--sello); width:18px; border-radius:4px }
+
+  /* LA VENCIDA NO SE BORRA: SE APAGA. Queda para que el cliente vea que
+     tipo de ofertas hacemos, pero sin poder pedirse. El marco y el precio
+     pierden el color: si siguiera dorada parecería que todavia vale.
+     (2026-09-23: "se queda color atenuada, no se puede usar".) */
+  .ofertaCaja.vencida{
+    border-color:var(--linea); background:none; opacity:.72;
+  }
+  .ofertaCaja.vencida .ofertaTitulo,
+  .ofertaCaja.vencida .ofertaPrecio,
+  .ofertaCaja.vencida .ofertaSolo{ color:var(--nohay) }
+  .ofertaCaja.vencida .ofertaPrecio{ text-decoration:line-through }
+
   .ofertaCaja{
     border:2px solid var(--sello); border-radius:10px;
     background:var(--sello-suave);
@@ -774,27 +797,46 @@ let ART = [];
 let listaDe = null;      // cuando se genero la lista que estamos viendo
 let listaPropia = false; // true si se pudo bajar la de verdad
 
-/* LA OFERTA DE LA SEMANA. Viene adentro del mismo archivo de la lista.
-   Se guarda en el telefono para que siga estando si un dia abre sin senal, y
-   se descarta sola cuando pasa la fecha. */
-let oferta = null;
+/* LAS OFERTAS. Vienen adentro del mismo archivo de la lista, y se guardan en
+   el telefono para que sigan estando si un dia abre sin senal.
 
-function guardarOferta(o) {
-  oferta = o || null;
-  guardar("tds_oferta", oferta);
+   DESDE EL 2026-09-23 SON HASTA TRES y pasan como un carrusel. El archivo
+   puede traer las dos formas y las dos tienen que andar:
+     - `ofertas`: la lista (lo que manda el programa nuevo);
+     - `oferta`:  una sola (lo que manda un programa que no se actualizo).
+
+   UNA VENCIDA NO DESAPARECE. Se ve apagada y no se puede pedir, hasta que el
+   dueno cargue otra en su lugar: "se la perdio, pero que vea que tipo de
+   ofertas hacemos". Por eso el vencimiento ya NO filtra aca -- solo marca. */
+let ofertas = [];
+let ofertaMirando = 0;   // cual de las tres se esta viendo
+
+function guardarOfertas(lista) {
+  ofertas = Array.isArray(lista) ? lista.filter(Boolean) : [];
+  guardar("tds_ofertas", ofertas);
+  if (ofertaMirando >= ofertas.length) ofertaMirando = 0;
 }
 
-function ofertaDeHoy() {
-  const o = oferta || leer("tds_oferta", null);
-  if (!o || !o.nombre || !(o.precio > 0)) return null;
-  if (o.hasta) {
-    // AAAA-MM-DD contra AAAA-MM-DD, como texto: no hay forma de que el huso
-    // horario del telefono corra la fecha un dia.
-    const h = new Date();
-    const hoy = h.getFullYear() + "-" + String(h.getMonth() + 1).padStart(2, "0") + "-" + String(h.getDate()).padStart(2, "0");
-    if (String(o.hasta) < hoy) return null;
+function hoyYMD() {
+  // AAAA-MM-DD contra AAAA-MM-DD, como texto: no hay forma de que el huso
+  // horario del telefono corra la fecha un dia.
+  const h = new Date();
+  return h.getFullYear() + "-" + String(h.getMonth() + 1).padStart(2, "0") + "-" + String(h.getDate()).padStart(2, "0");
+}
+
+function estaVencida(o) {
+  return !!(o && o.hasta && String(o.hasta) < hoyYMD());
+}
+
+/* Las que se pueden mostrar. Se lee lo guardado por si abrio sin senal, y se
+   acepta tambien el formato viejo de una sola. */
+function ofertasDeHoy() {
+  let lista = ofertas.length ? ofertas : leer("tds_ofertas", null);
+  if (!Array.isArray(lista) || !lista.length) {
+    const una = leer("tds_oferta", null);   // lo guardado a la vieja
+    lista = una ? [una] : [];
   }
-  return o;
+  return lista.filter((o) => o && o.nombre && o.precio > 0).slice(0, 3);
 }
 
 /* LA MARCA DE CADA ARTICULO.
@@ -931,7 +973,9 @@ async function bajarLista() {
     if (!Array.isArray(arts) || !arts.length) throw new Error("lista vacia");
     cargarLista(arts, j && j.generado);
     // Si el negocio saco la oferta, `j.oferta` no viene y la caja desaparece.
-    guardarOferta(j && j.oferta ? j.oferta : null);
+    // `ofertas` es lo nuevo; `oferta` es lo que manda un programa sin
+    // actualizar. Se acepta lo que venga.
+    guardarOfertas(j && Array.isArray(j.ofertas) ? j.ofertas : (j && j.oferta ? [j.oferta] : []));
     listaPropia = true;
     return true;
   } catch (e) {
@@ -1579,26 +1623,81 @@ function bloqueParecidos(a) {
 
 /* LA CAJA DE LA OFERTA. Adentro va la fila del articulo tal cual, con su
    boton Elegir: se agrega igual que cualquier otro, sin ningun camino nuevo. */
+/* EL CARRUSEL. Una caja a la vez, se corre con el dedo, y tres puntitos
+   abajo con el de la que se esta viendo prendido. Al llegar a la ultima,
+   vuelve a la primera. (2026-09-23, pedido del dueno: "como noticias, que es
+   lo que se puede leer hoy en cualquier pagina web".)
+
+   Con UNA sola oferta no hay puntitos ni nada que correr: se ve la caja de
+   siempre. */
 function cajaDeOferta() {
-  const o = ofertaDeHoy();
-  if (!o) return null;
+  const lista = ofertasDeHoy();
+  if (!lista.length) return null;
+  if (ofertaMirando >= lista.length) ofertaMirando = 0;
+
+  const envoltura = document.createElement("div");
+  envoltura.className = "ofertaCarrusel";
+  envoltura.appendChild(unaOferta(lista[ofertaMirando]));
+
+  if (lista.length > 1) {
+    // SE CORRE CON EL DEDO. Se mira solo el movimiento horizontal: si el
+    // dedo bajo mas de lo que se movio al costado, estaba scrolleando la
+    // pagina y no hay que robarle ese gesto.
+    let x0 = null, y0 = null;
+    envoltura.addEventListener("touchstart", (e) => {
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+    }, { passive: true });
+    envoltura.addEventListener("touchend", (e) => {
+      if (x0 == null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      const dy = e.changedTouches[0].clientY - y0;
+      x0 = null;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      irAOferta(ofertaMirando + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+
+    const puntos = document.createElement("div");
+    puntos.className = "ofertaPuntos";
+    lista.forEach((o, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "ofertaPunto" + (i === ofertaMirando ? " esta" : "");
+      b.setAttribute("aria-label", "Oferta " + (i + 1) + " de " + lista.length);
+      b.onclick = () => irAOferta(i);
+      puntos.appendChild(b);
+    });
+    envoltura.appendChild(puntos);
+  }
+  return envoltura;
+}
+
+/* Da la vuelta sola: de la ultima vuelve a la primera y al reves. */
+function irAOferta(i) {
+  const n = ofertasDeHoy().length;
+  if (!n) return;
+  ofertaMirando = ((i % n) + n) % n;
+  dibujarArriba();
+}
+
+function unaOferta(o) {
   const art = ART.find(a => a.id === o.articuloId);
+  const vencida = estaVencida(o);
 
   const caja = document.createElement("section");
-  caja.className = "ofertaCaja";
+  caja.className = "ofertaCaja" + (vencida ? " vencida" : "");
 
   /* EL ROTULO Y LA FECHA, EN UN SOLO RENGLON. */
   const titulo = document.createElement("div");
   titulo.className = "ofertaTitulo";
   const rot = document.createElement("span");
-  rot.textContent = "Oferta de la semana";
+  rot.textContent = vencida ? "Oferta que hicimos" : "Oferta de la semana";
   titulo.appendChild(rot);
   if (o.hasta) {
     const pp = String(o.hasta).split("-");
     if (pp.length === 3) {
       const f = document.createElement("span");
       f.className = "ofertaHasta";
-      f.textContent = "hasta el " + pp[2] + "/" + pp[1];
+      f.textContent = (vencida ? "terminó el " : "hasta el ") + pp[2] + "/" + pp[1];
       titulo.appendChild(f);
     }
   }
@@ -1651,7 +1750,15 @@ function cajaDeOferta() {
      Y entra DE UNA la cantidad minima: si la oferta dice "llevando 5 o mas" y
      entrara 1, el cliente se llevaria una sola creyendo que le hacen el precio
      de oferta, y se entera en el mostrador. */
-  if (art && art.hay) {
+  /* UNA VENCIDA NO SE PUEDE PEDIR. Queda a la vista para que el cliente sepa
+     que tipo de ofertas hacemos, pero sin boton: dejarselo tocar y cobrarle
+     el precio de lista despues seria peor que no mostrarla. */
+  if (vencida) {
+    const sin = document.createElement("span");
+    sin.className = "ofertaSinStock";
+    sin.textContent = "ya terminó";
+    abajo.appendChild(sin);
+  } else if (art && art.hay) {
     const cuantos = Math.max(1, Number(o.desdeCuantos) || 1);
     const b = document.createElement("button");
     b.type = "button";
