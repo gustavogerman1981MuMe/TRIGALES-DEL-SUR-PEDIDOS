@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="54">
+<meta name="tds-pagina" content="55">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -790,10 +790,11 @@
   }
   .llaves button.on{background:var(--sello); color:var(--sello-t)}
   .llaves button.onPres{background:var(--trigo); color:#241C0B}
-  /* El presupuesto NO sale por el verde de WhatsApp: el verde es el pedido
-     de verdad, el que mueve mercaderia. Un color, un significado. */
-  .btn.esWhatsApp.pres{background:var(--trigo); color:#241C0B}
-  .btn.esWhatsApp.pres:disabled{background:var(--linea); color:var(--tinta2)}
+  /* EL BOTON DE MANDAR SIEMPRE ES VERDE, sea pedido o presupuesto.
+     Lo habia puesto dorado para el presupuesto y el dueno lo corrigio el
+     2026-09-24: el verde es el de WhatsApp, y eso es lo que hace el boton
+     -- abrir WhatsApp. El dorado queda solo para la TECLA de arriba, que
+     es la que elige que se manda. */
   .campo{display:flex; flex-direction:column; gap:5px}
   .campo label{font-size:11px; color:var(--tinta2)}
   .campo input{
@@ -2476,7 +2477,6 @@ function pintarModoEnvio() {
   $("#esPedido").className = esPresupuesto ? "" : "on";
   $("#esPresupuesto").className = esPresupuesto ? "onPres" : "";
   const b = $("#enviar");
-  b.classList.toggle("pres", esPresupuesto);
   b.querySelector("span").textContent = esPresupuesto
     ? "Pedir el presupuesto por WhatsApp"
     : "Enviar el pedido por WhatsApp";
