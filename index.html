@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="46">
+<meta name="tds-pagina" content="49">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -365,9 +365,29 @@
   .mas:disabled{background:transparent; color:var(--nohay); border:1.5px dashed var(--linea2); font-size:11px; font-weight:700; letter-spacing:.06em}
 
   /* PASO 2: el campo de cantidad y el boton de confirmar. */
+  /* MENOS, CAMPO Y MAS: UNA SOLA PIEZA.
+     Antes el renglon tenia un boton "Elegir" y recien despues aparecia el
+     campo. Ahora el campo esta siempre y se carga todo junto con el boton
+     de abajo. (2026-09-24, pedido del dueno.) */
   .ponerCant{
-    flex:0 0 auto; display:flex; align-items:center; gap:7px;
+    flex:0 0 auto; display:flex; align-items:center; gap:0;
+    border:1.5px solid var(--linea2); border-radius:8px; overflow:hidden;
+    background:var(--papel2);
   }
+  .ponerCant button{
+    width:32px; height:35px; padding:0; border:0;
+    background:none; color:var(--tinta2);
+    font-size:17px; font-weight:700; line-height:1;
+  }
+  /* MARCADO = VERDE SUAVE. En toda la pagina el verde quiere decir "esto va
+     a tu pedido": el renglon ya cargado lleva la barrita verde y el "✓ en tu
+     pedido". Marcar es la antesala de eso, asi que es el mismo verde pero
+     mas flojo -- SOLO en el control, no en el renglon entero, para que no se
+     confunda con uno que YA esta cargado. (2026-09-24, pedido del dueno:
+     "cuando los marcas vos con el dedo se pintan de verde, suave".) */
+  .fila.eligiendo .ponerCant{ border-color:var(--hay); background:var(--hay-suave) }
+  .fila.eligiendo .ponerCant button{ color:var(--hay) }
+  .fila.eligiendo .ponerCant input{ color:var(--hay) }
   /* EL CAMPO DE LA CANTIDAD. Tres cosas que NO se pueden cambiar:
 
      1) LA LETRA VA EN 16px O MAS. Abajo de 16, el iPhone HACE ZOOM SOLO al
@@ -384,12 +404,12 @@
         distinto de la pantalla, y es justo lo que escribe el.
         (Idea del dueno.) */
   .ponerCant input{
-    width:52px; height:37px; text-align:center;
-    border:1.5px solid var(--linea2); border-radius:8px;
-    background:var(--papel2); color:var(--tinta);
+    width:42px; height:35px; text-align:center;
+    border:0; background:none; color:var(--tinta);
     font-family:"IBM Plex Mono",monospace; font-size:16px; font-weight:700; padding:0;
   }
-  .ponerCant input:focus{ border-color:var(--sello); outline:none }
+  .ponerCant input:focus{ outline:none }
+  .ponerCant input::placeholder{ color:var(--linea2) }
   .okCant{
     height:37px; padding:0 10px; border:0; border-radius:8px;
     background:var(--sello); color:var(--sello-t);
@@ -402,8 +422,19 @@
      suspensivos nada se mueve -- y el nombre entero vuelve apenas agrega.
      El acaba de tocar ESE articulo: no necesita volver a leerlo entero. */
   .fila.eligiendo .nom{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+  /* La X que apaga un renglon prendido. No es un boton lleno: apagar no es
+     la accion principal, cargar si. */
+  .okCant.apagar{
+    background:none; color:var(--tinta2);
+    border:1.5px solid var(--linea2); padding:0 11px; font-size:16px;
+  }
+
+  /* El boton de abajo cuando pasa a ser "Cargar N". Va en el color de la
+     accion, igual que Elegir y Agregar: es la misma familia de cosa. */
+  .btn.cargar{ background:var(--sello); color:var(--sello-t) }
+
   .fila.eligiendo{
-    border-left:3px solid var(--sello); margin-left:-10px; padding-left:7px;
+    border-left:3px solid var(--hay); margin-left:-10px; padding-left:7px;
     background:linear-gradient(90deg, var(--sello-suave), transparent 60%);
   }
   .fila.eligiendo .nom{font-weight:700}
@@ -1245,7 +1276,14 @@ let verHistorial = false;   // los pedidos viejos se muestran solo si se piden
 let quien = leer("tds_quien", "");
 let demoSinStock = false;                        // para VER cómo queda algo sin stock
 let verParecidosDe = null;
-let eligiendo = null;      // el articulo que se esta por agregar
+/* LO QUE ESCRIBIO EN CADA RENGLON.
+
+   No hay un estado de "elegido" aparte: un renglon esta elegido SI TIENE UN
+   NUMERO ESCRITO. Un solo dato en vez de dos que se pueden contradecir.
+
+   Antes eran dos toques por articulo ("Elegir" y "Agregar") y solo uno a la
+   vez: para cargar cuatro de una marca, ocho toques. (2026-09-24.) */
+let cuantosPongo = {};   // id -> lo que escribio. Vacio = ese no va.
 let cuantoPongo = "";      // lo que se escribio; vacio = 1 (ver confirmar())
 let marcaAbierta = null;   // la marca que el toco a mano en el menu
 let plegados = leer("tds_plegados", { favoritos: false, historial: true });
@@ -1355,56 +1393,70 @@ function filaArticulo(a) {
     const b = document.createElement("button");
     b.className = "mas"; b.type = "button"; b.disabled = true; b.textContent = "no hay";
     fila.appendChild(b);
-  } else if (eligiendo === a.id) {
-    // PASO 2: ya lo eligio. Escribe cuanto y toca Agregar.
-    fila.classList.add("eligiendo");
+  } else if (cant == null) {
+    /* EL CAMPO DE CANTIDAD ESTA SIEMPRE. NO HAY BOTON "ELEGIR".
+
+       Antes eran dos toques por articulo: "Elegir" y despues "Agregar". Para
+       cargar cuatro de una marca, ocho toques. El dueno lo pidio asi
+       (2026-09-24): "se saca el boton ese de elegir, ya queda preestablecido
+       con poner la cantidad, no tengo que tocar elegir, y cargas con el boton
+       todo junto".
+
+       Un renglon con un numero escrito queda PRENDIDO (el borde dorado de
+       siempre). Abajo, la barra pasa a decir "Cargar 4". Un solo toque para
+       todos.
+
+       NO SE AGREGA NINGUN TILDE AL COSTADO: eso comia ancho del nombre, que
+       es lo que hay que leer. El propio numero escrito dice cuales van.
+
+       OJO: el campo VACIO ya no quiere decir "uno". Ahora quiere decir "este
+       no". Si quisiera decir uno, TODOS los renglones de la pantalla estarian
+       elegidos todo el tiempo. */
+    const prendido = String(cuantosPongo[a.id] || "").trim() !== "";
+    if (prendido) fila.classList.add("eligiendo");
+
     const caja = document.createElement("div");
     caja.className = "ponerCant";
 
     const inp = document.createElement("input");
-    inp.type = "text"; inp.inputMode = "decimal"; inp.value = cuantoPongo;
-    inp.id = "campoCantidad";
-    // VACIO, con el 1 palido de fondo. Antes venia con el "1" escrito y
-    // MARCADO, y el celular le dibujaba encima dos agarraderas azules enormes.
-    inp.placeholder = "1";
+    inp.type = "text"; inp.inputMode = "decimal";
+    inp.value = cuantosPongo[a.id] || "";
+    inp.dataset.para = a.id;
+    inp.placeholder = "0";
     inp.setAttribute("aria-label", "Cuánto de " + a.nombre);
-    inp.oninput = () => { cuantoPongo = inp.value; };
-    inp.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); confirmar(); } };
 
-    const ok = document.createElement("button");
-    ok.type = "button"; ok.className = "okCant"; ok.textContent = "Agregar";
-
-    function confirmar() {
-      // Sin escribir nada es UNO: es lo que se pide casi siempre, y asi se
-      // agrega de un solo toque.
-      const escrito = String(cuantoPongo).trim();
-      const n = escrito === "" ? 1 : parseFloat(escrito.replace(",", "."));
-      if (!isFinite(n) || n <= 0) { inp.focus(); return; }
-      carrito[a.id] = Math.round(n * 100) / 100;
-      eligiendo = null; cuantoPongo = "";
-      // EL BUSCADOR SE LIMPIA SOLO. (2026-09-23, pedido del dueno:
-      // "cuando ya te encontro el azucar, el campo de buscar puede quedar
-      //  vacio, para no tener que ir, borrar, y agilizar ese paso".)
-      //
-      // Se limpia SIN robarle el foco: en el celular, enfocar el campo le
-      // abre el teclado de golpe y le tapa media pantalla justo cuando
-      // quizas ya termino. Queda listo para escribir lo siguiente con un
-      // toque, y lo que acaba de agregar se ve arriba, en 'Tu pedido'.
-      limpiarBuscador();
-      persistir(); avisarQueEntro(); dibujar();
+    // Se prende o se apaga SIN volver a dibujar la lista: redibujar le sacaria
+    // el foco y le cerraria el teclado mientras escribe.
+    function anotar(v) {
+      const texto = String(v == null ? "" : v);
+      cuantosPongo[a.id] = texto;
+      inp.value = texto;
+      fila.classList.toggle("eligiendo", texto.trim() !== "");
+      actualizarBarra();
     }
-    ok.onclick = confirmar;
 
-    caja.append(inp, ok);
+    const menos = document.createElement("button");
+    menos.type = "button"; menos.textContent = "−";
+    menos.setAttribute("aria-label", "Menos " + a.nombre);
+    menos.onclick = () => {
+      const n = parseFloat(String(inp.value).replace(",", ".")) || 0;
+      // Llegar a cero es sacarlo: el campo queda vacio y el renglon se apaga.
+      anotar(n <= 1 ? "" : String(Math.round((n - 1) * 100) / 100).replace(".", ","));
+    };
+
+    const mas = document.createElement("button");
+    mas.type = "button"; mas.textContent = "+";
+    mas.setAttribute("aria-label", "Más " + a.nombre);
+    mas.onclick = () => {
+      const n = parseFloat(String(inp.value).replace(",", ".")) || 0;
+      anotar(String(Math.round((n + 1) * 100) / 100).replace(".", ","));
+    };
+
+    inp.oninput = () => anotar(inp.value);
+    inp.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); inp.blur(); cargarLosPrendidos(); } };
+
+    caja.append(menos, inp, mas);
     fila.appendChild(caja);
-  } else if (cant == null) {
-    // PASO 1: todavia no lo eligio.
-    const b = document.createElement("button");
-    b.className = "mas"; b.type = "button";
-    b.textContent = "Elegir";
-    b.setAttribute("aria-label", "Elegir " + a.nombre);
-    b.onclick = () => { eligiendo = a.id; cuantoPongo = ""; dibujar(); enfocarCantidad(); };
-    fila.appendChild(b);
   } else {
     fila.appendChild(stepper(a));
   }
@@ -1443,9 +1495,9 @@ function stepper(a) {
    celular le dibuja encima dos agarraderas azules gigantes que tapan el campo:
    el dueno lo vio en su iPhone y pidio sacarlas. Como ahora el campo arranca
    vacio, no hace falta marcar nada para reemplazarlo. (2026-09-23.) */
-function enfocarCantidad() {
+function enfocarCantidad(id) {
   setTimeout(() => {
-    const i = document.getElementById("campoCantidad");
+    const i = document.querySelector('.ponerCant input[data-para="' + id + '"]');
     if (i) i.focus();
   }, 30);
 }
@@ -1922,7 +1974,6 @@ function unaOferta(o) {
     b.disabled = yaEsta;
     b.onclick = () => {
       carrito[art.id] = cuantos;
-      eligiendo = null;
       limpiarBuscador();
       persistir(); avisarQueEntro(); dibujar();
     };
@@ -2159,12 +2210,82 @@ function limpiarBuscador() {
   verParecidosDe = null;
 }
 
+/* LA BARRA DE ABAJO HACE DOS TRABAJOS, NUNCA LOS DOS A LA VEZ.
+
+   - Si hay articulos PRENDIDOS esperando cantidad, dice "Cargar 4" y los
+     carga a todos de un toque.
+   - Si no hay ninguno prendido, vuelve a ser "Ver pedido", como siempre.
+
+   Asi no se agrega ningun boton nuevo a la pantalla, que es lo que pidio
+   el dueno: "el unico boton que se agrega es cargar todos". Y mientras
+   estas eligiendo, lo unico que podes hacer abajo es cargar -- que es
+   justo lo que estabas haciendo. (2026-09-24.) */
 function actualizarBarra() {
+  const prendidos = losPrendidos().length;
   const ids = Object.keys(carrito);
   const n = ids.length;
+  const b = $("#verPedido");
+
+  if (prendidos > 0) {
+    $("#cuenta").textContent = prendidos === 1 ? "1 artículo elegido" : prendidos + " artículos elegidos";
+    $("#subcuenta").textContent = "Poné cuánto de cada uno y cargalos juntos";
+    b.textContent = prendidos === 1 ? "Cargar 1" : "Cargar los " + prendidos;
+    b.disabled = false;
+    b.classList.add("cargar");
+    b.onclick = cargarLosPrendidos;
+    return;
+  }
+
+  /* SI HAY RENGLONES PARA CARGAR, LA BARRA LO DICE. Sin esto nadie
+     descubre que se pueden marcar varios y cargarlos juntos: el dueno lo
+     marco -- "en algun lado tiene que decir que se puede cargar mas de
+     uno, si no no van a saber". (2026-09-24.) */
+  const hayParaCargar = document.querySelectorAll("#main .ponerCant").length > 0;
   $("#cuenta").textContent = n ? (n === 1 ? "1 artículo" : n + " artículos") : "Tu pedido está vacío";
-  $("#subcuenta").textContent = n ? "Seguí agregando, o revisalo y enviá" : "Buscá, tocá Elegir y después Agregar";
-  $("#verPedido").disabled = !n;
+  $("#subcuenta").textContent = hayParaCargar
+    ? "Poné cuánto en los que quieras y cargalos todos juntos"
+    : (n ? "Seguí agregando, o revisalo y enviá" : "Buscá un artículo y poné cuánto");
+  b.textContent = "Ver pedido";
+  b.disabled = !n;
+  b.classList.remove("cargar");
+  b.onclick = abrirHoja;
+}
+
+/* CARGA TODOS LOS PRENDIDOS DE UNA.
+
+   Sin escribir nada es UNO: es lo que se pide casi siempre. Un numero mal
+   escrito (letras, cero, negativo) NO se carga y NO se apaga: queda
+   prendido para que lo corrija. Perderlo en silencio seria hacerle un
+   pedido incompleto. */
+/* Los que tienen algo escrito. No hay otro estado: lo escrito ES la
+   eleccion. */
+function losPrendidos() {
+  return Object.keys(cuantosPongo).filter((id) => String(cuantosPongo[id] || "").trim() !== "");
+}
+
+function cargarLosPrendidos() {
+  const prendidos = losPrendidos();
+  if (!prendidos.length) return;
+  const quedanMal = [];
+  let entraron = 0;
+  for (const id of prendidos) {
+    const n = parseFloat(String(cuantosPongo[id]).trim().replace(",", "."));
+    if (!isFinite(n) || n <= 0) { quedanMal.push(id); continue; }
+    carrito[id] = Math.round(n * 100) / 100;
+    delete cuantosPongo[id];
+    entraron++;
+  }
+  if (!entraron) {
+    // Ninguno servia: se le deja el foco en el primero que esta mal.
+    enfocarCantidad(quedanMal[0]);
+    return;
+  }
+  /* EL BUSCADOR SE LIMPIA SOLO. (2026-09-23, pedido del dueno: "cuando ya
+     te encontro el azucar, el campo de buscar puede quedar vacio".)
+     Pero NO si quedo alguno mal escrito: ahi tiene que seguir viendo la
+     lista donde estaba para poder corregirlo. */
+  if (!quedanMal.length) limpiarBuscador();
+  persistir(); avisarQueEntro(); dibujar();
 }
 
 /* Al agregar, la barra de abajo parpadea una vez: el ojo va ahi y ve que el
@@ -2214,7 +2335,8 @@ function armarMensaje() {
   return l.join("\n");
 }
 
-$("#verPedido").onclick = abrirHoja;
+/* Que hace el boton de abajo lo decide actualizarBarra(): a veces es "Ver
+   pedido" y a veces "Cargar N". */
 $("#vaciarPedido").onclick = () => {
   if (!Object.keys(carrito).length) return;
   // Nunca se tira un pedido sin preguntar.
@@ -2230,7 +2352,9 @@ $("#velo").onclick = cerrarHoja;
 $("#quien").oninput = (e) => { quien = e.target.value; guardar("tds_quien", quien); mirarSiPuedeEnviar(); };
 $("#limpiar").onclick = () => { q.value = ""; q.focus(); dibujar(); };
 q.oninput = () => {
-  verParecidosDe = null; eligiendo = null;
+  // Al buscar otra cosa se apagan los prendidos: la lista de abajo cambia,
+  // asi que dejarlos prendidos seria cargar algo que ya no se ve.
+  verParecidosDe = null; cuantosPongo = {};
   // Escribir cierra el menu de marcas y suelta la marca elegida: ya esta
   // buscando a mano, no mirando una marca.
   marcaElegida = null;
