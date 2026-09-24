@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="58">
+<meta name="tds-pagina" content="59">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -329,9 +329,19 @@
   .rotulo.tocable{
     width:100%; background:none; border:0; padding:0; font-family:inherit;
     color:var(--tinta); font-weight:700; text-align:left;
+    /* MAS GRANDE QUE UN ROTULO SUELTO, porque este SE TOCA. Con los 11 px del
+       rotulo comun quedaba desproporcionado contra todo lo demas de la
+       pantalla y la flechita casi no se veia. El dueno, 2026-09-24: "el icono
+       muy chiquitito, el de la flechita para la derecha y para abajo, y la
+       tipografia muy chiquita, un poco mas grande". */
+    font-size:12.5px; letter-spacing:.11em;
   }
   .rotulo .flecha{color:var(--sello); font-size:11px; letter-spacing:0; flex:0 0 auto}
   .rotulo .cuantos{color:var(--tinta2); font-weight:400; letter-spacing:0; flex:0 0 auto}
+  /* En el que se toca, la flecha va mas grande TODAVIA: es el unico dibujo del
+     renglon y es lo que dice si la seccion esta abierta o cerrada. */
+  .rotulo.tocable .flecha{font-size:15px; line-height:1}
+  .rotulo.tocable .cuantos{font-size:12px}
 
   /* ---------- LISTA ---------- */
   main{flex:1; overflow-y:auto; padding:6px 16px 0; padding-bottom:104px; -webkit-overflow-scrolling:touch}
