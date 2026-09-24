@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="56">
+<meta name="tds-pagina" content="57">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -258,26 +258,65 @@
   .menuMarcas .cuantos{color:var(--tinta2); font-size:11px; font-weight:400; flex:0 0 auto}
 
 
-  /* MIENTRAS ESCRIBE, LA PANTALLA ES TODA PARA LA LISTA.
+  /* MIENTRAS ESCRIBE, LO UNICO QUE SE VA ES EL TITULO.
 
-     Este era EL problema: con el teclado abierto, entre la oferta y las
-     teclas quedaba un renglon y medio, y habia que tocar Enter para bajar el
-     teclado y recien ahi ver lo que se habia buscado.
+     HISTORIA, PORQUE ESTO CAMBIO DOS VECES Y CONVIENE NO VOLVER ATRAS SOLO:
 
-     Se van la oferta y el titulo. Vuelven solos al limpiar o al agregar el
-     articulo. La oferta el la quiere y se queda: solo se aparta mientras
-     hace falta el lugar. (2026-09-23, pedido del dueno.)
+     1. Al principio no se iba nada, y con el teclado abierto entre la oferta
+        y las teclas quedaba un renglon y medio de lista: habia que tocar
+        Enter para bajar el teclado y recien ahi ver lo que se habia buscado.
+     2. Entonces (2026-09-23) se escondian el titulo, la oferta Y los botones
+        del pedido mientras escribia.
+     3. Pero esconderlos deja al cliente sin salida: el que busca y no
+        encuentra se queda sin el boton de marcas y sin poder tocar la oferta
+        justo cuando los necesita. El dueno lo corrigio en dos pasos el
+        2026-09-24 -- primero "el buscador y las marcas siempre visibles", y
+        despues "la cajita de las promociones que quede siempre ahi para
+        poder seleccionar las promociones".
 
-     "ELEGIR POR MARCAS" NO SE VA MAS. Antes tambien se escondia, y era un
-     error: el que abre el buscador y no encuentra lo que escribio se queda
-     sin el otro camino justo cuando mas lo necesita. Tiene que poder saltar
-     de buscar a marcas sin borrar lo que escribio. (2026-09-24, el dueno:
-     "el buscador y las marcas siempre visibles, para que me de la opcion de
-     buscar por marcas tambien".) */
-  body[data-buscando] h1,
-  body[data-buscando] #ofertaArriba{ display:none }
-  /* Pegado al buscador, que el lugar mientras escribe es lo que se cuida. */
+     Asi que hoy queda arriba TODO lo que se toca -- oferta, buscador y
+     "Elegir por marcas" -- y se va solo el titulo, que no se toca. El lugar
+     perdido se compensa apretando los espacios de abajo. */
+  body[data-buscando] h1{ display:none }
   body[data-buscando] .barraPedido{ margin-top:8px }
+
+  /* LA OFERTA NO SE VA, PERO SE ACHICA.
+
+     Medido con el teclado abierto (390x400, un Android chico): el encabezado
+     entero mide 325 px y la pantalla 400, asi que de la lista NO SE VEIA NI
+     UN RENGLON -- y el encabezado es `sticky`, o sea que scrollear tampoco
+     ayudaba. Era volver al problema del 2026-09-23.
+
+     Asi que mientras escribe la oferta pasa a UN RENGLON: se va el rotulo
+     ("OFERTA DE LA SEMANA · HASTA EL 26/09"), la condicion y la aclaracion,
+     y quedan el nombre, el precio y el boton, en la misma linea. Se sigue
+     viendo y se sigue pudiendo tocar, que es lo que pidio el dueno; ocupa un
+     tercio. Al soltar el buscador vuelve entera sola. (2026-09-24.) */
+  body[data-buscando] .ofertaCarrusel{ margin-top:0 }
+  body[data-buscando] #ofertaArriba{ margin-top:2px }
+  body[data-buscando] .ofertaCaja{ padding:5px 9px; margin-top:0 }
+  body[data-buscando] .ofertaTitulo,
+  body[data-buscando] .ofertaCond,
+  body[data-buscando] .ofertaSolo{ display:none }
+  /* El nombre en un solo renglon: uno de dos lineas robaba otro renglon de
+     lista, que es justo lo que se esta cuidando. */
+  body[data-buscando] .ofertaNombre{
+    font-size:11.5px; line-height:1.25;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  /* Centrado, no apoyado en el piso: con una sola linea el `flex-end` de la
+     caja del carrusel dejaba el precio despegado del boton. */
+  body[data-buscando] .ofertaAbajo,
+  body[data-buscando] .ofertaPista > .ofertaCaja .ofertaAbajo{
+    margin-top:1px; align-items:center;
+  }
+  body[data-buscando] .ofertaPrecio{ font-size:15px; line-height:1.1 }
+  /* 30 px sigue siendo comodo para el dedo; abajo de eso no. */
+  body[data-buscando] .ofertaBoton{ height:30px; padding:0 12px; font-size:12.5px }
+  body[data-buscando] .ofertaBoton:disabled{ font-size:11px }
+  body[data-buscando] .ofertaPuntos{ padding:4px 0 0 }
+  body[data-buscando] .ofertaPunto{ width:5px; height:5px }
+  body[data-buscando] .ofertaPunto.esta{ width:13px }
 
   /* Al escribir, el buscador sube -- pero NO pegado al nombre. Con el margen
      en cero quedaba practicamente tocando "Trigales del Sur" y casi tapaba
@@ -2103,7 +2142,12 @@ function unaOferta(o) {
     b.disabled = yaEsta;
     b.onclick = () => {
       carrito[art.id] = cuantos;
-      limpiarBuscador();
+      // NO se limpia el buscador. Antes si: la oferta solo se podia tocar
+      // desde el inicio, con el buscador vacio, asi que limpiarlo no hacia
+      // nada. Desde que la oferta se ve TAMBIEN mientras escribe
+      // (2026-09-24), limpiarlo le borraria la palabra que estaba buscando
+      // por agregar una oferta, que es otra cosa. (Los renglones que tenga
+      // marcados no se tocan: dibujar() los vuelve a poner.)
       persistir(); avisarQueEntro(); dibujar();
     };
     abajo.appendChild(b);
