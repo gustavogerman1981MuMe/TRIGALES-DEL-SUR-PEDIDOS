@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="38">
+<meta name="tds-pagina" content="39">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -171,10 +171,24 @@
   @media (prefers-reduced-motion:reduce){ #refrescar.reciencambio{animation:none} }
   #refrescar:disabled{ opacity:.45 }
 
-  /* Entre la fila de botones y el titulo habia 2 px y quedaba pegado.
-     (2026-09-23: "arma tu pedido esta muy pegado a los botones, que baje
-     un poquitito".) */
-  h1{font-family:Archivo,sans-serif; font-weight:800; font-size:21px; margin:11px 0 0; letter-spacing:-.01em; text-wrap:balance}
+  /* "ARMA TU PEDIDO" VA COMO EL "GESTION" DEL PROGRAMA.
+
+     En la pantalla de arranque, abajo del nombre en Fraunces, dice GESTION
+     en IBM Plex Mono, en mayusculas, con las letras separadas y apagado. El
+     dueno mando la foto: "arma tu pedido usa la tipografia de GESTION, como
+     en la foto". (2026-09-23.)
+
+     Son los mismos numeros que usa el programa: 14px y 2.3px de separacion.
+     Eso lo baja de titulo grande a subtitulo -- que es lo que es: el que
+     manda en esta pantalla es el buscador, no el rotulo. Y de paso libera
+     alto, que es lo que siempre falta.
+
+     Entre la fila de botones y esto habia 2 px y quedaba pegado. */
+  h1{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-weight:400;
+    font-size:14px; letter-spacing:2.3px; text-transform:uppercase;
+    color:var(--tinta2); margin:12px 0 0; text-wrap:balance;
+  }
   /* EL BUSCADOR, DESPEGADO. Antes se confundia con el beige del fondo y todo
      parecia un solo bloque. (2026-09-23: "tiene que estar un poquito despegado
      del fondo, porque esta todo muy pegado".) */
