@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="31">
+<meta name="tds-pagina" content="32">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -92,9 +92,9 @@
      color del programa; el marco queda gris, porque si el marco tambien
      fuera dorado los tres le competirian a la oferta. */
   .btnTema{
-    flex:0 0 auto; width:27px; height:27px; padding:0;
-    border:1px solid var(--linea2); border-radius:8px;
-    background:var(--papel); color:var(--sello); font-size:14px; line-height:1;
+    flex:0 0 auto; width:31px; height:31px; padding:0;
+    border:1px solid var(--linea2); border-radius:9px;
+    background:var(--papel); color:var(--sello); font-size:16px; line-height:1;
     display:grid; place-items:center;
   }
   .btnTema svg{display:block}
@@ -107,7 +107,7 @@
      se alinean por el centro, y el nombre queda centrado de verdad porque
      los dos costados ocupan lo mismo. (2026-09-23, pedido del dueno.) */
   .marca{display:flex; align-items:center; justify-content:space-between; gap:8px}
-  .marca b{font-size:16px; letter-spacing:.07em; color:var(--ladrillo); white-space:nowrap; flex:0 0 auto}
+  .marca b{font-size:18.5px; letter-spacing:.06em; color:var(--ladrillo); white-space:nowrap; flex:0 0 auto}
   .ladoBarra{flex:1 1 0; display:flex; gap:6px; align-items:center; min-width:0}
   .ladoBarra.der{justify-content:flex-end}
 
@@ -149,7 +149,10 @@
   @media (prefers-reduced-motion:reduce){ #refrescar.reciencambio{animation:none} }
   #refrescar:disabled{ opacity:.45 }
 
-  h1{font-family:Archivo,sans-serif; font-weight:800; font-size:21px; margin:2px 0 0; letter-spacing:-.01em; text-wrap:balance}
+  /* Entre la fila de botones y el titulo habia 2 px y quedaba pegado.
+     (2026-09-23: "arma tu pedido esta muy pegado a los botones, que baje
+     un poquitito".) */
+  h1{font-family:Archivo,sans-serif; font-weight:800; font-size:21px; margin:11px 0 0; letter-spacing:-.01em; text-wrap:balance}
   /* EL BUSCADOR, DESPEGADO. Antes se confundia con el beige del fondo y todo
      parecia un solo bloque. (2026-09-23: "tiene que estar un poquito despegado
      del fondo, porque esta todo muy pegado".) */
@@ -614,7 +617,7 @@
            una flecha hacia arriba, que se lee como "subir algo", no como
            compartir. (2026-09-23, el dueno mando la imagen del que queria.) -->
       <button id="compartir" type="button" class="btnTema" aria-label="Compartir" title="Compartir">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/>
           <line x1="8.3" y1="13.3" x2="15.7" y2="17.7"/><line x1="15.7" y1="6.3" x2="8.3" y2="10.7"/>
         </svg>
@@ -623,7 +626,7 @@
     <b class="sello">Trigales del Sur</b>
     <div class="ladoBarra der">
       <button id="refrescar" type="button" class="btnTema" aria-label="Buscar la lista de hoy" title="Buscar la lista de hoy">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M20 11a8 8 0 10-2.3 5.7"/><path d="M20 4v7h-7"/>
         </svg>
       </button>
@@ -981,7 +984,7 @@ function aplicarTema(t) {
   if (oscuroAhora) {
     b.textContent = "☀";
   } else {
-    b.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">'
+    b.innerHTML = '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">'
       + '<path d="M20.7 14.3A8.6 8.6 0 019.7 3.3a1 1 0 00-1.3-1.2 10 10 0 1013.5 13.5 1 1 0 00-1.2-1.3z"/>'
       + '</svg>';
   }
