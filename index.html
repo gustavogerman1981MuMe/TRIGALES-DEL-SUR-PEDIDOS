@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="60">
+<meta name="tds-pagina" content="61">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -2362,10 +2362,10 @@ function dibujarArriba() {
   mar.type = "button";
   mar.className = "btnMarcas" + (menuMarcasAbierto ? " abierto" : "");
   mar.setAttribute("aria-expanded", String(menuMarcasAbierto));
-  /* "Marcas" solo no decia que se podia TOCAR ni para que servia. El dueno lo
-     cambio el 2026-09-24: "en vez de marcas solo, que se llame elegir por
-     marcas". */
-  mar.textContent = "Elegir por marcas";
+  /* Paso por "Elegir por marcas" (2026-09-24, "en vez de marcas solo, que se
+     llame elegir por marcas") y el mismo dia volvio a "Marcas": "quiero q en
+     la pagina de pedidos el boton elegir por marcas pongas Marcas con M". */
+  mar.textContent = "Marcas";
   mar.onclick = () => { menuMarcasAbierto = !menuMarcasAbierto; dibujar(); };
   barra.appendChild(mar);
 }
