@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="37">
+<meta name="tds-pagina" content="38">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -18,7 +18,7 @@
   [hidden]{ display:none !important; }
 </style>
 <title>Pedidos Trigales</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Fraunces:opsz,wght@9..144,700&family=Public+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
   :root{
     --papel:#F2EDE3; --papel2:#FBF8F2; --linea:#DCD2C1; --linea2:#C9BDA8;
@@ -114,7 +114,22 @@
      se alinean por el centro, y el nombre queda centrado de verdad porque
      los dos costados ocupan lo mismo. (2026-09-23, pedido del dueno.) */
   .marca{display:flex; align-items:center; justify-content:space-between; gap:8px}
-  .marca b{font-size:18.5px; letter-spacing:.06em; color:var(--ladrillo); white-space:nowrap; flex:0 0 auto}
+  /* EL NOMBRE, CON LA LETRA DEL PROGRAMA.
+
+     Es FRAUNCES, la misma que dice "Trigales del Sur" en la pantalla de
+     arranque del programa. Ahi va en minusculas y sin separar las letras,
+     asi que aca igual: en VERSALITAS separadas no se parece en nada aunque
+     sea la misma fuente. (2026-09-23, el dueno mando la foto de su
+     pantalla: "podes usar esa tipografia en la pagina de pedidos".)
+
+     El programa la lleva adentro (un .woff2 de 67 KB). La pagina la baja de
+     Google Fonts, que es el unico lugar de donde puede bajar una fuente. Si
+     no llegara, cae en Georgia: una serif parecida que todos tienen. */
+  .marca b{
+    font-family:Fraunces,Georgia,"Times New Roman",serif; font-weight:700;
+    font-size:21px; text-transform:none; letter-spacing:0;
+    color:var(--ladrillo); white-space:nowrap; flex:0 0 auto;
+  }
   .ladoBarra{flex:1 1 0; display:flex; gap:6px; align-items:center; min-width:0}
   .ladoBarra.der{justify-content:flex-end}
 
