@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="45">
+<meta name="tds-pagina" content="46">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -711,6 +711,15 @@
   }
   .hojaCuerpo .yaEsta{ display:none }
 
+  /* Texto chico y centrado, no un boton: lo que borra todo no se ofrece,
+     se deja disponible. Y en el color de aviso, para que se lea distinto
+     del verde de enviar. */
+  .vaciarPedido{
+    display:block; width:100%; background:none; border:0;
+    padding:10px 0 2px; font-family:inherit; font-size:12px;
+    color:var(--brasa); text-decoration:underline; text-underline-offset:3px;
+  }
+
   .quitar{background:none; border:0; color:var(--brasa); font-size:12px; padding:6px 0 0; text-decoration:underline; text-underline-offset:2px}
   .aviso{font-size:12.5px; color:var(--tinta2); line-height:1.45}
   .aviso.ok{color:var(--hay); font-weight:700}
@@ -812,6 +821,17 @@
       <span>Enviar el pedido por WhatsApp</span>
     </button>
     <p class="aviso" id="avisoEnvio">Se abre WhatsApp con el pedido ya escrito, al <span class="num">+54 9 11 5163-0039</span>. Vos solo tocás enviar.</p>
+    <!-- VACIAR EL PEDIDO VIVE ACA, Y ABAJO DE TODO.
+
+         Antes estaba arriba, pegado a "ocultar" y a "Ver pedido" -- dos que
+         se tocan todo el tiempo. Un dedo mal apoyado y se perdian diez
+         articulos. (2026-09-24, lo marco el dueno.)
+
+         Aca esta bien por tres motivos: se ve LO QUE SE VA A BORRAR justo
+         arriba, hay que abrir la hoja a proposito para llegar, y queda
+         despues de "Enviar", que es lo que uno viene a hacer. Ademas es
+         texto chico y no un boton: no compite con nada. -->
+    <button class="vaciarPedido" id="vaciarPedido" type="button">Vaciar el pedido y empezar de nuevo</button>
   </div>
 </section>
 
@@ -1990,17 +2010,20 @@ function cajaDeHistorial() {
 }
 
 /* EL PEDIDO QUE QUEDO A MEDIO ARMAR. Solo la primera vez que vuelve. */
+/* EL CARTEL DE "LO DEJASTE A MEDIAS" YA NO EXISTE.
+
+   Decia "esto es lo que habias empezado a armar y todavia no mandaste" y
+   traia su propio boton de borrar. Dos motivos para sacarlo:
+
+     1. Lo MISMO lo dice la caja "Tu pedido - N articulos", que esta
+        siempre a la vista arriba. Un cartel que repite lo que ya se ve es
+        un renglon menos de lista.
+     2. Traia OTRO boton de borrar todo, y justo ahi -- pegado a "ocultar"
+        -- es donde el dueno casi se borra el pedido.
+
+   El pedido sigue quedando cargado igual: eso no cambio. (2026-09-24.) */
 function avisoAMedias() {
-  if (!quedoAMedias || !Object.keys(carrito).length) return null;
-  const d = document.createElement("div");
-  d.className = "aMedias";
-  const txt = document.createElement("span");
-  txt.textContent = "Esto es lo que habías empezado a armar y todavía no mandaste.";
-  const b = document.createElement("button");
-  b.type = "button"; b.textContent = "Empezar de nuevo";
-  b.onclick = () => { carrito = {}; quedoAMedias = false; persistir(); dibujar(); };
-  d.append(txt, b);
-  return d;
+  return null;
 }
 
 /* LA OFERTA Y LOS DOS BOTONES VIVEN EN EL ENCABEZADO, no en la lista: asi la
@@ -2027,31 +2050,17 @@ function dibujarArriba() {
   const barra = $("#barraPedido");
   barra.innerHTML = "";
 
-  const hayAlgo = Object.keys(carrito).length > 0;
 
-  /* "EMPEZAR DE NUEVO" SOLO SI HAY ALGO QUE BORRAR.
 
-     Antes estaba siempre, y con el pedido vacio era un boton MUERTO: lo
-     tocabas y no pasaba nada, porque no habia nada que vaciar. Un boton
-     que no hace nada ensena que los botones no hacen nada.
-     (2026-09-23, lo marco el dueno.)
+  /* "EMPEZAR DE NUEVO" YA NO VIVE ACA ARRIBA.
 
-     Y se llama por lo que hace: vaciar lo cargado. "Nuevo pedido" con el
-     pedido ya vacio no queria decir nada. */
-  if (hayAlgo) {
-    const nuevo = document.createElement("button");
-    nuevo.type = "button";
-    nuevo.className = "btnNuevo";
-    nuevo.textContent = "Empezar de nuevo";
-    nuevo.onclick = () => {
-      /* Nunca se tira un pedido a medio armar sin preguntar. */
-      if (!confirmarVaciar()) return;
-      carrito = {};
-      quedoAMedias = false;
-      persistir(); dibujar();
-    };
-    barra.appendChild(nuevo);
-  }
+     Estaba pegado a "ocultar" y a "Ver pedido", que son dos que se tocan
+     todo el tiempo. Un boton que BORRA EL PEDIDO ENTERO no puede estar
+     al lado de dos que se tocan seguido: un dedo mal apoyado y perdes
+     diez articulos. El dueno lo marco el 2026-09-24.
+
+     Ahora esta adentro de la hoja "Ver pedido", que es donde se ve LO QUE
+     SE VA A BORRAR. Nadie vacia un pedido sin mirarlo antes. */
 
   /* "Pedidos anteriores" ya NO esta aca: paso a ser un titulo que se toca,
      adentro de la lista, junto con "Lo que mas pedis". Si quedara tambien
@@ -2206,6 +2215,16 @@ function armarMensaje() {
 }
 
 $("#verPedido").onclick = abrirHoja;
+$("#vaciarPedido").onclick = () => {
+  if (!Object.keys(carrito).length) return;
+  // Nunca se tira un pedido sin preguntar.
+  if (!confirmarVaciar()) return;
+  carrito = {};
+  quedoAMedias = false;
+  persistir();
+  cerrarHoja();
+  dibujar();
+};
 $("#cerrarHoja").onclick = cerrarHoja;
 $("#velo").onclick = cerrarHoja;
 $("#quien").oninput = (e) => { quien = e.target.value; guardar("tds_quien", quien); mirarSiPuedeEnviar(); };
