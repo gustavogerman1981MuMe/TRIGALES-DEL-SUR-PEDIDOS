@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="59">
+<meta name="tds-pagina" content="60">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -338,9 +338,15 @@
   }
   .rotulo .flecha{color:var(--sello); font-size:11px; letter-spacing:0; flex:0 0 auto}
   .rotulo .cuantos{color:var(--tinta2); font-weight:400; letter-spacing:0; flex:0 0 auto}
-  /* En el que se toca, la flecha va mas grande TODAVIA: es el unico dibujo del
-     renglon y es lo que dice si la seccion esta abierta o cerrada. */
-  .rotulo.tocable .flecha{font-size:15px; line-height:1}
+  /* La flecha del que se toca: el triangulo LLENO a 12 px pinta 11 px de
+     tinta, apenas mas que los 9 px de una letra del titulo. (Medido, no a
+     ojo: el triangulito chico "▾" pintaba 5.) Se gira para abrir, asi los
+     dos estados miden igual. */
+  .rotulo.tocable .flecha{
+    font-size:12px; line-height:1; display:inline-block;
+    transform-origin:50% 50%;
+  }
+  .rotulo.tocable .flecha.abierta{transform:rotate(90deg)}
   .rotulo.tocable .cuantos{font-size:12px}
 
   /* ---------- LISTA ---------- */
@@ -1709,8 +1715,17 @@ function rotuloPlegable(clave, texto, cuantos) {
   const b = document.createElement("button");
   b.type = "button"; b.className = "rotulo sello tocable";
   b.setAttribute("aria-expanded", String(abierto));
+  /* UN SOLO TRIANGULO, GIRADO. Antes eran dos simbolos distintos, "▾" y "▸",
+     y son los triangulos CHICOS del tipo: a 15 px pintaban apenas 5 px de
+     tinta, contra los 9 px de una letra del titulo -- por eso se veian
+     diminutos aunque el font-size dijera otra cosa (el dueno lo marco dos
+     veces, 2026-09-24). El lleno "▶" a 12 px pinta 11 px, que es lo que
+     corresponde al lado de esas letras.
+     Y va el MISMO glifo para los dos estados, girado con CSS: asi abierto y
+     cerrado miden exactamente igual. Con dos simbolos distintos no: "▼" y
+     "▶" pintan 11 y 14 px al mismo tamano, y el salto se nota al abrir. */
   const f = document.createElement("span");
-  f.className = "flecha"; f.textContent = abierto ? "▾" : "▸";
+  f.className = "flecha" + (abierto ? " abierta" : ""); f.textContent = "▶";
   const t = document.createElement("span"); t.textContent = texto;
   const c = document.createElement("span"); c.className = "cuantos"; c.textContent = cuantos;
   b.append(f, t, c);
