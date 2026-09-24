@@ -1,6 +1,6 @@
 {
   "name": "Pedidos Trigales del Sur",
-  "short_name": "Pedidos Trigales",
+  "short_name": "Pedidos TDS",
   "description": "Armá tu pedido y mandalo por WhatsApp.",
   "start_url": "./",
   "scope": "./",
