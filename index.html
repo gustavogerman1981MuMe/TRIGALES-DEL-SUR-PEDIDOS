@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="57">
+<meta name="tds-pagina" content="58">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -1448,6 +1448,30 @@ let marcaAbierta = null;   // la marca que el toco a mano en el menu
 let plegados = leer("tds_plegados", { favoritos: false, historial: true });
 let plegado = leer("tds_plegado", false);
 
+/* MIENTRAS ESTA ELIGIENDO, "TU PEDIDO" VA RESUMIDO.
+   ------------------------------------------------
+   Con una marca abierta o algo buscado, la pantalla es para los productos que
+   todavia no cargo. El pedido que ya lleva se muestra en UN renglon ("Tu
+   pedido · 3 artículos") y los renglones se guardan. Al salir de la lista se
+   abre solo, como estaba. El dueno, 2026-09-24: "una vez que estoy cargando
+   necesito espacio para ver los productos; luego cuando salgo de ahi, se abre
+   el pedido".
+
+   Igual lo puede abrir a mano con "mostrar". Eso NO se guarda: vale para la
+   lista que esta mirando, y aca queda con QUE busqueda lo abrio -- asi al
+   cambiar de marca o de palabra se vuelve a resumir solo, sin tener que
+   acordarse de apagarlo en cada camino que cambia la lista. */
+let loQueVaAbiertoEn = null;
+function estaEligiendoDeUnaLista() {
+  // Elegir una marca escribe su nombre en el buscador, asi que con mirar el
+  // texto alcanza para los dos casos.
+  return q.value.trim() !== "";
+}
+function loQueVaVaPlegado() {
+  if (!estaEligiendoDeUnaLista()) return plegado;
+  return loQueVaAbiertoEn !== q.value.trim();
+}
+
 const $ = (s) => document.querySelector(s);
 const main = $("#main"), q = $("#q");
 
@@ -1696,22 +1720,34 @@ function dibujarLoQueVaPidiendo() {
   const items = ART.filter((a) => carrito[a.id] != null);
   if (!items.length) return;
 
+  const plegadoAhora = loQueVaVaPlegado();
+  const enUnaLista = estaEligiendoDeUnaLista();
+
   const caja = document.createElement("div");
-  caja.className = "loQueVa" + (plegado ? " plegado" : "");
+  caja.className = "loQueVa" + (plegadoAhora ? " plegado" : "");
 
   const top = document.createElement("button");
   top.type = "button"; top.className = "loQueVaTop";
-  top.setAttribute("aria-expanded", String(!plegado));
+  top.setAttribute("aria-expanded", String(!plegadoAhora));
   const t1 = document.createElement("span");
   t1.className = "sello";
   t1.textContent = "Tu pedido \u00b7 " + items.length + (items.length === 1 ? " art\u00edculo" : " art\u00edculos");
   const t2 = document.createElement("span");
-  t2.className = "flecha"; t2.textContent = plegado ? "mostrar" : "ocultar";
+  t2.className = "flecha"; t2.textContent = plegadoAhora ? "mostrar" : "ocultar";
   top.append(t1, t2);
-  top.onclick = () => { plegado = !plegado; guardar("tds_plegado", plegado); dibujar(); };
+  top.onclick = () => {
+    if (enUnaLista) {
+      // Solo para la lista que esta mirando: no se guarda.
+      loQueVaAbiertoEn = plegadoAhora ? q.value.trim() : null;
+    } else {
+      plegado = !plegado;
+      guardar("tds_plegado", plegado);
+    }
+    dibujar();
+  };
   caja.appendChild(top);
 
-  if (!plegado) {
+  if (!plegadoAhora) {
     items.forEach((a) => {
       const l = document.createElement("div");
       l.className = "loQueVaFila";
