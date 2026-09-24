@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="53">
+<meta name="tds-pagina" content="54">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -692,25 +692,72 @@
   .btn.fantasma{background:transparent; color:var(--tinta); border:1.5px solid var(--linea2)}
 
   /* ---------- GUARDARLO EN LA PANTALLA ---------- */
+  /* EL CARTEL PARA GUARDARLA EN LA PANTALLA DEL CELULAR.
+
+     Antes era una tirita al pie que casi nadie veia, asi que la gente se
+     quedaba con el link y nunca hacia el acceso directo. El dueno pidio
+     (2026-09-24) que vaya EN EL MEDIO DE LA PANTALLA y que sea llamativo,
+     con el icono adentro. Eligio esta version: el icono grande arriba.
+
+     Lleva su propio velo y su propio z-index MAS ALTO que la hoja del
+     pedido, para que no se le mezclen: el velo de la hoja tiene un onclick
+     que la cierra, y compartirlo habria cerrado cosas de mas. */
+  .veloG{position:fixed; inset:0; background:rgba(30,25,20,.62); z-index:60}
   .guardarlo{
-    margin:0 16px 104px; padding:13px 14px;
-    background:var(--papel2); border:1.5px solid var(--linea2); border-radius:10px;
+    position:fixed; z-index:61; left:14px; right:14px; top:50%;
+    transform:translateY(-50%); max-height:92vh; overflow-y:auto;
+    background:var(--papel2); border-radius:17px; padding:20px 17px 15px;
+    box-shadow:0 14px 40px rgba(0,0,0,.34); text-align:center;
+    max-width:380px; margin:0 auto;
   }
-  .guardarlo .gTexto{display:flex; flex-direction:column; gap:3px}
-  .guardarlo .gTexto b{font-family:Archivo,sans-serif; font-size:14px}
-  .guardarlo .gTexto span{font-size:12.5px; color:var(--tinta2); line-height:1.45}
-  .gBotones{display:flex; gap:8px; margin-top:11px}
-  .gBotones button{
-    border-radius:7px; padding:9px 13px; font-size:13px; font-weight:700;
-    background:var(--sello); color:var(--sello-t); border:0;
+  .gIcono{
+    width:76px; height:76px; margin:0 auto 12px; display:block;
+    border-radius:22%; box-shadow:0 5px 14px rgba(0,0,0,.3);
   }
-  .gBotones button#gNo{background:transparent; color:var(--tinta2); border:1px solid var(--linea2); font-weight:500}
+  .guardarlo h2{
+    font-family:Archivo,sans-serif; font-weight:800; font-size:20px;
+    margin:0 0 7px; line-height:1.15; letter-spacing:-.01em;
+  }
+  .guardarlo p{margin:0; font-size:13.5px; color:var(--tinta2); line-height:1.5}
+  .guardarlo p b{color:var(--tinta)}
   .gCalma{
-    margin:11px 0 0; font-size:12.5px; color:var(--tinta2); line-height:1.55;
-    border-top:1px solid var(--linea); padding-top:10px;
+    margin-top:11px !important; font-size:11.5px !important;
+    background:var(--hay-suave); color:var(--hay) !important;
+    border-radius:8px; padding:8px 10px;
   }
-  .gCalma b{color:var(--tinta)}
-  .gCalma span{display:block; margin-top:7px}
+  .gCalma b{color:var(--hay) !important}
+  /* Los pasos del iPhone. Solo aparecen ahi: Android no los necesita. */
+  .gPasos{margin:13px 0 0; padding:0; list-style:none; text-align:left; display:grid; gap:9px}
+  .gPasos li{
+    display:grid; grid-template-columns:auto 1fr; gap:9px; align-items:start;
+    font-size:13px; line-height:1.45; color:var(--tinta2);
+  }
+  .gPasos li > span{grid-column:2}
+  .gPasos li b{color:var(--tinta)}
+  .gPasos li::before{
+    content:counter(gp); counter-increment:gp; width:21px; height:21px;
+    border-radius:50%; background:var(--sello); color:var(--sello-t);
+    font-family:Archivo,sans-serif; font-weight:800; font-size:11px;
+    display:grid; place-items:center; margin-top:1px;
+  }
+  .gPasos{counter-reset:gp}
+  /* EL BOTON DE COMPARTIR VA DIBUJADO, no descrito con palabras. "El
+     cuadradito con la flecha para arriba" obliga al cliente a traducir; el
+     dibujo lo reconoce de una. (Pedido del dueno, 2026-09-24.) */
+  .gGlifo{
+    display:inline-block; vertical-align:-4px; margin:0 1px; padding:2px;
+    color:var(--sello); background:var(--sello-suave); border-radius:5px;
+  }
+  .gSi{
+    display:block; width:100%; margin-top:14px; border:0; border-radius:10px;
+    background:var(--sello); color:var(--sello-t);
+    font-family:Archivo,sans-serif; font-weight:800; font-size:15.5px;
+    padding:14px 10px;
+  }
+  .gNo{
+    display:block; width:100%; margin-top:7px; border:0; background:none;
+    color:var(--tinta2); font-size:13px; padding:8px; font-family:inherit;
+  }
 
   /* ---------- HOJA DEL PEDIDO ---------- */
   .velo{position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:40}
@@ -840,21 +887,33 @@
   <button class="btn" id="verPedido" type="button" disabled>Ver pedido</button>
 </div>
 
-<section class="guardarlo" id="guardarlo" hidden>
-  <div class="gTexto">
-    <b>¿Lo tenés a mano?</b>
-    <span>Guardalo en la pantalla de tu celular y entrás de un toque, sin buscar el link. Te lo preguntamos solo hoy.</span>
-  </div>
-  <div class="gBotones">
-    <button type="button" id="gComo">Cómo se hace</button>
-    <button type="button" id="gNo">No, gracias</button>
-  </div>
-  <p class="gCalma" id="gCalma" hidden>
-    <b>No se instala nada en tu teléfono.</b> Es un acceso directo, como guardar un contacto:
-    queda un iconito en tu pantalla que abre esta misma página. No pide permisos, no ocupa
-    lugar, y lo borrás cuando quieras manteniéndolo apretado.
-    <span id="gPasos"></span>
+<div class="veloG" id="veloG" hidden></div>
+<section class="guardarlo" id="guardarlo" hidden role="dialog" aria-labelledby="gTitulo">
+  <img class="gIcono" id="gIcono" src="icono-192.png" alt="" width="76" height="76">
+  <h2 id="gTitulo">Ponelo en tu celular</h2>
+  <p id="gTexto">
+    Te queda este <b>iconito</b> junto a tus aplicaciones. Un toque y estás
+    pidiendo, <b>sin buscar el link nunca más</b>.
   </p>
+  <!-- Los dos toques del iPhone. Apple no deja que una página pida
+       instalarse sola, asi que ahi hay que decirselos. En Android no se
+       muestran: el telefono saca su propio cartel de Instalar. -->
+  <ol class="gPasos" id="gPasos" hidden>
+    <li><span>Tocá <b>este botón</b>
+      <svg class="gGlifo" viewBox="0 0 24 24" width="17" height="17" fill="none"
+           stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3v12"/><path d="M8.5 6.5 12 3l3.5 3.5"/>
+        <path d="M7 11H5.5A1.5 1.5 0 0 0 4 12.5v6A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 18.5 11H17"/>
+      </svg>
+      abajo de todo. Es el de <b>Compartir</b>.</span></li>
+    <li><span>Bajá hasta <b>"Agregar a inicio"</b> y tocá <b>Agregar</b>.</span></li>
+  </ol>
+  <p class="gCalma">
+    <b>No se instala nada.</b> Es un acceso directo: no ocupa lugar y lo borrás cuando quieras.
+  </p>
+  <button class="btn gSi" type="button" id="gSi">Sí, ponerlo</button>
+  <button class="gNo" type="button" id="gNo">Ahora no</button>
 </section>
 
 <div class="velo" id="velo" hidden></div>
@@ -2568,56 +2627,108 @@ function yaEstaGuardada() {
   } catch (e) { return false; }
 }
 
-/* EL CARTEL VIVE UN DIA Y DESPUES SE CALLA. (2026-09-23, pedido del dueno:
-   "que el cartel no desaparezca el primer dia, que le salga un cartel, no
-   preguntar mas".)
+/* CUANTAS VECES SE OFRECE, Y COMO SE TERMINA.
 
-   El primer dia que el cliente entra, el cartel esta -- y si recarga la pagina
-   sigue estando, asi que no lo pierde por cerrar sin querer. A partir del dia
-   siguiente no aparece nunca mas, lo haya tocado o no. Se ofrece una vez, con
-   respeto, y se termina el tema. */
-function elPrimerDia() {
-  const hoy = new Date().toISOString().slice(0, 10);
-  const guardado = leer("tds_primerDia", null);
-  if (!guardado) { guardar("tds_primerDia", hoy); return hoy; }
-  return guardado;
-}
+   El dueno lo fijo el 2026-09-24: "que le pregunte un par de veces porque es
+   importante que lo instale" -- pero con final. Entonces:
+
+     * Las TRES primeras veces que entra le sale el cartel.
+     * Las dos primeras el boton de abajo dice "Ahora no" y vuelve.
+     * La TERCERA dice "No preguntar mas", con esas palabras, para que sepa
+       que es la ultima. La toque o no, despues no aparece nunca mas.
+
+   Antes salia una sola vez (el primer dia) y casi nadie lo veia. NO queda
+   ningun botoncito fijo despues: tambien lo dijo el -- "si no lo hace a las
+   3 veces ya esta".
+
+   OJO CON LO QUE NO SE PUEDE SABER: la pagina solo esta SEGURA de que lo
+   guardo cuando la abren DESDE EL ICONITO (display-mode: standalone). En
+   Android ademas llega el evento `appinstalled` y ahi se anota. En iPhone no
+   llega nada: si lo guarda pero sigue entrando por el link de WhatsApp, para
+   la pagina es como si no lo tuviera. Por eso el tope de tres es importante:
+   es lo unico que garantiza que deje de molestar. */
+const TOPE_OFRECER = 3;
+
+function vecesOfrecido() { return Number(leer("tds_ofrecido", 0)) || 0; }
+
+/* UNA VEZ POR VISITA, NO UNA POR LLAMADA.
+
+   verSiOfrecerlo() se llama desde DOS lados: cuando Android manda su
+   `beforeinstallprompt` y al arrancar la pagina. En un Android de verdad
+   entran los dos, asi que el contador subia DE A DOS y de las tres vueltas
+   prometidas le quedaba una y media. Lo agarro la prueba de las tres
+   vueltas, no la vista. */
+let ofrecidoEnEstaVisita = false;
 
 function verSiOfrecerlo() {
-  if (yaEstaGuardada()) return;               // ya la tiene en su pantalla
-  if (leer("tds_noGuardar", false)) return;   // dijo que no
-  const hoy = new Date().toISOString().slice(0, 10);
-  if (elPrimerDia() !== hoy) return;          // ya paso su primer dia
+  if (ofrecidoEnEstaVisita) return;                   // ya se conto en esta visita
+  if (yaEstaGuardada()) return;                       // ya la abre desde el icono
+  if (leer("tds_noGuardar", false)) return;           // dijo que no preguntemos mas
+  if (vecesOfrecido() >= TOPE_OFRECER) return;        // ya se le ofrecio bastante
   const esIphone = /iphone|ipad|ipod/i.test(navigator.userAgent);
-  if (!cartelAndroid && !esIphone) return;    // en la computadora no molesta
+  if (!cartelAndroid && !esIphone) return;            // en la computadora no molesta
+
+  ofrecidoEnEstaVisita = true;
+  const van = vecesOfrecido() + 1;
+  guardar("tds_ofrecido", van);
+  const ultima = van >= TOPE_OFRECER;
+
+  /* LA TARJETA VUELVE A CERO ANTES DE MOSTRARSE.
+     El camino del iPhone le cambia el titulo, le muestra los pasos, le
+     esconde el texto y le cambia el boton. Si se vuelve a abrir sin
+     deshacer todo eso, sale mezclada: el titulo de una cosa con los pasos
+     de la otra. Se vio en la prueba. */
+  $("#gPasos").hidden = true;
+  $("#gTexto").hidden = false;
+  $("#gSi").textContent = "Sí, ponerlo";
+  $("#gSi").onclick = tocoQueSi;
+
+  $("#gTitulo").textContent = ultima ? "Última vez que te lo pedimos" : "Ponelo en tu celular";
+  $("#gNo").textContent = ultima ? "No preguntar más" : "Ahora no";
+  $("#gNo").style.textDecoration = ultima ? "underline" : "none";
+  $("#veloG").hidden = false;
   $("#guardarlo").hidden = false;
 }
 
-$("#gNo").onclick = () => {
-  guardar("tds_noGuardar", true);
+function cerrarGuardarlo(paraSiempre) {
+  if (paraSiempre) guardar("tds_noGuardar", true);
   $("#guardarlo").hidden = true;
-};
+  $("#veloG").hidden = true;
+}
 
-$("#gComo").onclick = async () => {
-  const calma = $("#gCalma");
-  calma.hidden = false;
+// "Ahora no" en la ultima vuelta es definitivo. En las otras dos solo cierra.
+$("#gNo").onclick = () => cerrarGuardarlo(vecesOfrecido() >= TOPE_OFRECER);
+
+async function tocoQueSi() {
   if (cartelAndroid) {
-    // Android tiene su propio cartel: se usa ese, que es el que el telefono
-    // reconoce como seguro.
-    $("#gPasos").textContent = "Toc\u00e1 Instalar en el cartel que te va a mostrar el tel\u00e9fono.";
+    /* ANDROID: se usa SU cartel, que es el que el telefono reconoce como
+       seguro. Si acepta, listo; si lo cancela, el nuestro se cierra igual
+       (ya le mostramos lo que teniamos para mostrar). */
     try {
       cartelAndroid.prompt();
-      const r = await cartelAndroid.userChoice;
-      if (r && r.outcome === "accepted") $("#guardarlo").hidden = true;
+      await cartelAndroid.userChoice;
     } catch (e) {}
     cartelAndroid = null;
-  } else {
-    // iPhone no tiene cartel: hay que decirle los dos toques.
-    $("#gPasos").textContent =
-      "En el iPhone: toc\u00e1 el bot\u00f3n de Compartir (el cuadradito con la flecha para arriba), "
-      + "baj\u00e1 hasta \"Agregar a inicio\" y toc\u00e1 Agregar.";
+    cerrarGuardarlo(false);
+    return;
   }
-};
+  /* iPHONE: Apple no deja que una pagina pida instalarse, asi que lo unico
+     que se puede hacer es mostrarle los dos toques. El cartel se queda
+     abierto mientras los hace, y el boton pasa a "Listo, ya esta". */
+  $("#gPasos").hidden = false;
+  $("#gTexto").hidden = true;
+  $("#gTitulo").textContent = "Ponelo en tu iPhone";
+  $("#gSi").textContent = "Listo, ya está";
+  $("#gSi").onclick = () => cerrarGuardarlo(false);
+}
+$("#gSi").onclick = tocoQueSi;
+
+/* Si el telefono avisa que ya quedo instalada, se termina el tema. Esto solo
+   llega en Android -- ver la nota de arriba. */
+window.addEventListener("appinstalled", () => {
+  guardar("tds_noGuardar", true);
+  cerrarGuardarlo(false);
+});
 
 pintarModoEnvio();
 arrancar();
