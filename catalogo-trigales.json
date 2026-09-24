@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-09-23T19:42:17.097Z",
+  "generado": "2026-09-24T00:49:51.320Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -26,6 +26,12 @@
     {
       "id": "art_csv_11",
       "nombre": "AGUILA COBERTURA BLANCA X 10 KG CAJA",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_112",
+      "nombre": "AGUILA CONFITES MINI ROCKLETS X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -102,12 +108,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_18",
-      "nombre": "ANIS EN GRANO X KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_21",
       "nombre": "ARGENFRUT MICRO CEREAL BLANCO X 1 KG",
       "familia": "GENERAL",
@@ -132,20 +132,8 @@
       "hay": true
     },
     {
-      "id": "art_csv_255",
-      "nombre": "AVENA X 5 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_28",
       "nombre": "AZUCAR COMUN PACK X 10 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_27",
-      "nombre": "AZUCAR COMUN X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -486,6 +474,12 @@
       "hay": true
     },
     {
+      "id": "art_csv_255",
+      "nombre": "CHACABUCO AVENA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_94",
       "nombre": "CHACABUCO HARINA 000 X 25 KG",
       "familia": "GENERAL",
@@ -590,12 +584,6 @@
     {
       "id": "art_csv_111",
       "nombre": "COCO RALLADO X KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_112",
-      "nombre": "CONFITES MINI ROCKLETS X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1124,18 +1112,6 @@
     {
       "id": "art_1789132704523",
       "nombre": "HARINA 000 PEQUEÑA EMA 000",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_200",
-      "nombre": "HARINA 000 X 5 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_201",
-      "nombre": "HARINA 0000 X 5 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1692,12 +1668,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_294",
-      "nombre": "MILKAULT MANTECA X 200 GR",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_296",
       "nombre": "MILKAUT CHEDDAR 48 FETAS",
       "familia": "GENERAL",
@@ -1736,6 +1706,12 @@
     {
       "id": "art_csv_301",
       "nombre": "MILKAUT CREMATTO BALANCE 445 GR",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_294",
+      "nombre": "MILKAUT MANTECA X 200 GR",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1916,18 +1892,6 @@
     {
       "id": "art_csv_335",
       "nombre": "PAMPERO MIEL X 5 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_1788455604448",
-      "nombre": "PAPELEA CARTUCHO  SULFITO N 4A",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_1788455630726",
-      "nombre": "PAPELEA CARTUCHO  SULFITO N 6L",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2556,12 +2520,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_440",
-      "nombre": "TAXONERA AZUCAR GRANULADA X 1 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_441",
       "nombre": "TAXONERA AZUCAR IMPALPABLE ANTIHUMEDAD X 5 KG",
       "familia": "GENERAL",
@@ -2684,6 +2642,12 @@
     {
       "id": "art_csv_468",
       "nombre": "UAILE ALMIDON DE MAIZ X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_18",
+      "nombre": "UAILE ANIS EN GRANO X KG",
       "familia": "GENERAL",
       "hay": true
     },
