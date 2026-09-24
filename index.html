@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="55">
+<meta name="tds-pagina" content="56">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -264,13 +264,20 @@
      teclas quedaba un renglon y medio, y habia que tocar Enter para bajar el
      teclado y recien ahi ver lo que se habia buscado.
 
-     Se van la oferta, el titulo, el OTRO buscador y los botones del pedido.
-     Vuelven todos solos al limpiar o al agregar el articulo. La oferta el la
-     quiere y se queda: solo se aparta mientras hace falta el lugar.
-     (2026-09-23, pedido del dueno.) */
+     Se van la oferta y el titulo. Vuelven solos al limpiar o al agregar el
+     articulo. La oferta el la quiere y se queda: solo se aparta mientras
+     hace falta el lugar. (2026-09-23, pedido del dueno.)
+
+     "ELEGIR POR MARCAS" NO SE VA MAS. Antes tambien se escondia, y era un
+     error: el que abre el buscador y no encuentra lo que escribio se queda
+     sin el otro camino justo cuando mas lo necesita. Tiene que poder saltar
+     de buscar a marcas sin borrar lo que escribio. (2026-09-24, el dueno:
+     "el buscador y las marcas siempre visibles, para que me de la opcion de
+     buscar por marcas tambien".) */
   body[data-buscando] h1,
-  body[data-buscando] #ofertaArriba,
-  body[data-buscando] .barraPedido{ display:none }
+  body[data-buscando] #ofertaArriba{ display:none }
+  /* Pegado al buscador, que el lugar mientras escribe es lo que se cuida. */
+  body[data-buscando] .barraPedido{ margin-top:8px }
 
   /* Al escribir, el buscador sube -- pero NO pegado al nombre. Con el margen
      en cero quedaba practicamente tocando "Trigales del Sur" y casi tapaba
@@ -917,6 +924,23 @@
   <button class="gNo" type="button" id="gNo">Ahora no</button>
 </section>
 
+<!-- NO SE SALE DE LA LISTA DEJANDO ARTICULOS MARCADOS SIN CARGAR.
+
+     El cliente pone las cantidades y se va a buscar otra cosa sin tocar
+     "Cargar los 4". Antes esos cuatro se borraban EN SILENCIO y el se
+     quedaba convencido de que ya los habia pedido. El dueno lo marco el
+     2026-09-24: "que no me deje salir de ahi si los que estan marcados no
+     los acepto nunca, porque puede pensar el cliente que ya los marco".
+
+     El velo NO cierra este cartel a proposito: acá hay que elegir. -->
+<div class="veloG" id="veloM" hidden></div>
+<section class="guardarlo" id="cartelMarcados" hidden role="dialog" aria-labelledby="mTitulo">
+  <h2 id="mTitulo">Te falta cargarlos</h2>
+  <p id="mTexto"></p>
+  <button class="btn gSi" type="button" id="mCargar">Cargarlos al pedido</button>
+  <button class="gNo" type="button" id="mDescartar">Descartarlos</button>
+</section>
+
 <div class="velo" id="velo" hidden></div>
 <section class="hoja" id="hoja" hidden aria-label="Tu pedido">
   <div class="hojaTop">
@@ -1333,16 +1357,20 @@ function avisarCopiado(b) {
 // Ojo: aca arriba todavia no existe el atajo `$` (se define mas abajo).
 document.getElementById("favoritos").onclick = () => {
   if (!losQueMasPide().length) return;
-  // Si estaba mirando una busqueda o una marca, se sale de ahi: si no, la
-  // seccion se abriria en una pantalla donde no se ve.
-  q.value = ""; marcaElegida = null; menuMarcasAbierto = false;
-  plegados.favoritos = !plegados.favoritos;
-  guardar("tds_plegados", plegados);
-  dibujar();
-  if (!plegados.favoritos) {
-    const r = main.querySelector(".rotulo.tocable");
-    if (r) r.scrollIntoView({ block: "start", behavior: "smooth" });
-  }
+  // Saca de la busqueda o de la marca, asi que primero se resuelve lo que
+  // haya quedado marcado sin cargar.
+  frenarSiHayMarcados(() => {
+    // Si estaba mirando una busqueda o una marca, se sale de ahi: si no, la
+    // seccion se abriria en una pantalla donde no se ve.
+    q.value = ""; marcaElegida = null; menuMarcasAbierto = false;
+    plegados.favoritos = !plegados.favoritos;
+    guardar("tds_plegados", plegados);
+    dibujar();
+    if (!plegados.favoritos) {
+      const r = main.querySelector(".rotulo.tocable");
+      if (r) r.scrollIntoView({ block: "start", behavior: "smooth" });
+    }
+  });
 };
 
 document.getElementById("tema").onclick = () => {
@@ -1750,8 +1778,11 @@ function dibujarMenuMarcas() {
     const c = document.createElement("span"); c.className = "cuantos";
     c.textContent = n;
     b.append(nom, c);
-    // Se escribe en el buscador de siempre: un solo camino.
-    b.onclick = () => { marcaElegida = m; q.value = m; menuMarcasAbierto = false; dibujar(); window.scrollTo(0, 0); };
+    // Se escribe en el buscador de siempre: un solo camino. Y si venia
+    // eligiendo de OTRA marca, primero se resuelve lo que dejo marcado.
+    b.onclick = () => frenarSiHayMarcados(() => {
+      marcaElegida = m; q.value = m; menuMarcasAbierto = false; dibujar(); window.scrollTo(0, 0);
+    });
     caja.appendChild(b);
   });
 }
@@ -1766,7 +1797,13 @@ function acomodarPantalla() {
   else document.body.removeAttribute("data-buscando");
 }
 
+/* CON QUE TEXTO SE DIBUJO LA LISTA QUE SE ESTA VIENDO. No es lo mismo que
+   q.value: el cliente ya escribio la letra siguiente y el freno lo paro ANTES
+   de redibujar. Sirve para poder devolverlo a la lista donde estaba. */
+let textoDibujado = "";
+
 function dibujar() {
+  textoDibujado = q.value;
   acomodarPantalla();
   dibujarArriba();
   dibujarMenuMarcas();
@@ -2220,7 +2257,10 @@ function dibujarArriba() {
   mar.type = "button";
   mar.className = "btnMarcas" + (menuMarcasAbierto ? " abierto" : "");
   mar.setAttribute("aria-expanded", String(menuMarcasAbierto));
-  mar.textContent = "Marcas";
+  /* "Marcas" solo no decia que se podia TOCAR ni para que servia. El dueno lo
+     cambio el 2026-09-24: "en vez de marcas solo, que se llame elegir por
+     marcas". */
+  mar.textContent = "Elegir por marcas";
   mar.onclick = () => { menuMarcasAbierto = !menuMarcasAbierto; dibujar(); };
   barra.appendChild(mar);
 }
@@ -2380,6 +2420,42 @@ function cargarLosPrendidos() {
   persistir(); avisarQueEntro(); dibujar();
 }
 
+/* EL FRENO: NO SE SALE DEJANDO MARCADOS SIN CARGAR.
+
+   Todo lo que saca de la lista donde esta eligiendo (escribir en el buscador,
+   tocar otra marca, borrar la busqueda, la estrella, refrescar) pasa por aca.
+   Si no hay nada marcado no se nota: sigue de largo. Si hay algo marcado,
+   frena y pregunta, y recien despues hace lo que iba a hacer.
+
+   Por que asi y no cargando cada uno solo al tocar "+": cargando solo, el
+   cliente no ve si entro o no entro. El dueno lo penso en voz alta y cerro:
+   "siempre tiene que tocar un boton para salir de ahi". (2026-09-24.) */
+let seguirDespuesDelCartel = null;
+
+function frenarSiHayMarcados(seguir) {
+  const cuantos = losPrendidos().length;
+  if (!cuantos) { seguir(); return; }
+  seguirDespuesDelCartel = seguir;
+  $("#mTexto").innerHTML = cuantos === 1
+    ? "Marcaste <b>1 artículo</b> y todavía no está en tu pedido."
+    : "Marcaste <b>" + cuantos + " artículos</b> y todavía no están en tu pedido.";
+  $("#veloM").hidden = false;
+  $("#cartelMarcados").hidden = false;
+}
+
+function cerrarCartelMarcados() {
+  $("#veloM").hidden = true;
+  $("#cartelMarcados").hidden = true;
+}
+
+/* Lo que estaba esperando se hace UNA sola vez y se suelta: si quedara
+   guardado, el cartel siguiente arrastraria la accion del anterior. */
+function seguirConLoQueIba() {
+  const seguir = seguirDespuesDelCartel;
+  seguirDespuesDelCartel = null;
+  if (seguir) seguir();
+}
+
 /* Al agregar, la barra de abajo parpadea una vez: el ojo va ahi y ve que el
    numero subio. Es la confirmacion de que entro. */
 function avisarQueEntro() {
@@ -2445,16 +2521,63 @@ $("#vaciarPedido").onclick = () => {
 $("#cerrarHoja").onclick = cerrarHoja;
 $("#velo").onclick = cerrarHoja;
 $("#quien").oninput = (e) => { quien = e.target.value; guardar("tds_quien", quien); mirarSiPuedeEnviar(); };
-$("#limpiar").onclick = () => { q.value = ""; q.focus(); dibujar(); };
+/* LOS DOS BOTONES DEL CARTEL.
+
+   "Cargarlos" puede NO llevarse todos: un numero mal escrito (cero, letras)
+   se queda prendido para corregirlo. En ese caso NO se sigue con lo que iba
+   a hacer -- se lo deja parado ahi, viendo el que esta mal. Seguir de largo
+   seria perderlo, que es justo lo que este cartel viene a evitar. */
+$("#mCargar").onclick = () => {
+  // Con que texto se estaba viendo la lista, ANTES de que cargar redibuje.
+  const volverA = textoDibujado;
+  cargarLosPrendidos();
+  cerrarCartelMarcados();
+  if (losPrendidos().length) {
+    // Quedo alguno mal escrito. Se lo devuelve a la lista donde estaba: si
+    // no, el renglon que tiene que corregir no se ve (el ya habia escrito
+    // otra cosa en el buscador) y la pantalla le pide arreglar algo
+    // invisible.
+    seguirDespuesDelCartel = null;
+    if (q.value !== volverA) { q.value = volverA; dibujar(); }
+    enfocarCantidad(losPrendidos()[0]);
+    return;
+  }
+  seguirConLoQueIba();
+};
+$("#mDescartar").onclick = () => {
+  cuantosPongo = {};
+  cerrarCartelMarcados();
+  seguirConLoQueIba();
+};
+
+$("#limpiar").onclick = () => frenarSiHayMarcados(() => { q.value = ""; q.focus(); dibujar(); });
 q.oninput = () => {
-  // Al buscar otra cosa se apagan los prendidos: la lista de abajo cambia,
-  // asi que dejarlos prendidos seria cargar algo que ya no se ve.
-  verParecidosDe = null; cuantosPongo = {};
-  // Escribir cierra el menu de marcas y suelta la marca elegida: ya esta
-  // buscando a mano, no mirando una marca.
-  marcaElegida = null;
-  if (q.value) menuMarcasAbierto = false;
-  dibujar();
+  const seguir = () => {
+    // Al buscar otra cosa se apagan los prendidos: la lista de abajo cambia,
+    // asi que dejarlos prendidos seria cargar algo que ya no se ve. Ya no se
+    // pierde nada: para llegar hasta aca con algo marcado hubo que decidirlo
+    // en el cartel.
+    verParecidosDe = null; cuantosPongo = {};
+    // Escribir cierra el menu de marcas y suelta la marca elegida: ya esta
+    // buscando a mano, no mirando una marca.
+    marcaElegida = null;
+    if (q.value) menuMarcasAbierto = false;
+    dibujar();
+  };
+  // El freno salta con la PRIMERA letra: es el momento justo para avisarle,
+  // antes de que la lista cambie abajo.
+  //
+  // Y SE LE DEVUELVE LO QUE ESTABA ESCRIBIENDO. Cargar los marcados vacia el
+  // buscador solo (lo hace limpiarBuscador, y esta bien que lo haga cuando
+  // uno carga a proposito). Aca no: el vino escribiendo otra cosa, y si al
+  // salir del cartel se le borra la palabra, tiene que empezar de nuevo sin
+  // entender por que.
+  if (losPrendidos().length) {
+    const loQueVeniaEscribiendo = q.value;
+    frenarSiHayMarcados(() => { q.value = loQueVeniaEscribiendo; seguir(); q.focus(); });
+    return;
+  }
+  seguir();
 };
 
 /* Al entrar o salir del buscador la pantalla se acomoda sola. */
