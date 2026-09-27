@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="69">
+<meta name="tds-pagina" content="70">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -156,7 +156,9 @@
        DORADO = toca para buscar la lista de hoy.
        VERDE  = listo, la buscaste. Y queda verde hasta que cierre la pagina.
 
-     ARRANCA SIEMPRE EN DORADO, aunque la lista se haya bajado sola. Yo la
+     ARRANCA SIEMPRE EN DORADO, aunque la lista se haya bajado sola (salvo
+     si la abrieron REFRESCANDOLA, tirando para abajo: eso es tocar el boton,
+     ver arrancar()). Yo la
      habia hecho arrancar en verde cuando la automatica funcionaba, con el
      argumento de que quedarse en dorado seria mentirle. El dueno me corrigio
      y tiene razon: "si el cliente no ve que hizo ese efecto, no se da cuenta.
@@ -2997,7 +2999,32 @@ async function arrancar() {
   dibujar();
   // La lista se baja igual al abrir, en silencio. Lo que NO se hace es
   // pintar el boton: ver el comentario de pintarRefrescar().
-  if (await bajarLista()) dibujar();
+  //
+  // SALVO QUE LA HAYAN REFRESCADO TIRANDO PARA ABAJO (o con el recargar del
+  // navegador). Eso ya es el cliente pidiendo la lista de hoy, igual que
+  // tocar el boton, asi que hace lo mismo que el boton: se apaga mientras
+  // busca, y al llegar titila y queda verde. (2026-09-27, el dueno: "si
+  // existe de verdad, deberia titilar la luz como si tocaramos el boton".)
+  const refrescada = laRefrescaron();
+  const b = $("#refrescar");
+  if (refrescada) b.disabled = true;
+  const hubo = await bajarLista();
+  if (hubo) dibujar();
+  if (refrescada) {
+    b.disabled = false;
+    // Si no se pudo bajar, se queda dorado y NO dice nada. Nunca error.
+    if (hubo) pintarRefrescar(true);
+  }
+}
+
+// Si esta vez la pagina se abrio RECARGANDOLA (tirar para abajo, o el
+// recargar del navegador) y no entrando por el link o el iconito.
+function laRefrescaron() {
+  try {
+    const n = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    if (n) return n.type === "reload";
+    return !!(performance.navigation && performance.navigation.type === 1);
+  } catch (e) { return false; }
 }
 
 /* EL BOTON SE PINTA SEGUN COMO ESTA LA LISTA.
