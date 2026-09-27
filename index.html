@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="65">
+<meta name="tds-pagina" content="66">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -33,6 +33,7 @@
     --hay-suave:#E9EFE5;
     --brasa:#9A3412;
     --ladrillo:#A63D2F;   /* el mismo ladrillo del programa */
+    --ladrillo-suave:#F6E3DF;
     color-scheme:light;
   }
   @media (prefers-color-scheme:dark){
@@ -43,6 +44,7 @@
       --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519; --hay-suave:#1F261B;
       --brasa:#E0764A;
       --ladrillo:#E77A69;   /* su version de noche, la del programa */
+      --ladrillo-suave:#2E1D1A;
       color-scheme:dark;
     }
   }
@@ -53,6 +55,7 @@
     --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519; --hay-suave:#1F261B;
     --brasa:#E0764A;
     --ladrillo:#E77A69;
+    --ladrillo-suave:#2E1D1A;
     color-scheme:dark;
   }
 
@@ -563,12 +566,13 @@
   .ofertaPunto.esta{ background:var(--sello); width:18px; border-radius:4px }
 
   /* UN COLOR DE MARCO POR CAJA (2026-09-27, pedido del dueno: "que sean de
-     distinto color el marco, asi nota la diferencia"). Los tres son de la
-     paleta de la pagina y ninguno es el rojo (que es "no hay") ni el gris
-     (que es "vencida"): marron, verde y dorado. Van ANTES de la regla de la
-     vencida, que les gana. */
-  .ofertaCaja.ofertaColor1{ border-color:var(--sello); background:var(--sello-suave) }
-  .ofertaCaja.ofertaColor1 .ofertaTitulo{ color:var(--sello) }
+     distinto color el marco, asi nota la diferencia"). Rojo, verde y dorado,
+     de la paleta de la pagina; el gris es de la vencida. La primera era
+     marron y el dueno la paso a ROJO (27/09): de noche el marron y el dorado
+     de esta pagina son casi el mismo color y parecian repetidos. Van ANTES de
+     la regla de la vencida, que les gana. */
+  .ofertaCaja.ofertaColor1{ border-color:var(--ladrillo); background:var(--ladrillo-suave) }
+  .ofertaCaja.ofertaColor1 .ofertaTitulo{ color:var(--ladrillo) }
   .ofertaCaja.ofertaColor2{ border-color:var(--hay); background:var(--hay-suave) }
   .ofertaCaja.ofertaColor2 .ofertaTitulo{ color:var(--hay) }
   .ofertaCaja.ofertaColor3{ border-color:var(--trigo); background:var(--trigo-suave) }
@@ -2036,7 +2040,8 @@ let pistaDeOfertas = null;
    veia "ya terminó" y no seguia mirando. */
 let ofertaTocada = false;
 let ofertaArranco = false;
-const CADA_CUANTO_PASAN_LAS_OFERTAS = 3000;
+// 4 segundos: primero fueron 3, y el dueno lo subio a 4 (27/09).
+const CADA_CUANTO_PASAN_LAS_OFERTAS = 4000;
 
 function quedarseQuietas() { ofertaTocada = true; }
 
@@ -2065,7 +2070,20 @@ function cajaDeOferta() {
   ventana.className = "ofertaVentana";
   const pista = document.createElement("div");
   pista.className = "ofertaPista";
+  hayRueda = lista.length > 1;
+  // Las dos copias de las puntas (ver "la rueda sin fin"): se ven igual, pero
+  // no cuentan para el lector de pantalla ni se pueden tocar con el teclado.
+  // (Sin "inert": si el cliente toca "Agregar" justo sobre una copia, agrega
+  // lo mismo que la de verdad; con inert ese toque se perdia.)
+  const copia = (o, i) => {
+    const c = unaOferta(o, i);
+    c.setAttribute("aria-hidden", "true");
+    c.querySelectorAll("button").forEach((b) => { b.tabIndex = -1; });
+    return c;
+  };
+  if (hayRueda) pista.appendChild(copia(lista[lista.length - 1], lista.length - 1));
   lista.forEach((o, i) => pista.appendChild(unaOferta(o, i)));
+  if (hayRueda) pista.appendChild(copia(lista[0], 0));
   ventana.appendChild(pista);
   envoltura.appendChild(ventana);
   pistaDeOfertas = pista;
@@ -2088,6 +2106,7 @@ function cajaDeOferta() {
     ventana.addEventListener("pointerdown", (e) => {
       if (e.button != null && e.button !== 0) return;   // solo el boton izquierdo
       quedarseQuietas();   // la toco: ya no pasan solas
+      if (saltoPendiente) saltoPendiente();   // si estaba dando la vuelta, a la de verdad YA
       x0 = e.clientX; y0 = e.clientY; arrastrando = false;
       pista.style.transition = "none";
     });
@@ -2111,11 +2130,14 @@ function cajaDeOferta() {
         }
       }
       if (!arrastrando) return;
-      // En las puntas el arrastre va a la mitad: se siente el tope sin trabarse.
-      const enLaPunta = (ofertaMirando === 0 && dx > 0) || (ofertaMirando === lista.length - 1 && dx < 0);
-      const corrido = enLaPunta ? dx / 2 : dx;
+      // Ya no hay tope en las puntas: es una rueda (despues de la ultima viene
+      // la primera), asi que el arrastre sigue al dedo igual en todas.
       if (e.cancelable) e.preventDefault();
-      pista.style.transform = "translateX(calc(" + (-ofertaMirando * 100) + "% + " + corrido + "px))";
+      // Como mucho una caja por arrastre: mas alla de la copia no hay nada y
+      // se veria el fondo vacio.
+      const ancho = ventana.clientWidth || 1;
+      const corrido = Math.max(-ancho, Math.min(ancho, dx));
+      pista.style.transform = "translateX(calc(" + (-lugarEnLaPista(ofertaMirando) * 100) + "% + " + corrido + "px))";
     });
 
     function soltar(dx) {
@@ -2157,19 +2179,61 @@ function cajaDeOferta() {
 
 /* Pone la fila donde corresponde. Con `suave` va animado; sin, de una (al
    dibujar de nuevo, para que no se vea deslizar sola). */
+/* LA RUEDA SIN FIN (2026-09-27, pedido del dueno). Antes, al llegar a la
+   ultima volvia de golpe para atras, cruzando todas, hasta la primera. Ahora
+   sigue siempre para el mismo lado: despues de la ultima, la primera entra
+   desde la derecha como una oferta mas. Para eso la fila lleva una COPIA de
+   la ultima al principio y una de la primera al final: se anima hasta la
+   copia y, apenas termina, se salta sin animar a la de verdad (no se nota,
+   son iguales). Con una sola oferta no hay rueda. */
+let hayRueda = false;
+function lugarEnLaPista(i) { return hayRueda ? i + 1 : i; }
+/* El salto de la copia a la de verdad que todavia no se hizo. Cualquier
+   movimiento nuevo (apoyar el dedo, un puntito, el paso solo) lo hace PRIMERO:
+   si no, tocando justo durante la vuelta la fila se rebobinaba para atras
+   cruzando todas, o saltaba debajo del dedo (revision del 27/09). */
+let saltoPendiente = null;
+
 function acomodarPista(suave) {
   if (!pistaDeOfertas) return;
   pistaDeOfertas.style.transition = suave ? "" : "none";
-  pistaDeOfertas.style.transform = "translateX(" + (-ofertaMirando * 100) + "%)";
+  pistaDeOfertas.style.transform = "translateX(" + (-lugarEnLaPista(ofertaMirando) * 100) + "%)";
   if (!suave) { void pistaDeOfertas.offsetWidth; pistaDeOfertas.style.transition = ""; }
 }
 
-/* Da la vuelta sola: de la ultima vuelve a la primera y al reves. */
+/* Da la vuelta sola: de la ultima pasa a la primera (y al reves), siempre
+   para el mismo lado. */
 function irAOferta(i) {
   const n = ofertasDeHoy().length;
   if (!n) return;
-  ofertaMirando = ((i % n) + n) % n;
-  acomodarPista(true);
+  if (saltoPendiente) saltoPendiente();
+  // Con las animaciones apagadas en el telefono no hay nada que disimular:
+  // se va derecho a la de verdad (y no queda la copia quieta 400 ms).
+  const sinAnimar = pistaDeOfertas && parseFloat(getComputedStyle(pistaDeOfertas).transitionDuration) === 0;
+  if (hayRueda && pistaDeOfertas && (i >= n || i < 0) && !sinAnimar) {
+    // A la COPIA que esta en la punta, animado...
+    const pista = pistaDeOfertas;
+    pista.style.transition = "";
+    pista.style.transform = "translateX(" + (-(i >= n ? n + 1 : 0) * 100) + "%)";
+    ofertaMirando = ((i % n) + n) % n;
+    // ...y enseguida a la de verdad, sin animar. Con un tope por si el
+    // navegador no avisa que termino (pestana escondida).
+    let listo = false;
+    let reloj = null;
+    const saltar = () => {
+      if (listo) return;
+      listo = true;
+      saltoPendiente = null;
+      clearTimeout(reloj);
+      if (pista === pistaDeOfertas) acomodarPista(false);
+    };
+    saltoPendiente = saltar;
+    pista.addEventListener("transitionend", saltar, { once: true });
+    reloj = setTimeout(saltar, 400);
+  } else {
+    ofertaMirando = ((i % n) + n) % n;
+    acomodarPista(true);
+  }
   // Los puntitos se actualizan sin volver a dibujar todo: si se redibujara,
   // la fila se armaria de nuevo y no se veria el deslizamiento.
   const ps = document.querySelectorAll(".ofertaPunto");
