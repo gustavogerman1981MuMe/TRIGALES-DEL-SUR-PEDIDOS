@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="66">
+<meta name="tds-pagina" content="67">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -33,7 +33,7 @@
     --hay-suave:#E9EFE5;
     --brasa:#9A3412;
     --ladrillo:#A63D2F;   /* el mismo ladrillo del programa */
-    --ladrillo-suave:#F6E3DF;
+    --ladrillo-suave:#F6E3DF; --naranja:#E07B24; --naranja-suave:#FCEBDA;
     color-scheme:light;
   }
   @media (prefers-color-scheme:dark){
@@ -44,7 +44,7 @@
       --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519; --hay-suave:#1F261B;
       --brasa:#E0764A;
       --ladrillo:#E77A69;   /* su version de noche, la del programa */
-      --ladrillo-suave:#2E1D1A;
+      --ladrillo-suave:#2E1D1A; --naranja:#F08A3C; --naranja-suave:#33230F;
       color-scheme:dark;
     }
   }
@@ -55,7 +55,7 @@
     --hay:#93B981; --nohay:#8B8377; --trigo:#D8A53F; --trigo-suave:#2E2519; --hay-suave:#1F261B;
     --brasa:#E0764A;
     --ladrillo:#E77A69;
-    --ladrillo-suave:#2E1D1A;
+    --ladrillo-suave:#2E1D1A; --naranja:#F08A3C; --naranja-suave:#33230F;
     color-scheme:dark;
   }
 
@@ -566,7 +566,7 @@
   .ofertaPunto.esta{ background:var(--sello); width:18px; border-radius:4px }
 
   /* UN COLOR DE MARCO POR CAJA (2026-09-27, pedido del dueno: "que sean de
-     distinto color el marco, asi nota la diferencia"). Rojo, verde y dorado,
+     distinto color el marco, asi nota la diferencia"). ROJO, VERDE y NARANJA (la tercera era dorada y se confundia con el marco dorado del pedido; el dueno, 27/09),
      de la paleta de la pagina; el gris es de la vencida. La primera era
      marron y el dueno la paso a ROJO (27/09): de noche el marron y el dorado
      de esta pagina son casi el mismo color y parecian repetidos. Van ANTES de
@@ -575,8 +575,8 @@
   .ofertaCaja.ofertaColor1 .ofertaTitulo{ color:var(--ladrillo) }
   .ofertaCaja.ofertaColor2{ border-color:var(--hay); background:var(--hay-suave) }
   .ofertaCaja.ofertaColor2 .ofertaTitulo{ color:var(--hay) }
-  .ofertaCaja.ofertaColor3{ border-color:var(--trigo); background:var(--trigo-suave) }
-  .ofertaCaja.ofertaColor3 .ofertaTitulo{ color:var(--trigo) }
+  .ofertaCaja.ofertaColor3{ border-color:var(--naranja); background:var(--naranja-suave) }
+  .ofertaCaja.ofertaColor3 .ofertaTitulo{ color:var(--naranja) }
 
   /* LA VENCIDA NO SE BORRA: SE APAGA. Queda para que el cliente vea que
      tipo de ofertas hacemos, pero sin poder pedirse. El marco y el precio
