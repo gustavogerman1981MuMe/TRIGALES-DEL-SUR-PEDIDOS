@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="68">
+<meta name="tds-pagina" content="69">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -363,6 +363,17 @@
 
   /* ---------- LISTA ---------- */
   main{flex:1; overflow-y:auto; padding:6px 16px 0; padding-bottom:104px; -webkit-overflow-scrolling:touch}
+  /* LA LISTA NO ARRASTRA LA PAGINA (2026-09-27, el dueno: "si mueve para
+     abajo, se arrastra todo... como que estas actualizando la aplicacion").
+     Con la lista arriba de todo, el dedo que seguia bajando se le pasaba al
+     telefono, que corria la pantalla ENTERA como para refrescarla; y al
+     volver a tocar la caja del pedido seguia arrastrando todo en vez de
+     moverla (solo se soltaba si primero la movias para arriba). `contain`
+     deja el gesto adentro: desde la lista y la caja del pedido el dedo mueve
+     SOLO la lista. Tirar para abajo para refrescar sigue andando desde el
+     encabezado (logo, buscador, ofertas). Lo mismo en la hoja del pedido y
+     en el cartel para guardarla. */
+  main, .hojaCuerpo, .guardarlo{ overscroll-behavior-y:contain }
   .rotulo{
     display:flex; align-items:center; gap:9px;
     font-size:11px; color:var(--tinta2); margin:18px 0 7px;
