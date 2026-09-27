@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-09-24T02:29:09.183Z",
+  "generado": "2026-09-27T22:29:12.866Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -446,6 +446,12 @@
     {
       "id": "art_csv_88",
       "nombre": "CAYFAR MERMELADA DE MEMBRILLO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1790350029830",
+      "nombre": "CAYFAR MERMERLADA DE MEMBRILLO X 10KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2292,12 +2298,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_404",
-      "nombre": "PURATOS MEJORADOR TOUPAN X 10 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_405",
       "nombre": "PURATOS PREMEZCLA (BUDIN) TEGRAL SATIN CHOCOLATE X 10 KG",
       "familia": "GENERAL",
@@ -2761,7 +2761,7 @@
       "precio": 61000,
       "desdeCuantos": 5,
       "texto": "LLEVANDO 5 O MAS",
-      "hasta": "2026-09-26",
+      "hasta": "2026-09-30",
       "hay": true,
       "vencida": false
     },
@@ -2792,7 +2792,7 @@
     "precio": 61000,
     "desdeCuantos": 5,
     "texto": "LLEVANDO 5 O MAS",
-    "hasta": "2026-09-26",
+    "hasta": "2026-09-30",
     "hay": true,
     "vencida": false
   }
