@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="79">
+<meta name="tds-pagina" content="80">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -927,6 +927,33 @@
   }
   .hoja h2{font-family:Archivo,sans-serif; font-weight:800; font-size:17px; margin:0; letter-spacing:-.01em}
   .hojaTop{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:15px 16px 11px; border-bottom:1px solid var(--linea)}
+  .hojaTop.soloCerrar{ justify-content:flex-end; padding:9px 10px 7px }
+  /* EL CAMPO DEL NOMBRE TITILA HASTA QUE ESCRIBA ALGO. (2026-09-28.)
+
+     Sin el nombre el pedido no se puede mandar, y el boton apagado no alcanza
+     para que se entienda POR QUE. El dueno lo pidio asi: "que se prenda esa
+     cajita para poner el nombre... o hacer un aviso titilar de color dorado
+     cada tanto".
+
+     DORADO Y NO EL COLOR DE LA OFERTA: el rojo, el verde y el naranja de
+     arriba ya quieren decir otra cosa (como le va a esa oferta), y usarlos
+     aca los ensuciaria -- es la regla de "un color, un significado". El
+     dorado es el color con que esta pagina llama la atencion en todos lados.
+
+     DOS TITILEOS Y DESCANSA, igual que el marco de la oferta: es el mismo
+     gesto, asi que se reconoce y no parece una pantalla rota. El ciclo entero
+     dura 4 s y el titileo se lleva menos de un segundo.
+
+     SOLO CAMBIA DE COLOR, NUNCA DE TAMANO: ni el borde ni el relleno se
+     mueven un pixel, asi que el campo no salta ni empuja lo de abajo. Y el
+     fondo se tinta con --trigo-suave, que en dia es crema y en noche marron
+     calido: en los dos se nota sin encandilar. */
+  #quien.faltaElNombre{ animation:pideNombre 4s ease-in-out infinite }
+  @keyframes pideNombre{
+    0%,15%,30%,100%{ border-color:var(--linea2); background:var(--papel2) }
+    7%,22%{ border-color:var(--trigo); background:var(--trigo-suave) }
+  }
+  @media (prefers-reduced-motion:reduce){ #quien.faltaElNombre{ animation:none; border-color:var(--trigo) } }
   .cerrar{background:none; border:0; font-size:23px; line-height:1; color:var(--tinta2); padding:4px 8px}
   .hojaPie{padding:12px 16px 16px; border-top:1px solid var(--linea); display:flex; flex-direction:column; gap:9px}
   /* PEDIDO O PRESUPUESTO.
@@ -1096,8 +1123,11 @@
      si es pedido o presupuesto, y el boton. El titulo dice CUANTO se manda,
      que es el dato que uno quiere confirmar antes de tocar. -->
 <section class="hoja" id="hoja" hidden aria-label="Mandar el pedido">
-  <div class="hojaTop">
-    <h2 id="hojaTitulo">Mandás tu pedido</h2>
+  <!-- SIN TITULO. Decia "Mandas 6 articulos" y el dueno lo saco el mismo dia
+       que lo vio: "no hace falta que este". El numero ya esta arriba, en la
+       cajita del pedido, y esta hoja no es para mirar el pedido sino para
+       mandarlo. Queda la X sola, que es lo unico que hace falta. -->
+  <div class="hojaTop soloCerrar">
     <button class="cerrar" id="cerrarHoja" type="button" aria-label="Cerrar">×</button>
   </div>
   <div class="hojaPie">
@@ -2819,10 +2849,6 @@ let sePuedeEnviarDesde = 0;
 function abrirHoja() {
   setTimeout(mirarSiPuedeEnviar, 0);
   sePuedeEnviarDesde = Date.now() + GUARDA_ANTES_DE_ENVIAR;
-  // EL TITULO DICE CUANTO SE MANDA. Es el dato que uno quiere confirmar antes
-  // de tocar el boton, y ocupa un renglon que ya existia.
-  const cuantos = ART.filter((a) => carrito[a.id] != null).length;
-  $("#hojaTitulo").textContent = cuantos === 1 ? "Mandás 1 artículo" : "Mandás " + cuantos + " artículos";
   $("#quien").value = quien;
   $("#velo").hidden = false;
   $("#hoja").hidden = false;
@@ -2968,6 +2994,9 @@ function mirarSiPuedeEnviar() {
   const hayPedido = Object.keys(carrito).length > 0;
   const hayQuien = $("#quien").value.trim() !== "";
   $("#enviar").disabled = !hayPedido || !hayQuien;
+  // Y el campo del nombre titila mientras este vacio (ver .faltaElNombre).
+  // Apenas escribe algo se queda quieto: ya no hay nada que avisar.
+  $("#quien").classList.toggle("faltaElNombre", !hayQuien);
 }
 
 $("#enviar").onclick = async () => {
