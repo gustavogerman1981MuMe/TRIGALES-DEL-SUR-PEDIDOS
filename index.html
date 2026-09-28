@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="77">
+<meta name="tds-pagina" content="78">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -930,6 +930,19 @@
   .cerrar{background:none; border:0; font-size:23px; line-height:1; color:var(--tinta2); padding:4px 8px}
   .hojaCuerpo{overflow-y:auto; padding:2px 16px 14px}
   .hojaPie{padding:12px 16px 16px; border-top:1px solid var(--linea); display:flex; flex-direction:column; gap:9px}
+  /* EL PEDIDO, PLEGADO ADENTRO DE LA HOJA. (2026-09-28.)
+     El dueno: "en el momento que toca enviar, el pedido queda reducido a la
+     caja chiquita con todo el pedido adentro... que se limpie un poco la
+     pantalla". Pasa al tocar el campo del nombre, que es cuando ya lo reviso.
+     Tiene la misma cara que la cajita "Tu pedido" de la pagina (.loQueVaTop),
+     a proposito: es la misma idea y se reconoce sola. */
+  .hojaResumen{
+    width:100%; display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:var(--sello-suave); border:0; border-top:1px solid var(--linea);
+    padding:11px 16px; text-align:left; color:var(--sello); font-family:inherit;
+  }
+  .hojaResumen .sello{font-size:11px}
+  .hojaResumen .flecha{font-size:11px; opacity:.8; text-decoration:underline; text-underline-offset:2px}
   /* PEDIDO O PRESUPUESTO.
      Dos teclas, no una casilla: una casilla apagada no dice que existe la
      otra opcion, y el que entra a pedir precios tiene que VER que puede.
@@ -1099,6 +1112,10 @@
     <button class="cerrar" id="cerrarHoja" type="button" aria-label="Cerrar">×</button>
   </div>
   <div class="hojaCuerpo" id="hojaCuerpo"></div>
+  <button class="hojaResumen" id="hojaResumen" type="button" hidden>
+    <span class="sello" id="hojaResumenTxt">Tu pedido</span>
+    <span class="flecha">mostrar</span>
+  </button>
   <div class="hojaPie">
     <div class="campo">
       <!-- SIN ROTULO ARRIBA NI LEYENDA ABAJO: lo dice el propio campo.
@@ -2798,8 +2815,60 @@ function persistir() {
 }
 
 /* ---------- LA HOJA DEL PEDIDO ---------- */
+
+/* EL PEDIDO SE PLIEGA CUANDO VA A PONER EL NOMBRE. (2026-09-28.)
+
+   El dueno: "una vez que el pedido esta hecho, que el cliente toca el boton
+   para poner el nombre, me gustaria que el pedido se minimice en la caja
+   chiquita de pedidos... que se limpie un poco la pantalla".
+
+   POR QUE EN EL NOMBRE Y NO AL ABRIR: el boton de abajo dice "Ver pedido" --
+   lo hizo notar el mismo dia -- asi que al abrir la hoja el pedido se ve
+   ENTERO, que es lo que el boton promete. Se pliega despues, cuando ya lo
+   reviso y pasa a mandarlo. Cada cosa hace lo que dice.
+
+   Si lo despliega a mano, no se vuelve a plegar solo: seria pelearle. */
+let hojaPlegada = false;
+let hojaDesplegadaAMano = false;
+
+function pintarPlegadoDeLaHoja() {
+  const cuantos = ART.filter((a) => carrito[a.id] != null).length;
+  const resumen = $("#hojaResumen");
+  $("#hojaCuerpo").hidden = hojaPlegada;
+  resumen.hidden = !hojaPlegada;
+  $("#hojaResumenTxt").textContent = "Tu pedido · " + cuantos + (cuantos === 1 ? " artículo" : " artículos");
+}
+
+$("#hojaResumen").onclick = () => {
+  hojaPlegada = false;
+  hojaDesplegadaAMano = true;
+  pintarPlegadoDeLaHoja();
+};
+
+/* Al tocar el nombre. `onfocus` y no `onclick`: tambien entra por teclado y
+   desde el "siguiente" del teclado del telefono. */
+$("#quien").onfocus = () => {
+  if (hojaPlegada || hojaDesplegadaAMano) return;
+  if (!Object.keys(carrito).length) return;
+  hojaPlegada = true;
+  pintarPlegadoDeLaHoja();
+};
+
+/* NO SE MANDA NADA EN EL PRIMER RATITO. (2026-09-28.)
+
+   La hoja esta pegada al piso de la pantalla, asi que el boton verde cae
+   JUSTO donde estaba "Ver pedido" -- lo vio el dueno: "dice ver pedido y esta
+   en el mismo lugar de enviar, hay un problema ahi". Y el nombre queda
+   guardado del pedido anterior, o sea que el verde ya esta PRENDIDO apenas se
+   abre: dos toques seguidos (lo que hace cualquiera cuando cree que no paso
+   nada) mandaban el pedido sin que lo mirara.
+   Medio segundo alcanza y nadie lo nota. */
+const GUARDA_ANTES_DE_ENVIAR = 600;
+let sePuedeEnviarDesde = 0;
+
 function abrirHoja() {
   setTimeout(mirarSiPuedeEnviar, 0);
+  sePuedeEnviarDesde = Date.now() + GUARDA_ANTES_DE_ENVIAR;
   const cuerpo = $("#hojaCuerpo");
   cuerpo.innerHTML = "";
   ART.filter(a => carrito[a.id] != null).forEach(a => {
@@ -2811,10 +2880,22 @@ function abrirHoja() {
     cuerpo.appendChild(f);
   });
   $("#quien").value = quien;
+  // La hoja SIEMPRE se abre mostrando el pedido entero: eso es lo que dice el
+  // boton que la abre. `abrirHoja` tambien se llama al quitar un articulo, y
+  // ahi tampoco corresponde plegarlo (todavia esta revisando).
+  pintarPlegadoDeLaHoja();
   $("#velo").hidden = false;
   $("#hoja").hidden = false;
 }
-function cerrarHoja() { $("#velo").hidden = true; $("#hoja").hidden = true; dibujar(); }
+function cerrarHoja() {
+  $("#velo").hidden = true;
+  $("#hoja").hidden = true;
+  // La proxima vez arranca de cero: abierta, y con el plegado automatico otra
+  // vez disponible.
+  hojaPlegada = false;
+  hojaDesplegadaAMano = false;
+  dibujar();
+}
 
 /* El mensaje. La última línea lleva los identificadores internos para que el
    programa NO tenga que adivinar de qué artículo se trata. */
@@ -2954,6 +3035,8 @@ function mirarSiPuedeEnviar() {
 }
 
 $("#enviar").onclick = async () => {
+  // Recien abierta la hoja, el toque no cuenta (ver GUARDA_ANTES_DE_ENVIAR).
+  if (Date.now() < sePuedeEnviarDesde) return;
   const items = ART.filter(a => carrito[a.id] != null);
   if (!items.length) return;
   // Cinturon y tirantes: el boton ya esta apagado, pero si alguna vez algo
