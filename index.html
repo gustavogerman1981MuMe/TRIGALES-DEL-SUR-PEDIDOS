@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="78">
+<meta name="tds-pagina" content="79">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -391,7 +391,7 @@
      deja el gesto adentro: desde la lista y la caja del pedido el dedo mueve
      SOLO la lista. Lo mismo en la hoja del pedido y en el cartel para
      guardarla. */
-  main, .hojaCuerpo, .guardarlo{ overscroll-behavior-y:contain }
+  main, .guardarlo{ overscroll-behavior-y:contain }
   /* Y EL TIRON DEL TELEFONO SE APAGA EN TODA LA PAGINA: el refrescar tirando
      para abajo lo hace la pagina (ver tirarParaRefrescar). En la app
      instalada el telefono no refrescaba nada, solo estiraba la pantalla (el
@@ -928,21 +928,7 @@
   .hoja h2{font-family:Archivo,sans-serif; font-weight:800; font-size:17px; margin:0; letter-spacing:-.01em}
   .hojaTop{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:15px 16px 11px; border-bottom:1px solid var(--linea)}
   .cerrar{background:none; border:0; font-size:23px; line-height:1; color:var(--tinta2); padding:4px 8px}
-  .hojaCuerpo{overflow-y:auto; padding:2px 16px 14px}
   .hojaPie{padding:12px 16px 16px; border-top:1px solid var(--linea); display:flex; flex-direction:column; gap:9px}
-  /* EL PEDIDO, PLEGADO ADENTRO DE LA HOJA. (2026-09-28.)
-     El dueno: "en el momento que toca enviar, el pedido queda reducido a la
-     caja chiquita con todo el pedido adentro... que se limpie un poco la
-     pantalla". Pasa al tocar el campo del nombre, que es cuando ya lo reviso.
-     Tiene la misma cara que la cajita "Tu pedido" de la pagina (.loQueVaTop),
-     a proposito: es la misma idea y se reconoce sola. */
-  .hojaResumen{
-    width:100%; display:flex; align-items:center; justify-content:space-between; gap:10px;
-    background:var(--sello-suave); border:0; border-top:1px solid var(--linea);
-    padding:11px 16px; text-align:left; color:var(--sello); font-family:inherit;
-  }
-  .hojaResumen .sello{font-size:11px}
-  .hojaResumen .flecha{font-size:11px; opacity:.8; text-decoration:underline; text-underline-offset:2px}
   /* PEDIDO O PRESUPUESTO.
      Dos teclas, no una casilla: una casilla apagada no dice que existe la
      otra opcion, y el que entra a pedir precios tiene que VER que puede.
@@ -971,21 +957,6 @@
     padding:11px 12px; font-size:16px; border:1.5px solid var(--linea2); border-radius:8px;
     background:var(--papel2); color:var(--tinta); width:100%;
   }
-  /* ADENTRO DE LA HOJA DEL PEDIDO, NADA DE ESTO VA.
-
-     El verde y el "en tu pedido" existen para marcar, EN LA LISTA GRANDE,
-     cual de todos los articulos ya cargaste. Pero adentro de "Tu pedido"
-     estan TODOS los que cargaste: marcarlos a todos no dice nada, y en
-     modo noche tres renglones verdes seguidos con los "quitar" naranjas
-     encima se leen como si la pantalla se hubiera dibujado mal.
-     (2026-09-23, lo marco el dueno.)
-
-     La regla que queda: un marcador solo sirve donde hay algo que
-     distinguir. Donde son todos iguales, molesta. */
-  .hojaCuerpo .fila.cargada{
-    background:none; border-left:0; margin-left:0; padding-left:0;
-  }
-  .hojaCuerpo .yaEsta{ display:none }
 
   /* Texto centrado, no un boton: lo que borra todo no se ofrece, se deja
      disponible. Y en el color de aviso, para que se lea distinto del verde
@@ -1056,7 +1027,10 @@
 
 <div class="barra">
   <div class="cuenta"><b id="cuenta">Tu pedido está vacío</b><span id="subcuenta">Buscá un artículo y tocá +</span></div>
-  <button class="btn" id="verPedido" type="button" disabled>Ver pedido</button>
+  <!-- DICE "ENVIAR PEDIDO", NO "VER PEDIDO". (2026-09-28.) El pedido se ve y
+       se corrige arriba, en la cajita "Tu pedido" de la pagina; este boton es
+       el ultimo paso. El id queda como estaba para no tocar medio archivo. -->
+  <button class="btn" id="verPedido" type="button" disabled>Enviar pedido</button>
 </div>
 
 <div class="veloG" id="veloG" hidden></div>
@@ -1106,16 +1080,26 @@
 </section>
 
 <div class="velo" id="velo" hidden></div>
-<section class="hoja" id="hoja" hidden aria-label="Tu pedido">
+<!-- ESTA HOJA YA NO MUESTRA EL PEDIDO: SOLO LO MANDA. (2026-09-28.)
+
+     Antes listaba los articulos otra vez, y en pantalla quedaba "Tu pedido"
+     TRES veces: la cajita de la pagina, el titulo de la hoja y la lista de
+     adentro. El dueno lo vio y lo corto: "queda tu pedido, tu pedido, tu
+     pedido, tres veces... esa caja previa, que es para chequear, para mi ya
+     no es necesario... lo pondria dentro de la cajita chiquita de antes, que
+     lo vea, si lo quiere cambiar que lo cambie, pero aca abajo el boton sea
+     enviar pedido".
+
+     Asi que el pedido se revisa y se corrige en UN solo lugar -- la cajita
+     "Tu pedido" de la pagina, que ya tiene el -, el + y el x de cada
+     renglon -- y aca solo queda lo que hace falta para mandarlo: de quien es,
+     si es pedido o presupuesto, y el boton. El titulo dice CUANTO se manda,
+     que es el dato que uno quiere confirmar antes de tocar. -->
+<section class="hoja" id="hoja" hidden aria-label="Mandar el pedido">
   <div class="hojaTop">
-    <h2>Tu pedido</h2>
+    <h2 id="hojaTitulo">Mandás tu pedido</h2>
     <button class="cerrar" id="cerrarHoja" type="button" aria-label="Cerrar">×</button>
   </div>
-  <div class="hojaCuerpo" id="hojaCuerpo"></div>
-  <button class="hojaResumen" id="hojaResumen" type="button" hidden>
-    <span class="sello" id="hojaResumenTxt">Tu pedido</span>
-    <span class="flecha">mostrar</span>
-  </button>
   <div class="hojaPie">
     <div class="campo">
       <!-- SIN ROTULO ARRIBA NI LEYENDA ABAJO: lo dice el propio campo.
@@ -1144,14 +1128,16 @@
     <p class="aviso" id="avisoEnvio">Se abre WhatsApp con el pedido ya escrito, al <span class="num">+54 9 11 5163-0039</span>. Vos solo tocás enviar.</p>
     <!-- VACIAR EL PEDIDO VIVE ACA, Y ABAJO DE TODO.
 
-         Antes estaba arriba, pegado a "ocultar" y a "Ver pedido" -- dos que
+         Antes estaba arriba, pegado a "ocultar" y al boton de abajo -- dos que
          se tocan todo el tiempo. Un dedo mal apoyado y se perdian diez
          articulos. (2026-09-24, lo marco el dueno.)
 
-         Aca esta bien por tres motivos: se ve LO QUE SE VA A BORRAR justo
-         arriba, hay que abrir la hoja a proposito para llegar, y queda
-         despues de "Enviar", que es lo que uno viene a hacer. Ademas es
-         texto chico y no un boton: no compite con nada. -->
+         Aca esta bien por tres motivos: hay que abrir la hoja a proposito
+         para llegar, queda despues de "Enviar" (que es lo que uno viene a
+         hacer), y es texto chico y no un boton, asi que no compite con nada.
+         Desde el 2026-09-28 la hoja ya no lista el pedido, asi que lo que se
+         va a borrar NO esta justo arriba -- por eso pregunta antes
+         (confirmarVaciar), que es el freno que de verdad lo cuida. -->
     <button class="vaciarPedido" id="vaciarPedido" type="button">Vaciar el pedido y empezar de nuevo</button>
   </div>
 </section>
@@ -1858,8 +1844,10 @@ function rotuloPlegable(clave, texto, cuantos) {
 
 /* LA LISTA QUE VA ARMANDO, SIEMPRE A LA VISTA.
    Una linea por articulo, chiquita, arriba de todo y pegada mientras scrollea.
-   Es para MIRAR mientras sigue buscando; la hoja de "Ver pedido" sigue siendo
-   para revisar y enviar. (2026-09-23, pedido del dueno.) */
+   Desde el 2026-09-28 es TAMBIEN donde se revisa y se corrige el pedido: la
+   hoja de abajo dejo de listarlo (ver el comentario de la hoja). Por eso cada
+   renglon tiene su -, su + y su x. (2026-09-23 y 2026-09-28, pedidos del
+   dueno.) */
 function dibujarLoQueVaPidiendo() {
   const items = ART.filter((a) => carrito[a.id] != null);
   if (!items.length) return;
@@ -2579,12 +2567,12 @@ function dibujarArriba() {
 
   /* "EMPEZAR DE NUEVO" YA NO VIVE ACA ARRIBA.
 
-     Estaba pegado a "ocultar" y a "Ver pedido", que son dos que se tocan
+     Estaba pegado a "ocultar" y al boton de abajo, que son dos que se tocan
      todo el tiempo. Un boton que BORRA EL PEDIDO ENTERO no puede estar
      al lado de dos que se tocan seguido: un dedo mal apoyado y perdes
      diez articulos. El dueno lo marco el 2026-09-24.
 
-     Ahora esta adentro de la hoja "Ver pedido", que es donde se ve LO QUE
+     Ahora esta adentro de la hoja de mandar, que es donde se ve LO QUE
      SE VA A BORRAR. Nadie vacia un pedido sin mirarlo antes. */
 
   /* "Pedidos anteriores" ya NO esta aca: paso a ser un titulo que se toca,
@@ -2690,7 +2678,7 @@ function limpiarBuscador() {
 
    - Si hay articulos PRENDIDOS esperando cantidad, dice "Cargar 4" y los
      carga a todos de un toque.
-   - Si no hay ninguno prendido, vuelve a ser "Ver pedido", como siempre.
+   - Si no hay ninguno prendido, vuelve a ser "Enviar pedido", como siempre.
 
    Asi no se agrega ningun boton nuevo a la pantalla, que es lo que pidio
    el dueno: "el unico boton que se agrega es cargar todos". Y mientras
@@ -2720,8 +2708,8 @@ function actualizarBarra() {
   $("#cuenta").textContent = n ? (n === 1 ? "1 artículo" : n + " artículos") : "Tu pedido está vacío";
   $("#subcuenta").textContent = hayParaCargar
     ? "Poné cuánto en los que quieras y cargalos todos juntos"
-    : (n ? "Seguí agregando, o revisalo y enviá" : "Buscá un artículo y poné cuánto");
-  b.textContent = "Ver pedido";
+    : (n ? "Seguí agregando, o revisalo arriba y mandalo" : "Buscá un artículo y poné cuánto");
+  b.textContent = "Enviar pedido";
   b.disabled = !n;
   b.classList.remove("cargar");
   b.onclick = abrirHoja;
@@ -2814,54 +2802,16 @@ function persistir() {
   guardar("tds_carrito", carrito);
 }
 
-/* ---------- LA HOJA DEL PEDIDO ---------- */
-
-/* EL PEDIDO SE PLIEGA CUANDO VA A PONER EL NOMBRE. (2026-09-28.)
-
-   El dueno: "una vez que el pedido esta hecho, que el cliente toca el boton
-   para poner el nombre, me gustaria que el pedido se minimice en la caja
-   chiquita de pedidos... que se limpie un poco la pantalla".
-
-   POR QUE EN EL NOMBRE Y NO AL ABRIR: el boton de abajo dice "Ver pedido" --
-   lo hizo notar el mismo dia -- asi que al abrir la hoja el pedido se ve
-   ENTERO, que es lo que el boton promete. Se pliega despues, cuando ya lo
-   reviso y pasa a mandarlo. Cada cosa hace lo que dice.
-
-   Si lo despliega a mano, no se vuelve a plegar solo: seria pelearle. */
-let hojaPlegada = false;
-let hojaDesplegadaAMano = false;
-
-function pintarPlegadoDeLaHoja() {
-  const cuantos = ART.filter((a) => carrito[a.id] != null).length;
-  const resumen = $("#hojaResumen");
-  $("#hojaCuerpo").hidden = hojaPlegada;
-  resumen.hidden = !hojaPlegada;
-  $("#hojaResumenTxt").textContent = "Tu pedido · " + cuantos + (cuantos === 1 ? " artículo" : " artículos");
-}
-
-$("#hojaResumen").onclick = () => {
-  hojaPlegada = false;
-  hojaDesplegadaAMano = true;
-  pintarPlegadoDeLaHoja();
-};
-
-/* Al tocar el nombre. `onfocus` y no `onclick`: tambien entra por teclado y
-   desde el "siguiente" del teclado del telefono. */
-$("#quien").onfocus = () => {
-  if (hojaPlegada || hojaDesplegadaAMano) return;
-  if (!Object.keys(carrito).length) return;
-  hojaPlegada = true;
-  pintarPlegadoDeLaHoja();
-};
+/* ---------- LA HOJA DE MANDAR EL PEDIDO ---------- */
 
 /* NO SE MANDA NADA EN EL PRIMER RATITO. (2026-09-28.)
 
    La hoja esta pegada al piso de la pantalla, asi que el boton verde cae
-   JUSTO donde estaba "Ver pedido" -- lo vio el dueno: "dice ver pedido y esta
-   en el mismo lugar de enviar, hay un problema ahi". Y el nombre queda
-   guardado del pedido anterior, o sea que el verde ya esta PRENDIDO apenas se
-   abre: dos toques seguidos (lo que hace cualquiera cuando cree que no paso
-   nada) mandaban el pedido sin que lo mirara.
+   JUSTO donde estaba el boton que la abrio -- lo vio el dueno: "dice ver
+   pedido y esta en el mismo lugar de enviar, hay un problema ahi". Y el
+   nombre queda guardado del pedido anterior, o sea que el verde ya esta
+   PRENDIDO apenas se abre: dos toques seguidos (lo que hace cualquiera cuando
+   cree que no paso nada) mandaban el pedido sin que lo mirara.
    Medio segundo alcanza y nadie lo nota. */
 const GUARDA_ANTES_DE_ENVIAR = 600;
 let sePuedeEnviarDesde = 0;
@@ -2869,31 +2819,17 @@ let sePuedeEnviarDesde = 0;
 function abrirHoja() {
   setTimeout(mirarSiPuedeEnviar, 0);
   sePuedeEnviarDesde = Date.now() + GUARDA_ANTES_DE_ENVIAR;
-  const cuerpo = $("#hojaCuerpo");
-  cuerpo.innerHTML = "";
-  ART.filter(a => carrito[a.id] != null).forEach(a => {
-    const f = filaArticulo(a);
-    const quitar = document.createElement("button");
-    quitar.className = "quitar"; quitar.type = "button"; quitar.textContent = "quitar";
-    quitar.onclick = () => { delete carrito[a.id]; persistir(); abrirHoja(); dibujar(); };
-    f.querySelector(".txt").appendChild(quitar);
-    cuerpo.appendChild(f);
-  });
+  // EL TITULO DICE CUANTO SE MANDA. Es el dato que uno quiere confirmar antes
+  // de tocar el boton, y ocupa un renglon que ya existia.
+  const cuantos = ART.filter((a) => carrito[a.id] != null).length;
+  $("#hojaTitulo").textContent = cuantos === 1 ? "Mandás 1 artículo" : "Mandás " + cuantos + " artículos";
   $("#quien").value = quien;
-  // La hoja SIEMPRE se abre mostrando el pedido entero: eso es lo que dice el
-  // boton que la abre. `abrirHoja` tambien se llama al quitar un articulo, y
-  // ahi tampoco corresponde plegarlo (todavia esta revisando).
-  pintarPlegadoDeLaHoja();
   $("#velo").hidden = false;
   $("#hoja").hidden = false;
 }
 function cerrarHoja() {
   $("#velo").hidden = true;
   $("#hoja").hidden = true;
-  // La proxima vez arranca de cero: abierta, y con el plegado automatico otra
-  // vez disponible.
-  hojaPlegada = false;
-  hojaDesplegadaAMano = false;
   dibujar();
 }
 
