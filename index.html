@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="75">
+<meta name="tds-pagina" content="76">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -974,12 +974,13 @@
   }
   .hojaCuerpo .yaEsta{ display:none }
 
-  /* Texto chico y centrado, no un boton: lo que borra todo no se ofrece,
-     se deja disponible. Y en el color de aviso, para que se lea distinto
-     del verde de enviar. */
+  /* Texto centrado, no un boton: lo que borra todo no se ofrece, se deja
+     disponible. Y en el color de aviso, para que se lea distinto del verde
+     de enviar. Era de 12 px y el dueno lo agrando (27/09: "casi que no se
+     ve"). */
   .vaciarPedido{
     display:block; width:100%; background:none; border:0;
-    padding:10px 0 2px; font-family:inherit; font-size:12px;
+    padding:10px 0 2px; font-family:inherit; font-size:14px;
     color:var(--brasa); text-decoration:underline; text-underline-offset:3px;
   }
 
