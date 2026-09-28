@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="72">
+<meta name="tds-pagina" content="73">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -3004,14 +3004,13 @@ function abrirWhatsApp(texto) {
   document.body.appendChild(a); a.click(); a.remove();
 }
 
-/* ARRANQUE. Primero se dibuja con el respaldo, para que el cliente vea la
-   lista al instante y no una pantalla en blanco. Despues, en segundo plano, se
-   baja la del dia y se vuelve a dibujar si llego. */
-/* LA VERSION DE LA PAGINA, A LA VISTA UN RATITO: al abrirla, al refrescarla
-   tirando para abajo y al tocar el boton de refrescar. Sale del mismo numero
-   escondido que usa el programa para no pisar una pagina mas nueva (el meta
-   tds-pagina que pone el armado), asi no hay dos numeros que se puedan
-   separar. */
+/* LA VERSION DE LA PAGINA, A LA VISTA UN RATITO: SOLO cuando la refrescan,
+   con el boton o tirando para abajo. Al abrirla NO (el dueno, 27/09: "yo
+   quiero abrir la aplicacion y, si toco el boton refrescar, ahi aparece el
+   v72 y desaparece"). Aparece y se va SIN titilar: el que titila es el
+   boton. Sale del mismo numero escondido que usa el programa para no pisar
+   una pagina mas nueva (el meta tds-pagina que pone el armado), asi no hay
+   dos numeros que se puedan separar. */
 let relojVersion = null;
 function mostrarVersion() {
   const m = document.querySelector('meta[name="tds-pagina"]');
@@ -3023,8 +3022,10 @@ function mostrarVersion() {
   relojVersion = setTimeout(() => el.classList.remove("seVe"), 4000);
 }
 
+/* ARRANQUE. Primero se dibuja con el respaldo, para que el cliente vea la
+   lista al instante y no una pantalla en blanco. Despues, en segundo plano, se
+   baja la del dia y se vuelve a dibujar si llego. */
 async function arrancar() {
-  mostrarVersion();
   cargarLista(RESPALDO, RESPALDO_DE);
   dibujar();
   // La lista se baja igual al abrir, en silencio. Lo que NO se hace es
@@ -3037,7 +3038,7 @@ async function arrancar() {
   // existe de verdad, deberia titilar la luz como si tocaramos el boton".)
   const refrescada = laRefrescaron();
   const b = $("#refrescar");
-  if (refrescada) b.disabled = true;
+  if (refrescada) { b.disabled = true; mostrarVersion(); }
   const hubo = await bajarLista();
   if (hubo) dibujar();
   if (refrescada) {
