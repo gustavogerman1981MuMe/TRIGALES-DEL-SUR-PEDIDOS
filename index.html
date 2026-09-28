@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="73">
+<meta name="tds-pagina" content="74">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -154,7 +154,11 @@
      nueva", es lo que HIZO EL:
 
        DORADO = toca para buscar la lista de hoy.
-       VERDE  = listo, la buscaste. Y queda verde hasta que cierre la pagina.
+       VERDE  = la acabas de buscar: titila en verde y SE APAGA, vuelve a
+                dorado. (Hasta el 27/09 quedaba verde hasta cerrar la
+                pagina; el dueno lo cambio: "yo creo que se apaga ahi la
+                cajita, ya esta, se actualizo, listo... despues arrastro y
+                tiene que titilar de vuelta".)
 
      ARRANCA SIEMPRE EN DORADO, aunque la lista se haya bajado sola (salvo
      si la abrieron REFRESCANDOLA, tirando para abajo: eso es tocar el boton,
@@ -385,10 +389,16 @@
      volver a tocar la caja del pedido seguia arrastrando todo en vez de
      moverla (solo se soltaba si primero la movias para arriba). `contain`
      deja el gesto adentro: desde la lista y la caja del pedido el dedo mueve
-     SOLO la lista. Tirar para abajo para refrescar sigue andando desde el
-     encabezado (logo, buscador, ofertas). Lo mismo en la hoja del pedido y
-     en el cartel para guardarla. */
+     SOLO la lista. Lo mismo en la hoja del pedido y en el cartel para
+     guardarla. */
   main, .hojaCuerpo, .guardarlo{ overscroll-behavior-y:contain }
+  /* Y EL TIRON DEL TELEFONO SE APAGA EN TODA LA PAGINA: el refrescar tirando
+     para abajo lo hace la pagina (ver tirarParaRefrescar). En la app
+     instalada el telefono no refrescaba nada, solo estiraba la pantalla (el
+     dueno, 27/09: "refresco bajandolo y no hace nada"); en el navegador
+     recargaba la pagina entera. Ahora es uno solo y hace lo mismo en los
+     dos: lo del boton. */
+  html, body{ overscroll-behavior-y:contain }
   .rotulo{
     display:flex; align-items:center; gap:9px;
     font-size:11px; color:var(--tinta2); margin:18px 0 7px;
@@ -3071,27 +3081,28 @@ function laRefrescaron() {
   return tipo === "reload" || yaEstaba;
 }
 
-/* EL BOTON SE PINTA SEGUN COMO ESTA LA LISTA.
-   Dorado = la guardada en el telefono. Verde = la de hoy.
-   Ver el comentario largo del CSS. */
+/* EL BOTON TITILA EN VERDE Y SE APAGA. Verde mientras titila (las dos
+   veces del CSS, 1,6 s cada una) y despues vuelve a dorado, listo para la
+   proxima: cada vez que se refresca, con el boton o tirando, titila de
+   nuevo. Ver el comentario largo del CSS. */
+const DURA_EL_TITILEO_DEL_BOTON = 3200;   // 2 x 1,6 s de #refrescar.reciencambio
+let relojBoton = null;
 function pintarRefrescar(alDia) {
   const b = $("#refrescar");
-  const estaba = b.classList.contains("aldia");
-  b.classList.toggle("aldia", !!alDia);
-  b.title = alDia ? "Ya buscaste la lista de hoy" : "Buscar la lista de hoy";
-  b.setAttribute("aria-label", b.title);
-  // Titila SOLO cuando cambia de verdad. Si titilara cada vez que se
-  // toca sin que cambie nada, el parpadeo dejaria de querer decir algo.
-  if (!!alDia !== estaba) {
-    b.classList.remove("reciencambio");
-    void b.offsetWidth;
-    b.classList.add("reciencambio");
-  }
+  clearTimeout(relojBoton);
+  b.classList.remove("reciencambio");
+  if (!alDia) { b.classList.remove("aldia"); return; }
+  b.classList.add("aldia");
+  void b.offsetWidth;   // para que titile aunque recien hubiera titilado
+  b.classList.add("reciencambio");
+  relojBoton = setTimeout(() => b.classList.remove("aldia", "reciencambio"), DURA_EL_TITILEO_DEL_BOTON);
 }
 
 
-$("#refrescar").onclick = async (e) => {
-  const b = e.currentTarget;
+/* REFRESCAR: lo mismo con el boton y tirando para abajo. */
+async function refrescarLista() {
+  const b = $("#refrescar");
+  if (b.disabled) return;   // ya esta buscando
   mostrarVersion();
   b.disabled = true;
   const hubo = await bajarLista();
@@ -3099,7 +3110,44 @@ $("#refrescar").onclick = async (e) => {
   b.disabled = false;
   // Si no se pudo bajar, se queda dorado y NO dice nada. Nunca error.
   if (hubo) pintarRefrescar(true);
-};
+}
+$("#refrescar").onclick = () => refrescarLista();
+
+/* TIRAR PARA ABAJO REFRESCA DE VERDAD, TAMBIEN EN LA APP. (2026-09-27.)
+   El dueno: "abro la app, refresco bajandolo y no hace nada... para que
+   aparezca hay que activarlo con el botoncito". En la app instalada el
+   telefono no refresca al tirar: solo estira la pantalla. Asi que lo hace la
+   pagina: con la lista arriba de todo, un dedo que baja mas de
+   TIRON_PARA_REFRESCAR (y bastante mas de lo que se corre al costado, para no
+   confundirlo con correr las ofertas) hace al soltar lo mismo que el boton.
+   Con la hoja del pedido o un cartel abiertos, no. Nada se mueve ni se
+   arrastra: solo refresca. */
+const TIRON_PARA_REFRESCAR = 70;
+let tiron = null;
+function tirarParaRefrescar() {
+  document.addEventListener("touchstart", (e) => {
+    tiron = null;
+    if (e.touches.length !== 1) return;
+    if (e.target.closest && e.target.closest(".velo, .veloG, .hoja, .guardarlo")) return;
+    if (main.scrollTop > 0) return;   // la lista no esta arriba de todo
+    const t = e.touches[0];
+    tiron = { x: t.clientX, y: t.clientY, dx: 0, dy: 0 };
+  }, { passive: true });
+  document.addEventListener("touchmove", (e) => {
+    if (!tiron || e.touches.length !== 1) { tiron = null; return; }
+    const t = e.touches[0];
+    tiron.dx = Math.max(tiron.dx, Math.abs(t.clientX - tiron.x));
+    tiron.dy = t.clientY - tiron.y;
+    if (main.scrollTop > 0) tiron = null;   // la lista se movio: era bajar la lista
+  }, { passive: true });
+  document.addEventListener("touchend", () => {
+    const t = tiron;
+    tiron = null;
+    if (t && t.dy >= TIRON_PARA_REFRESCAR && t.dy > t.dx * 2) refrescarLista();
+  }, { passive: true });
+  document.addEventListener("touchcancel", () => { tiron = null; }, { passive: true });
+}
+tirarParaRefrescar();
 /* ---------------------------------------------------------------------------
    GUARDARLO EN LA PANTALLA DEL CELULAR.
 
