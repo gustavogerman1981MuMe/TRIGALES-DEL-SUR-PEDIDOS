@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-09-27T22:29:12.866Z",
+  "generado": "2026-09-30T16:02:54.301Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -144,12 +144,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_31",
-      "nombre": "AZUCAR TAXONERA GRANULADA X 5 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_33",
       "nombre": "BALLINA PASTA CUBRE TORTA F H X 0.500 KG",
       "familia": "GENERAL",
@@ -200,12 +194,6 @@
     {
       "id": "art_csv_41",
       "nombre": "BARI MERMELADA DE MEMBRILLO X 10 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_42",
-      "nombre": "BLANCURA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -768,12 +756,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_140",
-      "nombre": "EGRAMAR GRASA GUSTAGRAS REFINADA X10 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_141",
       "nombre": "EGRAMAR MARGARINA MASA ORO SACHET X 0.5 KG",
       "familia": "GENERAL",
@@ -1116,12 +1098,6 @@
       "hay": true
     },
     {
-      "id": "art_1789132704523",
-      "nombre": "HARINA 000 PEQUEÑA EMA 000",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_204",
       "nombre": "INTY MANTECA X 2.5 KG",
       "familia": "GENERAL",
@@ -1339,7 +1315,7 @@
     },
     {
       "id": "art_csv_239",
-      "nombre": "LEDEVIT DESTELLO FRUTILLA X 4 KG",
+      "nombre": "LEDEVIT DESTELLO FRUTILLA X 4,4 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1351,7 +1327,7 @@
     },
     {
       "id": "art_csv_240",
-      "nombre": "LEDEVIT DESTELLO NEUTRO X 4 KG",
+      "nombre": "LEDEVIT DESTELLO NEUTRO X 4,4 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2316,12 +2292,6 @@
       "hay": true
     },
     {
-      "id": "art_1787488935989",
-      "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_408",
       "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
       "familia": "GENERAL",
@@ -2516,6 +2486,12 @@
     {
       "id": "art_csv_439",
       "nombre": "TAXONERA ADITIVO CONCENTRADO X 1/2 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_31",
+      "nombre": "TAXONERA AZUCAR GRANULADA X 5 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2771,7 +2747,7 @@
       "precio": 35800,
       "desdeCuantos": 5,
       "texto": "LLEVANDO 5 O MAS",
-      "hasta": "2026-09-28",
+      "hasta": "2026-10-04",
       "hay": true,
       "vencida": false
     },
