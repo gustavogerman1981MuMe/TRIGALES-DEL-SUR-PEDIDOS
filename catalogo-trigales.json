@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-09-30T16:02:54.301Z",
+  "generado": "2026-10-02T13:09:53.099Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -66,6 +66,12 @@
       "hay": true
     },
     {
+      "id": "art_csv_9",
+      "nombre": "AGUILA TABLETA BLANCO X 150 GS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_10",
       "nombre": "AGUILA TABLETA SEMIAMARGO X 150 GS",
       "familia": "GENERAL",
@@ -80,12 +86,6 @@
     {
       "id": "art_csv_13",
       "nombre": "AGUILA/ARCOR SNACK (9324) BON O BON X 800 GR",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_9",
-      "nombre": "AGUILATABLETA BLANCO X 150 GS",
       "familia": "GENERAL",
       "hay": true
     },
@@ -200,6 +200,18 @@
     {
       "id": "art_csv_43",
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1790942045002",
+      "nombre": "BOLSA CAMISETA NAVIDEÑA 30X40",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1790942112150",
+      "nombre": "BOLSA CAMISETA NAVIDEÑA 40X50",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1698,20 +1710,8 @@
       "hay": true
     },
     {
-      "id": "art_csv_304",
-      "nombre": "MILKAUT MANTECA X 25 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_305",
       "nombre": "MILKAUT MANTECA X 5 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_306",
-      "nombre": "MILKAUT PROVOLONE X KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1987,7 +1987,7 @@
     },
     {
       "id": "art_csv_355",
-      "nombre": "PAPELERA BOLSA CAMISETA DE 40 X 50 ( 250/5 )",
+      "nombre": "PAPELERA BOLSA CAMISETA DE 40 X 50",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2005,19 +2005,13 @@
     },
     {
       "id": "art_csv_358",
-      "nombre": "PAPELERA BOLSA DE ARRANQUE 20X 30 (180/1)",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 20X 30",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_359",
-      "nombre": "PAPELERA BOLSA DE ARRANQUE 25 X 35 ( 181/1 )",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_360",
-      "nombre": "PAPELERA BOLSA DE ARRANQUE 30 X 40 ( 182/1)",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 25 X 35",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2029,19 +2023,13 @@
     },
     {
       "id": "art_csv_362",
-      "nombre": "PAPELERA BOLSA DE ARRANQUE 40 X 50 (184/2)",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 40 X 50",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_363",
-      "nombre": "PAPELERA BOLSA DE ARRANQUE 50 X 70 (33180)",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_364",
-      "nombre": "PAPELERA BOLSA DE CONSORCIO DE 60 X 90 ( 281/1)",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 50 X 70",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2083,13 +2071,7 @@
     },
     {
       "id": "art_csv_370",
-      "nombre": "PAPELERA CAJAS PARA PIZZA X 50 UNIDADES (319)",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_371",
-      "nombre": "PAPELERA CAMISETAS USO INTERNO ( 251/6 )",
+      "nombre": "PAPELERA CAJAS PARA PIZZA X 50 UNIDADES",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2184,14 +2166,8 @@
       "hay": true
     },
     {
-      "id": "art_csv_386",
-      "nombre": "PAPELERA PAPEL MANTECA ROLLO X 5 METROS ( 1765 )",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_387",
-      "nombre": "PAPELERA PAPEL SUELTO (409/3 )",
+      "nombre": "PAPELERA PAPEL SUELTO",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2737,7 +2713,7 @@
       "precio": 61000,
       "desdeCuantos": 5,
       "texto": "LLEVANDO 5 O MAS",
-      "hasta": "2026-09-30",
+      "hasta": "2026-10-04",
       "hay": true,
       "vencida": false
     },
@@ -2757,7 +2733,7 @@
       "precio": 10900,
       "desdeCuantos": 10,
       "texto": "LLEVANDO 10 O MAS",
-      "hasta": "2026-10-01",
+      "hasta": "2026-10-04",
       "hay": true,
       "vencida": false
     }
@@ -2768,7 +2744,7 @@
     "precio": 61000,
     "desdeCuantos": 5,
     "texto": "LLEVANDO 5 O MAS",
-    "hasta": "2026-09-30",
+    "hasta": "2026-10-04",
     "hay": true,
     "vencida": false
   }
