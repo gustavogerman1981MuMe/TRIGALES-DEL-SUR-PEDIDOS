@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-02T13:09:53.099Z",
+  "generado": "2026-10-03T16:18:26.901Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -81,7 +81,7 @@
       "id": "art_csv_12",
       "nombre": "AGUILA/ARCOR PASTA DE MANI BON O BON X 290 GR",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_13",
@@ -129,7 +129,7 @@
       "id": "art_1789125724382",
       "nombre": "ARRAYANES RELLENO SABOR DULCE DE LECHE X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_28",
@@ -140,6 +140,12 @@
     {
       "id": "art_csv_29",
       "nombre": "AZUCAR COMUN X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_30",
+      "nombre": "AZUCAR COMUN X 50 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -165,7 +171,7 @@
       "id": "art_csv_36",
       "nombre": "BARI FRUTA ESCURRIDA X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_37",
@@ -198,8 +204,20 @@
       "hay": true
     },
     {
+      "id": "art_csv_42",
+      "nombre": "BLANCURA HARINA 000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_43",
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1791037599145",
+      "nombre": "BOLSA ARPILLERA",
       "familia": "GENERAL",
       "hay": true
     },
@@ -267,7 +285,7 @@
       "id": "art_csv_55",
       "nombre": "CALSA GARCIA RICOTA X 3 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_57",
@@ -327,7 +345,7 @@
       "id": "art_csv_66",
       "nombre": "CALSA POLVO PARA HORNEAR X 4 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_67",
@@ -345,13 +363,13 @@
       "id": "art_csv_69",
       "nombre": "CAMI PASCUALINA CRIOLLA",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_71",
       "nombre": "CAMI TAPA PASTELITOS X 2,5 DOCENAS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_70",
@@ -369,7 +387,7 @@
       "id": "art_csv_73",
       "nombre": "CAMI TAPAS DE EMPANADAS FAMILIAR CRIOLLAS X 5 DOC",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_74",
@@ -453,7 +471,7 @@
       "id": "art_1790350029830",
       "nombre": "CAYFAR MERMERLADA DE MEMBRILLO X 10KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_89",
@@ -585,7 +603,7 @@
       "id": "art_csv_110",
       "nombre": "CLUCELAT MANTECA X 200 GS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_111",
@@ -768,6 +786,12 @@
       "hay": true
     },
     {
+      "id": "art_csv_140",
+      "nombre": "EGRAMAR GRASA GUSTAGRAS REFINADA X10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_141",
       "nombre": "EGRAMAR MARGARINA MASA ORO SACHET X 0.5 KG",
       "familia": "GENERAL",
@@ -795,7 +819,7 @@
       "id": "art_csv_146",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO BALDE X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_147",
@@ -807,13 +831,13 @@
       "id": "art_csv_148",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 4 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_149",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_lista_151",
@@ -1119,7 +1143,7 @@
       "id": "art_csv_205",
       "nombre": "INTY MANTECA X 500 GR",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_207",
@@ -1161,7 +1185,7 @@
       "id": "art_csv_212",
       "nombre": "JULIAN ACEITUNAS VERDE EN RODAJAS X 4 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_214",
@@ -1221,7 +1245,7 @@
       "id": "art_csv_220",
       "nombre": "LAGOMARSINO CONCEPCION HARINA 0000 X 25 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_221",
@@ -1249,7 +1273,7 @@
     },
     {
       "id": "art_csv_225",
-      "nombre": "LANFIELD DULCE DE LECHE REPOSTERO X 10 KG",
+      "nombre": "LANFIELD ULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1257,7 +1281,7 @@
       "id": "art_csv_227",
       "nombre": "LEDEVIT BROWNIE X 4 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_228",
@@ -1341,7 +1365,7 @@
       "id": "art_csv_240",
       "nombre": "LEDEVIT DESTELLO NEUTRO X 4,4 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_242",
@@ -1383,7 +1407,7 @@
       "id": "art_csv_248",
       "nombre": "LEDEVIT PREMEZCLA MOUSSE DE FRUTILLA X 250 GR",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1789125659132",
@@ -1520,6 +1544,12 @@
     {
       "id": "art_csv_270",
       "nombre": "MAPLE DE HUEVO NUMERO 1",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1788446849724",
+      "nombre": "MAPLE DE HUEVO NUMERO 1 COLORADOS",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1710,8 +1740,20 @@
       "hay": true
     },
     {
+      "id": "art_csv_304",
+      "nombre": "MILKAUT MANTECA X 25 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_305",
       "nombre": "MILKAUT MANTECA X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_306",
+      "nombre": "MILKAUT PROVOLONE X KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2016,6 +2058,12 @@
       "hay": true
     },
     {
+      "id": "art_csv_360",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 30 X 40 ( 182/1)",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_361",
       "nombre": "PAPELERA BOLSA DE ARRANQUE 35 X 45 (183/1)",
       "familia": "GENERAL",
@@ -2030,6 +2078,12 @@
     {
       "id": "art_csv_363",
       "nombre": "PAPELERA BOLSA DE ARRANQUE 50 X 70",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_364",
+      "nombre": "PAPELERA BOLSA DE CONSORCIO DE 60 X 90 ( 281/1)",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2166,6 +2220,12 @@
       "hay": true
     },
     {
+      "id": "art_csv_386",
+      "nombre": "PAPELERA PAPEL MANTECA ROLLO X 5 METROS ( 1765 )",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_387",
       "nombre": "PAPELERA PAPEL SUELTO",
       "familia": "GENERAL",
@@ -2264,6 +2324,12 @@
     {
       "id": "art_csv_407",
       "nombre": "PURATOS PREMEZCLA EASY FACTURA X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1787488935989",
+      "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2409,13 +2475,13 @@
       "id": "art_csv_431",
       "nombre": "SEGUNDA COLONIA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_429",
       "nombre": "SEGUNDA COLONIA SEMOLIN X 25 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_432",
