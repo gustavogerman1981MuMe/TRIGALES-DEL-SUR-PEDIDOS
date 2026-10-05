@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-05T17:40:52.505Z",
+  "generado": "2026-10-05T17:53:29.187Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2710,12 +2710,12 @@
     {
       "articuloId": "art_csv_408",
       "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
-      "precio": 61000,
+      "precio": 59000,
       "desdeCuantos": 5,
       "texto": "LLEVANDO 5 O MAS",
-      "hasta": "2026-10-01",
+      "hasta": "2026-10-10",
       "hay": true,
-      "vencida": true
+      "vencida": false
     },
     {
       "articuloId": "art_csv_427",
@@ -2739,9 +2739,9 @@
     }
   ],
   "oferta": {
-    "articuloId": "art_csv_427",
-    "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 10 KG",
-    "precio": 35800,
+    "articuloId": "art_csv_408",
+    "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
+    "precio": 59000,
     "desdeCuantos": 5,
     "texto": "LLEVANDO 5 O MAS",
     "hasta": "2026-10-10",
