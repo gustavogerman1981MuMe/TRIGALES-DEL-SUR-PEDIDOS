@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-03T16:18:26.901Z",
+  "generado": "2026-10-05T17:39:37.089Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -144,12 +144,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_30",
-      "nombre": "AZUCAR COMUN X 50 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_33",
       "nombre": "BALLINA PASTA CUBRE TORTA F H X 0.500 KG",
       "familia": "GENERAL",
@@ -166,12 +160,6 @@
       "nombre": "BARI CEREZA X 3.1 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_36",
-      "nombre": "BARI FRUTA ESCURRIDA X 1 KG",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_37",
@@ -207,7 +195,7 @@
       "id": "art_csv_42",
       "nombre": "BLANCURA HARINA 000 X 25 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_43",
@@ -237,7 +225,7 @@
       "id": "art_csv_46",
       "nombre": "CALSA FLOR ESENCIA ALMENDRA X 2 LITROS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_47",
@@ -261,13 +249,13 @@
       "id": "art_csv_50",
       "nombre": "CALSA FLOR ESENCIA NARANJA X 2 LITROS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_51",
       "nombre": "CALSA FLOR ESENCIA PAN DULCE X 2 LITRO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_52",
@@ -291,7 +279,7 @@
       "id": "art_csv_57",
       "nombre": "CALSA KOLAROMA CHOCOLATE X 1 LITRO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_58",
@@ -325,7 +313,7 @@
     },
     {
       "id": "art_csv_63",
-      "nombre": "CALSA LEVADURA VIRGEN X 0.500 GS",
+      "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
       "hay": true
     },
@@ -375,7 +363,7 @@
       "id": "art_csv_70",
       "nombre": "CAMI TAPAS COPETIN X 5 DOCENAS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_72",
@@ -613,9 +601,9 @@
     },
     {
       "id": "art_csv_113",
-      "nombre": "CORDOBEZA LEVADURA X 0,5OO GS",
+      "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_114",
@@ -649,7 +637,7 @@
     },
     {
       "id": "art_lista_117",
-      "nombre": "DANICA LEVADURA FRESCA X 500 G",
+      "nombre": "DANICA LEVADURA FRESCA X 500 GS",
       "familia": "GENERAL",
       "hay": true
     },
@@ -699,7 +687,7 @@
       "id": "art_csv_126",
       "nombre": "DEWEY ESENCIA DE ALMENDRA X 1 L",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_127",
@@ -711,7 +699,7 @@
       "id": "art_csv_125",
       "nombre": "DEWEY MERMELADA DE BATATAX 10KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_128",
@@ -782,12 +770,6 @@
     {
       "id": "art_csv_139",
       "nombre": "EGRAMAR GRASA GUSTAGRAS REFINADA X 20 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_140",
-      "nombre": "EGRAMAR GRASA GUSTAGRAS REFINADA X10 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1167,7 +1149,7 @@
       "id": "art_csv_209",
       "nombre": "JULIAN ACEITUNAS VERDE DESCAROZADA X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_210",
@@ -1238,12 +1220,6 @@
     {
       "id": "art_csv_219",
       "nombre": "LAGOMARSINO CONCEPCION HARINA 000 X 25 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_220",
-      "nombre": "LAGOMARSINO CONCEPCION HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": false
     },
@@ -1524,32 +1500,32 @@
       "hay": true
     },
     {
-      "id": "art_csv_266",
-      "nombre": "LUGO MUZZARELLA PLANCHA X 20 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_268",
-      "nombre": "LUGO MUZZARELLA X KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_269",
       "nombre": "LUGO QUESO AZUL",
       "familia": "GENERAL",
       "hay": true
     },
     {
-      "id": "art_csv_270",
-      "nombre": "MAPLE DE HUEVO NUMERO 1",
+      "id": "art_1791201550463",
+      "nombre": "MANGA DE TELA 50CM",
       "familia": "GENERAL",
       "hay": true
     },
     {
-      "id": "art_1788446849724",
-      "nombre": "MAPLE DE HUEVO NUMERO 1 COLORADOS",
+      "id": "art_1791201614958",
+      "nombre": "MANGA DE TELA 60CM",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1791201695940",
+      "nombre": "MANGA DE TELA 70CM",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_270",
+      "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1740,20 +1716,8 @@
       "hay": true
     },
     {
-      "id": "art_csv_304",
-      "nombre": "MILKAUT MANTECA X 25 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_305",
       "nombre": "MILKAUT MANTECA X 5 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_306",
-      "nombre": "MILKAUT PROVOLONE X KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1848,12 +1812,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_322",
-      "nombre": "MUUUME DULCE DE LECHE X 1 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_323",
       "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
       "familia": "GENERAL",
@@ -1869,7 +1827,7 @@
       "id": "art_csv_327",
       "nombre": "NATURA MAYONESA X 2900 CC",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_328",
@@ -2059,7 +2017,7 @@
     },
     {
       "id": "art_csv_360",
-      "nombre": "PAPELERA BOLSA DE ARRANQUE 30 X 40 ( 182/1)",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 30 X 40",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2083,7 +2041,7 @@
     },
     {
       "id": "art_csv_364",
-      "nombre": "PAPELERA BOLSA DE CONSORCIO DE 60 X 90 ( 281/1)",
+      "nombre": "PAPELERA BOLSA DE CONSORCIO DE 60 X 90",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2221,7 +2179,7 @@
     },
     {
       "id": "art_csv_386",
-      "nombre": "PAPELERA PAPEL MANTECA ROLLO X 5 METROS ( 1765 )",
+      "nombre": "PAPELERA PAPEL MANTECA ROLLO X 5 METROS",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2328,12 +2286,6 @@
       "hay": true
     },
     {
-      "id": "art_1787488935989",
-      "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_408",
       "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
       "familia": "GENERAL",
@@ -2343,19 +2295,19 @@
       "id": "art_1787489473487",
       "nombre": "RDC GRASA REFINADA X 20KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1788115971998",
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN PLACA X 2 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_409",
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_410",
@@ -2366,12 +2318,6 @@
     {
       "id": "art_csv_411",
       "nombre": "RDC MARGARINA MASA REVECA X 5 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_412",
-      "nombre": "REFIGRAS BUTTERINA MARGARINA HOJALDRE X 10KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2412,12 +2358,6 @@
       "hay": true
     },
     {
-      "id": "art_1787874953948",
-      "nombre": "REGITECA ROLINA HOJALDRE X 10 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_417",
       "nombre": "REY DE REYES MORRON",
       "familia": "GENERAL",
@@ -2431,19 +2371,19 @@
     },
     {
       "id": "art_csv_423",
-      "nombre": "SAN IGNACIO DULCE DE LECHE HELADERO X 1O KG ((300-167))",
+      "nombre": "SAN IGNACIO DULCE DE LECHE HELADERO X 1O KG",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_424",
-      "nombre": "SAN IGNACIO DULCE DE LECHE PARA SEMBRAR X 1O KG ((300-266))",
+      "nombre": "SAN IGNACIO DULCE DE LECHE PARA SEMBRAR X 1O KG",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_425",
-      "nombre": "SAN IGNACIO DULCE DE LECHE REPOSTERO X 10 KG ((300-203))",
+      "nombre": "SAN IGNACIO DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2541,7 +2481,7 @@
       "id": "art_csv_441",
       "nombre": "TAXONERA AZUCAR IMPALPABLE ANTIHUMEDAD X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_442",
@@ -2565,7 +2505,7 @@
       "id": "art_csv_445",
       "nombre": "TAXONERA EMULSIONANTE EN PASTA X 3.75",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_446",
@@ -2601,7 +2541,7 @@
       "id": "art_csv_451",
       "nombre": "TAXONERA MEMBRILLO MIX X10KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_452",
@@ -2649,13 +2589,13 @@
       "id": "art_csv_459",
       "nombre": "TAXONERA MERMELADA DE MEMBRILLO X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_460",
       "nombre": "TAXONERA MERMELADA FRUTO DEL BOSQUE X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_468",
@@ -2779,9 +2719,9 @@
       "precio": 61000,
       "desdeCuantos": 5,
       "texto": "LLEVANDO 5 O MAS",
-      "hasta": "2026-10-04",
+      "hasta": "2026-10-01",
       "hay": true,
-      "vencida": false
+      "vencida": true
     },
     {
       "articuloId": "art_csv_427",
@@ -2789,7 +2729,7 @@
       "precio": 35800,
       "desdeCuantos": 5,
       "texto": "LLEVANDO 5 O MAS",
-      "hasta": "2026-10-04",
+      "hasta": "2026-10-10",
       "hay": true,
       "vencida": false
     },
@@ -2799,18 +2739,18 @@
       "precio": 10900,
       "desdeCuantos": 10,
       "texto": "LLEVANDO 10 O MAS",
-      "hasta": "2026-10-04",
+      "hasta": "2026-10-10",
       "hay": true,
       "vencida": false
     }
   ],
   "oferta": {
-    "articuloId": "art_csv_408",
-    "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
-    "precio": 61000,
+    "articuloId": "art_csv_427",
+    "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 10 KG",
+    "precio": 35800,
     "desdeCuantos": 5,
     "texto": "LLEVANDO 5 O MAS",
-    "hasta": "2026-10-04",
+    "hasta": "2026-10-10",
     "hay": true,
     "vencida": false
   }
