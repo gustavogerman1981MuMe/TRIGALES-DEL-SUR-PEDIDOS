@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="81">
+<meta name="tds-pagina" content="82">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -1719,13 +1719,9 @@ function filaArticulo(a) {
     e.className = "estrella"; e.textContent = "★ lo pedís seguido";
     pie.appendChild(e);
   }
-  if (noHay) {
-    const vp = document.createElement("button");
-    vp.className = "parecidos"; vp.type = "button";
-    vp.textContent = verParecidosDe === a.id ? "ocultar parecidos" : "ver parecidos";
-    vp.onclick = () => { verParecidosDe = verParecidosDe === a.id ? null : a.id; dibujar(); };
-    pie.appendChild(vp);
-  }
+  /* SIN «VER PARECIDOS». (2026-10-05, el dueño: «cuando un artículo no está,
+     me pone sin stock y ver parecidos; el ver parecidos, sacalo».) El artículo
+     sin stock queda con su «sin stock» y nada más. */
   // Si no quedo nada adentro, el pie no se cuelga: si no, deja su margen
   // arriba y el renglon crece sin que se vea por que.
   txt.appendChild(nom);
