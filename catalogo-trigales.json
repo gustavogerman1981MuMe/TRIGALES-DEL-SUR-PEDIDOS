@@ -1,16 +1,10 @@
 {
   "version": 1,
-  "generado": "2026-10-05T17:39:37.089Z",
+  "generado": "2026-10-05T17:40:52.505Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
   "articulos": [
-    {
-      "id": "art_csv_1",
-      "nombre": "ADITIVO PARA PANIFICADOS X 1 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
     {
       "id": "art_csv_4",
       "nombre": "AGUILA BOMBON BLANCO X KG",
