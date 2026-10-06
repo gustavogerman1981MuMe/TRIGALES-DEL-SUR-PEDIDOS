@@ -194,6 +194,9 @@
 
   /* Celular */
   @media (max-width: 820px) {
+    /* Los dos botones de la app, uno al lado del otro y del mismo tamaño (el dueño, 2026-10-06). */
+    .app .acciones { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .app .acciones .boton { min-height: 44px; padding: 6px 8px; font-size: 13px; line-height: 1.2; text-align: center; }
     section { padding-block: 30px !important; }
     .portada .ancho { padding-block: 22px 26px !important; gap: 14px !important; }
     .portada h1 { margin: 6px 0 10px; }
