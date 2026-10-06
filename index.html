@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="83">
+<meta name="tds-pagina" content="84">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -129,7 +129,10 @@
      El programa la lleva adentro (un .woff2 de 67 KB). La pagina la baja de
      Google Fonts, que es el unico lugar de donde puede bajar una fuente. Si
      no llegara, cae en Georgia: una serif parecida que todos tienen. */
-  .marca b{
+  /* v84: desde la v83 el nombre es un link (lleva a la página del negocio) y
+     no un <b>: sin el «.marca a.sello» perdía la Fraunces y salía en
+     mayúsculas separadas (el dueño: «no tiene la tipografía que me caracteriza»). */
+  .marca b, .marca a.sello{
     font-family:Fraunces,Georgia,"Times New Roman",serif; font-weight:700;
     font-size:21px; text-transform:none; letter-spacing:0;
     color:var(--ladrillo); white-space:nowrap; flex:0 0 auto;
