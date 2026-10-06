@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-06T18:13:26.535Z",
+  "generado": "2026-10-06T19:14:26.518Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -330,12 +330,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_71",
-      "nombre": "CAMI TAPA PASTELITOS X 2,5 DOCENAS",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_70",
       "nombre": "CAMI TAPAS COPETIN X 5 DOCENAS",
       "familia": "GENERAL",
@@ -358,6 +352,12 @@
       "nombre": "CAMI TAPAS DE EMPANADAS HOJALDRADAS X 5 DOC",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_csv_71",
+      "nombre": "CAMI TAPAS PASTELITOS X 2,5 DOCENAS",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_75",
