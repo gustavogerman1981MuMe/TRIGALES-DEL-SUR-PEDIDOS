@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-06T02:10:47.743Z",
+  "generado": "2026-10-06T15:36:38.350Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -21,7 +21,7 @@
       "id": "art_csv_11",
       "nombre": "AGUILA COBERTURA BLANCA X 10 KG CAJA",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_112",
@@ -141,13 +141,13 @@
       "id": "art_csv_30",
       "nombre": "AZUCAR COMUN X 50 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_33",
       "nombre": "BALLINA PASTA CUBRE TORTA F H X 0.500 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_34",
@@ -639,7 +639,7 @@
       "id": "art_1788115800350",
       "nombre": "DANICA GRASA PRIMOR REFINADA X 20",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_lista_117",
@@ -783,7 +783,7 @@
       "id": "art_csv_140",
       "nombre": "EGRAMAR GRASA GUSTAGRAS REFINADA X10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_141",
@@ -793,13 +793,13 @@
     },
     {
       "id": "art_csv_142",
-      "nombre": "EL ALJIBE ( 1010) JAMON 266 X KG",
+      "nombre": "EL ALJIBE  JAMON 266 X KG",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_143",
-      "nombre": "EL ALJIBE (1009) PATA DE CERDO MASTER X KG",
+      "nombre": "EL ALJIBE PATA DE CERDO MASTER X KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1233,7 +1233,7 @@
       "id": "art_csv_219",
       "nombre": "LAGOMARSINO CONCEPCION HARINA 000 X 25 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_220",
@@ -1287,7 +1287,7 @@
       "id": "art_csv_229",
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_230",
@@ -1809,19 +1809,19 @@
       "id": "art_csv_313",
       "nombre": "MORANDO ACEITUNA NEGRA X 2 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_314",
       "nombre": "MORANDO ACEITUNAS RODAJA X4 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_315",
       "nombre": "MORANDO ACEITUNAS VERDE DESCAROZADA X800 G",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_316",
@@ -1845,7 +1845,7 @@
       "id": "art_csv_319",
       "nombre": "MORANDO CONDIMENTADA X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_320",
@@ -1995,7 +1995,7 @@
       "id": "art_csv_347",
       "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 3 (3/1)",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_348",
@@ -2073,7 +2073,7 @@
       "id": "art_csv_360",
       "nombre": "PAPELERA BOLSA DE ARRANQUE 30 X 40",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_361",
@@ -2097,7 +2097,7 @@
       "id": "art_csv_364",
       "nombre": "PAPELERA BOLSA DE CONSORCIO DE 60 X 90",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_365",
@@ -2499,7 +2499,7 @@
       "id": "art_1787508781215",
       "nombre": "SILVIA LECHE LARGA VIDA X 1 LT",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_435",
