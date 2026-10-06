@@ -1,0 +1,432 @@
+<!doctype html>
+<!--
+  PARA TRANSFERIR: LA PÁGINA QUE ABRE EL QR DEL PROGRAMA. (2026-10-05.)
+
+  El recuadro «Para transferir a ...» de Proveedores > Registrar Pago (con
+  Transferencia) tiene «QR para el celular». Ese QR llevaba SOLO el alias en
+  texto, y el iPhone, al ver los puntos («arias.repisa.toro»), lo tomó como una
+  dirección web y lo mandó a Google. El dueño: "no me llevó a Mercado Pago… me
+  llevó a Google". Mercado Pago no tiene una forma pública de abrir una
+  transferencia con el alias y el monto ya cargados.
+
+  Arreglo aprobado ("Ok sí"): el QR es un LINK a esta página, que se publica al
+  lado de la página de pedidos (GitHub Pages):
+    https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/transferir.html#a=<alias>&m=<monto>&n=<nombre>
+  El link lo arma linkParaElCelular (src/lib/para-transferir.js).
+
+  - LOS DATOS VIENEN EN EL # (el fragmento), nunca en el ?: el navegador no se
+    los manda a ningún servidor. La página no pide nada a nadie (sin fetch, sin
+    librerías, sin letras de Google): todo está acá adentro. Lo único de afuera
+    es el link a Mercado Pago, que se abre solo si se toca.
+  - Lo que viene en el link se muestra SOLO con textContent: un nombre con
+    signos de HTML (los de menor y mayor) se ve escrito, no se ejecuta.
+  - «Copiar monto» copia como lo pide Mercado Pago: sin puntos de miles y con
+    coma decimal solo si hay centavos (1735669,48 / 150000). Es la regla de
+    montoParaMercadoPago; esta página no puede importarla, así que está copiada
+    y pruebas/pagina-para-transferir.mjs compara las dos con los mismos casos.
+    Y si el botón no pudo copiar y el monto se copia a mano (o con un toque
+    largo), también sale así, aunque en la pantalla diga «$1.735.669,48».
+  - Sin monto en el link, no hay tarjeta de monto. Sin alias, lo dice.
+
+  Lo cuida pruebas/pagina-para-transferir.mjs.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7F2E7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1B1815" media="(prefers-color-scheme: dark)">
+<title>Para transferir</title>
+<link rel="icon" type="image/png" href="icono-192.png">
+<link rel="apple-touch-icon" href="icono-192.png">
+<style>
+  :root {
+    --fondo: #F7F2E7;
+    --tarjeta: #FFFFFF;
+    --tinta: #2B2118;
+    --apagado: #8A7E68;
+    --borde: #DDD0B6;
+    --boton: #8B4A2B;
+    --boton-letra: #F7F2E7;
+    --aviso: #A63D2F;
+  }
+  /* De noche, los colores de noche del programa (src/lib/tema.js). */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fondo: #1B1815;
+      --tarjeta: #25211D;
+      --tinta: #EFE8DC;
+      --apagado: #A99E8D;
+      --borde: #463E35;
+      --boton: #D9A94A;
+      --boton-letra: #1B1815;
+      --aviso: #E77A69;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--tinta);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    -webkit-tap-highlight-color: transparent;
+  }
+  main {
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 22px 16px 28px;
+    padding-bottom: calc(28px + env(safe-area-inset-bottom));
+  }
+  [hidden] { display: none !important; }
+  .marca {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--apagado);
+  }
+  .para {
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--apagado);
+  }
+  .nombre {
+    margin: 2px 0 0;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+  .tarjeta {
+    margin-top: 16px;
+    padding: 14px;
+    background: var(--tarjeta);
+    border: 1.5px solid var(--borde);
+    border-radius: 12px;
+  }
+  .rotulo {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--apagado);
+  }
+  /* El alias y el monto: grandes, en monoespaciada, y se seleccionan enteros
+     con un toque largo (por si el botón no pudiera copiar).
+     LA LETRA SE ACHICA SOLO EN UN CELULAR ANGOSTO (2026-10-05). Con 23 px fijos,
+     en una pantalla de 320 px un alias de 20 letras se partía en dos renglones
+     con la monoespaciada del iPhone (SF Mono, 0,6 de ancho por letra):
+     «abcdefghij.klmnopq» arriba y «rs» abajo. Ahora es 23 px o lo que entra:
+     el ancho que queda adentro de la tarjeta (100vw menos 63 px: 16 + 16 del
+     costado de la página, 14 + 14 de la tarjeta y 1,5 + 1,5 del borde) dividido
+     13,4, así entran 22 letras (un CBU) en un renglón con un poquito de aire.
+     De 375 px para arriba sigue en 23 px, como el boceto aprobado ("Ok sí").
+     El primer font-size es para un navegador viejo que no sepa min().
+     Lo cuida pruebas/pagina-para-transferir.mjs (320, 360, 375 y 414 px). */
+  .valor {
+    margin: 6px 0 12px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Roboto Mono", "Liberation Mono", monospace;
+    font-size: 23px;
+    font-size: min(23px, calc((100vw - 63px) / 13.4));
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    -webkit-user-select: all;
+    user-select: all;
+  }
+  /* Botones grandes para el dedo: alto fijo y ancho completo, así «✓ Copiado»
+     no los cambia de tamaño. */
+  .boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 52px;
+    margin: 0;
+    padding: 0 16px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
+  }
+  .lleno { background: var(--boton); color: var(--boton-letra); border: 2px solid var(--boton); }
+  .de-borde { background: transparent; color: var(--boton); border: 2px solid var(--boton); }
+  /* «No se pudo copiar»: en el color del aviso (y el alias o el monto queda
+     marcado para copiarlo con el dedo). */
+  .lleno[data-estado="mal"] { background: var(--aviso); border-color: var(--aviso); }
+  .de-borde[data-estado="mal"] { color: var(--aviso); border-color: var(--aviso); }
+  .boton:active { opacity: 0.8; }
+  .boton:focus-visible { outline: 3px solid var(--apagado); outline-offset: 2px; }
+  /* Los tres textos de un «Copiar» ocupan el MISMO lugar (uno arriba del
+     otro) y se ve uno solo: cambiar de texto no mueve nada. */
+  .pila { display: inline-grid; }
+  .pila > span { grid-area: 1 / 1; visibility: hidden; white-space: nowrap; text-align: center; }
+  .boton[data-estado="listo"] .t-listo,
+  .boton[data-estado="ok"] .t-ok,
+  .boton[data-estado="mal"] .t-mal { visibility: visible; }
+  .abrir { margin-top: 18px; }
+  .ayuda {
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--apagado);
+  }
+  .aviso {
+    margin: 18px 0 0;
+    padding: 14px;
+    border: 1.5px solid var(--aviso);
+    border-radius: 12px;
+    color: var(--aviso);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="marca">Trigales del Sur</div>
+
+  <section id="conDatos" hidden>
+    <div class="para" id="para">Para transferir a</div>
+    <h1 class="nombre" id="nombre"></h1>
+
+    <div class="tarjeta">
+      <div class="rotulo">Alias</div>
+      <div class="valor" id="alias"></div>
+      <button type="button" class="boton lleno" id="copiarAlias" data-estado="listo">
+        <span class="pila"><span class="t-listo">Copiar alias</span><span class="t-ok">✓ Copiado</span><span class="t-mal">No se pudo copiar</span></span>
+      </button>
+    </div>
+
+    <div class="tarjeta" id="tarjetaMonto" hidden>
+      <div class="rotulo">Monto</div>
+      <div class="valor" id="monto"></div>
+      <button type="button" class="boton de-borde" id="copiarMonto" data-estado="listo">
+        <span class="pila"><span class="t-listo">Copiar monto</span><span class="t-ok">✓ Copiado</span><span class="t-mal">No se pudo copiar</span></span>
+      </button>
+    </div>
+
+    <!-- A /money-transfer y no a la raíz (2026-10-05): en el iPhone la app de
+         Mercado Pago solo se abre con las direcciones que ella declara (su
+         apple-app-site-association tiene "/money-transfer*", no "/"). Con la
+         raíz se abría la web pidiendo iniciar sesión, o la app de Mercado
+         Libre. Así cae directo en Transferir, que es lo que hace falta. -->
+    <a class="boton de-borde abrir" id="abrirMercadoPago" href="https://www.mercadopago.com.ar/money-transfer" target="_blank" rel="noopener noreferrer">Abrir Mercado Pago</a>
+    <p class="ayuda">En Mercado Pago: Transferir → pegá el alias</p>
+  </section>
+
+  <p class="aviso" id="sinAlias" hidden>Este QR no trae el alias. Volvé a generarlo desde el programa.</p>
+  <noscript><p class="aviso">Para ver el alias hace falta que el navegador tenga JavaScript prendido.</p></noscript>
+</main>
+
+<script>
+"use strict";
+
+// LEER EL LINK. Lo que viene después del #: a=<alias>&m=<monto>&n=<nombre>,
+// cada valor con encodeURIComponent. Vale el primero de cada uno; lo que no
+// se puede decodificar (un % suelto) se deja afuera sin romper la página.
+function leerFragmento(hash) {
+  var texto = String(hash === null || hash === undefined ? "" : hash);
+  if (texto.charAt(0) === "#") texto = texto.slice(1);
+  var datos = { alias: "", monto: 0, nombre: "" };
+  var vistos = {};
+  var partes = texto.split("&");
+  for (var i = 0; i < partes.length; i++) {
+    var parte = partes[i];
+    var igual = parte.indexOf("=");
+    if (igual <= 0) continue;
+    var clave = parte.slice(0, igual);
+    if (clave !== "a" && clave !== "m" && clave !== "n") continue;
+    if (vistos[clave]) continue;
+    var valor;
+    try {
+      valor = decodeURIComponent(parte.slice(igual + 1).replace(/\+/g, " "));
+    } catch (e) {
+      continue;
+    }
+    vistos[clave] = true;
+    if (clave === "a") datos.alias = valor.trim();
+    if (clave === "m") datos.monto = leerMonto(valor);
+    if (clave === "n") datos.nombre = recortar(valor, 80);
+  }
+  return datos;
+}
+
+// El monto viene como lo escribe JavaScript: 1735669.48 o 150000. Lo que no
+// tiene esa forma (letras, negativo, coma) es como si no hubiera monto.
+function leerMonto(texto) {
+  var t = String(texto === null || texto === undefined ? "" : texto).trim();
+  if (!/^\d{1,13}(\.\d{1,2})?$/.test(t)) return 0;
+  var n = Math.round(parseFloat(t) * 100) / 100;
+  return isFinite(n) && n > 0 ? n : 0;
+}
+
+// Recorta sin partir una letra en dos (una ñ o un emoji cuentan como una).
+function recortar(texto, maximo) {
+  var letras = Array.from ? Array.from(String(texto)) : String(texto).split("");
+  return letras.slice(0, maximo).join("").trim();
+}
+
+// PARA LEER: como money() del programa, «$1.735.669,48», «$150.000,00».
+function montoParaMostrar(n) {
+  var centavos = Math.round(Number(n) * 100);
+  if (!(centavos > 0)) return "";
+  var entero = String(Math.floor(centavos / 100)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  var resto = centavos % 100;
+  return "$" + entero + "," + (resto < 10 ? "0" : "") + resto;
+}
+
+// PARA COPIAR: como lo pide Mercado Pago, la regla de montoParaMercadoPago
+// (src/lib/para-transferir.js): sin puntos de miles y con coma decimal solo si
+// hay centavos, y con los DOS centavos: «1735669,48», «150000», «1250000,50».
+function montoParaCopiar(n) {
+  var v = Math.round(Number(n) * 100) / 100;
+  if (!(v > 0)) return "";
+  var texto = v % 1 === 0 ? String(v) : v.toFixed(2);
+  return texto.replace(".", ",");
+}
+
+// COPIAR: el portapapeles moderno y, si no está o falla, la forma vieja (una
+// caja de texto escondida + Copiar).
+function copiarConCajaEscondida(texto) {
+  var caja = document.createElement("textarea");
+  caja.value = texto;
+  caja.setAttribute("readonly", "");
+  caja.style.cssText = "position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px;";
+  document.body.appendChild(caja);
+  var listo = false;
+  try {
+    caja.focus();
+    caja.select();
+    caja.setSelectionRange(0, texto.length);
+    listo = document.execCommand("copy");
+  } catch (e) {
+    listo = false;
+  }
+  document.body.removeChild(caja);
+  return !!listo;
+}
+
+function copiar(texto, alTerminar) {
+  var hayApiNueva = typeof navigator !== "undefined" && navigator.clipboard
+    && typeof navigator.clipboard.writeText === "function" && window.isSecureContext !== false;
+  if (!hayApiNueva) { alTerminar(copiarConCajaEscondida(texto)); return; }
+  try {
+    navigator.clipboard.writeText(texto).then(
+      function () { alTerminar(true); },
+      function () { alTerminar(copiarConCajaEscondida(texto)); }
+    );
+  } catch (e) {
+    alTerminar(copiarConCajaEscondida(texto));
+  }
+}
+
+// LA PANTALLA. Todo lo que viene del link entra con textContent.
+var relojes = {};
+var aCopiar = { alias: "", monto: "" };
+
+function mostrarEstado(boton, estado) {
+  boton.setAttribute("data-estado", estado);
+  clearTimeout(relojes[boton.id]);
+  if (estado !== "listo") {
+    relojes[boton.id] = setTimeout(function () { boton.setAttribute("data-estado", "listo"); }, 2000);
+  }
+}
+
+function alTocarCopiar(que, boton, valorEnPantalla) {
+  copiar(aCopiar[que], function (ok) {
+    mostrarEstado(boton, ok ? "ok" : "mal");
+    // Si no se pudo, queda marcado para copiarlo con el dedo (y si es el
+    // monto, al copiarlo sale como lo pide Mercado Pago: alCopiarConElDedo).
+    if (!ok && window.getSelection) {
+      try { window.getSelection().selectAllChildren(valorEnPantalla); } catch (e) { /* nada */ }
+    }
+  });
+}
+
+// EL MONTO COPIADO CON EL DEDO SALE COMO LO PIDE MERCADO PAGO (2026-10-05).
+// En la pantalla el monto se lee como plata («$1.735.669,48»), pero Mercado
+// Pago no acepta ni el $ ni los puntos de miles. Si el botón no pudo copiar,
+// el monto queda marcado para copiarlo a mano; y con un toque largo también se
+// marca entero. En los dos casos, al tocar «Copiar» del celular lo que se
+// lleva es «1735669,48» (aCopiar.monto), no lo que se ve. Así no se cambió
+// nada de lo que se ve en el boceto aprobado ("Ok sí") ni salta nada.
+// Solo si lo marcado está ENTERO adentro del monto: si se marca toda la
+// página, se copia lo de siempre.
+function seleccionDentroDe(elemento) {
+  if (!elemento || !window.getSelection) return false;
+  var seleccion = window.getSelection();
+  if (!seleccion || !seleccion.rangeCount || seleccion.isCollapsed) return false;
+  return elemento.contains(seleccion.anchorNode) && elemento.contains(seleccion.focusNode);
+}
+
+function alCopiarConElDedo(evento) {
+  if (!aCopiar.monto || !seleccionDentroDe(document.getElementById("monto"))) return;
+  var portapapeles = evento && evento.clipboardData;
+  if (!portapapeles || typeof portapapeles.setData !== "function") return;
+  try {
+    portapapeles.setData("text/plain", aCopiar.monto);
+    evento.preventDefault();
+  } catch (e) {
+    /* queda la copia común */
+  }
+}
+
+function pintar() {
+  var datos = leerFragmento(window.location.hash);
+  var conDatos = document.getElementById("conDatos");
+  var sinAlias = document.getElementById("sinAlias");
+  if (!datos.alias) {
+    conDatos.hidden = true;
+    sinAlias.hidden = false;
+    return;
+  }
+  sinAlias.hidden = true;
+  conDatos.hidden = false;
+  document.getElementById("para").textContent = datos.nombre ? "Para transferir a" : "Para transferir";
+  var nombre = document.getElementById("nombre");
+  nombre.textContent = datos.nombre;
+  nombre.hidden = !datos.nombre;
+  document.getElementById("alias").textContent = datos.alias;
+  aCopiar.alias = datos.alias;
+  var tarjetaMonto = document.getElementById("tarjetaMonto");
+  if (datos.monto > 0) {
+    document.getElementById("monto").textContent = montoParaMostrar(datos.monto);
+    aCopiar.monto = montoParaCopiar(datos.monto);
+    tarjetaMonto.hidden = false;
+  } else {
+    document.getElementById("monto").textContent = "";
+    aCopiar.monto = "";
+    tarjetaMonto.hidden = true;
+  }
+  mostrarEstado(document.getElementById("copiarAlias"), "listo");
+  mostrarEstado(document.getElementById("copiarMonto"), "listo");
+}
+
+function arrancar() {
+  var botonAlias = document.getElementById("copiarAlias");
+  var botonMonto = document.getElementById("copiarMonto");
+  botonAlias.addEventListener("click", function () { alTocarCopiar("alias", botonAlias, document.getElementById("alias")); });
+  botonMonto.addEventListener("click", function () { alTocarCopiar("monto", botonMonto, document.getElementById("monto")); });
+  document.addEventListener("copy", alCopiarConElDedo);
+  // Si la página ya estaba abierta y se lee otro QR, cambia solo el #: se
+  // vuelve a pintar con los datos nuevos.
+  window.addEventListener("hashchange", pintar);
+  pintar();
+}
+
+if (typeof document !== "undefined" && document && typeof window !== "undefined" && window) arrancar();
+</script>
+</body>
+</html>
