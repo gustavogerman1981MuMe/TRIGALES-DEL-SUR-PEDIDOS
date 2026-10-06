@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-06T16:37:00.392Z",
+  "generado": "2026-10-06T17:12:55.649Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -228,12 +228,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_46",
-      "nombre": "CALSA FLOR ESENCIA ALMENDRA X 2 LITROS",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_47",
       "nombre": "CALSA FLOR ESENCIA COCO X 2 LITROS",
       "familia": "GENERAL",
@@ -250,18 +244,6 @@
       "nombre": "CALSA FLOR ESENCIA MANTECA X 2 LITROS",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_50",
-      "nombre": "CALSA FLOR ESENCIA NARANJA X 2 LITROS",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
-      "id": "art_csv_51",
-      "nombre": "CALSA FLOR ESENCIA PAN DULCE X 2 LITRO",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_52",
@@ -336,12 +318,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_66",
-      "nombre": "CALSA POLVO PARA HORNEAR X 4 KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_67",
       "nombre": "CALSA PREMEZCLA PAN DE QUESO X 2 KG",
       "familia": "GENERAL",
@@ -352,12 +328,6 @@
       "nombre": "CALSA SUPER HOJALDRE X 10 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_69",
-      "nombre": "CAMI PASCUALINA CRIOLLA",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_71",
@@ -594,12 +564,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_110",
-      "nombre": "CLUCELAT MANTECA X 200 GS",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_111",
       "nombre": "COCO RALLADO X KG",
       "familia": "GENERAL",
@@ -608,12 +572,6 @@
     {
       "id": "art_csv_113",
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
-      "id": "art_csv_114",
-      "nombre": "CUMANA ATUN LOMITO X 1.8 KG",
       "familia": "GENERAL",
       "hay": false
     },
@@ -634,12 +592,6 @@
       "nombre": "DANICA BIZCOCHUELO VAINILLA DANMIX X 10 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_1788115800350",
-      "nombre": "DANICA GRASA PRIMOR REFINADA X 20",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_lista_117",
@@ -688,12 +640,6 @@
       "nombre": "DEWEY AZUCAR NEGRA X 10 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_126",
-      "nombre": "DEWEY ESENCIA DE ALMENDRA X 1 L",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_127",
@@ -960,12 +906,6 @@
       "hay": true
     },
     {
-      "id": "art_lista_171",
-      "nombre": "EMETH ESENCIA PAN DULCE X 1 LITRO",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_lista_172",
       "nombre": "EMETH ESENCIA QUESO X 1 LITRO",
       "familia": "GENERAL",
@@ -1084,12 +1024,6 @@
       "nombre": "GELBRIX ESENCIA MANTECA X 5 L",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_192",
-      "nombre": "GELBRIX ESENCIA VAINILLA X 5 L",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_190",
@@ -1518,18 +1452,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_266",
-      "nombre": "LUGO MUZZARELLA PLANCHA X 20 KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
-      "id": "art_csv_268",
-      "nombre": "LUGO MUZZARELLA X KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_269",
       "nombre": "LUGO QUESO AZUL",
       "familia": "GENERAL",
@@ -1846,12 +1768,6 @@
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_322",
-      "nombre": "MUUUME DULCE DE LECHE X 1 KG",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_323",
@@ -2340,12 +2256,6 @@
       "hay": true
     },
     {
-      "id": "art_1787489473487",
-      "nombre": "RDC GRASA REFINADA X 20KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_1788115971998",
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN PLACA X 2 KG",
       "familia": "GENERAL",
@@ -2432,12 +2342,6 @@
     {
       "id": "art_csv_425",
       "nombre": "SAN IGNACIO DULCE DE LECHE REPOSTERO X 10 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_426",
-      "nombre": "SAN SIMON CEREZA X 3.1KILOS",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2548,12 +2452,6 @@
       "nombre": "TAXONERA COMPLEMENTO 1/2 LT",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_445",
-      "nombre": "TAXONERA EMULSIONANTE EN PASTA X 3.75",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_446",
@@ -2716,12 +2614,6 @@
       "nombre": "UAILE GELATINA SIN SABOR X 1 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_474",
-      "nombre": "UAILE LECHE EN POLVO X 25KG",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_475",
