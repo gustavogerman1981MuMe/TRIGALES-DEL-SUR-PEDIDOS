@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-06T15:36:38.350Z",
+  "generado": "2026-10-06T16:37:00.392Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -615,7 +615,7 @@
       "id": "art_csv_114",
       "nombre": "CUMANA ATUN LOMITO X 1.8 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_115",
@@ -1740,20 +1740,8 @@
       "hay": true
     },
     {
-      "id": "art_csv_301",
-      "nombre": "MILKAUT CREMATTO BALANCE 445 GR",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_294",
       "nombre": "MILKAUT MANTECA X 200 GR",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_304",
-      "nombre": "MILKAUT MANTECA X 25 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1767,7 +1755,7 @@
       "id": "art_csv_306",
       "nombre": "MILKAUT PROVOLONE X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_307",
@@ -1941,7 +1929,7 @@
       "id": "art_csv_338",
       "nombre": "PAPELERA BANDEJA EXPANDIDO 621 X 50 KG (102/1)",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_339",
@@ -1959,7 +1947,7 @@
       "id": "art_csv_341",
       "nombre": "PAPELERA BANDEJA MICRO 105 O (1654/1)",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_342",
@@ -2337,7 +2325,7 @@
       "id": "art_csv_407",
       "nombre": "PURATOS PREMEZCLA EASY FACTURA X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1787488935989",
@@ -2421,7 +2409,7 @@
       "id": "art_csv_417",
       "nombre": "REY DE REYES MORRON",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_422",
@@ -2511,7 +2499,7 @@
       "id": "art_csv_436",
       "nombre": "SILVIA QUESO TYBO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_437",
@@ -2733,7 +2721,7 @@
       "id": "art_csv_474",
       "nombre": "UAILE LECHE EN POLVO X 25KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_475",
