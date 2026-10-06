@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trigales del Sur · Distribuidora de insumos · Llavallol</title>
+<meta name="description" content="Trigales del Sur: insumos para panaderías, pizzerías, confiterías y comercios. Seguí 1681, Llavallol.">
+<link rel="icon" href="icono-trigo.png">
+<link rel="apple-touch-icon" href="icono-trigo.png">
+<meta name="theme-color" content="#8B4A2B">
+<!-- La vista previa al compartir el link (WhatsApp, Facebook, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trigales del Sur · Distribuidora de insumos · Llavallol">
+<meta property="og:description" content="Harinas, margarinas, cremas, lácteos y repostería para panadería, pizzería, confitería y comercios de la zona. Hacé tu pedido desde el celular.">
+<meta property="og:url" content="https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/negocio/">
+<meta property="og:image" content="https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/negocio/foto-rack.jpg">
+<meta property="og:locale" content="es_AR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+  :root {
+    --tinta: #2B2118; --papel: #F7F2E7; --kraft: #EDE4D3; --corteza: #8B4A2B; --corteza-osc: #6E3A20;
+    --trigo: #C99A3E; --salvia: #5C7A4E; --apagado: #7A6E58; --linea: #DDD0B6; --blanco: #FFFDF8;
+    --wa: #1F8F4E;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--papel); color: var(--tinta); font: 16px/1.6 "Public Sans", system-ui, sans-serif; }
+  a { color: inherit; }
+  .ancho { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+  h1, h2, h3 { font-family: "Public Sans", system-ui, sans-serif; line-height: 1.15; margin: 0; text-wrap: balance; }
+  h1, h2 { font-family: "Fraunces", Georgia, serif; font-weight: 700; letter-spacing: -.005em; }
+  h3 { font-weight: 700; }
+  .portada .etiqueta { font-size: 14px; }
+  .etiqueta { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--corteza); }
+
+  /* Barra de arriba */
+  html { scroll-padding-top: 76px; }
+  body { padding-top: 64px; }
+  .barra { position: fixed; top: 0; left: 0; right: 0; z-index: 10; background: rgba(247, 242, 231, .94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--linea); }
+  .barra .ancho { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 64px; }
+  .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .marca img { width: 38px; height: 38px; }
+  .marca b { font-family: "Fraunces", serif; font-size: 21px; letter-spacing: .01em; }
+  .marca small { display: block; font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--apagado); letter-spacing: .06em; margin-top: -2px; }
+  .menu { display: flex; gap: 22px; font-size: 14px; font-weight: 500; }
+  .menu a { text-decoration: none; color: var(--apagado); }
+  .menu a:hover { color: var(--corteza); }
+
+  .boton { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 10px; font: 700 15px "Public Sans", sans-serif; text-decoration: none; border: 2px solid transparent; transition: transform .15s ease, background .15s ease; }
+  .boton:active { transform: scale(.98); }
+  .boton.lleno { background: var(--corteza); color: var(--papel); }
+  .boton.lleno:hover { background: var(--corteza-osc); }
+  .boton.borde { border-color: var(--corteza); color: var(--corteza); background: transparent; }
+  .boton.wa { background: var(--wa); color: #fff; }
+  .boton svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .barra .boton { min-height: 40px; padding: 0 14px; font-size: 14px; }
+
+  /* Portada */
+  .portada { position: relative; overflow: hidden; border-bottom: 1px solid var(--linea); background:
+      radial-gradient(1200px 380px at 85% -10%, rgba(201, 154, 62, .22), transparent 70%), var(--papel); }
+  .portada .ancho { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 36px; align-items: stretch; padding-block: 56px 60px; }
+  .portada h1 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(34px, 5vw, 54px); letter-spacing: -.01em; margin: 10px 0 16px; }
+  .portada h1 em { font-style: normal; color: var(--corteza); }
+  .portada p.bajada { font-size: 18px; color: #4A3F33; max-width: 34em; margin: 0 0 26px; }
+  .acciones { display: flex; flex-wrap: wrap; gap: 12px; }
+  .datos-rapidos { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; font-size: 14px; color: var(--apagado); }
+  .datos-rapidos span { display: inline-flex; align-items: center; gap: 6px; }
+  .datos-rapidos svg { color: var(--corteza); }
+
+  .foto { position: relative; height: 100%; min-height: 0; border-radius: 18px; border: 1.5px dashed var(--trigo); background: var(--kraft);
+    display: grid; place-items: center; text-align: center; color: var(--apagado); font-size: 14px; padding: 20px; }
+  .foto img { width: 64px; height: 64px; opacity: .8; display: block; margin: 0 auto 10px; }
+
+  /* El riel de las marcas: corre solo, se frena al pasar el mouse o tocarlo */
+  .marcas { padding-block: 40px 44px; border-bottom: 1px solid var(--linea); background: var(--blanco); }
+  .marcas .cabeza { justify-content: center !important; text-align: center; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; margin-bottom: 18px; }
+  .marcas h2 { font-family: "IBM Plex Mono", monospace; font-weight: 400; text-transform: uppercase; letter-spacing: .12em; color: var(--corteza); font-size: clamp(15px, 2vw, 19px); margin-top: 0; }
+  .marcas .ayuda { font-size: 13px; color: var(--apagado); }
+  .riel { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; cursor: grab;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
+  .riel::-webkit-scrollbar { display: none; }
+  .riel.arrastrando { cursor: grabbing; }
+  .riel.arrastrando a { pointer-events: none; }
+  .riel-caja { position: relative; }
+  .flecha { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 42px; height: 42px; border-radius: 50%;
+    border: 1px solid var(--linea); background: var(--blanco); color: var(--corteza); font: 700 26px/1 "Public Sans", sans-serif; cursor: pointer;
+    display: grid; place-items: center; box-shadow: 0 8px 18px -10px rgba(43, 33, 24, .5); padding: 0 0 3px; }
+  .flecha:hover { border-color: var(--trigo); }
+  .flecha.izq { left: -8px; } .flecha.der { right: -8px; }
+  .puntitos { display: flex; justify-content: center; gap: 7px; margin-top: 14px; }
+  .puntitos button { width: 8px; height: 8px; border-radius: 4px; border: none; padding: 0; background: var(--linea); cursor: pointer; transition: width .2s, background .2s; }
+  .puntitos button.activo { width: 22px; background: var(--trigo); }
+  @media (max-width: 560px) { .flecha { width: 36px; height: 36px; font-size: 22px; } .flecha.izq { left: 4px; } .flecha.der { right: 4px; } }
+  .pista { display: flex; gap: 16px; width: max-content; padding: 8px 4px 12px; }
+  .logo-marca { flex: 0 0 auto; width: 200px; height: 104px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+    text-decoration: none; background: var(--papel); border: 1px solid var(--linea); border-radius: 16px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .logo-marca:hover, .logo-marca:focus-visible { transform: translateY(-4px); border-color: var(--trigo); box-shadow: 0 14px 26px -16px rgba(139, 74, 43, .6); outline: none; }
+  .logo-marca img { max-width: 76%; max-height: 58px; width: auto; height: auto; object-fit: contain; }
+  .logo-marca .nom { font-family: "Public Sans", sans-serif; font-weight: 800; letter-spacing: .02em; line-height: 1.05; }
+  .logo-marca .sub { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--apagado); letter-spacing: .08em; }
+  .logo-marca .ir { font-size: 11.5px; color: var(--corteza); opacity: 0; transition: opacity .2s; }
+  .logo-marca:hover .ir, .logo-marca:focus-visible .ir { opacity: 1; }
+
+  /* La franja de números */
+  .numeros { background: var(--corteza); color: var(--papel); }
+  .numeros .ancho { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding-block: 26px; }
+  .numero { text-align: center; }
+  .numero b { display: block; font-family: "Fraunces", serif; font-size: clamp(30px, 4.4vw, 42px); line-height: 1.05; }
+  .numero span { font-size: 14px; color: #F1DCC6; }
+
+  /* Comprá tranquilo */
+  .confianza { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 18px; }
+  .item-confianza { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; padding: 16px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; }
+  .item-confianza svg { width: 26px; height: 26px; color: var(--salvia); }
+  .item-confianza b { display: block; font-family: "Public Sans", sans-serif; font-size: 16px; }
+  .item-confianza span { font-size: 14.5px; color: #4A3F33; }
+
+  /* Lo que dicen los clientes */
+  .opiniones { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .opinion { margin: 0; padding: 20px; background: var(--blanco); border: 1.5px dashed var(--trigo); border-radius: 14px; }
+  .opinion p { margin: 0 0 12px; font-family: "Fraunces", serif; font-size: 17px; line-height: 1.45; color: var(--apagado); }
+  .opinion footer { padding: 0; border: none; font-size: 13px; color: var(--apagado); }
+
+  /* La parte de abajo, más compacta */
+  #que-hacemos { padding-bottom: 28px; }
+  .contacto { padding-top: 0 !important; padding-bottom: 36px; }
+  .ficha { padding: 18px 20px; }
+  .ficha h3 { font-size: 18px; margin-bottom: 8px; }
+  table.horarios td { padding: 7px 0; font-size: 15px; }
+  .renglon { padding: 7px 0; }
+  .renglon svg { width: 20px; height: 20px; }
+  .hoy { margin-top: 10px; font-size: 12.5px; padding: 4px 10px; }
+  footer { padding-block: 16px 76px; }
+
+  /* Secciones */
+  section { padding-block: 64px; }
+  .encabezado-seccion { max-width: 640px; margin-bottom: 30px; }
+  .encabezado-seccion h2 { font-size: clamp(26px, 3.4vw, 34px); margin-top: 8px; }
+  .encabezado-seccion p { color: #4A3F33; margin: 10px 0 0; }
+  .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .tarjeta { background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; padding: 22px; }
+  .tarjeta .icono { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--kraft); color: var(--corteza); margin-bottom: 14px; }
+  .tarjeta .icono svg { width: 24px; height: 24px; }
+  .tarjeta h3 { font-size: 18px; margin-bottom: 6px; }
+  .tarjeta p { margin: 0; color: #4A3F33; font-size: 15px; }
+
+  .rubros { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .rubros span { background: var(--kraft); border: 1px solid var(--linea); border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; }
+
+  .app { background: var(--tinta); color: var(--papel); }
+  .app .ancho { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; align-items: center; }
+  .app .etiqueta { color: var(--trigo); }
+  .app h2 { color: var(--papel); }
+  .app p { color: #D8CDB9; }
+  .pasos { list-style: none; padding: 0; margin: 22px 0 28px; display: grid; gap: 14px; counter-reset: paso; }
+  .pasos li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; color: #EFE6D6; }
+  .pasos li::before { counter-increment: paso; content: counter(paso); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--trigo); color: var(--tinta); font: 700 15px "Public Sans", sans-serif; }
+  .app .boton.borde { border-color: var(--papel); color: var(--papel); }
+  .celu { justify-self: center; width: 260px; max-width: 100%; border: 9px solid #0B0805; border-radius: 36px; background: #1B1612; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .9), 0 0 0 1px #3A2E24; }
+  .celu img, .celu video { display: block; width: 100%; height: auto; }
+  .celu .c-tit { display: flex; align-items: center; gap: 6px; font: 700 13px "Public Sans", sans-serif; }
+  .celu .c-tit img { width: 20px; height: 20px; }
+  .celu .c-busca { border: 1px solid var(--linea); border-radius: 8px; padding: 6px 8px; font-size: 11px; color: var(--apagado); background: var(--blanco); }
+  .celu .c-art { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--linea); padding: 6px 2px; font-size: 11px; }
+  .celu .c-art b { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--corteza); }
+  .celu .c-btn { margin-top: auto; background: var(--wa); color: #fff; border-radius: 8px; text-align: center; font: 700 12px "Public Sans", sans-serif; padding: 9px; }
+
+  .contacto .ancho { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+  .ficha { background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; padding: 24px; }
+  .ficha h3 { font-size: 20px; margin-bottom: 14px; }
+  .renglon { display: grid; grid-template-columns: 26px 1fr; gap: 10px; padding: 11px 0; border-top: 1px solid var(--linea); align-items: start; }
+  .renglon:first-of-type { border-top: none; }
+  .renglon svg { width: 22px; height: 22px; color: var(--corteza); margin-top: 2px; }
+  .renglon small { display: block; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--apagado); }
+  .renglon a { text-decoration: none; font-weight: 600; }
+  .renglon a:hover { color: var(--corteza); text-decoration: underline; }
+  table.horarios { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  table.horarios td { padding: 12px 0; border-top: 1px solid var(--linea); }
+  table.horarios tr:first-child td { border-top: none; }
+  table.horarios td:last-child { text-align: right; font-family: "IBM Plex Mono", monospace; font-weight: 600; }
+  .cerrado td:last-child { color: var(--apagado); font-weight: 400; }
+  .hoy { display: inline-block; margin-top: 14px; font-size: 13px; padding: 6px 12px; border-radius: 999px; background: var(--kraft); }
+  .falta { background: #FFF2C8; border: 1px dashed var(--trigo); border-radius: 4px; padding: 0 5px; font-weight: 500; }
+
+  footer { border-top: 1px solid var(--linea); padding-block: 26px 90px; font-size: 13px; color: var(--apagado); }
+  footer .ancho { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+
+  .app-flotante { position: fixed; right: 18px; bottom: 80px; z-index: 20; width: 50px; height: 50px; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 26px -10px rgba(0, 0, 0, .55); display: block; }
+  .app-flotante img { width: 100%; height: 100%; display: block; }
+  .wa-flotante { position: fixed; right: 18px; bottom: 18px; z-index: 20; width: 50px; height: 50px; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 12px 26px -10px rgba(0, 0, 0, .5); }
+  .wa-flotante svg { width: 27px; height: 27px; }
+
+  /* Celular */
+  @media (max-width: 820px) {
+    section { padding-block: 30px !important; }
+    .portada .ancho { padding-block: 22px 26px !important; gap: 14px !important; }
+    .portada h1 { margin: 6px 0 10px; }
+    .portada p.bajada { font-size: 16px; margin-bottom: 18px; }
+    .datos-rapidos { margin-top: 14px; }
+    .numeros .ancho { padding-block: 16px !important; row-gap: 12px !important; }
+    .numero b { font-size: 30px; }
+    .marcas { padding-block: 24px 26px !important; }
+    .marcas .cabeza { margin-bottom: 10px !important; }
+    .encabezado-seccion { margin-bottom: 18px !important; }
+    .tarjetas, .confianza { gap: 10px !important; }
+    .tarjeta { padding: 16px !important; }
+    .tarjeta .icono { margin-bottom: 8px !important; }
+    .pasos { margin: 14px 0 18px !important; gap: 10px !important; }
+    .contacto .ancho { gap: 10px !important; }
+    #que-hacemos { padding-bottom: 18px !important; }
+    .contacto { padding-top: 0 !important; padding-bottom: 22px !important; }
+    .ficha h3 { font-size: 17px; margin-bottom: 4px; }
+    table.horarios td { padding: 6px 0; }
+    .renglon { padding: 6px 0; }
+    .ficha { padding: 14px 16px !important; }
+    table.horarios td:last-child { white-space: nowrap; font-size: 14px; padding-left: 10px; }
+    footer { padding-block: 12px 80px !important; font-size: 12px; }
+    .foto { height: auto; aspect-ratio: 4 / 3; min-height: 0; }
+    .numeros .ancho { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
+    .menu { display: none; }
+    .portada .ancho, .app .ancho, .contacto .ancho { grid-template-columns: minmax(0, 1fr); }
+    .portada .ancho { padding-block: 34px 40px; gap: 18px; }
+    .logo-marca { width: 160px; height: 92px; }
+    section { padding-block: 48px; }
+    .celu { width: 210px; }
+  }
+  @media (max-width: 420px) {
+    .barra .boton span { display: none; }
+    .marca b { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="ancho">
+    <a class="marca" href="#inicio" aria-label="Trigales del Sur, inicio">
+      <img src="icono-trigo.png" alt="" style="border-radius:9px">
+      <span><b>Trigales del Sur</b><small>SEGUÍ 1681 · LLAVALLOL</small></span>
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- PORTADA -->
+  <div class="portada">
+    <div class="ancho">
+      <div>
+        <div class="etiqueta">Distribuidora de insumos</div>
+        <h1>Todo para tu <em>elaboración</em>, en un solo lugar.</h1>
+        <p class="bajada">Harinas, margarinas, cremas, lácteos y productos de repostería para panadería, pizzería, confitería y comercios de la zona. Atención de persona a persona, con más de 20 años de experiencia.</p>
+        <div class="datos-rapidos">
+          <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.4"/></svg> Seguí 1681, Llavallol</span>
+          <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Lun a Vie 8 a 15:30 · Sáb 8 a 14</span>
+        </div>
+      </div>
+
+      <div class="foto" style="padding:0;overflow:hidden;border-style:solid;border-color:var(--linea)">
+        <img src="foto-rack.jpg" alt="El depósito de Trigales del Sur: el rack con la mercadería ordenada" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;margin:0;border-radius:0"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOS NÚMEROS: reales, redondeados para abajo -->
+  <div class="numeros" aria-label="Trigales del Sur en números">
+    <div class="ancho">
+      <div class="numero"><b>+20</b><span>años de experiencia</span></div>
+      <div class="numero"><b>+450</b><span>productos</span></div>
+      <div class="numero"><b>+150</b><span>comercios nos eligen</span></div>
+      <div class="numero"><b>+60</b><span>marcas y proveedores</span></div>
+    </div>
+  </div>
+
+  <!-- LA APP PARA HACER PEDIDOS -->
+  <section class="app" id="pedidos">
+    <div class="ancho">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px"><img src="icono-espiga-192.png" alt="" style="width:64px;height:64px;border-radius:16px;box-shadow:0 10px 22px -12px rgba(0,0,0,.8)"><div class="etiqueta">La app para hacer pedidos</div></div>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);margin-top:8px">Tu pedido, desde el celular y a cualquier hora.</h2>
+        <ol class="pasos">
+          <li><span>Entrás a nuestra página de pedidos desde el celular. No hay que instalar nada.</span></li>
+          <li><span>Buscás los productos, elegís la cantidad y ves las ofertas de la semana.</span></li>
+          <li><span>Tocás «Enviar» y el pedido nos llega por WhatsApp. El presupuesto te llega en el día.</span></li>
+        </ol>
+        <div class="acciones">
+          <a class="boton lleno" style="background:var(--trigo);color:var(--tinta)" href="https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/" target="_blank" rel="noopener">Abrir la app de pedidos</a>
+          <a class="boton wa" href="https://wa.me/5491151630039" target="_blank" rel="noopener" style="border-color:var(--wa)">Preguntar por WhatsApp</a>
+        </div>
+        <p style="font-size:14px;margin-top:16px">Consejo: Guardala en la pantalla de inicio del celular y queda como una app más.</p>
+      </div>
+      <div class="celu"><video src="app-en-vivo.webm" poster="app-en-vivo-poster.png" autoplay muted loop playsinline aria-label="Así se ve la app de pedidos en el celular, en modo noche: la oferta de la semana pasando y un pedido de 4 artículos"></video></div>
+    </div>
+  </section>
+
+  <!-- LAS MARCAS: un riel que corre solo. Se frena con el mouse o el dedo, y cada
+       marca abre su página en OTRA pestaña: el cliente no se va de la nuestra. -->
+  <section class="marcas" id="marcas" aria-label="Marcas líderes que trabajamos">
+    <div class="ancho">
+      <div class="cabeza">
+        <h2>Trabajamos con marcas líderes</h2>
+      </div>
+    </div>
+    <div class="ancho">
+    <div class="riel-caja">
+    <button type="button" class="flecha izq" id="rielIzq" aria-label="Marcas anteriores">‹</button>
+    <div class="riel" id="riel">
+      <div class="pista" id="pista">
+        <a class="logo-marca" href="https://www.ledevit.com.ar" target="_blank" rel="noopener" title="Abre la página de LEDEVIT en otra pestaña"><img src="logos/listos/ledevit.png" alt="LEDEVIT"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.lacteossantamaria.com.ar" target="_blank" rel="noopener" title="Abre la página de Santa María en otra pestaña"><img src="logos/listos/santa-maria.png" alt="Santa María"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://molinochacabuco.com.ar" target="_blank" rel="noopener" title="Abre la página de CHACABUCO en otra pestaña"><img src="logos/listos/chacabuco.png" alt="CHACABUCO"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://lagomarsino.com.ar" target="_blank" rel="noopener" title="Abre la página de LAGOMARSINO en otra pestaña"><img src="logos/listos/lagomarsino.png" alt="LAGOMARSINO"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://rdcindustrial.com.ar" target="_blank" rel="noopener" title="Abre la página de RDC en otra pestaña"><img src="logos/listos/rdc.png" alt="RDC"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://taxonera.com" target="_blank" rel="noopener" title="Abre la página de TAXONERA en otra pestaña"><img src="logos/listos/taxonera.png" alt="TAXONERA"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://prinwey.com.ar/dewey/" target="_blank" rel="noopener" title="Abre la página de DEWEY en otra pestaña"><img src="logos/listos/dewey.png" alt="DEWEY"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://emeth.com.ar" target="_blank" rel="noopener" title="Abre la página de EMETH en otra pestaña"><img src="logos/listos/emeth.png" alt="EMETH"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.danica.com.ar" target="_blank" rel="noopener" title="Abre la página de DÁNICA en otra pestaña"><img src="logos/listos/danica.png" alt="DÁNICA"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://sanignacio.com.ar" target="_blank" rel="noopener" title="Abre la página de San Ignacio en otra pestaña"><img src="logos/listos/san-ignacio.png" alt="San Ignacio"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.molinocanuelas.com" target="_blank" rel="noopener" title="Abre la página de CAÑUELAS en otra pestaña"><img src="logos/listos/canuelas.png" alt="CAÑUELAS"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://masterbakery.com.ar" target="_blank" rel="noopener" title="Abre la página de MASTER BAKERY en otra pestaña"><img src="logos/listos/master-bakery.png" alt="MASTER BAKERY"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://gelbrix.com.ar" target="_blank" rel="noopener" title="Abre la página de GELBRIX en otra pestaña"><img src="logos/listos/gelbrix.png" alt="GELBRIX"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://lacteoselmundo.com.ar" target="_blank" rel="noopener" title="Abre la página de EL MUNDO en otra pestaña"><img src="logos/listos/el-mundo.png" alt="EL MUNDO"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.egramar.com/" target="_blank" rel="noopener" title="Abre la página de EGRAMAR en otra pestaña"><img src="logos/listos/egramar.png" alt="EGRAMAR"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.camiloferronargentina.site/" target="_blank" rel="noopener" title="Abre la página de CAMILO FERRÓN en otra pestaña"><img src="logos/listos/camilo-ferron.png" alt="CAMILO FERRÓN" style="max-height:44px"><span class="sub" style="color:#D7261E;font-weight:600">CAMILO FERRÓN</span><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.instagram.com/lacteoslugo/" target="_blank" rel="noopener" title="Abre el Instagram de LÁCTEOS LUGO en otra pestaña"><img src="logos/listos/lugo.png" alt="LUGO" style="max-height:46px"><span class="sub">LÁCTEOS · MUZZARELLA</span><span class="ir">Ver su Instagram ↗</span></a>
+        <a class="logo-marca" href="https://www.instagram.com/lacteossilvia/" target="_blank" rel="noopener" title="Abre el Instagram de LÁCTEOS SILVIA en otra pestaña"><img src="logos/listos/silvia.png" alt="LÁCTEOS SILVIA"><span class="ir">Ver su Instagram ↗</span></a>
+        <a class="logo-marca" href="https://www.latarantela.com/" target="_blank" rel="noopener" title="Abre la página de LA TARANTELA en otra pestaña"><img src="logos/listos/tarantella.png" alt="LA TARANTELA"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.instagram.com/milkautarg/" target="_blank" rel="noopener" title="Abre el Instagram de MILKAUT en otra pestaña"><img src="logos/listos/milkaut.png" alt="MILKAUT"><span class="ir">Ver su Instagram ↗</span></a>
+        <a class="logo-marca" href="http://www.molinocoronelsuarez.com.ar/" target="_blank" rel="noopener" title="Abre la página del MOLINO CORONEL SUÁREZ (harina Segunda Colonia) en otra pestaña"><img src="logos/listos/molino-coronel-suarez.png" alt="MOLINO CORONEL SUÁREZ" style="max-height:40px"><span class="sub" style="color:#2E6EA6;font-weight:600">SEGUNDA COLONIA</span><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.ramgras.com.ar/" target="_blank" rel="noopener" title="Abre la página de RAMGRAS en otra pestaña"><img src="logos/listos/ramgras.png" alt="RAMGRAS"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.chocolatesind.com.ar/" target="_blank" rel="noopener" title="Abre la página de CHI CHOCOLATES INDUSTRIALES en otra pestaña"><img src="logos/listos/chi.png" alt="CHI CHOCOLATES INDUSTRIALES"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.chocolateaguila.com/" target="_blank" rel="noopener" title="Abre la página de ÁGUILA en otra pestaña"><img src="logos/listos/aguila.png" alt="ÁGUILA"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.puratos.com.ar/es" target="_blank" rel="noopener" title="Abre la página de PURATOS en otra pestaña"><img src="logos/listos/puratos.png" alt="PURATOS"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca" href="https://www.barifrucor.com.ar/" target="_blank" rel="noopener" title="Abre la página de BARI FRUCOR en otra pestaña"><img src="logos/listos/bari.png" alt="BARI FRUCOR"><span class="ir">Ver su página ↗</span></a>
+      </div>
+    </div>
+    <button type="button" class="flecha der" id="rielDer" aria-label="Marcas siguientes">›</button>
+    </div>
+    <div class="puntitos" id="puntitos" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- QUÉ HACEMOS -->
+  <section id="que-hacemos">
+    <div class="ancho">
+      <div class="encabezado-seccion">
+        <div class="etiqueta">A qué nos dedicamos</div>
+        <h2>Abastecemos a los que hacen el pan de todos los días.</h2>
+        <p>Somos una distribuidora familiar de Llavallol. Trabajamos con las marcas que vos ya conocés y te atendemos como a un vecino: con stock, buen precio y el pedido listo cuando lo necesitás.</p>
+      </div>
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div>
+          <h3>Reparto a tu negocio</h3>
+          <p>Te llevamos el pedido a Lomas de Zamora, Adrogué, Burzaco, Mármol, Monte Grande y Longchamps.</p>
+        </div>
+        <div class="tarjeta">
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 18h3"/></svg></div>
+          <h3>Pedidos desde el celular</h3>
+          <p>Armás tu pedido y el presupuesto te llega en el día por WhatsApp.</p>
+        </div>
+        <div class="tarjeta">
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg></div>
+          <h3>Atención de persona a persona</h3>
+          <p>Te asesoramos, te avisamos de las ofertas y conocemos lo que pide tu negocio.</p>
+        </div>
+        <div class="tarjeta">
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h3>Ofertas de la semana</h3>
+          <p>Todas las semanas hay productos con precio especial. Las ves primero en la app.</p>
+        </div>
+      </div>
+      <div class="encabezado-seccion" style="margin:30px 0 0">
+        <div class="etiqueta">Cómo trabajamos</div>
+        <h2>Facilidades para tu negocio.</h2>
+      </div>
+      <div class="confianza">
+        <div class="item-confianza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><div><b>Factura A y B</b><span>Somos Responsables Inscriptos.</span></div></div>
+        <div class="item-confianza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><div><b>Pagás como te quede cómodo</b><span>Efectivo, transferencia, Mercado Pago, cheque o eCheq.</span></div></div>
+        <div class="item-confianza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><div><b>Stock al día</b><span>La lista de la app se actualiza sola varias veces por día.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- LAS OPINIONES DE CLIENTES: sacadas por ahora (el dueño las junta y se ponen más adelante). -->
+  <template id="opiniones-para-mas-adelante">
+    <section id="opiniones" style="padding-bottom:20px">
+    <div class="ancho">
+      <div class="encabezado-seccion">
+        <div class="etiqueta">Lo que dicen nuestros clientes</div>
+        <h2>Panaderías y pizzerías de la zona que confían en nosotros.</h2>
+        <div class="acciones" style="margin-top:16px"><a class="boton borde" href="https://share.google/Wlo81CkCqOmCPyKS2" target="_blank" rel="noopener">Ver y dejar opiniones en Google</a></div>
+      </div>
+      <div class="opiniones">
+        <figure class="opinion"><p>«Acá va una frase real de un cliente.»</p><footer><span class="falta">Nombre del comercio · a confirmar</span></footer></figure>
+        <figure class="opinion"><p>«Pedile a 2 o 3 clientes de confianza una frase corta.»</p><footer><span class="falta">Nombre del comercio · a confirmar</span></footer></figure>
+        <figure class="opinion"><p>«Con su permiso, va con el nombre del negocio.»</p><footer><span class="falta">Nombre del comercio · a confirmar</span></footer></figure>
+      </div>
+    </div>
+  </section>
+  </template>
+
+  <!-- HORARIOS Y CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="ancho">
+      <div class="ficha">
+        <h3>Horarios de atención</h3>
+        <table class="horarios">
+          <tr><td>Lunes a viernes</td><td>8:00 a 15:30</td></tr>
+          <tr><td>Sábados <small style="color:var(--apagado)">(solo por mostrador)</small></td><td>8:00 a 14:00</td></tr>
+          <tr class="cerrado"><td>Domingos</td><td>Cerrado</td></tr>
+          <tr><td>Feriados <small style="color:var(--apagado)">(solo por mostrador)</small></td><td>8:00 a 13:00</td></tr>
+        </table>
+        <span class="hoy" id="hoy">Abierto ahora</span>
+      </div>
+      <div class="ficha">
+        <h3>Dónde estamos</h3>
+        <div class="renglon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.4"/></svg>
+          <div><small>Dirección</small><a href="https://www.google.com/maps/search/?api=1&query=Segu%C3%AD%201681%2C%20Llavallol%2C%20Buenos%20Aires" target="_blank" rel="noopener">Seguí 1681, Llavallol (CP 1836)</a></div>
+        </div>
+        <div class="renglon">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+          <div><small>WhatsApp</small><a href="https://wa.me/5491151630039" target="_blank" rel="noopener">+54 9 11 5163-0039</a></div>
+        </div>
+        <div class="renglon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
+          <div><small>Instagram</small><a href="https://www.instagram.com/trigalesdelsur/" target="_blank" rel="noopener">@trigalesdelsur</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="ancho">
+    <span>© Trigales del Sur · Seguí 1681, Llavallol · <a href="https://www.instagram.com/trigalesdelsur/" target="_blank" rel="noopener">Instagram</a></span>
+    <span>Las fotos y el contenido son a modo ilustrativo. Las marcas nombradas pertenecen a sus empresas.</span>
+  </div>
+</footer>
+
+<a class="app-flotante" href="https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/" target="_blank" rel="noopener" aria-label="Hacer un pedido en la app" title="Hacer un pedido"><img src="icono-espiga-192.png" alt=""></a>
+<a class="wa-flotante" href="https://wa.me/5491151630039" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></svg>
+</a>
+
+<script>
+  // EL RIEL DE LAS MARCAS: corre solo, despacito. El cliente lo puede correr
+  // para cualquier lado y a su velocidad (con el dedo, arrastrando con el
+  // mouse o con las flechas), y los puntitos de abajo dicen por dónde va y
+  // llevan directo a esa parte. Después de tocarlo, a los 4 segundos vuelve a
+  // correr solo. La fila va repetida para que la cinta no se corte nunca.
+  (function () {
+    var riel = document.getElementById("riel"), pista = document.getElementById("pista");
+    var izq = document.getElementById("rielIzq"), der = document.getElementById("rielDer"), caja = document.getElementById("puntitos");
+    if (!riel || !pista) return;
+    // Con un reloj común y no con requestAnimationFrame: dentro de algunos visores del celular
+    // requestAnimationFrame no corre, y ni el riel solo ni las flechas se movían.
+    function cuadroSiguiente(fn) { return setTimeout(function () { fn(performance.now()); }, 16); }
+    var originales = Array.prototype.slice.call(pista.children), n = originales.length;
+    var copias = 0;
+    while ((copias < 2 || pista.scrollWidth < riel.clientWidth * 3 + 400) && copias < 8) {
+      originales.forEach(function (a) { var c = a.cloneNode(true); c.setAttribute("aria-hidden", "true"); c.tabIndex = -1; pista.appendChild(c); });
+      copias++;
+    }
+    function paso1() { var a = pista.children[0], b = pista.children[1]; return b ? b.offsetLeft - a.offsetLeft : 216; }
+    function vuelta() { return paso1() * n; }
+    function porPagina() { return Math.max(1, Math.floor(riel.clientWidth / paso1())); }
+    var paginas = Math.ceil(n / porPagina());
+    for (var p = 0; p < paginas; p++) (function (p) {
+      var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Ir a las marcas " + (p + 1));
+      b.addEventListener("click", function () { tocar(); irA(p * porPagina() * paso1()); });
+      caja.appendChild(b);
+    })(p);
+    function marcarPuntito() {
+      var en = ((riel.scrollLeft % vuelta()) + vuelta()) % vuelta();
+      var pag = Math.min(paginas - 1, Math.round(en / paso1() / porPagina()));
+      Array.prototype.forEach.call(caja.children, function (b, k) { b.className = k === pag ? "activo" : ""; });
+    }
+    // Siempre parados en la «vuelta del medio», así se puede correr para los dos lados sin llegar a una punta.
+    function acomodar() {
+      if (riel.scrollLeft < vuelta() * 0.5) poner(riel.scrollLeft + vuelta());
+      else if (riel.scrollLeft > vuelta() * 1.5 + 1) poner(riel.scrollLeft - vuelta());
+    }
+    // Lo que mueve el script no cuenta como «el cliente lo tocó»: los scroll que llegan enseguida se ignoran.
+    var propioHasta = 0, animando = null;
+    function poner(x) { propioHasta = performance.now() + 80; riel.scrollLeft = x; }
+    function deslizar(hasta, ms) {
+      var desde = riel.scrollLeft, t0 = null; ms = ms || 450;
+      if (animando) clearTimeout(animando);
+      function cuadro(t) {
+        if (t0 === null) t0 = t;
+        var k = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - k, 3);
+        poner(desde + (hasta - desde) * e);
+        if (k < 1) animando = cuadroSiguiente(cuadro); else { animando = null; acomodar(); marcarPuntito(); }
+      }
+      animando = cuadroSiguiente(cuadro);
+    }
+    function irA(x) { var base = Math.floor(riel.scrollLeft / vuelta()) * vuelta(); deslizar(base + x); }
+    var quieto = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var hastaQue = 0, frenadoMouse = false, pos = 0, antes = null, haciendoScroll = false;
+    function tocar() { hastaQue = Date.now() + 4000; }
+    izq.addEventListener("click", function () { tocar(); deslizar(riel.scrollLeft - paso1() * Math.max(1, porPagina() - 1)); });
+    der.addEventListener("click", function () { tocar(); deslizar(riel.scrollLeft + paso1() * Math.max(1, porPagina() - 1)); });
+    riel.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") frenadoMouse = true; });
+    riel.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") frenadoMouse = false; });
+    riel.addEventListener("touchstart", tocar, { passive: true });
+    riel.addEventListener("wheel", tocar, { passive: true });
+    riel.addEventListener("scroll", function () { marcarPuntito(); if (performance.now() < propioHasta) return; haciendoScroll = true; clearTimeout(riel._t); riel._t = setTimeout(function () { haciendoScroll = false; acomodar(); }, 150); }, { passive: true });
+    // Arrastrar con el mouse (en la PC): sin abrir la marca si fue un arrastre.
+    var arrastre = null;
+    riel.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse") return; arrastre = { x: e.clientX, desde: riel.scrollLeft, movio: false }; });
+    window.addEventListener("pointermove", function (e) {
+      if (!arrastre) return;
+      var dx = e.clientX - arrastre.x;
+      if (Math.abs(dx) > 5) { arrastre.movio = true; riel.classList.add("arrastrando"); tocar(); }
+      if (arrastre.movio) poner(arrastre.desde - dx);
+    });
+    window.addEventListener("pointerup", function () { if (!arrastre) return; var movio = arrastre.movio; arrastre = null; setTimeout(function () { riel.classList.remove("arrastrando"); }, 0); if (movio) acomodar(); });
+    poner(vuelta());
+    function paso(t) {
+      var libre = !frenadoMouse && !arrastre && !haciendoScroll && !animando && Date.now() > hastaQue && !quieto;
+      if (libre && antes !== null) {
+        pos += Math.min(t - antes, 100) * 0.03;
+        if (pos >= 1) { var e = Math.floor(pos); pos -= e; poner(riel.scrollLeft + e); if (riel.scrollLeft > vuelta() * 1.5 + 1) poner(riel.scrollLeft - vuelta()); }
+      } else pos = 0;
+      antes = t;
+      cuadroSiguiente(paso);
+    }
+    marcarPuntito();
+    cuadroSiguiente(paso);
+  })();
+
+  // «Abierto ahora / Cerrado» según la hora de Argentina.
+  (function () {
+    var el = document.getElementById("hoy");
+    try {
+      var partes = new Intl.DateTimeFormat("es-AR", { timeZone: "America/Argentina/Buenos_Aires", weekday: "short", hour: "numeric", minute: "numeric", hour12: false }).formatToParts(new Date());
+      var dia = "", h = 0, m = 0;
+      partes.forEach(function (p) { if (p.type === "weekday") dia = p.value.toLowerCase(); if (p.type === "hour") h = +p.value; if (p.type === "minute") m = +p.value; });
+      var min = h * 60 + m, abierto = false;
+      if (/lun|mar|mié|mie|jue|vie/.test(dia)) abierto = min >= 480 && min < 930;
+      else if (/sáb|sab/.test(dia)) abierto = min >= 480 && min < 840;
+      el.textContent = abierto ? "● Abierto ahora" : "● Cerrado ahora";
+      el.style.color = abierto ? "#3B6D2E" : "#8A3B2B";
+    } catch (e) { el.hidden = true; }
+  })();
+</script>
+</body>
+</html>
