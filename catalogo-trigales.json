@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-07T17:19:26.533Z",
+  "generado": "2026-10-07T18:25:26.534Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1089,7 +1089,7 @@
       "id": "art_csv_209",
       "nombre": "JULIAN ACEITUNAS VERDE DESCAROZADA X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_210",
@@ -1098,16 +1098,16 @@
       "hay": true
     },
     {
-      "id": "art_csv_211",
-      "nombre": "JULIAN ACEITUNAS VERDE EN RODAJAS X 1 KG",
+      "id": "art_csv_212",
+      "nombre": "JULIAN ACEITUNAS VERDE EN RODAJAS ESPECIAL X 4 KG",
       "familia": "GENERAL",
       "hay": true
     },
     {
-      "id": "art_csv_212",
-      "nombre": "JULIAN ACEITUNAS VERDE EN RODAJAS X 4 KG",
+      "id": "art_csv_211",
+      "nombre": "JULIAN ACEITUNAS VERDE EN RODAJAS X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_214",
