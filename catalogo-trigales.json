@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-07T15:05:38.960Z",
+  "generado": "2026-10-07T17:19:26.533Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1041,7 +1041,7 @@
       "id": "art_csv_196",
       "nombre": "GELBRIX POLVO PARA HORNEAR X 3 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_197",
@@ -1695,7 +1695,7 @@
       "id": "art_csv_310",
       "nombre": "MIX NAVIDEÑO  ALMENDRA-NUEZ-CAJU",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_312",
@@ -1887,7 +1887,7 @@
       "id": "art_csv_350",
       "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 6 (6/1)",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_351",
@@ -2187,7 +2187,7 @@
       "id": "art_csv_401",
       "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT PISTACHO X 0.800 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_402",
