@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-07T13:04:38.999Z",
+  "generado": "2026-10-07T14:05:09.268Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -462,12 +462,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_255",
-      "nombre": "CHACABUCO AVENA X 5 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_94",
       "nombre": "CHACABUCO HARINA 000 X 25 KG",
       "familia": "GENERAL",
@@ -483,7 +477,7 @@
       "id": "art_csv_96",
       "nombre": "CHACABUCO HARINA INTEGRAL X 25 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_97",
@@ -1647,7 +1641,7 @@
       "id": "art_csv_299",
       "nombre": "MILKAUT CREMA AL 39% SACHET X 5 LT",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_300",
@@ -2318,6 +2312,12 @@
     {
       "id": "art_csv_425",
       "nombre": "SAN IGNACIO DULCE DE LECHE REPOSTERO X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1791380901808",
+      "nombre": "SANTA CRUZ PAN RAYADO X 5KG",
       "familia": "GENERAL",
       "hay": true
     },
