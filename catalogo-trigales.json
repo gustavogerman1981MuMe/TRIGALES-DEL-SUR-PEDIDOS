@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-07T18:25:26.534Z",
+  "generado": "2026-10-07T19:28:39.928Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -327,7 +327,7 @@
       "id": "art_csv_68",
       "nombre": "CALSA SUPER HOJALDRE X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_70",
@@ -1695,7 +1695,7 @@
       "id": "art_csv_310",
       "nombre": "MIX NAVIDEÑO  ALMENDRA-NUEZ-CAJU",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_312",
