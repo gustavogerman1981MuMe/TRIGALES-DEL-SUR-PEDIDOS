@@ -67,7 +67,12 @@
      En el celular van más chicos (36 en vez de 42): con 42 quedaban pegados al
      nombre. */
   .acciones-barra { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-  .redondo { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; border: 1px solid transparent; background: transparent; padding: 0; cursor: pointer; text-decoration: none; }
+  /* EL DIBUJO VA CLAVADO EN EL MEDIO. En el iPhone el de compartir salía
+     corrido abajo y a la derecha (el dueño, 2026-10-07): Safari no centra lo
+     de adentro de un <button> como lo hace con un <a>. Así que el dibujo se
+     clava en el centro del redondel a mano, y queda igual en los tres. */
+  .redondo { position: relative; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; border: 1px solid transparent; background: transparent; padding: 0; cursor: pointer; text-decoration: none; appearance: none; -webkit-appearance: none; }
+  .redondo svg, .redondo img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
   .redondo svg { width: 20px; height: 20px; }
   .redondo.pedidos { background: #241B13; }
   .redondo.pedidos img { width: 28px; height: 28px; display: block; }
