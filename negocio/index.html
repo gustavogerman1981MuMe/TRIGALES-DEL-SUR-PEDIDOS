@@ -201,18 +201,24 @@
   /* EL CONSEJO DE GUARDARLA EN EL CELULAR, con su dibujo y el paso a paso.
      (2026-10-07: *"poné un iconito que te explique cómo hacerlo, con una
      leyenda"*.) */
-  /* EL CONSEJO, PLEGADO: cerrado ocupa un renglón. (2026-10-07.) */
-  .consejo { margin-top: 18px; background: var(--kraft); border: 1px solid rgba(42,33,23,.12); border-radius: 12px; color: #2A2117; }
-  .consejo summary { display: flex; gap: 10px; align-items: center; padding: 11px 14px; cursor: pointer; list-style: none; }
-  .consejo summary::-webkit-details-marker { display: none; }
-  .consejo svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--corteza); }
-  .consejo b { font-size: 14px; color: #2A2117; font-weight: 700; }
-  .consejo summary b { flex: 1; min-width: 0; }
-  .consejo .abrir { font-size: 13px; font-weight: 700; color: var(--corteza); flex-shrink: 0; white-space: nowrap; }
-  .consejo[open] .abrir { visibility: hidden; }
-  .consejo p { margin: 0 14px 10px 44px; font-size: 13px; line-height: 1.6; color: #6B5F4C; }
-  .consejo p:first-of-type { margin-top: 2px; }
-  .consejo u { text-decoration: none; font-weight: 700; color: var(--corteza); }
+  /* EL CONSEJO: UN RENGLÓN Y UN BOTÓN. La explicación va en una pantalla
+     flotante (2026-10-07): el desplegable, en el celular, partía el renglón en
+     tres y no se entendía dónde tocar. */
+  .consejo-link { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin-top: 18px; font-size: 14px; line-height: 1.5; }
+  .consejo-link svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--trigo); }
+  .consejo-link > span { flex: 1 1 200px; min-width: 0; }
+  /* El botón, bien marcado y con lugar para el dedo: en el celular queda solo
+     en su renglón y se toca sin apuntar. */
+  .comoabrir { flex-shrink: 0; background: transparent; border: 1px solid var(--trigo); border-radius: 999px; padding: 7px 14px; font: inherit; font-size: 13px; font-weight: 700; color: var(--trigo); cursor: pointer; }
+  .comoabrir:hover, .comoabrir:focus-visible { background: var(--trigo); color: #2A2117; }
+  .como { border: none; border-radius: 16px; padding: 22px 22px 18px; max-width: 420px; width: calc(100% - 28px); background: var(--papel); color: var(--tinta); box-shadow: 0 30px 70px -20px rgba(0,0,0,.55); }
+  .como::backdrop { background: rgba(26,19,13,.6); }
+  .como h3 { margin: 0 0 12px; font-size: 20px; }
+  .como .paso { padding: 12px 0; border-top: 1px solid var(--linea); }
+  .como .paso > b { display: block; font-size: 12.5px; letter-spacing: .4px; text-transform: uppercase; color: var(--corteza); margin-bottom: 4px; }
+  .como .paso span { font-size: 14.5px; line-height: 1.6; }
+  .como .chiquito { font-size: 12.5px; color: var(--apagado); margin: 14px 0 16px; line-height: 1.6; }
+  .como .cerrar { width: 100%; padding: 12px; border: none; border-radius: 10px; background: var(--corteza); color: #fff; font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; }
   .tarjeta .icono svg { width: 24px; height: 24px; }
   .tarjeta h3 { font-size: 18px; margin-bottom: 6px; }
   .tarjeta p { margin: 0; color: #4A3F33; font-size: 15px; }
@@ -369,18 +375,23 @@
           <a class="boton lleno" style="background:var(--trigo);color:var(--tinta)" href="https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/" target="_blank" rel="noopener">Abrir la app de pedidos</a>
           <a class="boton wa" href="https://wa.me/5491151630039" target="_blank" rel="noopener" style="border-color:var(--wa)">Preguntar por WhatsApp</a>
         </div>
-        <!-- SE ABRE SOLO SI LO TOCA. (2026-10-07.) El dueño: *"no me gustó mucho
-             cómo se estiró la parte de la app del celular, la caja esa la agrandó
-             mucho"*. Cerrado es un renglón; el paso a paso aparece al tocarlo. -->
-        <details class="consejo">
-          <summary>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.6"/><path d="M12 7.5v6M9 10.5l3-3 3 3"/><path d="M9.6 18.6h4.8"/></svg>
-            <b>Guardala en la pantalla del celular y queda como una app más.</b>
-            <span class="abrir">¿Cómo?</span>
-          </summary>
-          <p><u>En Android:</u> abrila, tocá los tres puntitos de arriba a la derecha y elegí <b>«Agregar a pantalla principal»</b>.</p>
-          <p><u>En iPhone:</u> abrila con Safari, tocá el cuadradito con la flecha de abajo y elegí <b>«Agregar a inicio»</b>.</p>
-        </details>
+        <!-- UN BOTÓN, Y LA EXPLICACIÓN EN UNA PANTALLA FLOTANTE. (2026-10-07.)
+             Primero fue un desplegable, y en el celular quedaba mal: el renglón
+             se partía en tres y no se entendía dónde tocar. El dueño: *"dejamos
+             el consejo como estaba antes, como que es un link, apretás y se abre
+             una pantalla flotante y muestra cómo se hace"*. -->
+        <p class="consejo-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.6"/><path d="M12 7.5v6M9 10.5l3-3 3 3"/><path d="M9.6 18.6h4.8"/></svg>
+          <span>Guardala en la pantalla del celular y queda como una app más.</span>
+          <button type="button" class="comoabrir" onclick="document.getElementById('comoguardar').showModal()">¿Cómo se hace?</button>
+        </p>
+        <dialog id="comoguardar" class="como" aria-label="Cómo guardarla en el celular">
+          <h3>Guardarla en el celular</h3>
+          <div class="paso"><b>En Android</b><span>Abrila, tocá los <b>tres puntitos</b> de arriba a la derecha y elegí <b>«Agregar a pantalla principal»</b>.</span></div>
+          <div class="paso"><b>En iPhone</b><span>Abrila con <b>Safari</b>, tocá el <b>cuadradito con la flecha</b> de abajo y elegí <b>«Agregar a inicio»</b>.</span></div>
+          <p class="chiquito">Queda con el ícono en la pantalla, como cualquier otra app. No ocupa lugar ni hay que instalar nada.</p>
+          <button type="button" class="cerrar" onclick="document.getElementById('comoguardar').close()">Listo</button>
+        </dialog>
       </div>
       <!-- El ancho y el alto del video (484 x 1046) reservan su lugar desde el principio: la página no salta al cargarlo. -->
       <div class="celu"><video  poster="app-en-vivo-poster.png" width="484" height="1046" autoplay muted loop playsinline aria-label="Así se hace un pedido en la app: se busca harina y margarina, se eligen las cantidades, y el pedido se manda por WhatsApp"><source src="app-en-vivo.mp4" type="video/mp4"><source src="app-en-vivo.webm" type="video/webm"></video></div>
