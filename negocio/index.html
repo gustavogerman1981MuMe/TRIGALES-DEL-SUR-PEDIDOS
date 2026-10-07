@@ -69,7 +69,12 @@
   .portada p.bajada { font-size: 18px; color: #4A3F33; max-width: 34em; margin: 0 0 26px; }
   .acciones { display: flex; flex-wrap: wrap; gap: 12px; }
   .datos-rapidos { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; font-size: 14px; color: var(--apagado); }
-  .datos-rapidos span { display: inline-flex; align-items: center; gap: 6px; }
+  .datos-rapidos span, .datos-rapidos a { display: inline-flex; align-items: center; gap: 6px; }
+  /* EL MAPA DE ARRIBA SE TOCA. (2026-10-07.) El dueño: *"arriba, el iconito del
+     mapa que se ponga la manito para apretarlo y que te lleve al Google Map"*,
+     como ya lo hacía la dirección de abajo. */
+  .datos-rapidos a { color: inherit; text-decoration: none; border-bottom: 1px dashed var(--linea); padding-bottom: 1px; }
+  .datos-rapidos a:hover { color: var(--corteza); border-bottom-color: var(--corteza); }
   .datos-rapidos svg { color: var(--corteza); }
 
   .foto { position: relative; height: 100%; min-height: 0; border-radius: 18px; border: 1.5px dashed var(--trigo); background: var(--kraft);
@@ -186,6 +191,28 @@
   .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
   .tarjeta { background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; padding: 22px; }
   .tarjeta .icono { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--kraft); color: var(--corteza); margin-bottom: 14px; }
+  /* LA TARJETA DE LAS OFERTAS ES UN LINK A LA APP. (2026-10-07, pedido del
+     dueño: *"que vos apretés ahí, que esté aclarado solo en la app, y que sea
+     un link también a la app"*.) Se levanta un poco al pasarle el dedo o el
+     mouse, para que se note que se toca. */
+  .tarjeta-link { display: block; color: inherit; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+  .tarjeta-link:hover, .tarjeta-link:focus-visible { transform: translateY(-2px); border-color: var(--corteza); box-shadow: 0 10px 24px rgba(42,33,23,.10); }
+  .tarjeta-link .ir { display: inline-block; margin-top: 10px; font-weight: 700; font-size: 14px; color: var(--corteza); }
+  /* EL CONSEJO DE GUARDARLA EN EL CELULAR, con su dibujo y el paso a paso.
+     (2026-10-07: *"poné un iconito que te explique cómo hacerlo, con una
+     leyenda"*.) */
+  /* EL CONSEJO, PLEGADO: cerrado ocupa un renglón. (2026-10-07.) */
+  .consejo { margin-top: 18px; background: var(--kraft); border: 1px solid rgba(42,33,23,.12); border-radius: 12px; color: #2A2117; }
+  .consejo summary { display: flex; gap: 10px; align-items: center; padding: 11px 14px; cursor: pointer; list-style: none; }
+  .consejo summary::-webkit-details-marker { display: none; }
+  .consejo svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--corteza); }
+  .consejo b { font-size: 14px; color: #2A2117; font-weight: 700; }
+  .consejo summary b { flex: 1; min-width: 0; }
+  .consejo .abrir { font-size: 13px; font-weight: 700; color: var(--corteza); flex-shrink: 0; white-space: nowrap; }
+  .consejo[open] .abrir { visibility: hidden; }
+  .consejo p { margin: 0 14px 10px 44px; font-size: 13px; line-height: 1.6; color: #6B5F4C; }
+  .consejo p:first-of-type { margin-top: 2px; }
+  .consejo u { text-decoration: none; font-weight: 700; color: var(--corteza); }
   .tarjeta .icono svg { width: 24px; height: 24px; }
   .tarjeta h3 { font-size: 18px; margin-bottom: 6px; }
   .tarjeta p { margin: 0; color: #4A3F33; font-size: 15px; }
@@ -233,8 +260,8 @@
 
   /* Los dos botones flotantes de abajo a la derecha: 44 px cada uno, con los mismos 12 px entre los dos
      (el de la app va a 18 + 44 + 12 = 74 px del borde de abajo). */
-  .app-flotante { position: fixed; right: 18px; bottom: 74px; z-index: 20; width: 44px; height: 44px; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 26px -10px rgba(0, 0, 0, .55); display: block; }
-  .app-flotante img { width: 100%; height: 100%; display: block; }
+  .app-flotante { position: fixed; right: 18px; bottom: 74px; z-index: 20; width: 44px; height: 44px; border-radius: 50%; background: #241B13; box-shadow: 0 12px 26px -10px rgba(0, 0, 0, .55); display: grid; place-items: center; }
+  .app-flotante img { width: 30px; height: 30px; display: block; }
   .wa-flotante { position: fixed; right: 18px; bottom: 18px; z-index: 20; width: 44px; height: 44px; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 12px 26px -10px rgba(0, 0, 0, .5); }
   .wa-flotante svg { width: 24px; height: 24px; }
   /* Al final de la página, el texto del pie termina ARRIBA de los dos botones (74 + 44 + 8 de aire = 126 px):
@@ -305,7 +332,7 @@
         <h1>Todo para tu <em>elaboración</em>, en un solo lugar.</h1>
         <p class="bajada">Harinas, margarinas, cremas, lácteos y productos de repostería para panadería, pizzería, confitería y comercios de la zona. Atención de persona a persona, con más de 20 años de experiencia.</p>
         <div class="datos-rapidos">
-          <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.4"/></svg> Seguí 1681, Llavallol</span>
+          <a class="dato-mapa" href="https://www.google.com/maps/search/?api=1&query=Segu%C3%AD%201681%2C%20Llavallol%2C%20Buenos%20Aires" target="_blank" rel="noopener" title="Abrir en Google Maps cómo llegar"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.4"/></svg> Seguí 1681, Llavallol</a>
           <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Lun a Vie 8 a 15:30 · Sáb 8 a 14</span>
         </div>
       </div>
@@ -330,18 +357,30 @@
   <section class="app" id="pedidos">
     <div class="ancho">
       <div>
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px"><img class="icono-app" src="icono-espiga-192.png" alt=""><div class="etiqueta">La app para hacer pedidos</div></div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px"><img class="icono-app" src="icono-ofertas-192.png" alt=""><div class="etiqueta">La app para hacer pedidos</div></div>
         <h2 style="font-size:clamp(26px,3.4vw,34px);margin-top:8px">Tu pedido, desde el celular y a cualquier hora.</h2>
         <ol class="pasos">
           <li><span>Entrás a nuestra página de pedidos desde el celular. No hay que instalar nada.</span></li>
           <li><span>Buscás los productos, elegís la cantidad y ves las ofertas de la semana.</span></li>
           <li><span>Tocás «Enviar» y el pedido nos llega por WhatsApp. El presupuesto te llega en el día.</span></li>
+          <li><span><b>Las ofertas de la semana son por la app.</b> El pedido tiene que entrar por la app.</span></li>
         </ol>
         <div class="acciones">
           <a class="boton lleno" style="background:var(--trigo);color:var(--tinta)" href="https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/" target="_blank" rel="noopener">Abrir la app de pedidos</a>
           <a class="boton wa" href="https://wa.me/5491151630039" target="_blank" rel="noopener" style="border-color:var(--wa)">Preguntar por WhatsApp</a>
         </div>
-        <p style="font-size:14px;margin-top:16px">Consejo: Guardala en la pantalla de inicio del celular y queda como una app más.</p>
+        <!-- SE ABRE SOLO SI LO TOCA. (2026-10-07.) El dueño: *"no me gustó mucho
+             cómo se estiró la parte de la app del celular, la caja esa la agrandó
+             mucho"*. Cerrado es un renglón; el paso a paso aparece al tocarlo. -->
+        <details class="consejo">
+          <summary>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.6"/><path d="M12 7.5v6M9 10.5l3-3 3 3"/><path d="M9.6 18.6h4.8"/></svg>
+            <b>Guardala en la pantalla del celular y queda como una app más.</b>
+            <span class="abrir">¿Cómo?</span>
+          </summary>
+          <p><u>En Android:</u> abrila, tocá los tres puntitos de arriba a la derecha y elegí <b>«Agregar a pantalla principal»</b>.</p>
+          <p><u>En iPhone:</u> abrila con Safari, tocá el cuadradito con la flecha de abajo y elegí <b>«Agregar a inicio»</b>.</p>
+        </details>
       </div>
       <!-- El ancho y el alto del video (484 x 1046) reservan su lugar desde el principio: la página no salta al cargarlo. -->
       <div class="celu"><video  poster="app-en-vivo-poster.png" width="484" height="1046" autoplay muted loop playsinline aria-label="Así se hace un pedido en la app: se busca harina y margarina, se eligen las cantidades, y el pedido se manda por WhatsApp"><source src="app-en-vivo.mp4" type="video/mp4"><source src="app-en-vivo.webm" type="video/webm"></video></div>
@@ -433,11 +472,12 @@
           <h3>Atención de persona a persona</h3>
           <p>Te asesoramos, te avisamos de las ofertas y conocemos lo que pide tu negocio.</p>
         </div>
-        <div class="tarjeta">
-          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+        <a class="tarjeta tarjeta-link" href="https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/" target="_blank" rel="noopener" title="Abrir la app y ver las ofertas de la semana">
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5.5 18.5 13-13"/><circle cx="8" cy="8" r="2.6"/><circle cx="16" cy="16" r="2.6"/></svg></div>
           <h3>Ofertas de la semana</h3>
-          <p>Todas las semanas hay productos con precio especial. Las ves primero en la app.</p>
-        </div>
+          <p>Todas las semanas hay productos con precio especial. <b>Se hacen solo por la app</b>: tocá acá y las ves.</p>
+          <span class="ir">Ver las ofertas ›</span>
+        </a>
       </div>
       <div class="encabezado-seccion" style="margin:30px 0 0">
         <div class="etiqueta">Cómo trabajamos</div>
@@ -510,7 +550,7 @@
   </div>
 </footer>
 
-<a class="app-flotante" href="https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/" target="_blank" rel="noopener" aria-label="Hacer un pedido en la app" title="Hacer un pedido"><img src="icono-espiga-192.png" alt=""></a>
+<a class="app-flotante" href="https://gustavogerman1981mume.github.io/TRIGALES-DEL-SUR-PEDIDOS/" target="_blank" rel="noopener" aria-label="Hacer un pedido en la app" title="Hacer un pedido"><img src="icono-ofertas-192.png" alt=""></a>
 <a class="wa-flotante" href="https://wa.me/5491151630039" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></svg>
 </a>
