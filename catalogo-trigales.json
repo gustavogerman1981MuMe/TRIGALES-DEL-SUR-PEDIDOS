@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-07T14:05:09.268Z",
+  "generado": "2026-10-07T15:05:38.960Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -783,7 +783,7 @@
       "id": "art_lista_152",
       "nombre": "EMETH AZUCAR IMPALPABLE X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_lista_153",
