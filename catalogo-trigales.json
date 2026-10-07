@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-07T10:59:52.006Z",
+  "generado": "2026-10-07T12:04:09.269Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1482,12 +1482,6 @@
       "hay": true
     },
     {
-      "id": "art_1788446849724",
-      "nombre": "MAPLE DE HUEVO NUMERO 1 COLORADOS",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_271",
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
@@ -1698,14 +1692,14 @@
       "hay": true
     },
     {
-      "id": "art_csv_310",
-      "nombre": "MIX ALMENDRA-NUEZ-CAJU-AVELLANA",
+      "id": "art_csv_311",
+      "nombre": "MIX MEDITERRANEO FRUTOS SECOS CON PASAS X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
-      "id": "art_csv_311",
-      "nombre": "MIX MEDITERRANEO FRUTOS SECOS/ PASAS X KG",
+      "id": "art_csv_310",
+      "nombre": "MIX NAVIDEÑO  ALMENDRA-NUEZ-CAJU",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1803,7 +1797,7 @@
       "id": "art_csv_333",
       "nombre": "PALMITO ENTERO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_334",
@@ -2160,16 +2154,16 @@
       "hay": true
     },
     {
-      "id": "art_csv_393",
-      "nombre": "PASAS DE UVA X 10 KG",
+      "id": "art_csv_394",
+      "nombre": "PASAS DE UVA X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
     {
-      "id": "art_csv_394",
-      "nombre": "PASAS DE UVA X KG",
+      "id": "art_csv_393",
+      "nombre": "PASAS DE UVA X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1787492078727",
