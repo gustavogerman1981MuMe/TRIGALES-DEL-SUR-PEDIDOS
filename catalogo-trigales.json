@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-07T12:04:09.269Z",
+  "generado": "2026-10-07T13:04:38.999Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1209,7 +1209,7 @@
       "id": "art_csv_227",
       "nombre": "LEDEVIT BROWNIE X 4 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_228",
@@ -1221,7 +1221,7 @@
       "id": "art_csv_229",
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_230",
@@ -2624,6 +2624,18 @@
     {
       "id": "art_csv_483",
       "nombre": "VINAGRE X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1791376414662",
+      "nombre": "WRACIE CREMA CHANTILLY X 1L",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1791376334609",
+      "nombre": "WRACIE CREMA VAINILLA  X 1L",
       "familia": "GENERAL",
       "hay": true
     }
