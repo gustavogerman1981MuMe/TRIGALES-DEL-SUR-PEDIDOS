@@ -103,6 +103,10 @@
     text-decoration: none; background: var(--papel); border: 1px solid var(--linea); border-radius: 16px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
   .logo-marca:hover, .logo-marca:focus-visible { transform: translateY(-4px); border-color: var(--trigo); box-shadow: 0 14px 26px -16px rgba(139, 74, 43, .6); outline: none; }
   .logo-marca img { max-width: 76%; max-height: 58px; width: auto; height: auto; object-fit: contain; }
+  /* LAGOMARSINO y MASTER BAKERY se veían chicos al lado de los demás, porque
+     su dibujo es más alto que ancho y el tope de alto los frenaba antes.
+     (El dueño, 2026-10-07.) */
+  .logo-marca.grandecito img { max-width: 88%; max-height: 72px; }
   .logo-marca .nom { font-family: "Public Sans", sans-serif; font-weight: 800; letter-spacing: .02em; line-height: 1.05; }
   .logo-marca .sub { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--apagado); letter-spacing: .08em; }
   .logo-marca .ir { font-size: 11.5px; color: var(--corteza); opacity: 0; transition: opacity .2s; }
@@ -120,7 +124,10 @@
   .logo-marca.muuume { gap: 2px; }
   /* .Muuume. y UAILE van más grandes que los demás: así se leen las letras chicas (la de «Productos
      alimenticios» de UAILE, escrita a mano, arriba de las letras verdes). */
-  .logo-marca.muuume img, .logo-marca.uaile img { max-width: 90%; max-height: 74px; }
+  /* La tarjeta de .Muuume. un poco más chica (él, 2026-10-07: «achicá la caja
+     esa un poquitito»); UAILE queda como estaba para que se lea la cursiva. */
+  .logo-marca.muuume img { max-width: 84%; max-height: 64px; }
+  .logo-marca.uaile img { max-width: 90%; max-height: 74px; }
   .logo-marca.muuume .sub { color: var(--corteza); font-weight: 600; font-size: 10.5px; line-height: 1; margin-bottom: -1px; }
   /* El dulce de leche .Muuume.: la etiqueta del tambor, sobre su mismo gris. La imagen va recortada
      justo a la tinta: el aire de arriba y de abajo lo da este alto. */
@@ -360,7 +367,7 @@
         <div class="logo-marca sin-link muuume dulce" title=".Muuume.: nuestro dulce de leche repostero, marca propia"><img src="logos/listos/muuume-dulce.png" alt=".Muuume. Dulce de Leche Repostero" width="540" height="342" draggable="false"></div>
         <a class="logo-marca" href="https://www.lacteossantamaria.com.ar" target="_blank" rel="noopener" title="Abre la página de Santa María en otra pestaña"><img src="logos/listos/santa-maria.png" alt="Santa María"><span class="ir">Ver su página ↗</span></a>
         <a class="logo-marca" href="https://molinochacabuco.com.ar" target="_blank" rel="noopener" title="Abre la página de CHACABUCO en otra pestaña"><img src="logos/listos/chacabuco.png" alt="CHACABUCO"><span class="ir">Ver su página ↗</span></a>
-        <a class="logo-marca" href="https://lagomarsino.com.ar" target="_blank" rel="noopener" title="Abre la página de LAGOMARSINO en otra pestaña"><img src="logos/listos/lagomarsino.png" alt="LAGOMARSINO"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca grandecito" href="https://lagomarsino.com.ar" target="_blank" rel="noopener" title="Abre la página de LAGOMARSINO en otra pestaña"><img src="logos/listos/lagomarsino.png" alt="LAGOMARSINO"><span class="ir">Ver su página ↗</span></a>
         <a class="logo-marca" href="https://rdcindustrial.com.ar" target="_blank" rel="noopener" title="Abre la página de RDC en otra pestaña"><img src="logos/listos/rdc.png" alt="RDC"><span class="ir">Ver su página ↗</span></a>
         <a class="logo-marca" href="https://taxonera.com" target="_blank" rel="noopener" title="Abre la página de TAXONERA en otra pestaña"><img src="logos/listos/taxonera.png" alt="TAXONERA"><span class="ir">Ver su página ↗</span></a>
         <a class="logo-marca" href="https://prinwey.com.ar/dewey/" target="_blank" rel="noopener" title="Abre la página de DEWEY en otra pestaña"><img src="logos/listos/dewey.png" alt="DEWEY"><span class="ir">Ver su página ↗</span></a>
@@ -368,7 +375,7 @@
         <a class="logo-marca" href="https://www.danica.com.ar" target="_blank" rel="noopener" title="Abre la página de DÁNICA en otra pestaña"><img src="logos/listos/danica.png" alt="DÁNICA"><span class="ir">Ver su página ↗</span></a>
         <a class="logo-marca" href="https://sanignacio.com.ar" target="_blank" rel="noopener" title="Abre la página de San Ignacio en otra pestaña"><img src="logos/listos/san-ignacio.png" alt="San Ignacio"><span class="ir">Ver su página ↗</span></a>
         <a class="logo-marca" href="https://www.molinocanuelas.com" target="_blank" rel="noopener" title="Abre la página de CAÑUELAS en otra pestaña"><img src="logos/listos/canuelas.png" alt="CAÑUELAS"><span class="ir">Ver su página ↗</span></a>
-        <a class="logo-marca" href="https://masterbakery.com.ar" target="_blank" rel="noopener" title="Abre la página de MASTER BAKERY en otra pestaña"><img src="logos/listos/master-bakery.png" alt="MASTER BAKERY"><span class="ir">Ver su página ↗</span></a>
+        <a class="logo-marca grandecito" href="https://masterbakery.com.ar" target="_blank" rel="noopener" title="Abre la página de MASTER BAKERY en otra pestaña"><img src="logos/listos/master-bakery.png" alt="MASTER BAKERY"><span class="ir">Ver su página ↗</span></a>
         <a class="logo-marca" href="https://gelbrix.com.ar" target="_blank" rel="noopener" title="Abre la página de GELBRIX en otra pestaña"><img src="logos/listos/gelbrix.png" alt="GELBRIX"><span class="ir">Ver su página ↗</span></a>
         <a class="logo-marca" href="https://lacteoselmundo.com.ar" target="_blank" rel="noopener" title="Abre la página de EL MUNDO en otra pestaña"><img src="logos/listos/el-mundo.png" alt="EL MUNDO"><span class="ir">Ver su página ↗</span></a>
         <a class="logo-marca" href="https://www.egramar.com/" target="_blank" rel="noopener" title="Abre la página de EGRAMAR en otra pestaña"><img src="logos/listos/egramar.png" alt="EGRAMAR"><span class="ir">Ver su página ↗</span></a>
@@ -399,7 +406,6 @@
     <button type="button" class="flecha der" id="rielDer" aria-label="Marcas siguientes">›</button>
     </div>
     <div class="puntitos" id="puntitos" aria-hidden="true"></div>
-    <p class="marca-propia" id="marca-propia"><span class="quien">Nuestra marca propia:</span> mozzarella <img src="logos/listos/muuume-letras.png" alt=".Muuume." width="292" height="56"> <span class="resto"><span class="trozo">en cilindro de <b>2&nbsp;kg</b> y en plancha de <b>10&nbsp;kg</b>,</span> <span class="trozo">y dulce de leche repostero.</span></span></p>
     </div>
   </section>
 
