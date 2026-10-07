@@ -257,6 +257,17 @@
   .como .paso span { font-size: 14.5px; line-height: 1.6; }
   .como .chiquito { font-size: 12.5px; color: var(--apagado); margin: 14px 0 16px; line-height: 1.6; }
   .como .cerrar { width: 100%; padding: 12px; border: none; border-radius: 10px; background: var(--corteza); color: #fff; font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; }
+  /* El cartelito que avisa que copió el link (abajo, al medio). (2026-10-07.) */
+  #avisito { position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 16px); z-index: 60;
+             background: #3E6B32; color: #fff; font: 700 14.5px "Public Sans", sans-serif;
+             padding: 12px 20px; border-radius: 999px; box-shadow: 0 16px 34px -14px rgba(0,0,0,.7);
+             opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease;
+             max-width: calc(100% - 32px); text-align: center; }
+  #avisito.se-ve { opacity: 1; transform: translate(-50%, 0); }
+  /* Y si el teléfono no deja ni copiar, el link se muestra para copiarlo a mano. */
+  .como input { width: 100%; box-sizing: border-box; font: 14px "IBM Plex Mono", monospace; color: var(--tinta);
+                background: var(--blanco); border: 1px solid var(--linea); border-radius: 10px; padding: 11px 12px; margin-bottom: 12px; }
+  .como .copiar { width: 100%; padding: 12px; border: 1px solid var(--corteza); border-radius: 10px; background: transparent; color: var(--corteza); font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; margin-bottom: 8px; }
   .tarjeta .icono svg { width: 24px; height: 24px; }
   .tarjeta h3 { font-size: 18px; margin-bottom: 6px; }
   .tarjeta p { margin: 0; color: #4A3F33; font-size: 15px; }
@@ -372,7 +383,7 @@
         <a class="redondo wa" href="https://wa.me/5491151630039" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp" title="Escribinos por WhatsApp">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></svg>
         </a>
-      <button type="button" class="redondo compartir" onclick="compartirLaPagina(this)" aria-label="Compartir esta página" title="Compartir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.3M8.3 13.2l7.4 4.3"/></svg></button>
+      <button type="button" class="redondo compartir" onclick="compartirLaPagina()" aria-label="Compartir esta página" title="Compartir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.3M8.3 13.2l7.4 4.3"/></svg></button>
       </div>
   </div>
 </header>
@@ -439,6 +450,13 @@
           <div class="paso"><b>En iPhone</b><span>Abrila con <b>Safari</b>, tocá el <b>cuadradito con la flecha</b> de abajo y elegí <b>«Agregar a inicio»</b>.</span></div>
           <p class="chiquito">Queda con el ícono en la pantalla, como cualquier otra app. No ocupa lugar ni hay que instalar nada.</p>
           <button type="button" class="cerrar" onclick="document.getElementById('comoguardar').close()">Listo</button>
+        </dialog>
+        <!-- ÚLTIMO RECURSO para compartir: el link a la vista. (2026-10-07.) -->
+        <dialog id="ellink" class="como" aria-label="El link de la página">
+          <h3>El link de la página</h3>
+          <input type="text" readonly value="" aria-label="Link de la página" onclick="this.select()">
+          <button type="button" class="copiar" onclick="copiarDesdeElCartel(this)">Copiar el link</button>
+          <button type="button" class="cerrar" onclick="document.getElementById('ellink').close()">Listo</button>
         </dialog>
       </div>
       <!-- El ancho y el alto del video (484 x 1046) reservan su lugar desde el principio: la página no salta al cargarlo. -->
@@ -610,37 +628,92 @@
 </footer>
 
 <script>
-  // COMPARTIR LA PÁGINA. En el celular abre el menú de compartir del teléfono;
-  // en la computadora no existe, así que copia el link y lo avisa en el botón.
-  // (2026-10-07.)
-  async function compartirLaPagina(boton) {
+  /* COMPARTIR LA PÁGINA. Tiene CUATRO caminos, de mejor a peor, porque no en
+     todos los teléfonos anda el primero. El 2026-10-07 el dueño lo abrió
+     desde adentro de WhatsApp y el botón no hacía NADA: ahí el menú de
+     compartir del teléfono está bloqueado, tiraba error, y el código se
+     daba por vencido en silencio. Ahora, si el camino no anda, sigue al
+     siguiente, y SIEMPRE termina avisando algo.
+       1. El menú de compartir del teléfono (WhatsApp, mensajes, mail...).
+       2. Copiar el link al portapapeles.
+       3. Copiarlo a la vieja usanza (los visores viejos no tienen lo de arriba).
+       4. Mostrarlo en pantalla para copiarlo a mano.
+     Si lo abre y lo cierra él (AbortError), no se hace nada más: eso NO es
+     un error. */
+  async function compartirLaPagina() {
+    const link = location.href.split("#")[0];
     const datos = {
       title: "Trigales del Sur",
-      text: "Insumos para panadería, pizzería y confitería. Peдídos desde el celular:",
-      url: location.href.split("#")[0],
+      text: "Insumos para panadería, pizzería y confitería. Pedidos desde el celular:",
+      url: link,
     };
-    try {
-      if (navigator.share) { await navigator.share(datos); return; }
-    } catch (e) {
-      return; // lo cerró él: no se hace nada más
+    if (navigator.share) {
+      try {
+        await navigator.share(datos);
+        return;
+      } catch (e) {
+        // Lo cerró él: listo, no se insiste.
+        if (e && (e.name === "AbortError" || e.name === "CanceledError")) return;
+        // Cualquier otra cosa (bloqueado, no permitido): se sigue de largo.
+      }
     }
-    try {
-      await navigator.clipboard.writeText(datos.url);
-      avisarCopiado(boton);
-    } catch (e) {
-      prompt("Copiá el link para compartirlo:", datos.url);
-    }
+    if (await copiarElLink(link)) { avisar("¡Link copiado!"); return; }
+    mostrarElLink(link);
   }
-  function avisarCopiado(boton) {
-    if (!boton) return;
-    const texto = boton.querySelector("span");
-    const antes = texto ? texto.textContent : "";
-    if (texto) texto.textContent = "¡Link copiado!";
-    boton.classList.add("copiado");
-    setTimeout(() => {
-      if (texto) texto.textContent = antes;
-      boton.classList.remove("copiado");
-    }, 2200);
+
+  async function copiarElLink(link) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(link);
+        return true;
+      }
+    } catch (e) { /* sigue por abajo */ }
+    try {
+      const caja = document.createElement("textarea");
+      caja.value = link;
+      caja.setAttribute("readonly", "");
+      caja.style.cssText = "position:fixed;top:0;left:0;opacity:0;pointer-events:none";
+      document.body.appendChild(caja);
+      caja.select();
+      caja.setSelectionRange(0, 99999);
+      const listo = document.execCommand("copy");
+      document.body.removeChild(caja);
+      return !!listo;
+    } catch (e) { return false; }
+  }
+
+  // El cartelito verde abajo, para que se vea que hizo algo.
+  let relojDelAviso = null;
+  function avisar(texto) {
+    let c = document.getElementById("avisito");
+    if (!c) {
+      c = document.createElement("div");
+      c.id = "avisito";
+      document.body.appendChild(c);
+    }
+    c.textContent = texto;
+    c.classList.add("se-ve");
+    clearTimeout(relojDelAviso);
+    relojDelAviso = setTimeout(() => c.classList.remove("se-ve"), 2600);
+  }
+
+  // Último recurso: el link en pantalla, ya marcado para copiarlo a mano.
+  function mostrarElLink(link) {
+    const d = document.getElementById("ellink");
+    if (!d) { avisar(link); return; }
+    const caja = d.querySelector("input");
+    caja.value = link;
+    d.showModal();
+    setTimeout(() => { try { caja.select(); caja.setSelectionRange(0, 99999); } catch (e) {} }, 60);
+  }
+  async function copiarDesdeElCartel(boton) {
+    const caja = document.getElementById("ellink").querySelector("input");
+    if (await copiarElLink(caja.value)) {
+      boton.textContent = "¡Copiado!";
+      setTimeout(() => { boton.textContent = "Copiar el link"; }, 1800);
+    } else {
+      try { caja.select(); caja.setSelectionRange(0, 99999); } catch (e) {}
+    }
   }
 
   // EL RIEL DE LAS MARCAS: corre solo, despacito. El cliente lo puede correr
