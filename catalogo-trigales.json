@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-08T00:43:59.933Z",
+  "generado": "2026-10-08T18:51:27.033Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -19,9 +19,9 @@
     },
     {
       "id": "art_csv_11",
-      "nombre": "AGUILA COBERTURA BLANCA X 10 KG CAJA",
+      "nombre": "AGUILA COBERTURA BLANCA X 1 KG CAJA",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_112",
@@ -324,12 +324,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_68",
-      "nombre": "CALSA SUPER HOJALDRE X 10 KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_70",
       "nombre": "CAMI TAPAS COPETIN X 5 DOCENAS",
       "familia": "GENERAL",
@@ -345,7 +339,7 @@
       "id": "art_csv_73",
       "nombre": "CAMI TAPAS DE EMPANADAS FAMILIAR CRIOLLAS X 5 DOC",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_74",
@@ -435,7 +429,7 @@
       "id": "art_1790350029830",
       "nombre": "CAYFAR MERMERLADA DE MEMBRILLO X 10KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_89",
@@ -483,7 +477,7 @@
       "id": "art_csv_97",
       "nombre": "CHACABUCO HARINA INTEGRAL X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_98",
@@ -567,7 +561,7 @@
       "id": "art_csv_113",
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_115",
@@ -783,7 +777,7 @@
       "id": "art_lista_152",
       "nombre": "EMETH AZUCAR IMPALPABLE X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_lista_153",
@@ -795,7 +789,7 @@
       "id": "art_lista_154",
       "nombre": "EMETH BAÑO DE REPOSTERIA BOTON BLANCO X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_lista_155",
@@ -903,7 +897,7 @@
       "id": "art_lista_171",
       "nombre": "EMETH ESENCIA PAN DULCE X 1 LITRO",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_lista_172",
@@ -1170,12 +1164,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_220",
-      "nombre": "LAGOMARSINO CONCEPCION HARINA 0000 X 25 KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_221",
       "nombre": "LAGOMARSINO HARINA CARLOS CASARES 000 X 25",
       "familia": "GENERAL",
@@ -1203,7 +1191,7 @@
       "id": "art_csv_225",
       "nombre": "LANFIELD ULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_227",
@@ -1693,9 +1681,9 @@
     },
     {
       "id": "art_csv_311",
-      "nombre": "MIX MEDITERRANEO FRUTOS SECOS CON PASAS X KG",
+      "nombre": "MIX MEDITERRANEO FRUTOS SECOS CON PASAS 1X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_310",
@@ -1726,12 +1714,6 @@
       "nombre": "MORANDO ANCHOAS FILET",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_319",
-      "nombre": "MORANDO CONDIMENTADA X 1 KG",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_320",
@@ -1767,7 +1749,7 @@
       "id": "art_csv_328",
       "nombre": "NUECES CUARTOS X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_329",
@@ -2163,7 +2145,7 @@
       "id": "art_csv_393",
       "nombre": "PASAS DE UVA X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1787492078727",
@@ -2220,12 +2202,6 @@
       "hay": false
     },
     {
-      "id": "art_1787488935989",
-      "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_408",
       "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
       "familia": "GENERAL",
@@ -2235,7 +2211,7 @@
       "id": "art_1788115971998",
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN PLACA X 2 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_409",
@@ -2373,7 +2349,7 @@
       "id": "art_1787508781215",
       "nombre": "SILVIA LECHE LARGA VIDA X 1 LT",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_435",
