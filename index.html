@@ -2,6 +2,21 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<!-- 🔒 EL CANDADO QUE PROTEGE ESTA PÁGINA DE QUE EL PROGRAMA LA PISE.
+     (2026-10-07, el día de la mudanza a trigalesdelsur.com.ar.)
+
+     Hasta hoy la raíz del sitio era LA APP de pedidos, y el programa publica
+     la app ahí cada vez que sube la lista de precios — solo, cada 2 horas.
+     Ahora la raíz es ESTA página. Un programa viejo, que todavía cree que la
+     app va en la raíz, la pisaría sin que nadie se entere.
+
+     El programa YA tiene un freno para eso: antes de subir mira este número,
+     y si el publicado es MAYOR que el suyo no toca nada ("la publicada es más
+     nueva"). Ver versionDeLaPagina y VERSION_PAGINA en src/lib/armar-pagina.js.
+     Con 9000 ninguna versión del programa, vieja o nueva, va a pisar esto.
+
+     🚨 NO SACAR NI BAJAR ESTE NÚMERO. -->
+<meta name="tds-pagina" content="9000">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trigales del Sur · Distribuidora de insumos · Llavallol</title>
 <meta name="description" content="Trigales del Sur: insumos para panaderías, pizzerías, confiterías y comercios. Seguí 1681, Llavallol.">
