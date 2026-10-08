@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-07T22:31:26.529Z",
+  "generado": "2026-10-08T00:43:59.933Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -898,6 +898,12 @@
       "nombre": "EMETH ESENCIA NARANJA X 1 LITRO",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_lista_171",
+      "nombre": "EMETH ESENCIA PAN DULCE X 1 LITRO",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_lista_172",
