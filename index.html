@@ -59,7 +59,10 @@
   /* El icono de la T (arriba, al lado de «Trigales del Sur») y el del carrito (al lado de «La app para
      hacer pedidos») salen de esta MISMA regla: los dos miden siempre lo mismo, en la PC y en el celular. */
   .marca img, .icono-app { width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0; display: block; }
-  .icono-app { box-shadow: 0 6px 14px -8px rgba(0, 0, 0, .8); }
+  /* EL ICONO DEL CARRITO CON EL PORCENTAJE, un toque mas grande y un toque mas
+     arriba (2026-10-08, pedido del dueno). SOLO este: las marcas del riel
+     siguen en 38. */
+  .icono-app { width: 46px; height: 46px; border-radius: 11px; position: relative; top: -3px; box-shadow: 0 6px 14px -8px rgba(0, 0, 0, .8); }
   .marca b { font-family: "Fraunces", serif; font-size: 21px; letter-spacing: .01em; }
   .marca small { display: block; font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--apagado); letter-spacing: .06em; margin-top: -2px; white-space: nowrap; }
   .menu { display: flex; gap: 22px; font-size: 14px; font-weight: 500; }
@@ -257,13 +260,20 @@
   /* EL CONSEJO: UN RENGLÓN Y UN BOTÓN. La explicación va en una pantalla
      flotante (2026-10-07): el desplegable, en el celular, partía el renglón en
      tres y no se entendía dónde tocar. */
-  .consejo-link { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin-top: 18px; font-size: 14px; line-height: 1.5; }
-  .consejo-link svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--trigo); }
-  .consejo-link > span { flex: 1 1 200px; min-width: 0; }
-  /* El botón, bien marcado y con lugar para el dedo: en el celular queda solo
-     en su renglón y se toca sin apuntar. */
-  .comoabrir { flex-shrink: 0; background: transparent; border: 1px solid var(--trigo); border-radius: 999px; padding: 7px 14px; font: inherit; font-size: 13px; font-weight: 700; color: var(--trigo); cursor: pointer; }
-  .comoabrir:hover, .comoabrir:focus-visible { background: var(--trigo); color: #2A2117; }
+  /* NO ES UN BOTON, ES LA FRASE. (2026-10-08.) El dueno: *"ese boton no me
+     gusta... prefiero que la marques como que se puede tildar, o sea subrayada,
+     por ejemplo como Segui 1681, que la puedas marcar con la manito y ahi te
+     salga el flotante... o despues de «queda como una app mas.» escrito «como
+     se hace?», que no parezca un boton pero que se note, en amarillo si
+     queres"*. Asi que se toca TODA la frase (subrayada de puntitos, igual que
+     la direccion en los datos rapidos) y «¿Como se hace?» va en amarillo pegado
+     atras. Sigue siendo un <button> de verdad: se llega con el Tab y el lector
+     de pantalla lo canta como lo que es. */
+  .consejo-link { display: flex; align-items: flex-start; gap: 9px; margin-top: 18px; width: 100%; background: transparent; border: none; padding: 0; font: inherit; font-size: 14px; line-height: 1.5; color: inherit; text-align: left; cursor: pointer; }
+  .consejo-link svg { width: 24px; height: 24px; flex-shrink: 0; color: var(--trigo); margin-top: 1px; }
+  .consejo-link > span { min-width: 0; border-bottom: 1px dashed var(--linea); padding-bottom: 2px; }
+  .consejo-link b { color: var(--trigo); font-weight: 700; white-space: nowrap; }
+  .consejo-link:hover > span, .consejo-link:focus-visible > span { border-bottom-color: var(--trigo); }
   .como { border: none; border-radius: 16px; padding: 22px 22px 18px; max-width: 420px; width: calc(100% - 28px); background: var(--papel); color: var(--tinta); box-shadow: 0 30px 70px -20px rgba(0,0,0,.55); }
   .como::backdrop { background: rgba(26,19,13,.6); }
   .como h3 { margin: 0 0 12px; font-size: 20px; }
@@ -454,11 +464,10 @@
              se partía en tres y no se entendía dónde tocar. El dueño: *"dejamos
              el consejo como estaba antes, como que es un link, apretás y se abre
              una pantalla flotante y muestra cómo se hace"*. -->
-        <p class="consejo-link">
+        <button type="button" class="consejo-link" onclick="document.getElementById('comoguardar').showModal()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.6"/><path d="M12 7.5v6M9 10.5l3-3 3 3"/><path d="M9.6 18.6h4.8"/></svg>
-          <span>Guardala en la pantalla del celular y queda como una app más.</span>
-          <button type="button" class="comoabrir" onclick="document.getElementById('comoguardar').showModal()">¿Cómo se hace?</button>
-        </p>
+          <span>Guardala en la pantalla del celular y queda como una app más. <b>¿Cómo se hace?</b></span>
+        </button>
         <dialog id="comoguardar" class="como" aria-label="Cómo guardarla en el celular">
           <h3>Guardarla en el celular</h3>
           <div class="paso"><b>En Android</b><span>Abrila, tocá los <b>tres puntitos</b> de arriba a la derecha y elegí <b>«Agregar a pantalla principal»</b>.</span></div>
