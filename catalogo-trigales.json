@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-09T14:42:24.218Z",
+  "generado": "2026-10-09T16:42:28.463Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2053,13 +2053,13 @@
     },
     {
       "id": "art_csv_381",
-      "nombre": "PAPELERA MOLDE DE BUDIN ALUMINIO DE 1/2 KG X 10 UNIDADES (104/1)",
+      "nombre": "PAPELERA MOLDE DE BUDIN ALUMINIO DE 1/2 KG X 10 UNIDADES",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_382",
-      "nombre": "PAPELERA MOLDE DE BUDIN PAPEL X 10 UNIDADES ( 384 )",
+      "nombre": "PAPELERA MOLDE DE BUDIN PAPEL X 10 UNIDADES",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2097,7 +2097,7 @@
       "id": "art_csv_389",
       "nombre": "PAPELERA PLATO DE ALUMINIO P26 X 10 UNIDADES (110/1)",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_390",
@@ -2193,7 +2193,7 @@
       "id": "art_1788115971998",
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN PLACA X 2 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_409",
