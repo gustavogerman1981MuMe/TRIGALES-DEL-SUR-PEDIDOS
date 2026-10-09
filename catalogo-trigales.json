@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-09T11:47:58.112Z",
+  "generado": "2026-10-09T14:29:46.996Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -122,6 +122,12 @@
     {
       "id": "art_1789125724382",
       "nombre": "ARRAYANES RELLENO SABOR DULCE DE LECHE X 10 KG",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
+      "id": "art_1791553005726",
+      "nombre": "AVENA X 5KG",
       "familia": "GENERAL",
       "hay": false
     },
@@ -741,7 +747,7 @@
       "id": "art_csv_146",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO BALDE X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_147",
@@ -753,13 +759,13 @@
       "id": "art_csv_148",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 4 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_149",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_lista_151",
@@ -1185,7 +1191,7 @@
       "id": "art_csv_225",
       "nombre": "LANFIELD ULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_227",
