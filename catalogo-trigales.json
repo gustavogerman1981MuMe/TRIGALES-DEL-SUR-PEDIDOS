@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-09T08:29:05.091Z",
+  "generado": "2026-10-09T11:47:58.112Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -714,12 +714,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_140",
-      "nombre": "EGRAMAR GRASA GUSTAGRAS REFINADA X10 KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_141",
       "nombre": "EGRAMAR MARGARINA MASA ORO SACHET X 0.5 KG",
       "familia": "GENERAL",
@@ -1203,7 +1197,7 @@
       "id": "art_csv_228",
       "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_229",
@@ -1932,12 +1926,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_360",
-      "nombre": "PAPELERA BOLSA DE ARRANQUE 30 X 40",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_361",
       "nombre": "PAPELERA BOLSA DE ARRANQUE 35 X 45 (183/1)",
       "familia": "GENERAL",
@@ -1954,12 +1942,6 @@
       "nombre": "PAPELERA BOLSA DE ARRANQUE 50 X 70",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_364",
-      "nombre": "PAPELERA BOLSA DE CONSORCIO DE 60 X 90",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_365",
@@ -2090,12 +2072,6 @@
     {
       "id": "art_csv_385",
       "nombre": "PAPELERA PAPEL MANTECA ROLLO X 1 KG ( 765 )",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_386",
-      "nombre": "PAPELERA PAPEL MANTECA ROLLO X 5 METROS",
       "familia": "GENERAL",
       "hay": true
     },
