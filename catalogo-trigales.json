@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-09T14:29:46.996Z",
+  "generado": "2026-10-09T14:42:24.218Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1335,7 +1335,7 @@
       "id": "art_csv_249",
       "nombre": "LEOPARDO LONGANIZA X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1787598090761",
@@ -2031,7 +2031,7 @@
       "id": "art_csv_377",
       "nombre": "PAPELERA FILM 300 MTS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_378",
