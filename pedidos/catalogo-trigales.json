@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-10T01:20:13.397Z",
+  "generado": "2026-10-10T14:37:32.382Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -129,7 +129,7 @@
       "id": "art_1791553005726",
       "nombre": "AVENA X 5KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_28",
@@ -1654,12 +1654,6 @@
       "nombre": "MILKAUT MANTECA X 5 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_306",
-      "nombre": "MILKAUT PROVOLONE X KG",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_307",
