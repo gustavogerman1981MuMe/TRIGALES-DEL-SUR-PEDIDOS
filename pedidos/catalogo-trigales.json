@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-10T14:37:32.382Z",
+  "generado": "2026-10-10T19:35:45.521Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1654,6 +1654,12 @@
       "nombre": "MILKAUT MANTECA X 5 KG",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_csv_306",
+      "nombre": "MILKAUT PROVOLONE X KG",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_307",
