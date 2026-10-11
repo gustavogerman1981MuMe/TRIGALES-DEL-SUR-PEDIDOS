@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-11T01:39:18.177Z",
+  "generado": "2026-10-11T03:39:48.177Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2613,7 +2613,7 @@
       "texto": "LLEVANDO 5 O MAS",
       "hasta": "2026-10-10",
       "hay": true,
-      "vencida": false
+      "vencida": true
     },
     {
       "articuloId": "art_csv_427",
@@ -2623,7 +2623,7 @@
       "texto": "LLEVANDO 5 O MAS",
       "hasta": "2026-10-10",
       "hay": true,
-      "vencida": false
+      "vencida": true
     },
     {
       "articuloId": "art_csv_28",
@@ -2633,17 +2633,7 @@
       "texto": "LLEVANDO 10 O MAS",
       "hasta": "2026-10-10",
       "hay": true,
-      "vencida": false
+      "vencida": true
     }
-  ],
-  "oferta": {
-    "articuloId": "art_csv_408",
-    "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
-    "precio": 59000,
-    "desdeCuantos": 5,
-    "texto": "LLEVANDO 5 O MAS",
-    "hasta": "2026-10-10",
-    "hay": true,
-    "vencida": false
-  }
+  ]
 }
