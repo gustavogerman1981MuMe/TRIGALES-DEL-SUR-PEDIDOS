@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-12T19:47:08.520Z",
+  "generado": "2026-10-12T21:56:39.988Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1365,7 +1365,7 @@
       "id": "art_csv_253",
       "nombre": "LOCOCO AHUMADO PIMENTON X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_254",
@@ -2184,10 +2184,22 @@
       "hay": false
     },
     {
+      "id": "art_1787488935989",
+      "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
       "id": "art_csv_408",
       "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1787489473487",
+      "nombre": "RDC GRASA REFINADA X 20KG",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_1788115971998",
