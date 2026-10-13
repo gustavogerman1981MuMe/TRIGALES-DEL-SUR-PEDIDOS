@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-13T13:01:16.074Z",
+  "generado": "2026-10-13T14:06:34.376Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1641,7 +1641,7 @@
       "id": "art_csv_300",
       "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_294",
@@ -1795,25 +1795,25 @@
     },
     {
       "id": "art_csv_337",
-      "nombre": "PAPELERA BANDEJA EXPANDIDO 618 X 50 (1022/1)",
+      "nombre": "PAPELERA BANDEJA EXPANDIDO 618 X 50",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_338",
-      "nombre": "PAPELERA BANDEJA EXPANDIDO 621 X 50 KG (102/1)",
+      "nombre": "PAPELERA BANDEJA EXPANDIDO 621 X 50 KG",
       "familia": "GENERAL",
       "hay": false
     },
     {
       "id": "art_csv_339",
-      "nombre": "PAPELERA BANDEJA MICRO 102 (1652)",
+      "nombre": "PAPELERA BANDEJA MICRO 102",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_340",
-      "nombre": "PAPELERA BANDEJA MICRO 103 (1653)",
+      "nombre": "PAPELERA BANDEJA MICRO 103",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1897,7 +1897,7 @@
     },
     {
       "id": "art_csv_354",
-      "nombre": "PAPELERA BOLSA CAMISETA DE 30 X 40 ( 230/2 )",
+      "nombre": "PAPELERA BOLSA CAMISETA DE 30 X 40",
       "familia": "GENERAL",
       "hay": true
     },
