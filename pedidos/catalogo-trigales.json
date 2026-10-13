@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-13T14:06:34.376Z",
+  "generado": "2026-10-13T16:47:22.970Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -79,7 +79,7 @@
     },
     {
       "id": "art_csv_13",
-      "nombre": "AGUILA/ARCOR SNACK (9324) BON O BON X 800 GR",
+      "nombre": "AGUILA/ARCOR SNACK  BON O BON X 800 GR",
       "familia": "GENERAL",
       "hay": true
     },
@@ -309,7 +309,7 @@
       "id": "art_csv_63",
       "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_64",
@@ -1317,7 +1317,7 @@
       "id": "art_csv_247",
       "nombre": "LEDEVIT PREMEZCLA MOUSSE CHOCOLATE X 250 GR",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_248",
@@ -1819,19 +1819,19 @@
     },
     {
       "id": "art_csv_341",
-      "nombre": "PAPELERA BANDEJA MICRO 105 O (1654/1)",
+      "nombre": "PAPELERA BANDEJA MICRO 105 O",
       "familia": "GENERAL",
       "hay": false
     },
     {
       "id": "art_csv_342",
-      "nombre": "PAPELERA BANDEJA MICRO 107 R (1657)",
+      "nombre": "PAPELERA BANDEJA MICRO 107 R",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_343",
-      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 1 (1/1)",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 1",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1849,49 +1849,49 @@
     },
     {
       "id": "art_csv_346",
-      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 2 (2/1)",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 2",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_347",
-      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 3 (3/1)",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 3",
       "familia": "GENERAL",
       "hay": false
     },
     {
       "id": "art_csv_348",
-      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 4 (4/1)",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 4",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_349",
-      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 5 (5/1)",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 5",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_350",
-      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 6 (6/1)",
+      "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 6",
       "familia": "GENERAL",
       "hay": false
     },
     {
       "id": "art_csv_351",
-      "nombre": "PAPELERA BLONDA BLANCA NUMERO 28 ( 1879 )",
+      "nombre": "PAPELERA BLONDA BLANCA NUMERO 28",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_352",
-      "nombre": "PAPELERA BLONDA BLANCA NUMERO 30 ( 1880)",
+      "nombre": "PAPELERA BLONDA BLANCA NUMERO 30",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_353",
-      "nombre": "PAPELERA BLONDA BLANCA NUMERO 32 (1881)",
+      "nombre": "PAPELERA BLONDA BLANCA NUMERO 32",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2047,7 +2047,7 @@
     },
     {
       "id": "art_csv_380",
-      "nombre": "PAPELERA LAMINAS FOLEX DE 20 X 25 X 1 KG ( 270/1 )",
+      "nombre": "PAPELERA LAMINAS FOLEX DE 20 X 25 X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2065,19 +2065,19 @@
     },
     {
       "id": "art_csv_383",
-      "nombre": "PAPELERA PAPEL ALUMINIO ROLLO 40 CM X 1 KG (102)",
+      "nombre": "PAPELERA PAPEL ALUMINIO ROLLO 40 CM X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_384",
-      "nombre": "PAPELERA PAPEL FILM ECONOMICO X 38 CM ( 767 )",
+      "nombre": "PAPELERA PAPEL FILM ECONOMICO X 38 CM",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_385",
-      "nombre": "PAPELERA PAPEL MANTECA ROLLO X 1 KG ( 765 )",
+      "nombre": "PAPELERA PAPEL MANTECA ROLLO X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2089,25 +2089,25 @@
     },
     {
       "id": "art_csv_388",
-      "nombre": "PAPELERA PLATO DE ALUMINIO P23 X 10 UNIDADES (109/1)",
+      "nombre": "PAPELERA PLATO DE ALUMINIO P23 X 10 UNIDADES",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_389",
-      "nombre": "PAPELERA PLATO DE ALUMINIO P26 X 10 UNIDADES (110/1)",
+      "nombre": "PAPELERA PLATO DE ALUMINIO P26 X 10 UNIDADES",
       "familia": "GENERAL",
       "hay": false
     },
     {
       "id": "art_csv_390",
-      "nombre": "PAPELERA PRECINTOS DE 6 CM ( 611 )",
+      "nombre": "PAPELERA PRECINTOS DE 6 CM",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_391",
-      "nombre": "PAPELERA TACOS DE COLORES ( 613 )",
+      "nombre": "PAPELERA TACOS DE COLORES",
       "familia": "GENERAL",
       "hay": true
     },
