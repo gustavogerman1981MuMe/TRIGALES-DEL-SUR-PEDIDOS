@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-13T20:48:22.397Z",
+  "generado": "2026-10-13T22:48:52.397Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1801,7 +1801,7 @@
     },
     {
       "id": "art_csv_338",
-      "nombre": "PAPELERA BANDEJA EXPANDIDO 621 X 50 KG",
+      "nombre": "PAPELERA BANDEJA EXPANDIDO 621 X 50",
       "familia": "GENERAL",
       "hay": false
     },
@@ -1909,13 +1909,13 @@
     },
     {
       "id": "art_csv_356",
-      "nombre": "PAPELERA BOLSA CAMISETA DE 45 X 60 ( 233 )",
+      "nombre": "PAPELERA BOLSA CAMISETA DE 45 X 60",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_357",
-      "nombre": "PAPELERA BOLSA DE ARRANQUE 15 X 20 (170/1)",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 15 X 20",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1933,7 +1933,7 @@
     },
     {
       "id": "art_csv_361",
-      "nombre": "PAPELERA BOLSA DE ARRANQUE 35 X 45 (183/1)",
+      "nombre": "PAPELERA BOLSA DE ARRANQUE 35 X 45",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1951,7 +1951,7 @@
     },
     {
       "id": "art_csv_365",
-      "nombre": "PAPELERA BOLSA DE CONSORCIO DE 90 X 1.2 ( 1296 )",
+      "nombre": "PAPELERA BOLSA DE CONSORCIO DE 90 X 1.2",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2017,7 +2017,7 @@
     },
     {
       "id": "art_csv_336",
-      "nombre": "PAPELERA CINTA DE PAPEL RAPIFIX 48 X 50 ( 351 )",
+      "nombre": "PAPELERA CINTA DE PAPEL RAPIFIX 48 X 50",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2035,7 +2035,7 @@
     },
     {
       "id": "art_csv_378",
-      "nombre": "PAPELERA FONDO PIZZERO X KG (410/2)",
+      "nombre": "PAPELERA FONDO PIZZERO X KG",
       "familia": "GENERAL",
       "hay": true
     },
