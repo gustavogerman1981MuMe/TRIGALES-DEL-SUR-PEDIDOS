@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-13T10:02:08.521Z",
+  "generado": "2026-10-13T13:01:16.074Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -285,7 +285,7 @@
       "id": "art_csv_59",
       "nombre": "CALSA KOLAROMA LIMON X 1 LITRO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_60",
