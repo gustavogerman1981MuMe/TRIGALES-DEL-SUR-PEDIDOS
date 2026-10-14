@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-14T11:17:59.986Z",
+  "generado": "2026-10-14T13:18:21.255Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -147,7 +147,7 @@
       "id": "art_csv_30",
       "nombre": "AZUCAR COMUN X 50 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_33",
@@ -477,7 +477,7 @@
       "id": "art_csv_96",
       "nombre": "CHACABUCO HARINA INTEGRAL X 25 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_97",
@@ -1203,7 +1203,7 @@
       "id": "art_csv_228",
       "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_229",
@@ -1290,6 +1290,12 @@
       "hay": true
     },
     {
+      "id": "art_1791978604769",
+      "nombre": "LEDEVIT DULCE DE LECHE X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_243",
       "nombre": "LEDEVIT PREMEZCLA CREMA PASTELERA X 250 GR",
       "familia": "GENERAL",
@@ -1317,7 +1323,7 @@
       "id": "art_csv_247",
       "nombre": "LEDEVIT PREMEZCLA MOUSSE CHOCOLATE X 250 GR",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_248",
@@ -2253,7 +2259,7 @@
       "id": "art_1787874876231",
       "nombre": "REGITECA GRASA X 20 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1788967922508",
