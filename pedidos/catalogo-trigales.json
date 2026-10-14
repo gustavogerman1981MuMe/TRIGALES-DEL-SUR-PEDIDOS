@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-14T13:18:21.255Z",
+  "generado": "2026-10-14T16:23:06.699Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -153,7 +153,7 @@
       "id": "art_csv_33",
       "nombre": "BALLINA PASTA CUBRE TORTA F H X 0.500 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_34",
@@ -309,7 +309,7 @@
       "id": "art_csv_63",
       "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_64",
@@ -1341,7 +1341,7 @@
       "id": "art_csv_249",
       "nombre": "LEOPARDO LONGANIZA X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1787598090761",
@@ -1641,13 +1641,13 @@
       "id": "art_csv_299",
       "nombre": "MILKAUT CREMA AL 39% SACHET X 5 LT",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_300",
       "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_294",
@@ -1665,7 +1665,7 @@
       "id": "art_csv_306",
       "nombre": "MILKAUT PROVOLONE X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_307",
@@ -2391,7 +2391,7 @@
       "id": "art_csv_441",
       "nombre": "TAXONERA AZUCAR IMPALPABLE ANTIHUMEDAD X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_442",
@@ -2493,13 +2493,13 @@
       "id": "art_csv_459",
       "nombre": "TAXONERA MERMELADA DE MEMBRILLO X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_460",
       "nombre": "TAXONERA MERMELADA FRUTO DEL BOSQUE X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_468",
