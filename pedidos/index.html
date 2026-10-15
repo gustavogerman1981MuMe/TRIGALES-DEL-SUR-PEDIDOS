@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="96">
+<meta name="tds-pagina" content="97">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -1066,7 +1066,7 @@
   .cartelPres button{ display:block; width:100%; margin-top:9px; padding:10px; border:0; border-radius:8px; background:var(--hay); color:#fff; font-size:14px; font-weight:700 }
   .cartelPres[hidden]{ display:none }
   .embebido .cartelPres{ display:none !important }
-  .light .ladoBarra, .light #ofertaArriba, .light #barraPedido, .light #menuMarcas, .light .rotuloEnvio, .light #llaves, .light .versionPagina{ display:none !important }
+  .light .ladoBarra, .light #ofertaArriba, .light #barraPedido, .light #menuMarcas, .light .rotuloEnvio, .light #llaves{ display:none !important }
   .embebido .sello .conocenos{ display:none }
   .cartelPres .cierraPres{ position:absolute; top:6px; right:6px; width:30px; height:30px; margin:0; padding:0; background:transparent; color:inherit; border:0; font-size:16px; line-height:1; opacity:.7 }
   .cartelPres.yaEs button{ background:transparent; color:var(--hay); border:2px solid var(--hay) }
@@ -3142,13 +3142,15 @@ if (LIGHT) {
   document.documentElement.classList.add("light");
   const t = document.querySelector("h1");
   if (t && t.firstChild && t.firstChild.nodeType === 3) t.firstChild.nodeValue = "Pedí un presupuesto";
-  // La barra de abajo dice «Tu pedido…» / «Enviar pedido»: en el presupuesto tiene que decir presupuesto.
+  // El texto de la barra de abajo habla de «pedido»: en el presupuesto tiene que decir presupuesto.
   const barra = document.querySelector(".barra");
   if (barra && window.MutationObserver) {
+    const cambios = [["Tu " + "pedido", "Tu presupuesto"], ["Enviar " + "pedido", "Pedir presupuesto"], ["el " + "pedido", "el presupuesto"]];
     const decirPresupuesto = () => {
       barra.querySelectorAll("#cuenta, #subcuenta, #verPedido").forEach((el) => {
         const antes = el.textContent;
-        const despues = antes.replace(/Tu pedido/g, "Tu presupuesto").replace(/Enviar pedido/g, "Pedir presupuesto").replace(/el pedido/g, "el presupuesto");
+        let despues = antes;
+        cambios.forEach(([de, a]) => { despues = despues.split(de).join(a); });
         if (despues !== antes) el.textContent = despues;
       });
     };
