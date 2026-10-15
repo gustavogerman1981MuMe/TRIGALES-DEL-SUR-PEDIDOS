@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-15T17:24:05.848Z",
+  "generado": "2026-10-15T20:47:44.209Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2202,22 +2202,16 @@
       "hay": true
     },
     {
-      "id": "art_1787489473487",
-      "nombre": "RDC GRASA REFINADA X 20KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_1788115971998",
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN PLACA X 2 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_409",
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_410",
