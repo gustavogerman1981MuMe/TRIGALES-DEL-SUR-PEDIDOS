@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="91">
+<meta name="tds-pagina" content="92">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -1060,12 +1060,11 @@
   /* «PEDÍ UN PRESUPUESTO» (2026-10-15, pedido del dueño: «muchos me piden
      precios... se entera que puedo hacer un presupuesto abajo de todo cuando
      la envía»). Un cartel ARRIBA, antes de la lista, que prende el modo
-     presupuesto con un toque, y una franja que lo recuerda mientras se arma. */
+     presupuesto con un toque, (La franja que lo recordaba se sacó el 2026-10-15: «demasiados carteles».) */
   .cartelPres{ margin:12px 0 4px; padding:12px 14px; border-radius:10px; background:var(--hay-suave, #E9EFE4); border:2px solid var(--hay); font-size:13.5px; line-height:1.45 }
   .cartelPres b.tPres{ display:block; font-size:15.5px; margin-bottom:2px }
   .cartelPres button{ display:block; width:100%; margin-top:9px; padding:10px; border:0; border-radius:8px; background:var(--hay); color:#fff; font-size:14px; font-weight:700 }
   .cartelPres.yaEs button{ background:transparent; color:var(--hay); border:2px solid var(--hay) }
-  .franjaPres{ margin:8px 0 0; padding:8px 11px; border-radius:8px; background:var(--trigo-suave); border:1px solid var(--trigo); font-size:12.5px; line-height:1.4 }
   .aviso{font-size:12.5px; color:var(--tinta2); line-height:1.45}
   .aviso.ok{color:var(--hay); font-weight:700}
 
@@ -1118,9 +1117,6 @@
     <b class="tPres">¿Querés saber precios?</b>
     Pedí un <b>presupuesto</b>: armás la lista y te pasamos los precios, <b>sin compromiso</b>.
     <button type="button" id="pedirPres">Pedir un presupuesto</button>
-  </div>
-  <div class="franjaPres" id="franjaPres" hidden>
-    <b>Estás armando un PRESUPUESTO.</b> No preparamos mercadería: solo te pasamos los precios.
   </div>
   <div id="ofertaArriba"></div>
   <div class="buscador" id="cajaNombre">
@@ -1293,7 +1289,7 @@ const RESPALDO = [["art_csv_4","AGUILA BOMBON BLANCO X KG",1],["art_csv_3","AGUI
 const ARCHIVO_LISTA = "catalogo-trigales.json";
 // De cuando es la lista que va pegada como respaldo. Se pone sola al armar
 // la pagina, para que SIEMPRE se pueda decir que version se esta usando.
-const RESPALDO_DE = "2026-10-14T20:24:06.700Z";
+const RESPALDO_DE = "2026-10-15T12:44:33.862Z";
 let ART = [];
 let listaDe = null;      // cuando se genero la lista que estamos viendo
 let listaPropia = false; // true si se pudo bajar la de verdad
@@ -3100,7 +3096,6 @@ function pintarModoEnvio() {
   if (cartel) {
     cartel.classList.toggle("yaEs", esPresupuesto);
     $("#pedirPres").textContent = esPresupuesto ? "Presupuesto prendido ✓ — armá la lista" : "Pedir un presupuesto";
-    $("#franjaPres").hidden = !esPresupuesto;
   }
   const b = $("#enviar");
   b.querySelector("span").textContent = esPresupuesto
