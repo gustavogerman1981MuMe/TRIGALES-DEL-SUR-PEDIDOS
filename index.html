@@ -129,6 +129,10 @@
      altura, en la computadora y en el celular. */
   .app .acciones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 640px; }
   .app .acciones .boton { min-height: 52px; padding: 8px 10px; font-size: 14px; line-height: 1.2; text-align: center; width: 100%; box-sizing: border-box; }
+  /* EL BOTÓN DEL PRESUPUESTO, CON COLOR PROPIO (2026-10-15, el dueño: «ponele color»): naranja, para que no se
+     confunda con el dorado de «Abrir la app» ni con el verde de WhatsApp. */
+  .boton.presupuesto { background: #E8863A; color: #1F1610; border-color: #E8863A; }
+  .boton.presupuesto:hover { background: #F09A55; }
   .datos-rapidos { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; font-size: 14px; color: var(--apagado); }
   .datos-rapidos span, .datos-rapidos a { display: inline-flex; align-items: center; gap: 6px; }
   /* EL MAPA DE ARRIBA SE TOCA. (2026-10-07.) El dueño: *"arriba, el iconito del
@@ -464,7 +468,7 @@
           <a class="boton lleno" style="background:var(--trigo);color:var(--tinta)" href="pedidos/" target="_blank" rel="noopener">Abrir la app de pedidos</a>
           <!-- «PEDÍ UN PRESUPUESTO» (2026-10-15, pedido del dueño: muchos piden precios y se enteraban
                del presupuesto recién al enviar). Abre la app YA en modo presupuesto (?presupuesto=1). -->
-          <a class="boton borde" href="pedidos/?presupuesto=1" target="_blank" rel="noopener">Pedir un presupuesto</a>
+          <a class="boton presupuesto" href="pedidos/?presupuesto=1" target="_blank" rel="noopener">Pedir un presupuesto</a>
           <a class="boton wa" href="https://wa.me/5491151630039" target="_blank" rel="noopener" style="border-color:var(--wa)">Preguntar por WhatsApp</a>
         </div>
         <!-- UN BOTÓN, Y LA EXPLICACIÓN EN UNA PANTALLA FLOTANTE. (2026-10-07.)
