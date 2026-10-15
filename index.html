@@ -135,6 +135,13 @@
      disponible si tocan el botón»). La app de /pedidos/ adentro de una ventana que se abre con los botones;
      no ocupa lugar en la página. En el celular ocupa toda la pantalla. */
   #ventanaPedido { border: 0; padding: 0; border-radius: 14px; width: min(940px, 96vw); height: min(90vh, 860px); max-width: 96vw; max-height: 96vh; background: #1B1815; overflow: hidden; }
+  #ofrecerApp { border: 3px solid var(--corteza); border-radius: 14px; padding: 20px 22px; width: min(440px, 92vw); background: #FFFDF8; color: var(--tinta); }
+  #ofrecerApp::backdrop { background: rgba(20, 14, 8, .62); }
+  #ofrecerApp h3 { font-family: "Fraunces", serif; font-size: 22px; margin: 0 0 8px; }
+  #ofrecerApp p { color: #4A3F33; font-size: 14px; line-height: 1.5; margin: 0 0 14px; }
+  #ofrecerApp .boton { width: 100%; box-sizing: border-box; margin-bottom: 10px; cursor: pointer; font-family: inherit; }
+  #ofrecerApp .chiquito { font-size: 12.5px; text-align: center; margin: 4px 0 8px; }
+  #ofrecerApp .cerrar { display: block; margin: 0 auto; background: none; border: 0; color: #6E6152; text-decoration: underline; cursor: pointer; font-size: 13px; }
   #ventanaPedido::backdrop { background: rgba(20, 14, 8, .62); }
   #ventanaPedido .vp-top { display: flex; align-items: center; justify-content: space-between; padding: 8px 8px 8px 16px; background: #2A1F14; color: #F7F2E7; font: 700 14px "Public Sans", sans-serif; }
   #ventanaPedido .vp-top button { width: 40px; height: 40px; border: 0; border-radius: 8px; background: rgba(255,255,255,.12); color: #F7F2E7; font-size: 20px; line-height: 1; cursor: pointer; }
@@ -907,26 +914,57 @@
        mensaje de WhatsApp). Se abre con «Armar mi pedido» y con «Pedir un presupuesto» (este la abre con «Un
        presupuesto» prendido). Si el navegador no puede, los botones siguen siendo links normales a /pedidos/. -->
   <dialog id="ventanaPedido" aria-label="Armá tu pedido">
-    <div class="vp-top"><span>Armá tu pedido</span><button type="button" id="cerrarVentanaPedido" aria-label="Cerrar">✕</button></div>
+    <div class="vp-top"><span id="tituloVentanaPedido">Armá tu pedido</span><button type="button" id="cerrarVentanaPedido" aria-label="Cerrar">✕</button></div>
     <iframe id="marcoPedido" title="Armá tu pedido"></iframe>
+  </dialog>
+  <!-- PRIMERO LA APP (2026-10-15, el dueño: «cuando toquen armar el pedido, que les solicite primero bajar la
+       app; si la tienen bajada, que la hagan por la app»). El navegador no puede saber si ya está instalada, por
+       eso hay dos botones. «Seguir desde acá» se recuerda mientras dure la visita. -->
+  <dialog id="ofrecerApp" aria-label="Pedí desde la app">
+    <h3>Pedí desde la app</h3>
+    <p>Con la app ves <b>las ofertas de la semana</b> y la lista del día, y tenés tu pedido siempre a mano. Se guarda en tu celular en un toque.</p>
+    <a class="boton lleno" id="instalarApp" style="background:var(--trigo);color:var(--tinta)" href="pedidos/" target="_blank" rel="noopener">Instalar / abrir la app</a>
+    <button type="button" class="boton borde" id="seguirAca" style="color:var(--corteza);border-color:var(--corteza);background:#fff">Seguir desde acá, sin instalar</button>
+    <p class="chiquito">Si ya la tenés en el celular, tocá «Instalar / abrir la app».</p>
+    <button type="button" class="cerrar" id="cerrarOfrecerApp">Cerrar</button>
   </dialog>
   <script>
     (function () {
       var ven = document.getElementById('ventanaPedido');
       var marco = document.getElementById('marcoPedido');
-      if (!ven || !marco || typeof ven.showModal !== 'function') return;   // sin soporte: queda el link normal
+      var titulo = document.getElementById('tituloVentanaPedido');
+      var oferta = document.getElementById('ofrecerApp');
+      if (!ven || !marco || typeof ven.showModal !== 'function') return;   // sin soporte: quedan los links normales
       var BASE = 'pedidos/?embebido=1';
+      function abrir(destino, textoTitulo) {
+        if (marco.getAttribute('data-src') !== destino) { marco.setAttribute('data-src', destino); marco.src = destino; }
+        titulo.textContent = textoTitulo;
+        ven.showModal();
+      }
+      function sinApp() { try { return sessionStorage.getItem('tds-sin-app') === '1'; } catch (e) { return false; } }
       document.querySelectorAll('[data-arma]').forEach(function (a) {
         a.addEventListener('click', function (ev) {
           ev.preventDefault();
-          var quiere = a.getAttribute('data-arma') === 'presupuesto' ? BASE + '&presupuesto=1' : BASE;
-          if (marco.getAttribute('data-src') !== quiere) { marco.setAttribute('data-src', quiere); marco.src = quiere; }
-          ven.showModal();
+          if (a.getAttribute('data-arma') === 'presupuesto') {
+            abrir(BASE + '&light=1&presupuesto=1', 'Pedí un presupuesto');   // el presupuesto: versión sencilla, sin ofertas
+          } else if (sinApp() || typeof oferta.showModal !== 'function') {
+            abrir(BASE, 'Armá tu pedido');
+          } else {
+            oferta.showModal();   // el pedido: primero se ofrece la app
+          }
         });
       });
+      document.getElementById('seguirAca').addEventListener('click', function () {
+        try { sessionStorage.setItem('tds-sin-app', '1'); } catch (e) {}
+        oferta.close();
+        abrir(BASE, 'Armá tu pedido');
+      });
+      document.getElementById('instalarApp').addEventListener('click', function () { oferta.close(); });
+      document.getElementById('cerrarOfrecerApp').addEventListener('click', function () { oferta.close(); });
       document.getElementById('cerrarVentanaPedido').addEventListener('click', function () { ven.close(); });
-      // Tocar afuera (el fondo oscuro) también la cierra.
+      // Tocar afuera (el fondo oscuro) también las cierra.
       ven.addEventListener('click', function (ev) { if (ev.target === ven) ven.close(); });
+      oferta.addEventListener('click', function (ev) { if (ev.target === oferta) oferta.close(); });
     })();
   </script>
 </body>

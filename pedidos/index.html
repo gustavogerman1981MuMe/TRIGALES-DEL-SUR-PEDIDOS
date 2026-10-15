@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#8B4A2B">
-<meta name="tds-pagina" content="94">
+<meta name="tds-pagina" content="96">
 <meta name="description" content="Armá tu pedido y mandalo por WhatsApp.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icono-192.png">
@@ -1066,6 +1066,7 @@
   .cartelPres button{ display:block; width:100%; margin-top:9px; padding:10px; border:0; border-radius:8px; background:var(--hay); color:#fff; font-size:14px; font-weight:700 }
   .cartelPres[hidden]{ display:none }
   .embebido .cartelPres{ display:none !important }
+  .light .ladoBarra, .light #ofertaArriba, .light #barraPedido, .light #menuMarcas, .light .rotuloEnvio, .light #llaves, .light .versionPagina{ display:none !important }
   .embebido .sello .conocenos{ display:none }
   .cartelPres .cierraPres{ position:absolute; top:6px; right:6px; width:30px; height:30px; margin:0; padding:0; background:transparent; color:inherit; border:0; font-size:16px; line-height:1; opacity:.7 }
   .cartelPres.yaEs button{ background:transparent; color:var(--hay); border:2px solid var(--hay) }
@@ -3131,9 +3132,33 @@ $("#pedirPres").onclick = () => {
 let EMBEBIDO = false;
 try { EMBEBIDO = new URLSearchParams(location.search).get("embebido") === "1"; } catch (e) {}
 if (EMBEBIDO) document.documentElement.classList.add("embebido");
+/* LIGHT (2026-10-15, el dueño: «una versión un poco más light, sin publicación de ofertas. Bien
+   sencillito: buscar, cargar y enviar. Sin que parezca el celular»). ?light=1 es SOLO para presupuestos:
+   esconde las ofertas, «Pedir por Marcas», «¿Cómo pido?» y los botones de arriba, y deja el modo presupuesto
+   fijo (no hay llave de pedido/presupuesto). Es la misma app y el mismo mensaje de WhatsApp. */
+let LIGHT = false;
+try { LIGHT = new URLSearchParams(location.search).get("light") === "1"; } catch (e) {}
+if (LIGHT) {
+  document.documentElement.classList.add("light");
+  const t = document.querySelector("h1");
+  if (t && t.firstChild && t.firstChild.nodeType === 3) t.firstChild.nodeValue = "Pedí un presupuesto";
+  // La barra de abajo dice «Tu pedido…» / «Enviar pedido»: en el presupuesto tiene que decir presupuesto.
+  const barra = document.querySelector(".barra");
+  if (barra && window.MutationObserver) {
+    const decirPresupuesto = () => {
+      barra.querySelectorAll("#cuenta, #subcuenta, #verPedido").forEach((el) => {
+        const antes = el.textContent;
+        const despues = antes.replace(/Tu pedido/g, "Tu presupuesto").replace(/Enviar pedido/g, "Pedir presupuesto").replace(/el pedido/g, "el presupuesto");
+        if (despues !== antes) el.textContent = despues;
+      });
+    };
+    new MutationObserver(decirPresupuesto).observe(barra, { childList: true, characterData: true, subtree: true });
+    decirPresupuesto();
+  }
+}
 try {
-  if (new URLSearchParams(location.search).get("presupuesto") === "1") {
-    if (!EMBEBIDO) $("#cartelPres").hidden = false;   // viene del botón de la página: ahí SÍ se muestra
+  if (LIGHT || new URLSearchParams(location.search).get("presupuesto") === "1") {
+    if (!EMBEBIDO && !LIGHT) $("#cartelPres").hidden = false;   // viene del botón de la página: ahí SÍ se muestra
     cambiarModoEnvio(true);
   }
 } catch (e) {}
@@ -3185,7 +3210,7 @@ $("#enviar").onclick = async () => {
     : "Listo. Se abrió WhatsApp con el pedido escrito — y también quedó copiado, por si preferís pegarlo.";
   // Vuelve a "Un pedido": un presupuesto es una vez, y dejarlo prendido
   // haria salir el pedido siguiente como presupuesto sin que nadie lo note.
-  cambiarModoEnvio(false);
+  cambiarModoEnvio(LIGHT);
 };
 
 /* ABRIR WHATSAPP, QUE NO ES LO MISMO EN CADA TELEFONO.
