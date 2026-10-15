@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-15T14:45:08.221Z",
+  "generado": "2026-10-15T17:24:05.848Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -171,7 +171,7 @@
       "id": "art_csv_36",
       "nombre": "BARI FRUTA ESCURRIDA X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_37",
@@ -249,7 +249,7 @@
       "id": "art_csv_49",
       "nombre": "CALSA FLOR ESENCIA MANTECA X 2 LITROS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_52",
@@ -483,7 +483,7 @@
       "id": "art_csv_97",
       "nombre": "CHACABUCO HARINA INTEGRAL X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_98",
@@ -1485,7 +1485,7 @@
       "id": "art_csv_272",
       "nombre": "MARIMIL RICOTA X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_273",
@@ -1635,7 +1635,7 @@
       "id": "art_csv_298",
       "nombre": "MILKAUT CREMA 330 CC",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_299",
