@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-16T12:43:18.984Z",
+  "generado": "2026-10-16T13:43:24.742Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2618,11 +2618,11 @@
   ],
   "ofertas": [
     {
-      "articuloId": "art_1790350029830",
-      "nombre": "CAYFAR MERMERLADA DE MEMBRILLO X 10KG",
-      "precio": 16500,
-      "desdeCuantos": 5,
-      "texto": "LLEVANDO 5 O MAS",
+      "articuloId": "art_1791376414662",
+      "nombre": "WRACIE CREMA CHANTILLY X 1L",
+      "precio": 7500,
+      "desdeCuantos": 1,
+      "texto": "",
       "hasta": "2026-10-18",
       "hay": true,
       "vencida": false
@@ -2649,11 +2649,11 @@
     }
   ],
   "oferta": {
-    "articuloId": "art_1790350029830",
-    "nombre": "CAYFAR MERMERLADA DE MEMBRILLO X 10KG",
-    "precio": 16500,
-    "desdeCuantos": 5,
-    "texto": "LLEVANDO 5 O MAS",
+    "articuloId": "art_1791376414662",
+    "nombre": "WRACIE CREMA CHANTILLY X 1L",
+    "precio": 7500,
+    "desdeCuantos": 1,
+    "texto": "",
     "hasta": "2026-10-18",
     "hay": true,
     "vencida": false
