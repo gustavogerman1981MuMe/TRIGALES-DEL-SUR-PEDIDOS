@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-16T11:42:54.834Z",
+  "generado": "2026-10-16T12:43:18.984Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -525,7 +525,7 @@
       "id": "art_csv_104",
       "nombre": "CHI EME- JO S/A X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_106",
