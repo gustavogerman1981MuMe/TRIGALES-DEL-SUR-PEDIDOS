@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-16T09:45:44.524Z",
+  "generado": "2026-10-16T11:42:54.834Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -207,7 +207,7 @@
       "id": "art_csv_42",
       "nombre": "BLANCURA HARINA 000 X 25 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_43",
@@ -1671,7 +1671,7 @@
       "id": "art_csv_307",
       "nombre": "MILKAUT QUESO CREMA CREMATTO DOYPACK X 1.5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_308",
