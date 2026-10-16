@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-16T17:48:36.943Z",
+  "generado": "2026-10-16T18:54:18.757Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1062,12 +1062,6 @@
       "hay": false
     },
     {
-      "id": "art_csv_207",
-      "nombre": "JULIAN ACEITUNA 00 X 5 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_208",
       "nombre": "JULIAN ACEITUNAS NEGRAS EN ACEITE X 2 KG",
       "familia": "GENERAL",
@@ -1693,7 +1687,7 @@
     },
     {
       "id": "art_csv_312",
-      "nombre": "MORANDO ACEITUNA 00 X 5 KG",
+      "nombre": "MORANDO ACEITUNA 00 VERDE X 5 KG",
       "familia": "GENERAL",
       "hay": true
     },
