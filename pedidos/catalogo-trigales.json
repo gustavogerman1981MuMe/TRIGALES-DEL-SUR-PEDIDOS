@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-16T15:58:46.715Z",
+  "generado": "2026-10-16T16:47:46.818Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -969,7 +969,7 @@
       "id": "art_csv_181",
       "nombre": "EMETH POLVO PARA HORNEAR X 3 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_182",
@@ -1036,12 +1036,6 @@
       "nombre": "GELBRIX PASTELERA X 3 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_196",
-      "nombre": "GELBRIX POLVO PARA HORNEAR X 3 KG",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_197",
