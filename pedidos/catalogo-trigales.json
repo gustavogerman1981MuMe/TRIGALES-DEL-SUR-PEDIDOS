@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-16T19:54:37.279Z",
+  "generado": "2026-10-17T11:38:46.928Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -588,6 +588,12 @@
       "hay": true
     },
     {
+      "id": "art_1788115800350",
+      "nombre": "DANICA GRASA PRIMOR REFINADA X 20",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
       "id": "art_lista_117",
       "nombre": "DANICA LEVADURA FRESCA X 500 GS",
       "familia": "GENERAL",
@@ -614,6 +620,12 @@
     {
       "id": "art_lista_121",
       "nombre": "DANICA MAYONESA ORIGINAL",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1792190950457",
+      "nombre": "DANICA OLEOMARGARINA X 20KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1735,9 +1747,9 @@
     },
     {
       "id": "art_csv_327",
-      "nombre": "NATURA MAYONESA X 2900 CC",
+      "nombre": "NATURA MAYONESA X 2.755 CC",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_328",
