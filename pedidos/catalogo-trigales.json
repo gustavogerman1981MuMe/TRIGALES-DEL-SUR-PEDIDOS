@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-17T13:39:45.978Z",
+  "generado": "2026-10-17T15:53:35.641Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -981,7 +981,7 @@
       "id": "art_csv_181",
       "nombre": "EMETH POLVO PARA HORNEAR X 3 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_182",
@@ -1189,7 +1189,7 @@
     },
     {
       "id": "art_csv_225",
-      "nombre": "LANFIELD ULCE DE LECHE REPOSTERO X 10 KG",
+      "nombre": "LANFIELD DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1287,7 +1287,7 @@
       "id": "art_csv_242",
       "nombre": "LEDEVIT DULCE DE LECHE REPOSTERO X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1791978604769",
