@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-17T11:38:46.928Z",
+  "generado": "2026-10-17T12:39:15.977Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2241,7 +2241,7 @@
       "id": "art_1787875043846",
       "nombre": "REGITECA FILOMENA MASA X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1787874894968",
