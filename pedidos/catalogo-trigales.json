@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-19T13:46:09.761Z",
+  "generado": "2026-10-19T14:16:40.463Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1371,7 +1371,7 @@
       "id": "art_csv_253",
       "nombre": "LOCOCO AHUMADO PIMENTON X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_254",
