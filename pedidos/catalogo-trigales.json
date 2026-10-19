@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-19T13:15:43.884Z",
+  "generado": "2026-10-19T13:46:09.761Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2350,12 +2350,6 @@
       "nombre": "SILVIA QUESO AZUL X KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_436",
-      "nombre": "SILVIA QUESO TYBO",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_437",
