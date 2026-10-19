@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-19T15:17:39.760Z",
+  "generado": "2026-10-19T15:48:10.061Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2502,12 +2502,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_19",
-      "nombre": "UAILE ANTIMOHO X 2 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_469",
       "nombre": "UAILE AZUCAR IMPALPABLE X 1 KG",
       "familia": "GENERAL",
@@ -2553,7 +2547,7 @@
       "id": "art_csv_473",
       "nombre": "UAILE ESENCIA ALMENDRA X 1 LITRO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_464",
