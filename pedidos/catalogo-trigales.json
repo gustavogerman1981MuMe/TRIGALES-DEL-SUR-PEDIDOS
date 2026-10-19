@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-19T14:47:31.776Z",
+  "generado": "2026-10-19T15:17:39.760Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -657,7 +657,7 @@
       "id": "art_csv_125",
       "nombre": "DEWEY MERMELADA DE BATATAX 10KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_128",
