@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-19T11:32:10.248Z",
+  "generado": "2026-10-19T12:32:39.918Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -525,7 +525,7 @@
       "id": "art_csv_104",
       "nombre": "CHI EME- JO S/A X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_106",
@@ -1215,7 +1215,7 @@
       "id": "art_csv_230",
       "nombre": "LEDEVIT CREMA CHANTILLY X 4.7 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_231",
