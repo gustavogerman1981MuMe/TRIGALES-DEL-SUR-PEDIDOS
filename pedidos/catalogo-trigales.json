@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-19T16:18:27.970Z",
+  "generado": "2026-10-19T16:49:27.968Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2542,12 +2542,6 @@
       "nombre": "UAILE CACAO AMARGO X 1 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_473",
-      "nombre": "UAILE ESENCIA ALMENDRA X 1 LITRO",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_464",
