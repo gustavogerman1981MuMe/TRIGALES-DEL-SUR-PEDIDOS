@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-17T18:56:33.380Z",
+  "generado": "2026-10-19T11:32:10.248Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1443,7 +1443,7 @@
       "id": "art_csv_267",
       "nombre": "LUGO MUZZARELLA PLANCHA PIEDRA X 20 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_269",
@@ -2451,7 +2451,7 @@
       "id": "art_csv_453",
       "nombre": "TAXONERA MERMELADA DE BATATA X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_454",
@@ -2625,7 +2625,7 @@
       "texto": "",
       "hasta": "2026-10-18",
       "hay": true,
-      "vencida": false
+      "vencida": true
     },
     {
       "articuloId": "art_csv_147",
@@ -2635,7 +2635,7 @@
       "texto": "LLEVANDO 6 O MAS",
       "hasta": "2026-10-18",
       "hay": true,
-      "vencida": false
+      "vencida": true
     },
     {
       "articuloId": "art_csv_28",
@@ -2645,17 +2645,7 @@
       "texto": "LLEVANDO 10 O MAS",
       "hasta": "2026-10-18",
       "hay": true,
-      "vencida": false
+      "vencida": true
     }
-  ],
-  "oferta": {
-    "articuloId": "art_1791376414662",
-    "nombre": "WRACIE CREMA CHANTILLY X 1L",
-    "precio": 7500,
-    "desdeCuantos": 1,
-    "texto": "",
-    "hasta": "2026-10-18",
-    "hay": true,
-    "vencida": false
-  }
+  ]
 }
