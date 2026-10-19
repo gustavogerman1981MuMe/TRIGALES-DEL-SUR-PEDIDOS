@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-19T16:49:27.968Z",
+  "generado": "2026-10-19T17:19:36.266Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1719,7 +1719,7 @@
       "id": "art_csv_318",
       "nombre": "MORANDO ANCHOAS FILET",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_320",
@@ -2193,7 +2193,7 @@
       "id": "art_1787488935989",
       "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_408",
