@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-19T17:19:36.266Z",
+  "generado": "2026-10-19T17:50:06.261Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1648,6 +1648,18 @@
       "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1792431165931",
+      "nombre": "MILKAUT HELADO SOFT DULCE DE LECHE  X 1L",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
+      "id": "art_1792431406127",
+      "nombre": "MILKAUT HELADO SOFT MILK AMERICANA X 1L",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_294",
