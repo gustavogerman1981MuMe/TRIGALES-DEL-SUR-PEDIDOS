@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-20T13:01:35.952Z",
+  "generado": "2026-10-20T13:31:54.445Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1149,7 +1149,7 @@
       "id": "art_csv_217",
       "nombre": "JULIAN ACEITUNAS VERDES NUMERO 4 X 5KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_218",
