@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-20T11:30:28.819Z",
+  "generado": "2026-10-20T12:00:35.957Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1647,7 +1647,7 @@
       "id": "art_csv_300",
       "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1792431165931",
