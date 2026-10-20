@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-19T19:52:27.983Z",
+  "generado": "2026-10-20T11:00:06.261Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1443,7 +1443,7 @@
       "id": "art_csv_267",
       "nombre": "LUGO MUZZARELLA PLANCHA PIEDRA X 20 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_269",
