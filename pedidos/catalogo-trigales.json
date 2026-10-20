@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-20T16:34:06.273Z",
+  "generado": "2026-10-20T17:04:27.706Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -249,7 +249,7 @@
       "id": "art_csv_49",
       "nombre": "CALSA FLOR ESENCIA MANTECA X 2 LITROS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_52",
@@ -267,13 +267,13 @@
       "id": "art_csv_55",
       "nombre": "CALSA GARCIA RICOTA X 3 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_57",
       "nombre": "CALSA KOLAROMA CHOCOLATE X 1 LITRO",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_58",
@@ -285,7 +285,7 @@
       "id": "art_csv_59",
       "nombre": "CALSA KOLAROMA LIMON X 1 LITRO",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_60",
