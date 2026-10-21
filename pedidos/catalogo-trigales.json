@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-21T14:47:50.574Z",
+  "generado": "2026-10-21T15:07:57.901Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2618,11 +2618,11 @@
   ],
   "ofertas": [
     {
-      "articuloId": "art_1791376414662",
-      "nombre": "WRACIE CREMA CHANTILLY X 1L",
-      "precio": 7500,
-      "desdeCuantos": 1,
-      "texto": "",
+      "articuloId": "art_1792593788108",
+      "nombre": "DANICA BOVINA  MARGARINA MASA PRIMOR X 5 KG",
+      "precio": 15250,
+      "desdeCuantos": 12,
+      "texto": "LLEVANDO 3 CAJAS O MAS",
       "hasta": "2026-10-28",
       "hay": true,
       "vencida": false
@@ -2649,11 +2649,11 @@
     }
   ],
   "oferta": {
-    "articuloId": "art_1791376414662",
-    "nombre": "WRACIE CREMA CHANTILLY X 1L",
-    "precio": 7500,
-    "desdeCuantos": 1,
-    "texto": "",
+    "articuloId": "art_1792593788108",
+    "nombre": "DANICA BOVINA  MARGARINA MASA PRIMOR X 5 KG",
+    "precio": 15250,
+    "desdeCuantos": 12,
+    "texto": "LLEVANDO 3 CAJAS O MAS",
     "hasta": "2026-10-28",
     "hay": true,
     "vencida": false
