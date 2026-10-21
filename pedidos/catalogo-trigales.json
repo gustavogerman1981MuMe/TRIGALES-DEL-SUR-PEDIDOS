@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-21T01:00:43.933Z",
+  "generado": "2026-10-21T11:16:00.331Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -249,7 +249,7 @@
       "id": "art_csv_49",
       "nombre": "CALSA FLOR ESENCIA MANTECA X 2 LITROS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_52",
@@ -267,13 +267,13 @@
       "id": "art_csv_55",
       "nombre": "CALSA GARCIA RICOTA X 3 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_57",
       "nombre": "CALSA KOLAROMA CHOCOLATE X 1 LITRO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_58",
@@ -285,7 +285,7 @@
       "id": "art_csv_59",
       "nombre": "CALSA KOLAROMA LIMON X 1 LITRO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_60",
@@ -1635,7 +1635,7 @@
       "id": "art_csv_298",
       "nombre": "MILKAUT CREMA 330 CC",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_299",
@@ -1647,19 +1647,19 @@
       "id": "art_csv_300",
       "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1792431165931",
       "nombre": "MILKAUT HELADO SOFT DULCE DE LECHE  X 1L",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1792431406127",
       "nombre": "MILKAUT HELADO SOFT MILK AMERICANA X 1L",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_294",
@@ -1683,7 +1683,7 @@
       "id": "art_csv_307",
       "nombre": "MILKAUT QUESO CREMA CREMATTO DOYPACK X 1.5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_308",
