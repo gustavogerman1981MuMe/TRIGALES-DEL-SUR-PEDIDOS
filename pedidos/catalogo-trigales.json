@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-21T13:17:19.722Z",
+  "generado": "2026-10-21T14:47:50.574Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -584,6 +584,12 @@
     {
       "id": "art_1789137475431",
       "nombre": "DANICA BIZCOCHUELO VAINILLA DANMIX X 10 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1792593788108",
+      "nombre": "DANICA BOVINA  MARGARINA MASA PRIMOR X 5 KG",
       "familia": "GENERAL",
       "hay": true
     },
