@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-21T15:38:39.504Z",
+  "generado": "2026-10-21T16:08:50.869Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -592,6 +592,12 @@
       "nombre": "DANICA BOVINA  MARGARINA MASA PRIMOR X 5 KG",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1792597795887",
+      "nombre": "DANICA CHEDAR X 1 LT",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_1788115800350",
