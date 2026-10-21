@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-20T19:36:58.014Z",
+  "generado": "2026-10-21T01:00:43.933Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2617,19 +2617,19 @@
       "precio": 7500,
       "desdeCuantos": 1,
       "texto": "",
-      "hasta": "2026-10-18",
+      "hasta": "2026-10-28",
       "hay": true,
-      "vencida": true
+      "vencida": false
     },
     {
       "articuloId": "art_csv_147",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 10 KG",
-      "precio": 31800,
+      "precio": 32000,
       "desdeCuantos": 6,
       "texto": "LLEVANDO 6 O MAS",
-      "hasta": "2026-10-18",
+      "hasta": "2026-10-28",
       "hay": true,
-      "vencida": true
+      "vencida": false
     },
     {
       "articuloId": "art_csv_28",
@@ -2637,9 +2637,19 @@
       "precio": 10600,
       "desdeCuantos": 10,
       "texto": "LLEVANDO 10 O MAS",
-      "hasta": "2026-10-18",
+      "hasta": "2026-10-28",
       "hay": true,
-      "vencida": true
+      "vencida": false
     }
-  ]
+  ],
+  "oferta": {
+    "articuloId": "art_1791376414662",
+    "nombre": "WRACIE CREMA CHANTILLY X 1L",
+    "precio": 7500,
+    "desdeCuantos": 1,
+    "texto": "",
+    "hasta": "2026-10-28",
+    "hay": true,
+    "vencida": false
+  }
 }
