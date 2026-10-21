@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-21T11:16:00.331Z",
+  "generado": "2026-10-21T11:46:19.715Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -249,7 +249,7 @@
       "id": "art_csv_49",
       "nombre": "CALSA FLOR ESENCIA MANTECA X 2 LITROS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_52",
@@ -267,13 +267,13 @@
       "id": "art_csv_55",
       "nombre": "CALSA GARCIA RICOTA X 3 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_57",
       "nombre": "CALSA KOLAROMA CHOCOLATE X 1 LITRO",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_58",
@@ -285,7 +285,7 @@
       "id": "art_csv_59",
       "nombre": "CALSA KOLAROMA LIMON X 1 LITRO",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_60",
@@ -333,7 +333,7 @@
       "id": "art_csv_70",
       "nombre": "CAMI TAPAS COPETIN X 5 DOCENAS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_72",
@@ -357,7 +357,7 @@
       "id": "art_csv_71",
       "nombre": "CAMI TAPAS PASTELITOS X 2,5 DOCENAS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_75",
@@ -1653,13 +1653,13 @@
       "id": "art_1792431165931",
       "nombre": "MILKAUT HELADO SOFT DULCE DE LECHE  X 1L",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1792431406127",
       "nombre": "MILKAUT HELADO SOFT MILK AMERICANA X 1L",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_294",
