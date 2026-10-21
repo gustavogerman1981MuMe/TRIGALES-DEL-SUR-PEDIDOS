@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-21T16:08:50.869Z",
+  "generado": "2026-10-21T16:55:39.516Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -597,13 +597,13 @@
       "id": "art_1792597795887",
       "nombre": "DANICA CHEDAR X 1 LT",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1788115800350",
       "nombre": "DANICA GRASA PRIMOR REFINADA X 20",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_lista_117",
