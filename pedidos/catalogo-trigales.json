@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-22T16:18:31.942Z",
+  "generado": "2026-10-22T16:25:22.466Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2635,16 +2635,6 @@
       "precio": 15250,
       "desdeCuantos": 12,
       "texto": "LLEVANDO 3 CAJAS O MAS",
-      "hasta": "2026-10-28",
-      "hay": true,
-      "vencida": false
-    },
-    {
-      "articuloId": "art_csv_147",
-      "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 10 KG",
-      "precio": 32000,
-      "desdeCuantos": 6,
-      "texto": "LLEVANDO 6 O MAS",
       "hasta": "2026-10-28",
       "hay": true,
       "vencida": false
