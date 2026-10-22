@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-22T11:46:15.540Z",
+  "generado": "2026-10-22T12:16:45.530Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2253,7 +2253,7 @@
       "id": "art_csv_416",
       "nombre": "REFIGRAS LAMINATTA MARGARINA MASA X10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1787875024663",
