@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-22T13:17:45.833Z",
+  "generado": "2026-10-22T13:48:15.847Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1809,7 +1809,7 @@
       "id": "art_csv_332",
       "nombre": "PALMITO EN RODAJA",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_333",
