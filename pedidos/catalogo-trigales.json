@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-23T12:48:02.344Z",
+  "generado": "2026-10-23T13:16:45.620Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "art_csv_23",
-      "nombre": "ARGENFRUT MICRO CEREAL NEGRO X 1 KG",
+      "nombre": "ARGENFRUT MICRO CEREAL NEGRO LECHE X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2635,6 +2635,16 @@
       "precio": 15250,
       "desdeCuantos": 12,
       "texto": "LLEVANDO 3 CAJAS O MAS",
+      "hasta": "2026-10-28",
+      "hay": true,
+      "vencida": false
+    },
+    {
+      "articuloId": "art_csv_43",
+      "nombre": "BLANCURA HARINA 0000 X 25 KG",
+      "precio": 18900,
+      "desdeCuantos": 10,
+      "texto": "LLEVANDO 10 O MAS",
       "hasta": "2026-10-28",
       "hay": true,
       "vencida": false
