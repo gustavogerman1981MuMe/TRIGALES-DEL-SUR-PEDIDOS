@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-23T11:47:02.333Z",
+  "generado": "2026-10-23T12:17:32.338Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2319,7 +2319,7 @@
       "id": "art_csv_425",
       "nombre": "SAN IGNACIO DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1791380901808",
