@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-23T16:05:34.209Z",
+  "generado": "2026-10-23T17:32:03.298Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1083,7 +1083,7 @@
       "id": "art_1792769062979",
       "nombre": "HUEVOS X CAJON OFERTA",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_204",
@@ -2656,11 +2656,11 @@
       "vencida": false
     },
     {
-      "articuloId": "art_csv_28",
-      "nombre": "AZUCAR COMUN PACK X 10 KG",
-      "precio": 10600,
-      "desdeCuantos": 10,
-      "texto": "LLEVANDO 10 O MAS",
+      "articuloId": "art_1792769062979",
+      "nombre": "HUEVOS X CAJON OFERTA",
+      "precio": 50000,
+      "desdeCuantos": 3,
+      "texto": "LLEVANDO  3 CAJONES O MAS",
       "hasta": "2026-10-28",
       "hay": true,
       "vencida": false
