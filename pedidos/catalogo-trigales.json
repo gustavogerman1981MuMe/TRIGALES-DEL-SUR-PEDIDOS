@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-23T15:04:34.362Z",
+  "generado": "2026-10-23T15:35:04.204Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -727,13 +727,13 @@
     },
     {
       "id": "art_csv_136",
-      "nombre": "EGRAMAR ELEVOL MARGARINA HOJALDRE X 5KG",
+      "nombre": "EGRAMAR ELEVOL MARGARINA HOJALDRE X 5 KG",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_137",
-      "nombre": "EGRAMAR ELEVOL MARGARINA MASA X 5KG",
+      "nombre": "EGRAMAR ELEVOL MARGARINA MASA X 5 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1078,6 +1078,12 @@
       "nombre": "GHELCO BAÑO DE REPOSTERIA SEMIAMARGO X 1 KG",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1792769062979",
+      "nombre": "HUEVOS X CAJON OFERTA",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_204",
