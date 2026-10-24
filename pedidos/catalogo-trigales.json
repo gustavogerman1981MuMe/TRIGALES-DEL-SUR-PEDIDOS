@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-24T16:29:56.284Z",
+  "generado": "2026-10-24T17:00:25.979Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -543,7 +543,7 @@
       "id": "art_csv_107",
       "nombre": "CHOCLO CREMOSO X 0,800 GR",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_108",
