@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-24T14:05:28.792Z",
+  "generado": "2026-10-24T14:13:26.929Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2651,16 +2651,6 @@
       "precio": 18900,
       "desdeCuantos": 10,
       "texto": "LLEVANDO 10 O MAS",
-      "hasta": "2026-10-28",
-      "hay": true,
-      "vencida": false
-    },
-    {
-      "articuloId": "art_1792769062979",
-      "nombre": "HUEVOS X CAJON OFERTA",
-      "precio": 50000,
-      "desdeCuantos": 3,
-      "texto": "LLEVANDO  3 CAJONES O MAS",
       "hasta": "2026-10-28",
       "hay": true,
       "vencida": false
