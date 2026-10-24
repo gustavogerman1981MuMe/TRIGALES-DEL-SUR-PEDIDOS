@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-24T15:28:58.538Z",
+  "generado": "2026-10-24T15:59:28.785Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1797,7 +1797,7 @@
       "id": "art_csv_331",
       "nombre": "OSTRAMAR ATUN X !KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_332",
