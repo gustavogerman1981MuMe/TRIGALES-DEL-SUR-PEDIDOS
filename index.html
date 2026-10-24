@@ -414,6 +414,9 @@
     .barra .boton span { display: none; }
     .marca b { font-size: 19px; }
   }
+  .que-fila{display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:center;margin-bottom:34px}
+  .que-foto{width:100%;max-width:280px;justify-self:end;height:auto;border-radius:18px;border:1px solid var(--linea);box-shadow:0 10px 30px rgba(60,40,20,.15)}
+  @media(max-width:760px){.que-fila{grid-template-columns:1fr;gap:22px}.que-foto{justify-self:start}}
 </style>
 </head>
 <body>
@@ -583,11 +586,11 @@
   <!-- QUÉ HACEMOS -->
   <section id="que-hacemos">
     <div class="ancho">
-      <div class="encabezado-seccion">
+      <div class="que-fila"><div class="encabezado-seccion">
         <div class="etiqueta">A qué nos dedicamos</div>
         <h2>Abastecemos a los que hacen el pan de todos los días.</h2>
         <p>Somos una distribuidora familiar de Llavallol. Trabajamos con las marcas que vos ya conocés y te atendemos como a un vecino: con stock, buen precio y el pedido listo cuando lo necesitás.</p>
-      </div>
+      </div><img class="que-foto" src="fachada.jpg" width="800" height="800" loading="lazy" alt="Frente del local de Trigales del Sur, Seguí 1681, Llavallol"></div>
       <div class="tarjetas">
         <div class="tarjeta">
           <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div>
