@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-24T14:13:26.929Z",
+  "generado": "2026-10-24T14:43:58.494Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1080,12 +1080,6 @@
       "hay": true
     },
     {
-      "id": "art_1792769062979",
-      "nombre": "HUEVOS X CAJON OFERTA",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
       "id": "art_csv_204",
       "nombre": "INTY MANTECA X 2.5 KG",
       "familia": "GENERAL",
@@ -1496,12 +1490,6 @@
     {
       "id": "art_csv_270",
       "nombre": "MAPLE DE HUEVO NUMERO 1",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_271",
-      "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true
     },
