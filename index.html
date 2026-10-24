@@ -414,9 +414,13 @@
     .barra .boton span { display: none; }
     .marca b { font-size: 19px; }
   }
-  .que-fila{display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:center;margin-bottom:34px}
-  .que-foto{width:100%;max-width:280px;justify-self:end;height:auto;border-radius:18px;border:1px solid var(--linea);box-shadow:0 10px 30px rgba(60,40,20,.15)}
-  @media(max-width:760px){.que-fila{grid-template-columns:1fr;gap:22px}.que-foto{justify-self:start}}
+  .que-fila{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center;margin-bottom:34px}
+  .que-fila .encabezado-seccion{max-width:none;margin-bottom:0}
+  .que-fila .etiqueta{font-size:14px}
+  .que-fila h2{font-family:"Fraunces",serif;font-weight:700;font-size:clamp(34px,5vw,54px);letter-spacing:-.01em;margin:10px 0 16px;line-height:1.15}
+  .que-fila p{font-size:18px;max-width:34em;margin:0}
+  .que-foto{width:100%;aspect-ratio:1.1/1;object-fit:cover;object-position:50% 58%;height:auto;border-radius:18px;border:1px solid var(--linea);box-shadow:0 10px 30px rgba(60,40,20,.15)}
+  @media(max-width:760px){.que-fila{grid-template-columns:minmax(0,1fr);gap:22px}.que-fila h2{font-size:34px}.que-fila p{font-size:16px}}
 </style>
 </head>
 <body>
