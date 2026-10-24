@@ -422,6 +422,13 @@
   .que-marco{position:relative;min-height:0}
   .que-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 58%;border-radius:18px;border:1px solid var(--linea);box-shadow:0 10px 30px rgba(60,40,20,.15)}
   @media(max-width:760px){.que-fila{grid-template-columns:minmax(0,1fr);gap:22px}.que-fila h2{font-size:34px}.que-fila p{font-size:16px}.que-marco{aspect-ratio:1.1/1}}
+  /* iPhone viejos (iOS 14 o menos) no entienden aspect-ratio: la foto quedaba en 0 de alto. */
+  @supports not (aspect-ratio: 1 / 1) {
+    @media (max-width: 760px) {
+      .foto { height: 0 !important; padding: 0 0 75% 0 !important; display: block !important; }
+      .que-marco { height: 0; padding-bottom: 91%; }
+    }
+  }
 </style>
 </head>
 <body>
