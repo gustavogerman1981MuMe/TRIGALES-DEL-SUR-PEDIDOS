@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-24T14:43:58.494Z",
+  "generado": "2026-10-24T14:58:38.606Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2639,6 +2639,16 @@
       "precio": 18900,
       "desdeCuantos": 10,
       "texto": "LLEVANDO 10 O MAS",
+      "hasta": "2026-10-28",
+      "hay": true,
+      "vencida": false
+    },
+    {
+      "articuloId": "art_csv_270",
+      "nombre": "MAPLE DE HUEVO NUMERO 1",
+      "precio": 4800,
+      "desdeCuantos": 12,
+      "texto": "",
       "hasta": "2026-10-28",
       "hay": true,
       "vencida": false
