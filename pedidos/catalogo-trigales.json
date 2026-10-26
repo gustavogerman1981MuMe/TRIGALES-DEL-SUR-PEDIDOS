@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-26T14:02:25.857Z",
+  "generado": "2026-10-26T14:33:25.847Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -297,7 +297,7 @@
       "id": "art_csv_61",
       "nombre": "CALSA KOLAROMA NARANJA X 1 LITRO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_62",
