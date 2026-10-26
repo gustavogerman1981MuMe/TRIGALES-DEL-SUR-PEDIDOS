@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-26T11:00:18.127Z",
+  "generado": "2026-10-26T11:30:48.120Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -783,7 +783,7 @@
       "id": "art_csv_147",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_148",
