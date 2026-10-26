@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-26T14:33:25.847Z",
+  "generado": "2026-10-26T15:03:48.129Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2343,7 +2343,7 @@
       "id": "art_csv_431",
       "nombre": "SEGUNDA COLONIA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_429",
