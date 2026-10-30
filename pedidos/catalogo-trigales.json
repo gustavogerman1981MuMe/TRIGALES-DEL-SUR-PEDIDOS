@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-26T15:34:17.826Z",
+  "generado": "2026-10-30T11:54:32.466Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -267,7 +267,7 @@
       "id": "art_csv_55",
       "nombre": "CALSA GARCIA RICOTA X 3 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_57",
@@ -321,7 +321,7 @@
       "id": "art_csv_65",
       "nombre": "CALSA MTK MASA X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_67",
@@ -345,7 +345,7 @@
       "id": "art_csv_73",
       "nombre": "CAMI TAPAS DE EMPANADAS FAMILIAR CRIOLLAS X 5 DOC",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_74",
@@ -540,12 +540,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_107",
-      "nombre": "CHOCLO CREMOSO X 0,800 GR",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_108",
       "nombre": "CHOCLO GRANO AMARILLO X 0,800 GR",
       "familia": "GENERAL",
@@ -573,7 +567,7 @@
       "id": "art_csv_113",
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_115",
@@ -777,19 +771,19 @@
       "id": "art_csv_146",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO BALDE X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_147",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_148",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 4 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_149",
@@ -1089,7 +1083,7 @@
       "id": "art_csv_205",
       "nombre": "INTY MANTECA X 500 GR",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_208",
@@ -1464,6 +1458,12 @@
       "hay": true
     },
     {
+      "id": "art_csv_268",
+      "nombre": "LUGO MUZZARELLA X KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_269",
       "nombre": "LUGO QUESO AZUL",
       "familia": "GENERAL",
@@ -1497,7 +1497,7 @@
       "id": "art_csv_272",
       "nombre": "MARIMIL RICOTA X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_273",
@@ -1674,8 +1674,8 @@
       "hay": false
     },
     {
-      "id": "art_csv_294",
-      "nombre": "MILKAUT MANTECA X 200 GR",
+      "id": "art_1793192657927",
+      "nombre": "MILKAUT LECHE ENTERA X 1LT",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1797,7 +1797,7 @@
       "id": "art_csv_331",
       "nombre": "OSTRAMAR ATUN X !KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_332",
@@ -1893,7 +1893,7 @@
       "id": "art_csv_348",
       "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 4",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_349",
@@ -2187,13 +2187,19 @@
       "id": "art_csv_401",
       "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT PISTACHO X 0.800 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_402",
       "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT SEMIAMARGO X 0.800 KG",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1793189392458",
+      "nombre": "PURATOS EASY PANETTONE X 5 KG",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_405",
@@ -2211,7 +2217,7 @@
       "id": "art_csv_407",
       "nombre": "PURATOS PREMEZCLA EASY FACTURA X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1787488935989",
@@ -2259,7 +2265,7 @@
       "id": "art_1787875024663",
       "nombre": "REGITECA FILOMENA HOJALDRE X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1787875043846",
@@ -2307,7 +2313,7 @@
       "id": "art_csv_424",
       "nombre": "SAN IGNACIO DULCE DE LECHE PARA SEMBRAR X 1O KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_425",
@@ -2343,7 +2349,7 @@
       "id": "art_csv_431",
       "nombre": "SEGUNDA COLONIA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_429",
@@ -2452,12 +2458,6 @@
       "nombre": "TAXONERA JALEA FANTASIA X 14 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_451",
-      "nombre": "TAXONERA MEMBRILLO MIX X10KG",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_452",
@@ -2616,6 +2616,12 @@
       "hay": true
     },
     {
+      "id": "art_1793115841664",
+      "nombre": "WRACIE CREMA CHANTILLY X 4,7L",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_1791376334609",
       "nombre": "WRACIE CREMA VAINILLA  X 1L",
       "familia": "GENERAL",
@@ -2631,7 +2637,7 @@
       "texto": "LLEVANDO 3 CAJAS O MAS",
       "hasta": "2026-10-28",
       "hay": true,
-      "vencida": false
+      "vencida": true
     },
     {
       "articuloId": "art_csv_43",
@@ -2641,7 +2647,7 @@
       "texto": "LLEVANDO 10 O MAS",
       "hasta": "2026-10-28",
       "hay": true,
-      "vencida": false
+      "vencida": true
     },
     {
       "articuloId": "art_csv_270",
@@ -2651,17 +2657,7 @@
       "texto": "",
       "hasta": "2026-10-28",
       "hay": true,
-      "vencida": false
+      "vencida": true
     }
-  ],
-  "oferta": {
-    "articuloId": "art_1792593788108",
-    "nombre": "DANICA BOVINA  MARGARINA MASA PRIMOR X 5 KG",
-    "precio": 15250,
-    "desdeCuantos": 12,
-    "texto": "LLEVANDO 3 CAJAS O MAS",
-    "hasta": "2026-10-28",
-    "hay": true,
-    "vencida": false
-  }
+  ]
 }
