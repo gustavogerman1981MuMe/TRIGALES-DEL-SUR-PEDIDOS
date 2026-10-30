@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-30T11:54:32.466Z",
+  "generado": "2026-10-30T12:21:14.911Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -123,7 +123,7 @@
       "id": "art_1789125724382",
       "nombre": "ARRAYANES RELLENO SABOR DULCE DE LECHE X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1791553005726",
@@ -375,7 +375,7 @@
       "id": "art_csv_79",
       "nombre": "CARLETI CEREZA X 3100 GR",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_80",
@@ -1059,7 +1059,7 @@
       "id": "art_csv_195",
       "nombre": "GELBRIX PASTELERA X 3 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_197",
@@ -2630,34 +2630,44 @@
   ],
   "ofertas": [
     {
-      "articuloId": "art_1792593788108",
-      "nombre": "DANICA BOVINA  MARGARINA MASA PRIMOR X 5 KG",
-      "precio": 15250,
-      "desdeCuantos": 12,
-      "texto": "LLEVANDO 3 CAJAS O MAS",
-      "hasta": "2026-10-28",
+      "articuloId": "art_1789125724382",
+      "nombre": "ARRAYANES RELLENO SABOR DULCE DE LECHE X 10 KG",
+      "precio": 19000,
+      "desdeCuantos": 5,
+      "texto": "LLEVANDO 5 UNIDADES O MAS",
+      "hasta": "2026-11-15",
       "hay": true,
-      "vencida": true
+      "vencida": false
     },
     {
       "articuloId": "art_csv_43",
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
       "precio": 18900,
       "desdeCuantos": 10,
-      "texto": "LLEVANDO 10 O MAS",
-      "hasta": "2026-10-28",
+      "texto": "LLEVANDO 5 O MAS",
+      "hasta": "2026-11-15",
       "hay": true,
-      "vencida": true
+      "vencida": false
     },
     {
-      "articuloId": "art_csv_270",
-      "nombre": "MAPLE DE HUEVO NUMERO 1",
-      "precio": 4800,
-      "desdeCuantos": 12,
+      "articuloId": "art_1793115841664",
+      "nombre": "WRACIE CREMA CHANTILLY X 4,7L",
+      "precio": 31500,
+      "desdeCuantos": 2,
       "texto": "",
-      "hasta": "2026-10-28",
+      "hasta": "2026-11-15",
       "hay": true,
-      "vencida": true
+      "vencida": false
     }
-  ]
+  ],
+  "oferta": {
+    "articuloId": "art_1789125724382",
+    "nombre": "ARRAYANES RELLENO SABOR DULCE DE LECHE X 10 KG",
+    "precio": 19000,
+    "desdeCuantos": 5,
+    "texto": "LLEVANDO 5 UNIDADES O MAS",
+    "hasta": "2026-11-15",
+    "hay": true,
+    "vencida": false
+  }
 }
