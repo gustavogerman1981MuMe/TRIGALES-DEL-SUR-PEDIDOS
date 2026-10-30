@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-30T13:22:02.437Z",
+  "generado": "2026-10-30T13:52:16.679Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -345,7 +345,7 @@
       "id": "art_csv_73",
       "nombre": "CAMI TAPAS DE EMPANADAS FAMILIAR CRIOLLAS X 5 DOC",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_74",
@@ -1395,7 +1395,7 @@
       "id": "art_csv_256",
       "nombre": "LOCOCO COMINO X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_257",
