@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-30T15:54:02.745Z",
+  "generado": "2026-10-30T16:24:32.430Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -345,7 +345,7 @@
       "id": "art_csv_73",
       "nombre": "CAMI TAPAS DE EMPANADAS FAMILIAR CRIOLLAS X 5 DOC",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_74",
@@ -1491,7 +1491,7 @@
       "id": "art_csv_270",
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_272",
