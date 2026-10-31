@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-31T13:01:33.043Z",
+  "generado": "2026-10-31T13:32:32.751Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -465,7 +465,7 @@
       "id": "art_csv_94",
       "nombre": "CHACABUCO HARINA 000 X 25 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_95",
@@ -1347,7 +1347,7 @@
       "id": "art_1789125659132",
       "nombre": "LEITE DULCE DE LECHE X 10KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_249",
@@ -2529,7 +2529,7 @@
       "id": "art_csv_469",
       "nombre": "UAILE AZUCAR IMPALPABLE X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_470",
