@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-31T11:00:24.687Z",
+  "generado": "2026-10-31T13:01:33.043Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -465,7 +465,7 @@
       "id": "art_csv_94",
       "nombre": "CHACABUCO HARINA 000 X 25 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_95",
@@ -717,7 +717,7 @@
       "id": "art_csv_135",
       "nombre": "DURAZNO X 0,800 GR",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_136",
