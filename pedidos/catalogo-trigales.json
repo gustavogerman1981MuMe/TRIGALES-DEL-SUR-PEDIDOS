@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-10-31T18:18:10.726Z",
+  "generado": "2026-10-31T18:48:40.716Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2168,12 +2168,6 @@
     {
       "id": "art_1787492078727",
       "nombre": "PEQUEÑA EMA HARINA 000 X 25KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_398",
-      "nombre": "PRODUCTOS VARIOS",
       "familia": "GENERAL",
       "hay": true
     },
