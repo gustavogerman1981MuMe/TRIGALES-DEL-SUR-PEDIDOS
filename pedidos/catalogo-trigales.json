@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-01T13:04:25.605Z",
+  "generado": "2026-11-01T13:34:50.777Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -370,12 +370,6 @@
       "nombre": "CAÑUELA ACEITE X 5 LT",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_79",
-      "nombre": "CARLETI CEREZA X 3100 GR",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_80",
@@ -1056,12 +1050,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_195",
-      "nombre": "GELBRIX PASTELERA X 3 KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_csv_197",
       "nombre": "GHELCO BAÑO DE REPOSTERIA BLANCO X 1 KG",
       "familia": "GENERAL",
@@ -1156,12 +1144,6 @@
       "nombre": "JULIAN ACEITUNAS VERDES NUMERO 1 X 5 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_217",
-      "nombre": "JULIAN ACEITUNAS VERDES NUMERO 4 X 5KG",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_218",
@@ -1340,12 +1322,6 @@
     {
       "id": "art_csv_248",
       "nombre": "LEDEVIT PREMEZCLA MOUSSE DE FRUTILLA X 250 GR",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
-      "id": "art_1789125659132",
-      "nombre": "LEITE DULCE DE LECHE X 10KG",
       "familia": "GENERAL",
       "hay": false
     },
@@ -1780,12 +1756,6 @@
       "nombre": "NATURA MAYONESA X 2.755 CC",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_328",
-      "nombre": "NUECES CUARTOS X KG",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_329",
@@ -2256,12 +2226,6 @@
       "hay": true
     },
     {
-      "id": "art_csv_416",
-      "nombre": "REFIGRAS LAMINATTA MARGARINA MASA X10 KG",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
       "id": "art_1787875024663",
       "nombre": "REGITECA FILOMENA HOJALDRE X 5 KG",
       "familia": "GENERAL",
@@ -2290,12 +2254,6 @@
       "nombre": "REGITECA MATILDA GRASA PRIMER JUGO X 20 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_417",
-      "nombre": "REY DE REYES MORRON",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_422",
