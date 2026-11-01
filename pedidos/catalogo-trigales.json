@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-01T13:34:50.777Z",
+  "generado": "2026-11-01T14:05:20.817Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -70,12 +70,6 @@
       "nombre": "AGUILA TABLETA SEMIAMARGO X 150 GS",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_12",
-      "nombre": "AGUILA/ARCOR PASTA DE MANI BON O BON X 290 GR",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_13",
