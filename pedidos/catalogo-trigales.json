@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-02T16:08:25.270Z",
+  "generado": "2026-11-02T16:38:49.337Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -471,7 +471,7 @@
       "id": "art_csv_97",
       "nombre": "CHACABUCO HARINA INTEGRAL X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_98",
@@ -2127,7 +2127,7 @@
       "id": "art_csv_394",
       "nombre": "PASAS DE UVA X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_393",
