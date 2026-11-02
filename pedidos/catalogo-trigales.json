@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-02T12:24:30.234Z",
+  "generado": "2026-11-02T13:17:17.868Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -477,7 +477,7 @@
       "id": "art_csv_98",
       "nombre": "CHACABUCO MASA MADRE X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_100",
@@ -1718,6 +1718,12 @@
     {
       "id": "art_csv_318",
       "nombre": "MORANDO ANCHOAS FILET",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
+      "id": "art_csv_319",
+      "nombre": "MORANDO CONDIMENTADA X 1 KG",
       "familia": "GENERAL",
       "hay": false
     },
