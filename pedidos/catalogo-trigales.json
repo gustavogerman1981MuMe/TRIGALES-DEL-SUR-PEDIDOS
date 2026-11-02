@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-02T13:17:17.868Z",
+  "generado": "2026-11-02T13:53:16.224Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1419,7 +1419,7 @@
       "id": "art_csv_265",
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_267",
