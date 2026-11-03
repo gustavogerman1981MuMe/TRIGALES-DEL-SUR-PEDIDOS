@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-03T15:35:23.747Z",
+  "generado": "2026-11-03T16:05:49.060Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1392,14 +1392,14 @@
       "hay": true
     },
     {
-      "id": "art_csv_263",
-      "nombre": "LODISER ALPINO LECHE X 0,500 KG",
+      "id": "art_csv_262",
+      "nombre": "LODISER ALPINO TABLETA BLANCO X 0,500 KG",
       "familia": "GENERAL",
       "hay": true
     },
     {
-      "id": "art_csv_262",
-      "nombre": "LODISER ALPINO TABLETA BLANCO X 0,500 KG",
+      "id": "art_csv_263",
+      "nombre": "LODISER ALPINO TABLETA LECHE X 0,500 KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2481,7 +2481,7 @@
       "id": "art_csv_469",
       "nombre": "UAILE AZUCAR IMPALPABLE X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_470",
