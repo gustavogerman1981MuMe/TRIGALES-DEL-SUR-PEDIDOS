@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-03T16:05:49.060Z",
+  "generado": "2026-11-03T16:35:53.739Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -873,7 +873,7 @@
       "id": "art_lista_165",
       "nombre": "EMETH ESENCIA COCO X 1 LITRO",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_lista_166",
