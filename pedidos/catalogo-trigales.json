@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-03T11:31:04.053Z",
+  "generado": "2026-11-03T12:01:33.618Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2121,7 +2121,7 @@
       "id": "art_csv_394",
       "nombre": "PASAS DE UVA X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_393",
