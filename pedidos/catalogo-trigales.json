@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T17:28:33.578Z",
+  "generado": "2026-11-04T18:06:33.601Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1707,13 +1707,13 @@
       "id": "art_csv_318",
       "nombre": "MORANDO ANCHOAS FILET",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_319",
       "nombre": "MORANDO CONDIMENTADA X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_320",
