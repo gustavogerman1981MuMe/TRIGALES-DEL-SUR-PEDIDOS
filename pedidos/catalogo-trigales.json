@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T16:57:57.579Z",
+  "generado": "2026-11-04T17:28:33.578Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2469,7 +2469,7 @@
       "id": "art_csv_18",
       "nombre": "UAILE ANIS EN GRANO X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_469",
