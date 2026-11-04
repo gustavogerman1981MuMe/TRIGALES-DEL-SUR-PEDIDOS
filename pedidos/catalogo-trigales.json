@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T13:02:13.722Z",
+  "generado": "2026-11-04T13:32:44.034Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2259,13 +2259,13 @@
       "id": "art_csv_424",
       "nombre": "SAN IGNACIO DULCE DE LECHE PARA SEMBRAR X 1O KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_425",
       "nombre": "SAN IGNACIO DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1791380901808",
