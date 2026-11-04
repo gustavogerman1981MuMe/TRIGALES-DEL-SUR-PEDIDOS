@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T11:30:44.026Z",
+  "generado": "2026-11-04T12:01:14.019Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -351,7 +351,7 @@
       "id": "art_csv_71",
       "nombre": "CAMI TAPAS PASTELITOS X 2,5 DOCENAS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_75",
@@ -1095,7 +1095,7 @@
       "id": "art_csv_214",
       "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_215",
@@ -2469,7 +2469,7 @@
       "id": "art_csv_18",
       "nombre": "UAILE ANIS EN GRANO X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_469",
