@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T12:31:43.718Z",
+  "generado": "2026-11-04T13:02:13.722Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -681,7 +681,7 @@
       "id": "art_csv_132",
       "nombre": "DOBLE VIA SAL GRUESA LAVADA Y SECA X 25 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_133",
