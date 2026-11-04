@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T18:06:33.601Z",
+  "generado": "2026-11-04T18:37:33.277Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -219,13 +219,13 @@
       "id": "art_1790942045002",
       "nombre": "BOLSA CAMISETA NAVIDEÑA 30X40",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1790942112150",
       "nombre": "BOLSA CAMISETA NAVIDEÑA 40X50",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_47",
