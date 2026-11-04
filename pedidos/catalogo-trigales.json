@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T14:33:44.030Z",
+  "generado": "2026-11-04T15:04:13.708Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -471,7 +471,7 @@
       "id": "art_csv_97",
       "nombre": "CHACABUCO HARINA INTEGRAL X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_98",
