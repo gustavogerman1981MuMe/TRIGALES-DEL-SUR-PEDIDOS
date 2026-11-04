@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T11:00:13.736Z",
+  "generado": "2026-11-04T11:30:44.026Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -39,7 +39,7 @@
       "id": "art_csv_8",
       "nombre": "AGUILA DROPS SEMIAMARGO  X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_6",
