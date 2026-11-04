@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-03T19:55:40.785Z",
+  "generado": "2026-11-04T11:00:13.736Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -550,12 +550,6 @@
       "nombre": "COCO RALLADO M X KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_csv_113",
-      "nombre": "CORDOBEZA LEVADURA X 5OO GS",
-      "familia": "GENERAL",
-      "hay": false
     },
     {
       "id": "art_csv_115",
