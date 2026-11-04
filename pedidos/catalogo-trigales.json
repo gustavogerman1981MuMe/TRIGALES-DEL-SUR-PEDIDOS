@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T15:04:13.708Z",
+  "generado": "2026-11-04T15:57:04.421Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1677,7 +1677,7 @@
       "id": "art_csv_311",
       "nombre": "MIX MEDITERRANEO FRUTOS SECOS CON PASAS 1X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_310",
