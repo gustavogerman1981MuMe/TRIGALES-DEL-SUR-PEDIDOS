@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-05T17:37:52.140Z",
+  "generado": "2026-11-05T18:25:36.098Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1680,8 +1680,20 @@
       "hay": true
     },
     {
+      "id": "art_1793900943515",
+      "nombre": "MORANDO ACEITUNA EN RODAJA X 0.800 KGS",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
       "id": "art_csv_312",
-      "nombre": "MORANDO ACEITUNA 00 VERDE X 5 KG",
+      "nombre": "MORANDO ACEITUNA VERDE 00 X 5 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_1793900995562",
+      "nombre": "MORANDO ACEITUNA VERDE N 2 X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
