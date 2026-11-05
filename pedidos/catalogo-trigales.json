@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-05T16:06:33.291Z",
+  "generado": "2026-11-05T16:36:51.840Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -747,7 +747,7 @@
       "id": "art_csv_146",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO BALDE X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_147",
@@ -759,7 +759,7 @@
       "id": "art_csv_148",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 4 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_149",
