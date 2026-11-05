@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-04T19:39:33.583Z",
+  "generado": "2026-11-05T11:00:29.956Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -668,12 +668,6 @@
     {
       "id": "art_csv_130",
       "nombre": "DOBLE VIA SAL ENTREFINA X 25 KG",
-      "familia": "GENERAL",
-      "hay": true
-    },
-    {
-      "id": "art_csv_131",
-      "nombre": "DOBLE VIA SAL FINA SECA X 25 KG",
       "familia": "GENERAL",
       "hay": true
     },
