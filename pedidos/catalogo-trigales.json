@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-07T13:40:53.101Z",
+  "generado": "2026-11-07T13:57:36.573Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2602,12 +2602,12 @@
       "vencida": false
     },
     {
-      "articuloId": "art_1793115841664",
-      "nombre": "WRACIE CREMA CHANTILLY X 4,7L",
-      "precio": 31500,
-      "desdeCuantos": 2,
+      "articuloId": "art_1789137475431",
+      "nombre": "DANICA BIZCOCHUELO VAINILLA DANMIX X 10 KG",
+      "precio": 20000,
+      "desdeCuantos": 1,
       "texto": "",
-      "hasta": "2026-11-15",
+      "hasta": "2026-11-30",
       "hay": true,
       "vencida": false
     }
