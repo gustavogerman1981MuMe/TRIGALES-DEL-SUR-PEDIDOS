@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-07T17:51:56.680Z",
+  "generado": "2026-11-07T18:22:14.505Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1413,7 +1413,7 @@
       "id": "art_csv_268",
       "nombre": "LUGO MUZZARELLA X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_269",
