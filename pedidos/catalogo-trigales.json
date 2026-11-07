@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-07T13:57:36.573Z",
+  "generado": "2026-11-07T14:27:52.799Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2592,12 +2592,12 @@
       "vencida": false
     },
     {
-      "articuloId": "art_csv_43",
-      "nombre": "BLANCURA HARINA 0000 X 25 KG",
-      "precio": 18900,
-      "desdeCuantos": 10,
-      "texto": "LLEVANDO 5 O MAS",
-      "hasta": "2026-11-15",
+      "articuloId": "art_csv_75",
+      "nombre": "CAMPOS LARGOS ACEITE X 4 LITROS",
+      "precio": 9850,
+      "desdeCuantos": 1,
+      "texto": "",
+      "hasta": "2026-11-30",
       "hay": true,
       "vencida": false
     },
