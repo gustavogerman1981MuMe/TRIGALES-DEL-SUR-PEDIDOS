@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-09T15:26:58.815Z",
+  "generado": "2026-11-09T15:57:28.959Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1455,7 +1455,7 @@
       "id": "art_csv_272",
       "nombre": "MARIMIL RICOTA X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_273",
