@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-09T14:31:37.554Z",
+  "generado": "2026-11-09T15:26:58.815Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -987,7 +987,7 @@
       "id": "art_csv_184",
       "nombre": "FEMAG FECULA DE MANDIOCA X 25",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_185",
@@ -1401,19 +1401,19 @@
       "id": "art_csv_265",
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_267",
       "nombre": "LUGO MUZZARELLA PLANCHA PIEDRA X 20 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_268",
       "nombre": "LUGO MUZZARELLA X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_269",
@@ -2332,6 +2332,18 @@
       "nombre": "SILVIA QUESO AZUL X KG",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1794236851714",
+      "nombre": "SILVIA QUESO PROVOLONE",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
+      "id": "art_csv_436",
+      "nombre": "SILVIA QUESO TYBO",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_437",
