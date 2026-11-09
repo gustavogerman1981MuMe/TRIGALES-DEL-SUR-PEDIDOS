@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-09T13:00:07.575Z",
+  "generado": "2026-11-09T13:30:37.862Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -987,7 +987,7 @@
       "id": "art_csv_184",
       "nombre": "FEMAG FECULA DE MANDIOCA X 25",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_185",
