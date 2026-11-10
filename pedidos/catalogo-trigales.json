@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-10T14:03:11.720Z",
+  "generado": "2026-11-10T14:33:41.729Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -996,6 +996,12 @@
       "hay": true
     },
     {
+      "id": "art_1794319478251",
+      "nombre": "FEMAG MANDIOCA X 10 KG",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
       "id": "art_csv_187",
       "nombre": "FINCA DE SANTIAGO TOMATE TRITURADO SACHET X 2 KG",
       "familia": "GENERAL",
@@ -1492,6 +1498,12 @@
       "nombre": "MAYANA CACAO AMARGO X 1 KG",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1794319498990",
+      "nombre": "MAYANA EXTRACTO DE MALTA X 5 KG",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_279",
