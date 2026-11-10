@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-10T13:02:11.719Z",
+  "generado": "2026-11-10T13:32:41.714Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1957,25 +1957,25 @@
     },
     {
       "id": "art_csv_366",
-      "nombre": "PAPELERA BOLSA PP DE 15 X 30 ( 819 )",
+      "nombre": "PAPELERA BOLSA PP DE 15 X 30",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_367",
-      "nombre": "PAPELERA BOLSA PP DE 15 X 35 ( 820 )",
+      "nombre": "PAPELERA BOLSA PP DE 15 X 35",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_368",
-      "nombre": "PAPELERA BOLSA PP DE 20 X 30 ( 826 ) (40 PAQ)",
+      "nombre": "PAPELERA BOLSA PP DE 20 X 30",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_369",
-      "nombre": "PAPELERA BOLSA PP DE 30 X 40 ( 836 ) (20 PAQ)",
+      "nombre": "PAPELERA BOLSA PP DE 30 X 40",
       "familia": "GENERAL",
       "hay": true
     },
@@ -1993,25 +1993,25 @@
     },
     {
       "id": "art_csv_372",
-      "nombre": "PAPELERA CARTUCHOS NUMERO 4A ( 127 )",
+      "nombre": "PAPELERA CARTUCHOS NUMERO 4A",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_373",
-      "nombre": "PAPELERA CARTUCHOS NUMERO 6 ( 129 )",
+      "nombre": "PAPELERA CARTUCHOS NUMERO 6",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_374",
-      "nombre": "PAPELERA CARTUCHOS NUMERO 7 ( 131 )",
+      "nombre": "PAPELERA CARTUCHOS NUMERO 7",
       "familia": "GENERAL",
       "hay": true
     },
     {
       "id": "art_csv_375",
-      "nombre": "PAPELERA CINTA ADHESIVA ( 1348 )",
+      "nombre": "PAPELERA CINTA ADHESIVA",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2023,7 +2023,7 @@
     },
     {
       "id": "art_csv_376",
-      "nombre": "PAPELERA FAJAS TIRA SATINADA 70 CM X KG (337/3)",
+      "nombre": "PAPELERA FAJAS TIRA SATINADA 70 CM X KG",
       "familia": "GENERAL",
       "hay": true
     },
@@ -2041,7 +2041,7 @@
     },
     {
       "id": "art_csv_379",
-      "nombre": "PAPELERA HILO DE ALGODON DE 3 HEBRAS ( 390 ) 300GR",
+      "nombre": "PAPELERA HILO DE ALGODON DE 3 HEBRAS  300GR",
       "familia": "GENERAL",
       "hay": true
     },
