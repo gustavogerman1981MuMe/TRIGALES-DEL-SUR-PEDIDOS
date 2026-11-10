@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-10T11:30:41.407Z",
+  "generado": "2026-11-10T12:01:11.713Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2337,7 +2337,7 @@
       "id": "art_1794236851714",
       "nombre": "SILVIA QUESO PROVOLONE",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_436",
