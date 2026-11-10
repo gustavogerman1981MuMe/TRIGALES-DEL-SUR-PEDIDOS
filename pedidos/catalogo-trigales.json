@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-10T12:01:11.713Z",
+  "generado": "2026-11-10T12:31:41.714Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2583,7 +2583,7 @@
       "id": "art_1793115841664",
       "nombre": "WRACIE CREMA CHANTILLY X 4,7L",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1791376334609",
