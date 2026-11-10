@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-10T12:31:41.714Z",
+  "generado": "2026-11-10T13:02:11.719Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1947,7 +1947,7 @@
       "id": "art_csv_363",
       "nombre": "PAPELERA BOLSA DE ARRANQUE 50 X 70",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_365",
