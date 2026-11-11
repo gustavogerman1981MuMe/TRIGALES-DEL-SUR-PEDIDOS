@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-11T14:12:36.734Z",
+  "generado": "2026-11-11T14:43:07.341Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -39,7 +39,7 @@
       "id": "art_csv_8",
       "nombre": "AGUILA DROPS SEMIAMARGO  X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_6",
@@ -153,7 +153,7 @@
       "id": "art_csv_34",
       "nombre": "BALLINA PASTA CUBRE TORTA F H X 3 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_35",
