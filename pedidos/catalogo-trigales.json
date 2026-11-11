@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-11T15:44:06.744Z",
+  "generado": "2026-11-11T16:30:26.691Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1257,7 +1257,7 @@
       "id": "art_csv_240",
       "nombre": "LEDEVIT DESTELLO NEUTRO X 4,4 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_242",
