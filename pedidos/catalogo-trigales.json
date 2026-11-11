@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-11T11:10:06.770Z",
+  "generado": "2026-11-11T11:40:37.047Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -339,7 +339,7 @@
       "id": "art_csv_73",
       "nombre": "CAMI TAPAS DE EMPANADAS FAMILIAR CRIOLLAS X 5 DOC",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_74",
@@ -351,7 +351,7 @@
       "id": "art_csv_71",
       "nombre": "CAMI TAPAS PASTELITOS X 2,5 DOCENAS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_75",
@@ -1617,7 +1617,7 @@
       "id": "art_csv_298",
       "nombre": "MILKAUT CREMA 330 CC",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_299",
