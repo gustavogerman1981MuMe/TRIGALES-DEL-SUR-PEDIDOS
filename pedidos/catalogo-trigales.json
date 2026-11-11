@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-11T13:42:07.042Z",
+  "generado": "2026-11-11T14:12:36.734Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2001,7 +2001,7 @@
       "id": "art_csv_370",
       "nombre": "PAPELERA CAJAS PARA PIZZA X 50 UNIDADES",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_372",
