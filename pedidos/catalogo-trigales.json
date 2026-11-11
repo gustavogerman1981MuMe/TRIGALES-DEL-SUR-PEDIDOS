@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-11T11:40:37.047Z",
+  "generado": "2026-11-11T12:11:07.051Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -261,7 +261,7 @@
       "id": "art_csv_55",
       "nombre": "CALSA GARCIA RICOTA X 3 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_57",
