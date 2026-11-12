@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-12T11:47:12.327Z",
+  "generado": "2026-11-12T13:15:16.505Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1995,7 +1995,7 @@
       "id": "art_1788455390007",
       "nombre": "PAPELERA BOLSAS DE ARRANQUE 60X90",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_370",
@@ -2343,7 +2343,7 @@
       "id": "art_csv_435",
       "nombre": "SILVIA QUESO AZUL X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1794236851714",
