@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-12T11:32:54.714Z",
+  "generado": "2026-11-12T11:47:12.327Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2235,7 +2235,7 @@
       "id": "art_1787875024663",
       "nombre": "REGITECA FILOMENA HOJALDRE X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1787875043846",
