@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-13T12:58:24.196Z",
+  "generado": "2026-11-13T13:28:54.183Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2511,7 +2511,7 @@
       "id": "art_csv_470",
       "nombre": "UAILE AZUCAR IMPALPABLE X 1O KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_471",
