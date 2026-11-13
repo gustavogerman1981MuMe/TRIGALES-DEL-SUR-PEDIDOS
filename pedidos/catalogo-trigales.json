@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-13T16:51:35.263Z",
+  "generado": "2026-11-13T17:44:17.006Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1623,13 +1623,13 @@
       "id": "art_csv_299",
       "nombre": "MILKAUT CREMA AL 39% SACHET X 5 LT",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_300",
       "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1792431165931",
@@ -2595,7 +2595,7 @@
       "id": "art_1793115841664",
       "nombre": "WRACIE CREMA CHANTILLY X 4,7L",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1791376334609",
