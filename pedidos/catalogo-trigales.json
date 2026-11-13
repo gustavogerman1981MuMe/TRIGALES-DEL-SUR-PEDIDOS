@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-13T11:30:47.220Z",
+  "generado": "2026-11-13T12:07:00.586Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -477,7 +477,7 @@
       "id": "art_csv_98",
       "nombre": "CHACABUCO MASA MADRE X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_100",
