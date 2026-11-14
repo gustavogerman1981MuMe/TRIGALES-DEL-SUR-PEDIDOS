@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-14T16:36:09.526Z",
+  "generado": "2026-11-14T17:07:05.928Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1725,7 +1725,7 @@
       "id": "art_csv_317",
       "nombre": "MORANDO ACEITUNAS VERDE NUMERO 3 X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_318",
