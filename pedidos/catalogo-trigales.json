@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-14T16:05:39.833Z",
+  "generado": "2026-11-14T16:36:09.526Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -705,7 +705,7 @@
       "id": "art_csv_137",
       "nombre": "EGRAMAR ELEVOL MARGARINA MASA X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_138",
@@ -1725,7 +1725,7 @@
       "id": "art_csv_317",
       "nombre": "MORANDO ACEITUNAS VERDE NUMERO 3 X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_318",
