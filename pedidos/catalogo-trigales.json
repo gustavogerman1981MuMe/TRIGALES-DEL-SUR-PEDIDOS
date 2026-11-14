@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-14T12:32:16.893Z",
+  "generado": "2026-11-14T13:02:46.895Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1665,7 +1665,7 @@
       "id": "art_csv_307",
       "nombre": "MILKAUT QUESO CREMA CREMATTO DOYPACK X 1.5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_308",
