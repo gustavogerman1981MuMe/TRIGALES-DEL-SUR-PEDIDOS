@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-15T19:34:59.947Z",
+  "generado": "2026-11-16T11:21:08.690Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2619,7 +2619,7 @@
       "texto": "LLEVANDO 5 UNIDADES O MAS",
       "hasta": "2026-11-15",
       "hay": true,
-      "vencida": false
+      "vencida": true
     },
     {
       "articuloId": "art_csv_75",
@@ -2643,12 +2643,12 @@
     }
   ],
   "oferta": {
-    "articuloId": "art_1789125724382",
-    "nombre": "ARRAYANES RELLENO SABOR DULCE DE LECHE X 10 KG",
-    "precio": 19000,
-    "desdeCuantos": 5,
-    "texto": "LLEVANDO 5 UNIDADES O MAS",
-    "hasta": "2026-11-15",
+    "articuloId": "art_csv_75",
+    "nombre": "CAMPOS LARGOS ACEITE X 4 LITROS",
+    "precio": 9850,
+    "desdeCuantos": 1,
+    "texto": "",
+    "hasta": "2026-11-30",
     "hay": true,
     "vencida": false
   }
