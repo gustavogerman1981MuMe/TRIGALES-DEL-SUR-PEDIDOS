@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-16T12:52:38.704Z",
+  "generado": "2026-11-16T13:33:38.703Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2493,7 +2493,7 @@
       "id": "art_csv_460",
       "nombre": "TAXONERA MERMELADA FRUTO DEL BOSQUE X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_468",
