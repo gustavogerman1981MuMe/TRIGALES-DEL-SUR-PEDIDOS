@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-16T13:33:38.703Z",
+  "generado": "2026-11-16T15:07:08.685Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1005,7 +1005,7 @@
       "id": "art_csv_187",
       "nombre": "FINCA DE SANTIAGO TOMATE TRITURADO SACHET X 2 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_188",
@@ -2517,7 +2517,7 @@
       "id": "art_csv_470",
       "nombre": "UAILE AZUCAR IMPALPABLE X 1O KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_471",
@@ -2601,7 +2601,7 @@
       "id": "art_1793115841664",
       "nombre": "WRACIE CREMA CHANTILLY X 4,7L",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1791376334609",
