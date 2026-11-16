@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-16T15:37:57.269Z",
+  "generado": "2026-11-16T16:08:01.620Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -687,7 +687,7 @@
       "id": "art_csv_134",
       "nombre": "DOS ANCLAS SAL FINA X 25 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_135",
