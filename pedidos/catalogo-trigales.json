@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-17T11:00:22.843Z",
+  "generado": "2026-11-17T11:30:53.493Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1431,13 +1431,13 @@
       "id": "art_csv_266",
       "nombre": "LUGO MUZZARELLA PLANCHA X 20 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_268",
       "nombre": "LUGO MUZZARELLA X KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_269",
