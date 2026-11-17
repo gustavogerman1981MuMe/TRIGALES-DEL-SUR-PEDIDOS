@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-17T14:33:52.843Z",
+  "generado": "2026-11-17T15:04:22.834Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1629,7 +1629,7 @@
       "id": "art_csv_297",
       "nombre": "MILKAUT CHEDDAR POUCH X 3.5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_298",
@@ -2211,7 +2211,7 @@
       "id": "art_csv_407",
       "nombre": "PURATOS PREMEZCLA EASY FACTURA X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1787488935989",
