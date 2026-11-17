@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-17T13:32:52.828Z",
+  "generado": "2026-11-17T14:03:22.545Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1011,7 +1011,7 @@
       "id": "art_1794319478251",
       "nombre": "FEMAG MANDIOCA X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_187",
@@ -1521,13 +1521,13 @@
       "id": "art_1794319498990",
       "nombre": "MAYANA EXTRACTO DE MALTA X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_279",
       "nombre": "MAYANA GELATINA SIN SABOR X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_280",
@@ -1611,7 +1611,7 @@
       "id": "art_csv_293",
       "nombre": "MAYANA GRANA FANTASIA VERDE X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_296",
