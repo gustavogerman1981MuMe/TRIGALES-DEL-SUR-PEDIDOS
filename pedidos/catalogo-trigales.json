@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-17T13:02:27.867Z",
+  "generado": "2026-11-17T13:32:52.828Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2422,6 +2422,18 @@
       "nombre": "TAXONERA COMPLEMENTO 1/2 LT",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1794921144778",
+      "nombre": "TAXONERA FRUTA ESCURRIDA X 10 KG",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
+      "id": "art_1794921187321",
+      "nombre": "TAXONERA FRUTA PREMIUM X 10 KG",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_446",
