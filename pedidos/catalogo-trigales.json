@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-17T15:04:22.834Z",
+  "generado": "2026-11-17T15:34:52.830Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1101,7 +1101,7 @@
       "id": "art_csv_211",
       "nombre": "JULIAN ACEITUNAS VERDE EN RODAJAS X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_214",
