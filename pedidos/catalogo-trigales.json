@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-18T13:09:42.935Z",
+  "generado": "2026-11-18T13:39:47.400Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -2614,24 +2614,6 @@
       "nombre": "VINAGRE X 5 KG",
       "familia": "GENERAL",
       "hay": true
-    },
-    {
-      "id": "art_1791376414662",
-      "nombre": "WRACIE CREMA CHANTILLY X 1L",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
-      "id": "art_1793115841664",
-      "nombre": "WRACIE CREMA CHANTILLY X 4,7L",
-      "familia": "GENERAL",
-      "hay": false
-    },
-    {
-      "id": "art_1791376334609",
-      "nombre": "WRACIE CREMA VAINILLA  X 1L",
-      "familia": "GENERAL",
-      "hay": false
     }
   ],
   "ofertas": [
