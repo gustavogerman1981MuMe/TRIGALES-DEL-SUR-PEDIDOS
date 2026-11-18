@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-18T17:43:42.649Z",
+  "generado": "2026-11-18T18:20:39.274Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -303,7 +303,7 @@
       "id": "art_1794849615830",
       "nombre": "CALSA LEUDEX LEVADURA X 500 GS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_63",
@@ -561,7 +561,7 @@
       "id": "art_csv_113",
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_115",
