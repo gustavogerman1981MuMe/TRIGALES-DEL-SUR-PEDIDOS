@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-18T15:41:47.415Z",
+  "generado": "2026-11-18T16:12:17.104Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1473,7 +1473,7 @@
       "id": "art_csv_271",
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_272",
@@ -1629,25 +1629,25 @@
       "id": "art_csv_297",
       "nombre": "MILKAUT CHEDDAR POUCH X 3.5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_298",
       "nombre": "MILKAUT CREMA 330 CC",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_299",
       "nombre": "MILKAUT CREMA AL 39% SACHET X 5 LT",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_300",
       "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1792431165931",
@@ -1683,7 +1683,7 @@
       "id": "art_csv_307",
       "nombre": "MILKAUT QUESO CREMA CREMATTO DOYPACK X 1.5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_308",
