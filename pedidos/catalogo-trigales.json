@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-18T18:51:39.565Z",
+  "generado": "2026-11-18T19:22:39.571Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -405,7 +405,7 @@
       "id": "art_csv_85",
       "nombre": "CAVIWA PASTA DE MANI RELLENO X 0,440 GR",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_86",
