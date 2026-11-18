@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-18T11:08:17.406Z",
+  "generado": "2026-11-18T11:38:42.952Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -753,7 +753,7 @@
       "id": "art_csv_145",
       "nombre": "EL MUNDO DULCE DE LECHE ALFAJORERO X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_146",
