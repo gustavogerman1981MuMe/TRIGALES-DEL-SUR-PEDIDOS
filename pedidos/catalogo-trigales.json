@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-17T19:39:15.693Z",
+  "generado": "2026-11-18T11:08:17.406Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1431,7 +1431,7 @@
       "id": "art_csv_266",
       "nombre": "LUGO MUZZARELLA PLANCHA X 20 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_268",
@@ -2631,7 +2631,7 @@
       "id": "art_1791376334609",
       "nombre": "WRACIE CREMA VAINILLA  X 1L",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     }
   ],
   "ofertas": [
