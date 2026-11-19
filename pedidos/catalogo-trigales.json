@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-19T13:00:37.813Z",
+  "generado": "2026-11-19T13:31:07.825Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -465,7 +465,7 @@
       "id": "art_csv_95",
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_96",
@@ -1761,7 +1761,7 @@
       "id": "art_csv_321",
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_323",
