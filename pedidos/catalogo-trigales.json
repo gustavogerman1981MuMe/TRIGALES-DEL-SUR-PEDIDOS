@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-19T15:03:37.886Z",
+  "generado": "2026-11-19T15:34:07.823Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -579,7 +579,7 @@
       "id": "art_1789137475431",
       "nombre": "DANICA BIZCOCHUELO VAINILLA DANMIX X 10 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1792593788108",
@@ -2644,7 +2644,7 @@
       "desdeCuantos": 1,
       "texto": "",
       "hasta": "2026-11-30",
-      "hay": true,
+      "hay": false,
       "vencida": false
     }
   ],
