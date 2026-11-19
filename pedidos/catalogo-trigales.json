@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-19T15:34:07.823Z",
+  "generado": "2026-11-19T16:04:15.339Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1347,7 +1347,7 @@
       "id": "art_csv_252",
       "nombre": "LOCOCO ADOBO PARA PIZZA X 1 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_253",
@@ -1671,7 +1671,7 @@
       "id": "art_csv_305",
       "nombre": "MILKAUT MANTECA X 5 KG",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_csv_306",
