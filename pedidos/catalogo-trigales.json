@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-19T14:01:37.820Z",
+  "generado": "2026-11-19T14:32:38.175Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1017,7 +1017,7 @@
       "id": "art_csv_187",
       "nombre": "FINCA DE SANTIAGO TOMATE TRITURADO SACHET X 2 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_188",
