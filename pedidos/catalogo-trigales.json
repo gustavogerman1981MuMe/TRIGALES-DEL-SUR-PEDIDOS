@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-19T17:04:34.890Z",
+  "generado": "2026-11-19T17:35:34.901Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1887,13 +1887,13 @@
       "id": "art_csv_347",
       "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 3",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_348",
       "nombre": "PAPELERA BANDEJAS DE CARTON NUMERO 4",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_349",
@@ -1977,7 +1977,7 @@
       "id": "art_csv_363",
       "nombre": "PAPELERA BOLSA DE ARRANQUE 50 X 70",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_365",
@@ -2013,13 +2013,13 @@
       "id": "art_1788455390007",
       "nombre": "PAPELERA BOLSAS DE ARRANQUE 60X90",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_370",
       "nombre": "PAPELERA CAJAS PARA PIZZA X 50 UNIDADES",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_372",
