@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-19T11:35:38.179Z",
+  "generado": "2026-11-19T12:30:07.889Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -627,7 +627,7 @@
       "id": "art_lista_121",
       "nombre": "DANICA MAYONESA ORIGINAL",
       "familia": "GENERAL",
-      "hay": true
+      "hay": false
     },
     {
       "id": "art_1792190950457",
@@ -1107,7 +1107,7 @@
       "id": "art_csv_214",
       "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_215",
@@ -1125,7 +1125,7 @@
       "id": "art_csv_216",
       "nombre": "JULIAN ACEITUNAS VERDE NUMERO 3 X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1788115864404",
