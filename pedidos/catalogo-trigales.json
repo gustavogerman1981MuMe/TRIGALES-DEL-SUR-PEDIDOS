@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-19T14:32:38.175Z",
+  "generado": "2026-11-19T15:03:37.886Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -627,7 +627,7 @@
       "id": "art_lista_121",
       "nombre": "DANICA MAYONESA ORIGINAL",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1792190950457",
