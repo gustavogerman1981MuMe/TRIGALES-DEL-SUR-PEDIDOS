@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-20T14:45:39.599Z",
+  "generado": "2026-11-20T16:00:26.052Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1359,12 +1359,6 @@
       "id": "art_csv_252",
       "nombre": "LOCOCO ADOBO PARA PIZZA X 1 KG",
       "familia": "GENERAL",
-      "hay": false
-    },
-    {
-      "id": "art_csv_253",
-      "nombre": "LOCOCO AHUMADO PIMENTON X 1 KG",
-      "familia": "GENERAL",
       "hay": true
     },
     {
@@ -1377,11 +1371,17 @@
       "id": "art_csv_256",
       "nombre": "LOCOCO COMINO X 1 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_257",
       "nombre": "LOCOCO OREGANO X 1 KG",
+      "familia": "GENERAL",
+      "hay": true
+    },
+    {
+      "id": "art_csv_253",
+      "nombre": "LOCOCO PIMENTON AHUMADO X 1 KG",
       "familia": "GENERAL",
       "hay": true
     },
