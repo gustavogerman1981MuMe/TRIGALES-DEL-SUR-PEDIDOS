@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-20T12:56:51.461Z",
+  "generado": "2026-11-20T13:35:16.710Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -478,6 +478,12 @@
       "nombre": "CHACABUCO HARINA INTEGRAL X 5 KG",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1795181536519",
+      "nombre": "CHACABUCO HARINA MASA MADRE X 25 KG",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_98",
@@ -1316,6 +1322,12 @@
     {
       "id": "art_csv_248",
       "nombre": "LEDEVIT PREMEZCLA MOUSSE DE FRUTILLA X 250 GR",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
+      "id": "art_1789125659132",
+      "nombre": "LEITE DULCE DE LECHE X 10KG",
       "familia": "GENERAL",
       "hay": false
     },
