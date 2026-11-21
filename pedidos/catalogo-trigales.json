@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-21T11:37:17.477Z",
+  "generado": "2026-11-21T12:07:47.751Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -465,7 +465,7 @@
       "id": "art_csv_95",
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_96",
@@ -483,7 +483,7 @@
       "id": "art_1795181536519",
       "nombre": "CHACABUCO HARINA MASA MADRE X 25 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_98",
