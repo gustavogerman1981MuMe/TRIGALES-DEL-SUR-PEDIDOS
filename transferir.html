@@ -36,7 +36,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="tds-transferir" content="2">
+<meta name="tds-transferir" content="3">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#F7F2E7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1B1815" media="(prefers-color-scheme: dark)">
@@ -177,10 +177,6 @@
   .boton[data-estado="listo"] .t-listo,
   .boton[data-estado="ok"] .t-ok,
   .boton[data-estado="mal"] .t-mal { visibility: visible; }
-  /* DOS TOQUES (2026-11-20): el botón copia Y abre Mercado Pago. Con el alias ya copiado, su tarjeta se apaga y la del monto queda resaltada y más grande (es lo que sigue). */
-  .tarjeta[data-hecho="1"] { opacity: 0.55; }
-  .tarjeta[data-siguiente="1"] { border-color: var(--boton); border-width: 2.5px; }
-  .tarjeta[data-siguiente="1"] .valor { font-size: min(28px, calc((100vw - 63px) / 11)); }
   .abrir { margin-top: 18px; }
   .ayuda {
     margin: 12px 0 0;
@@ -206,11 +202,11 @@
     <div class="para" id="para">Para transferir a</div>
     <h1 class="nombre" id="nombre"></h1>
 
-    <div class="tarjeta" id="tarjetaAlias">
+    <div class="tarjeta">
       <div class="rotulo">Alias</div>
       <div class="valor" id="alias"></div>
       <button type="button" class="boton lleno" id="copiarAlias" data-estado="listo">
-        <span class="pila"><span class="t-listo">Copiar alias y abrir Mercado Pago</span><span class="t-ok">✓ Copiado</span><span class="t-mal">No se pudo copiar</span></span>
+        <span class="pila"><span class="t-listo">Copiar alias</span><span class="t-ok">✓ Copiado</span><span class="t-mal">No se pudo copiar</span></span>
       </button>
     </div>
 
@@ -218,7 +214,7 @@
       <div class="rotulo">Monto</div>
       <div class="valor" id="monto"></div>
       <button type="button" class="boton de-borde" id="copiarMonto" data-estado="listo">
-        <span class="pila"><span class="t-listo">Copiar monto y abrir Mercado Pago</span><span class="t-ok">✓ Copiado</span><span class="t-mal">No se pudo copiar</span></span>
+        <span class="pila"><span class="t-listo">Copiar monto</span><span class="t-ok">✓ Copiado</span><span class="t-mal">No se pudo copiar</span></span>
       </button>
     </div>
 
@@ -349,27 +345,15 @@ function mostrarEstado(boton, estado) {
   }
 }
 
-var DIRECCION_MERCADO_PAGO = "https://www.mercadopago.com.ar/money-transfer";
-
-function marcarSiguiente() {
-  var tarjetaAlias = document.getElementById("tarjetaAlias");
-  var tarjetaMonto = document.getElementById("tarjetaMonto");
-  if (tarjetaAlias && tarjetaAlias.setAttribute) tarjetaAlias.setAttribute("data-hecho", "1");
-  if (tarjetaMonto && tarjetaMonto.setAttribute && !tarjetaMonto.hidden) tarjetaMonto.setAttribute("data-siguiente", "1");
-}
-
 function alTocarCopiar(que, boton, valorEnPantalla) {
-  // Primero arranca la copia y, en el MISMO toque, se abre Mercado Pago (si se espera, el celular bloquea la ventana).
   copiar(aCopiar[que], function (ok) {
     mostrarEstado(boton, ok ? "ok" : "mal");
-    if (ok && que === "alias") marcarSiguiente();
     // Si no se pudo, queda marcado para copiarlo con el dedo (y si es el
     // monto, al copiarlo sale como lo pide Mercado Pago: alCopiarConElDedo).
     if (!ok && window.getSelection) {
       try { window.getSelection().selectAllChildren(valorEnPantalla); } catch (e) { /* nada */ }
     }
   });
-  try { if (typeof window.open === "function") window.open(DIRECCION_MERCADO_PAGO, "_blank", "noopener,noreferrer"); } catch (e) { /* queda el botón Abrir Mercado Pago */ }
 }
 
 // EL MONTO COPIADO CON EL DEDO SALE COMO LO PIDE MERCADO PAGO (2026-10-05).
@@ -427,9 +411,6 @@ function pintar() {
     aCopiar.monto = "";
     tarjetaMonto.hidden = true;
   }
-  var ta = document.getElementById("tarjetaAlias"), tm = document.getElementById("tarjetaMonto");
-  if (ta && ta.removeAttribute) ta.removeAttribute("data-hecho");
-  if (tm && tm.removeAttribute) tm.removeAttribute("data-siguiente");
   mostrarEstado(document.getElementById("copiarAlias"), "listo");
   mostrarEstado(document.getElementById("copiarMonto"), "listo");
 }
