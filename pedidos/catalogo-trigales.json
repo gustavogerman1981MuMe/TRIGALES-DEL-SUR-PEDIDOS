@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-24T15:35:28.621Z",
+  "generado": "2026-11-24T16:20:06.081Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1773,7 +1773,7 @@
       "id": "art_csv_321",
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_323",
