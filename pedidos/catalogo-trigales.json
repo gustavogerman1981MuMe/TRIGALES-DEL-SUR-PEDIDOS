@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-24T14:34:31.543Z",
+  "generado": "2026-11-24T15:04:58.312Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1788,6 +1788,12 @@
       "hay": true
     },
     {
+      "id": "art_1795532341827",
+      "nombre": "NATURA ACEITE DE GIRASOL X 5 LT",
+      "familia": "GENERAL",
+      "hay": false
+    },
+    {
       "id": "art_csv_327",
       "nombre": "NATURA MAYONESA X 2.755 CC",
       "familia": "GENERAL",
@@ -2439,13 +2445,13 @@
       "id": "art_1794921144778",
       "nombre": "TAXONERA FRUTA ESCURRIDA X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_1794921187321",
       "nombre": "TAXONERA FRUTA PREMIUM X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_446",
@@ -2529,7 +2535,7 @@
       "id": "art_csv_460",
       "nombre": "TAXONERA MERMELADA FRUTO DEL BOSQUE X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_468",
