@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-24T15:04:58.312Z",
+  "generado": "2026-11-24T15:35:28.621Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1791,7 +1791,7 @@
       "id": "art_1795532341827",
       "nombre": "NATURA ACEITE DE GIRASOL X 5 LT",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_327",
