@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-25T11:00:11.027Z",
+  "generado": "2026-11-25T11:30:41.029Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -333,7 +333,7 @@
       "id": "art_csv_70",
       "nombre": "CAMI TAPAS COPETIN X 5 DOCENAS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_72",
@@ -357,7 +357,7 @@
       "id": "art_csv_71",
       "nombre": "CAMI TAPAS PASTELITOS X 2,5 DOCENAS",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_75",
@@ -1683,7 +1683,7 @@
       "id": "art_csv_305",
       "nombre": "MILKAUT MANTECA X 5 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true
     },
     {
       "id": "art_csv_306",
@@ -1762,6 +1762,12 @@
       "nombre": "MORANDO CONDIMENTADA X 1 KG",
       "familia": "GENERAL",
       "hay": true
+    },
+    {
+      "id": "art_1795605269582",
+      "nombre": "MUNDO LANFIELD X 4 KG",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_320",
