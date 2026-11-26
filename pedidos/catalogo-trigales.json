@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T13:46:35.467Z",
+  "generado": "2026-11-26T14:17:05.172Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -527,14 +527,14 @@
       "nombre": "CHACABUCO HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 329
+      "tope": 328
     },
     {
       "id": "art_csv_95",
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 172
+      "tope": 171
     },
     {
       "id": "art_csv_96",
@@ -604,7 +604,7 @@
       "nombre": "CHI EME- JO S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 265
+      "tope": 257
     },
     {
       "id": "art_csv_106",
@@ -826,7 +826,7 @@
       "nombre": "EGRAMAR ELEVOL MARGARINA HOJALDRE X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 156
+      "tope": 155
     },
     {
       "id": "art_csv_137",
@@ -895,7 +895,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 4 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 25
+      "tope": 24
     },
     {
       "id": "art_csv_149",
@@ -1390,7 +1390,7 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 215
+      "tope": 214
     },
     {
       "id": "art_csv_230",
@@ -1493,7 +1493,7 @@
       "nombre": "LEDEVIT PREMEZCLA CREMA PASTELERA X 250 GR",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 39
+      "tope": 38
     },
     {
       "id": "art_csv_244",
@@ -1705,7 +1705,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 18
+      "tope": 17
     },
     {
       "id": "art_csv_271",
@@ -2523,7 +2523,7 @@
       "nombre": "PEQUEÑA EMA HARINA 000 X 25KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 19
+      "tope": 119
     },
     {
       "id": "art_csv_399",
@@ -2551,7 +2551,7 @@
       "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT SEMIAMARGO X 0.800 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 129
+      "tope": 127
     },
     {
       "id": "art_1793189392458",
@@ -2633,7 +2633,7 @@
       "nombre": "REGITECA FILOMENA MASA X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 11
+      "tope": 10
     },
     {
       "id": "art_1787874894968",
@@ -2710,7 +2710,7 @@
       "nombre": "SEGUNDA COLONIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 124
+      "tope": 116
     },
     {
       "id": "art_csv_431",
@@ -2938,7 +2938,7 @@
       "nombre": "UAILE ALMIDON DE MAIZ X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 45
+      "tope": 44
     },
     {
       "id": "art_csv_18",
