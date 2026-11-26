@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T11:44:35.471Z",
+  "generado": "2026-11-26T12:15:05.472Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -390,7 +390,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 94
+      "tope": 93
     },
     {
       "id": "art_csv_73",
@@ -535,7 +535,7 @@
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 175
+      "tope": 174
     },
     {
       "id": "art_csv_96",
@@ -902,7 +902,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 9
+      "tope": 8
     },
     {
       "id": "art_lista_151",
@@ -1651,7 +1651,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 105
+      "tope": 104
     },
     {
       "id": "art_csv_267",
@@ -1705,7 +1705,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 31
+      "tope": 30
     },
     {
       "id": "art_csv_271",
@@ -1961,7 +1961,7 @@
       "nombre": "MILKAUT QUESO CREMA CREMATTO POUCH X 3.5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 22
+      "tope": 21
     },
     {
       "id": "art_csv_309",
@@ -2086,7 +2086,7 @@
       "nombre": "NUECES ENTERAS EXTRA LIGHT X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 71
+      "tope": 70
     },
     {
       "id": "art_csv_330",
