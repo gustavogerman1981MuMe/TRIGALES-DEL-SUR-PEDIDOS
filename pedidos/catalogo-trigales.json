@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T17:50:32.666Z",
+  "generado": "2026-11-26T18:21:02.662Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -10,14 +10,14 @@
       "nombre": "AGUILA BOMBON BLANCO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 80
+      "tope": 79
     },
     {
       "id": "art_csv_3",
       "nombre": "AGUILA BOMBON SEMI/AMARGO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 68
+      "tope": 67
     },
     {
       "id": "art_csv_11",
@@ -169,7 +169,7 @@
       "nombre": "BALLINA PASTA CUBRE TORTA F H X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 59
+      "tope": 58
     },
     {
       "id": "art_csv_34",
@@ -355,7 +355,7 @@
       "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 127
+      "tope": 107
     },
     {
       "id": "art_csv_64",
@@ -415,7 +415,7 @@
       "nombre": "CAMPOS LARGOS ACEITE X 4 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 56
+      "tope": 52
     },
     {
       "id": "art_csv_76",
@@ -476,7 +476,7 @@
       "nombre": "CAYFAR MERMELADA DE BATATA X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 86
+      "tope": 85
     },
     {
       "id": "art_csv_88",
@@ -595,7 +595,7 @@
       "nombre": "CHI EME- B BLANCO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 89
+      "tope": 88
     },
     {
       "id": "art_csv_104",
@@ -776,7 +776,7 @@
       "nombre": "DEWEY MERMELADA DE MEMBRILLO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 175
+      "tope": 174
     },
     {
       "id": "art_csv_129",
@@ -790,7 +790,7 @@
       "nombre": "DOBLE VIA SAL ENTREFINA X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 191
+      "tope": 181
     },
     {
       "id": "art_csv_132",
@@ -928,14 +928,14 @@
       "nombre": "EMETH BAÑO DE REPOSTERIA BOTON BLANCO X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 91
+      "tope": 81
     },
     {
       "id": "art_lista_155",
       "nombre": "EMETH BAÑO DE REPOSTERIA BOTON NEGRO X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 82
+      "tope": 72
     },
     {
       "id": "art_lista_150",
@@ -1102,7 +1102,7 @@
       "nombre": "EMETH HARINA DE MALTA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 40
+      "tope": 36
     },
     {
       "id": "art_lista_178",
@@ -1388,7 +1388,7 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 210
+      "tope": 202
     },
     {
       "id": "art_csv_230",
@@ -1703,7 +1703,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 8
+      "tope": 6
     },
     {
       "id": "art_csv_271",
@@ -1717,7 +1717,7 @@
       "nombre": "MARIMIL RICOTA X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 45
+      "tope": 42
     },
     {
       "id": "art_csv_273",
@@ -2092,7 +2092,7 @@
       "nombre": "ORESTE SALSA EN BIDON X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 24
+      "tope": 23
     },
     {
       "id": "art_csv_331",
@@ -2278,7 +2278,7 @@
       "nombre": "PAPELERA BOLSA DE ARRANQUE 20X 30",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 56
+      "tope": 55
     },
     {
       "id": "art_csv_359",
@@ -2292,7 +2292,7 @@
       "nombre": "PAPELERA BOLSA DE ARRANQUE 35 X 45",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 23
+      "tope": 22
     },
     {
       "id": "art_csv_362",
@@ -2694,7 +2694,7 @@
       "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 46
+      "tope": 45
     },
     {
       "id": "art_csv_428",
@@ -3012,7 +3012,7 @@
       "nombre": "UAILE POLVO PARA HORNEAR X 1KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 22
+      "tope": 21
     },
     {
       "id": "art_csv_466",
