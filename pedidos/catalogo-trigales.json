@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T11:14:05.474Z",
+  "generado": "2026-11-26T11:44:35.471Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -170,7 +170,7 @@
       "nombre": "BALLINA PASTA CUBRE TORTA F H X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 61
+      "tope": 59
     },
     {
       "id": "art_csv_34",
@@ -240,7 +240,7 @@
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 389
+      "tope": 388
     },
     {
       "id": "art_1791037599145",
@@ -390,7 +390,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 98
+      "tope": 94
     },
     {
       "id": "art_csv_73",
@@ -591,14 +591,14 @@
       "nombre": "CHI EME- 2 S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 293
+      "tope": 292
     },
     {
       "id": "art_csv_103",
       "nombre": "CHI EME- B BLANCO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 96
+      "tope": 95
     },
     {
       "id": "art_csv_104",
@@ -723,7 +723,7 @@
       "nombre": "DANICA MARGARINA MASA PRIMOR VEGETAL X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 275
+      "tope": 274
     },
     {
       "id": "art_lista_121",
@@ -1452,7 +1452,7 @@
       "nombre": "LEDEVIT CREMA VAINILLA X 4,7 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 31
+      "tope": 30
     },
     {
       "id": "art_csv_239",
@@ -1658,7 +1658,7 @@
       "nombre": "LUGO MUZZARELLA PLANCHA PIEDRA X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 14
+      "tope": 13
     },
     {
       "id": "art_csv_266",
@@ -2058,7 +2058,7 @@
       "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 122
+      "tope": 120
     },
     {
       "id": "art_csv_324",
@@ -2744,7 +2744,7 @@
       "nombre": "SILVIA LECHE LARGA VIDA X 1 LT",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 292
+      "tope": 280
     },
     {
       "id": "art_csv_435",
