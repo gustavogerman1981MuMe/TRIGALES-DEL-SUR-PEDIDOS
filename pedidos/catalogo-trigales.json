@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T14:17:05.172Z",
+  "generado": "2026-11-26T14:47:35.168Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -239,7 +239,7 @@
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 385
+      "tope": 387
     },
     {
       "id": "art_1791037599145",
@@ -722,14 +722,14 @@
       "nombre": "DANICA MARGARINA MASA PRIMOR VEGETAL X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 267
+      "tope": 266
     },
     {
       "id": "art_lista_121",
       "nombre": "DANICA MAYONESA ORIGINAL",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 401
+      "tope": 397
     },
     {
       "id": "art_1792190950457",
@@ -1195,7 +1195,7 @@
       "nombre": "FRUTOS MENDOCINOS ACEITE DE GIRASOL X 5 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 266
+      "tope": 265
     },
     {
       "id": "art_csv_191",
@@ -1327,7 +1327,7 @@
       "nombre": "LA TARANTELLA TYBO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 353
+      "tope": 346
     },
     {
       "id": "art_csv_219",
@@ -1677,7 +1677,7 @@
       "nombre": "LUGO QUESO AZUL",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 14
+      "tope": 12
     },
     {
       "id": "art_1791201550463",
@@ -2024,7 +2024,7 @@
       "nombre": "MORANDO ANCHOAS FILET",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 9
+      "tope": 8
     },
     {
       "id": "art_csv_319",
@@ -2101,7 +2101,7 @@
       "nombre": "OSTRAMAR ATUN X !KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 78
+      "tope": 77
     },
     {
       "id": "art_csv_332",
@@ -2252,14 +2252,14 @@
       "nombre": "PAPELERA BOLSA CAMISETA DE 30 X 40",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 72
+      "tope": 69
     },
     {
       "id": "art_csv_355",
       "nombre": "PAPELERA BOLSA CAMISETA DE 40 X 50",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 171
+      "tope": 168
     },
     {
       "id": "art_csv_356",
@@ -2633,7 +2633,7 @@
       "nombre": "REGITECA FILOMENA MASA X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 10
+      "tope": 6
     },
     {
       "id": "art_1787874894968",
@@ -2654,7 +2654,7 @@
       "nombre": "REGITECA MATILDA GRASA PRIMER JUGO X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 11
+      "tope": 10
     },
     {
       "id": "art_csv_422",
