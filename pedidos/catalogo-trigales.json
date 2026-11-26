@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T16:19:02.348Z",
+  "generado": "2026-11-26T16:49:32.662Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -239,7 +239,7 @@
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 387
+      "tope": 384
     },
     {
       "id": "art_1791037599145",
@@ -1388,7 +1388,7 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 211
+      "tope": 210
     },
     {
       "id": "art_csv_230",
@@ -1649,7 +1649,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 101
+      "tope": 100
     },
     {
       "id": "art_csv_267",
@@ -1703,7 +1703,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 14
+      "tope": 12
     },
     {
       "id": "art_csv_271",
