@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T18:21:02.662Z",
+  "generado": "2026-11-26T18:51:32.651Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -107,7 +107,7 @@
       "nombre": "ANANA X 0.800 GR",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 49
+      "tope": 45
     },
     {
       "id": "art_csv_21",
@@ -355,7 +355,7 @@
       "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 107
+      "tope": 97
     },
     {
       "id": "art_csv_64",
@@ -858,7 +858,7 @@
       "nombre": "EL ALJIBE  JAMON 266 X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 139
+      "tope": 120
     },
     {
       "id": "art_csv_143",
@@ -1318,7 +1318,7 @@
       "nombre": "JULIAN ACEITUNAS VERDES NUMERO 1 X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 9
+      "tope": 7
     },
     {
       "id": "art_csv_218",
@@ -1464,7 +1464,7 @@
       "nombre": "LEDEVIT DESTELLO NEUTRO X 310 GR",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 14
+      "tope": 13
     },
     {
       "id": "art_csv_240",
@@ -1649,7 +1649,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 98
+      "tope": 94
     },
     {
       "id": "art_csv_267",
@@ -1703,7 +1703,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 6
+      "tope": 4
     },
     {
       "id": "art_csv_271",
@@ -2057,7 +2057,7 @@
       "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 113
+      "tope": 111
     },
     {
       "id": "art_csv_324",
@@ -2659,7 +2659,7 @@
       "nombre": "SALVITA MORRON",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 16
+      "tope": 4
     },
     {
       "id": "art_csv_423",
