@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T14:47:35.168Z",
+  "generado": "2026-11-26T15:18:05.480Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -149,7 +149,7 @@
       "nombre": "AZUCAR COMUN PACK X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 140
+      "tope": 129
     },
     {
       "id": "art_csv_29",
@@ -211,7 +211,7 @@
       "nombre": "BARI JALEA FANTASIA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 41
+      "tope": 39
     },
     {
       "id": "art_csv_40",
@@ -355,7 +355,7 @@
       "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 129
+      "tope": 127
     },
     {
       "id": "art_csv_64",
@@ -389,7 +389,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 81
+      "tope": 78
     },
     {
       "id": "art_csv_73",
@@ -403,7 +403,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS HOJALDRADAS X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 50
+      "tope": 49
     },
     {
       "id": "art_csv_71",
@@ -506,7 +506,7 @@
       "nombre": "CAYFAR TOMATE TRITURADO X 8 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 192
+      "tope": 191
     },
     {
       "id": "art_csv_92",
@@ -534,7 +534,7 @@
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 171
+      "tope": 170
     },
     {
       "id": "art_csv_96",
@@ -604,7 +604,7 @@
       "nombre": "CHI EME- JO S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 257
+      "tope": 256
     },
     {
       "id": "art_csv_106",
@@ -729,7 +729,7 @@
       "nombre": "DANICA MAYONESA ORIGINAL",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 397
+      "tope": 393
     },
     {
       "id": "art_1792190950457",
@@ -1076,7 +1076,7 @@
       "nombre": "EMETH ESENCIA VAINILLA X 2 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 100
+      "tope": 99
     },
     {
       "id": "art_lista_175",
@@ -1195,7 +1195,7 @@
       "nombre": "FRUTOS MENDOCINOS ACEITE DE GIRASOL X 5 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 265
+      "tope": 262
     },
     {
       "id": "art_csv_191",
@@ -1209,7 +1209,7 @@
       "nombre": "GELBRIX JALEA FANTASIA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 56
+      "tope": 55
     },
     {
       "id": "art_csv_197",
@@ -1383,7 +1383,7 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 60
+      "tope": 56
     },
     {
       "id": "art_csv_229",
@@ -1568,7 +1568,7 @@
       "nombre": "LOCOCO ADOBO PARA PIZZA X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 9
+      "tope": 8
     },
     {
       "id": "art_csv_254",
@@ -1658,7 +1658,7 @@
       "nombre": "LUGO MUZZARELLA PLANCHA PIEDRA X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 9
+      "tope": 8
     },
     {
       "id": "art_csv_266",
@@ -1705,7 +1705,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 17
+      "tope": 14
     },
     {
       "id": "art_csv_271",
@@ -1961,7 +1961,7 @@
       "nombre": "MILKAUT QUESO CREMA CREMATTO POUCH X 3.5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 20
+      "tope": 19
     },
     {
       "id": "art_csv_309",
@@ -2017,7 +2017,7 @@
       "nombre": "MORANDO ACEITUNAS VERDE NUMERO 3 X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 16
+      "tope": 15
     },
     {
       "id": "art_csv_318",
@@ -2357,7 +2357,7 @@
       "nombre": "PAPELERA CAJAS PARA PIZZA X 50 UNIDADES",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 68
+      "tope": 67
     },
     {
       "id": "art_csv_372",
@@ -2378,7 +2378,7 @@
       "nombre": "PAPELERA CARTUCHOS NUMERO 7",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 8
+      "tope": 7
     },
     {
       "id": "art_csv_375",
@@ -2591,7 +2591,7 @@
       "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 121
+      "tope": 120
     },
     {
       "id": "art_1788115971998",
@@ -2626,7 +2626,7 @@
       "nombre": "REGITECA FILOMENA HOJALDRE X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 68
+      "tope": 64
     },
     {
       "id": "art_1787875043846",
@@ -2696,7 +2696,7 @@
       "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 48
+      "tope": 46
     },
     {
       "id": "art_csv_428",
