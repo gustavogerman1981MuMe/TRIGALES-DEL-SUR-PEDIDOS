@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T12:45:35.161Z",
+  "generado": "2026-11-26T13:16:05.166Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -100,7 +100,7 @@
       "nombre": "ALMENDRA USA  X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 24
+      "tope": 21
     },
     {
       "id": "art_csv_17",
@@ -232,14 +232,14 @@
       "nombre": "BLANCURA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 236
+      "tope": 233
     },
     {
       "id": "art_csv_43",
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 386
+      "tope": 385
     },
     {
       "id": "art_1791037599145",
@@ -389,7 +389,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 84
+      "tope": 83
     },
     {
       "id": "art_csv_73",
@@ -431,7 +431,7 @@
       "nombre": "CASTAÑA DE CAJU X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 9
+      "tope": 5
     },
     {
       "id": "art_csv_81",
@@ -618,7 +618,7 @@
       "nombre": "CHI M2 - G DROPS S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 67
+      "tope": 66
     },
     {
       "id": "art_csv_108",
@@ -701,7 +701,7 @@
       "nombre": "DANICA LEVADURA FRESCA X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 48
+      "tope": 47
     },
     {
       "id": "art_lista_118",
@@ -909,7 +909,7 @@
       "nombre": "EMETH ADITIVO MEJORADOR X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 20
+      "tope": 19
     },
     {
       "id": "art_lista_152",
@@ -1125,7 +1125,7 @@
       "nombre": "EMETH MERMELADA DE MEMBRILLO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 97
+      "tope": 96
     },
     {
       "id": "art_lista_180",
@@ -1651,7 +1651,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 104
+      "tope": 103
     },
     {
       "id": "art_csv_267",
@@ -1900,7 +1900,7 @@
       "nombre": "MILKAUT CREMA 330 CC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 30
+      "tope": 29
     },
     {
       "id": "art_csv_299",
@@ -2087,7 +2087,7 @@
       "nombre": "NUECES ENTERAS EXTRA LIGHT X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 69
+      "tope": 63
     },
     {
       "id": "art_csv_330",
@@ -2301,7 +2301,7 @@
       "nombre": "PAPELERA BOLSA DE ARRANQUE 40 X 50",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 31
+      "tope": 30
     },
     {
       "id": "art_csv_363",
@@ -2626,7 +2626,7 @@
       "nombre": "REGITECA FILOMENA HOJALDRE X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 69
+      "tope": 68
     },
     {
       "id": "art_1787875043846",
@@ -2703,14 +2703,14 @@
       "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 4 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 8
+      "tope": 7
     },
     {
       "id": "art_csv_430",
       "nombre": "SEGUNDA COLONIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 127
+      "tope": 125
     },
     {
       "id": "art_csv_431",
