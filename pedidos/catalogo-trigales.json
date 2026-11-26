@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T15:18:05.480Z",
+  "generado": "2026-11-26T15:48:35.481Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -381,22 +381,21 @@
       "id": "art_csv_70",
       "nombre": "CAMI TAPAS COPETIN X 5 DOCENAS",
       "familia": "GENERAL",
-      "hay": true,
-      "tope": 1
+      "hay": false
     },
     {
       "id": "art_csv_72",
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 78
+      "tope": 76
     },
     {
       "id": "art_csv_73",
       "nombre": "CAMI TAPAS DE EMPANADAS FAMILIAR CRIOLLAS X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 6
+      "tope": 5
     },
     {
       "id": "art_csv_74",
@@ -409,8 +408,7 @@
       "id": "art_csv_71",
       "nombre": "CAMI TAPAS PASTELITOS X 2,5 DOCENAS",
       "familia": "GENERAL",
-      "hay": true,
-      "tope": 1
+      "hay": false
     },
     {
       "id": "art_csv_75",
@@ -667,7 +665,7 @@
       "nombre": "DALOMO ACEITE DE OLIVA X 500 CC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 49
+      "tope": 48
     },
     {
       "id": "art_1789137475431",
@@ -729,7 +727,7 @@
       "nombre": "DANICA MAYONESA ORIGINAL",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 393
+      "tope": 392
     },
     {
       "id": "art_1792190950457",
@@ -813,7 +811,7 @@
       "nombre": "DOS ANCLAS SAL FINA X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 3
+      "tope": 5
     },
     {
       "id": "art_csv_135",
@@ -1383,14 +1381,14 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 56
+      "tope": 55
     },
     {
       "id": "art_csv_229",
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 214
+      "tope": 213
     },
     {
       "id": "art_csv_230",
@@ -1712,7 +1710,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 61
+      "tope": 57
     },
     {
       "id": "art_csv_272",
@@ -2717,7 +2715,7 @@
       "nombre": "SEGUNDA COLONIA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 8
+      "tope": 4
     },
     {
       "id": "art_csv_429",
