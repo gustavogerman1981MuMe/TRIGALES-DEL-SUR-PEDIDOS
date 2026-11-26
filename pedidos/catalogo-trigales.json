@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T13:16:05.166Z",
+  "generado": "2026-11-26T13:46:35.467Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -232,7 +232,7 @@
       "nombre": "BLANCURA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 233
+      "tope": 232
     },
     {
       "id": "art_csv_43",
@@ -389,7 +389,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 83
+      "tope": 81
     },
     {
       "id": "art_csv_73",
@@ -506,7 +506,7 @@
       "nombre": "CAYFAR TOMATE TRITURADO X 8 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 193
+      "tope": 192
     },
     {
       "id": "art_csv_92",
@@ -604,7 +604,7 @@
       "nombre": "CHI EME- JO S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 266
+      "tope": 265
     },
     {
       "id": "art_csv_106",
@@ -618,7 +618,7 @@
       "nombre": "CHI M2 - G DROPS S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 66
+      "tope": 65
     },
     {
       "id": "art_csv_108",
@@ -653,7 +653,7 @@
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 77
+      "tope": 76
     },
     {
       "id": "art_csv_115",
@@ -722,7 +722,7 @@
       "nombre": "DANICA MARGARINA MASA PRIMOR VEGETAL X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 268
+      "tope": 267
     },
     {
       "id": "art_lista_121",
@@ -874,7 +874,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE ALFAJORERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 10
+      "tope": 9
     },
     {
       "id": "art_csv_146",
@@ -1153,7 +1153,7 @@
       "nombre": "FAINALIND X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 8
+      "tope": 7
     },
     {
       "id": "art_csv_184",
@@ -1651,7 +1651,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 103
+      "tope": 101
     },
     {
       "id": "art_csv_267",
@@ -1705,7 +1705,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 23
+      "tope": 18
     },
     {
       "id": "art_csv_271",
@@ -1968,7 +1968,7 @@
       "nombre": "MISKY ALMIDON DE MAIZ X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 123
+      "tope": 120
     },
     {
       "id": "art_csv_311",
@@ -2059,7 +2059,7 @@
       "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 120
+      "tope": 116
     },
     {
       "id": "art_csv_324",
@@ -2710,7 +2710,7 @@
       "nombre": "SEGUNDA COLONIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 125
+      "tope": 124
     },
     {
       "id": "art_csv_431",
@@ -2951,7 +2951,7 @@
       "nombre": "UAILE AZUCAR IMPALPABLE X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 40
+      "tope": 39
     },
     {
       "id": "art_csv_470",
