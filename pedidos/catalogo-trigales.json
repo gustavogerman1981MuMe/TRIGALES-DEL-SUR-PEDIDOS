@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T00:05:22.129Z",
+  "generado": "2026-11-26T11:14:05.474Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -94,7 +94,7 @@
       "nombre": "ALBERTINA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 72
+      "tope": 71
     },
     {
       "id": "art_csv_15",
@@ -198,7 +198,7 @@
       "nombre": "BARI FRUTA ESCURRIDA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 14
+      "tope": 13
     },
     {
       "id": "art_csv_38",
@@ -356,7 +356,7 @@
       "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 151
+      "tope": 131
     },
     {
       "id": "art_csv_64",
@@ -390,7 +390,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 100
+      "tope": 98
     },
     {
       "id": "art_csv_73",
@@ -404,7 +404,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS HOJALDRADAS X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 51
+      "tope": 50
     },
     {
       "id": "art_csv_71",
@@ -591,7 +591,7 @@
       "nombre": "CHI EME- 2 S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 298
+      "tope": 293
     },
     {
       "id": "art_csv_103",
@@ -619,7 +619,7 @@
       "nombre": "CHI M2 - G DROPS S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 70
+      "tope": 67
     },
     {
       "id": "art_csv_108",
@@ -633,14 +633,14 @@
       "nombre": "CLUCELAT MANTECA X 2,5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 160
+      "tope": 156
     },
     {
       "id": "art_csv_111",
       "nombre": "COCO RALLADO F X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 139
+      "tope": 135
     },
     {
       "id": "art_1792673553644",
@@ -1104,7 +1104,7 @@
       "nombre": "EMETH HARINA DE MALTA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 41
+      "tope": 40
     },
     {
       "id": "art_lista_178",
@@ -1341,7 +1341,7 @@
       "nombre": "LAGOMARSINO HARINA CARLOS CASARES 000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 487
+      "tope": 481
     },
     {
       "id": "art_csv_222",
@@ -1438,14 +1438,14 @@
       "nombre": "LEDEVIT CREMA VAINILA X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 76
+      "tope": 74
     },
     {
       "id": "art_csv_237",
       "nombre": "LEDEVIT CREMA VAINILLA X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 66
+      "tope": 64
     },
     {
       "id": "art_csv_238",
@@ -1712,7 +1712,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 74
+      "tope": 73
     },
     {
       "id": "art_csv_272",
@@ -1893,7 +1893,7 @@
       "nombre": "MILKAUT CHEDDAR POUCH X 3.5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 8
+      "tope": 7
     },
     {
       "id": "art_csv_298",
@@ -1914,7 +1914,7 @@
       "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 30
+      "tope": 28
     },
     {
       "id": "art_1792431165931",
@@ -2044,14 +2044,14 @@
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 48
+      "tope": 47
     },
     {
       "id": "art_csv_321",
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 19
+      "tope": 18
     },
     {
       "id": "art_csv_323",
@@ -2522,7 +2522,7 @@
       "nombre": "PEQUEÑA EMA HARINA 000 X 25KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 219
+      "tope": 19
     },
     {
       "id": "art_csv_399",
@@ -2604,7 +2604,7 @@
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 132
+      "tope": 128
     },
     {
       "id": "art_csv_410",
@@ -2625,7 +2625,7 @@
       "nombre": "REGITECA FILOMENA HOJALDRE X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 85
+      "tope": 69
     },
     {
       "id": "art_1787875043846",
@@ -2660,7 +2660,7 @@
       "nombre": "SALVITA MORRON",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 24
+      "tope": 18
     },
     {
       "id": "art_csv_423",
@@ -2971,7 +2971,7 @@
       "nombre": "UAILE AZUCAR NEGRA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 27
+      "tope": 26
     },
     {
       "id": "art_csv_461",
