@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T16:49:32.662Z",
+  "generado": "2026-11-26T17:20:02.655Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -183,7 +183,7 @@
       "nombre": "BARI CEREZA X 3.1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 132
+      "tope": 131
     },
     {
       "id": "art_csv_36",
@@ -776,7 +776,7 @@
       "nombre": "DEWEY MERMELADA DE MEMBRILLO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 176
+      "tope": 175
     },
     {
       "id": "art_csv_129",
@@ -1559,7 +1559,7 @@
       "nombre": "LICOR RON X 1 LITRO",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 32
+      "tope": 31
     },
     {
       "id": "art_csv_252",
@@ -1649,7 +1649,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 100
+      "tope": 99
     },
     {
       "id": "art_csv_267",
@@ -1703,7 +1703,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 12
+      "tope": 10
     },
     {
       "id": "art_csv_271",
@@ -1759,7 +1759,7 @@
       "nombre": "MAYANA CACAO AMARGO X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 51
+      "tope": 50
     },
     {
       "id": "art_1794319498990",
@@ -1966,7 +1966,7 @@
       "nombre": "MISKY ALMIDON DE MAIZ X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 120
+      "tope": 119
     },
     {
       "id": "art_csv_311",
@@ -2057,7 +2057,7 @@
       "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 116
+      "tope": 113
     },
     {
       "id": "art_csv_324",
