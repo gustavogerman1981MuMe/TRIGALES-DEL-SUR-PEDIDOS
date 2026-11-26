@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T12:15:05.472Z",
+  "generado": "2026-11-26T12:45:35.161Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -93,15 +93,14 @@
       "id": "art_csv_14",
       "nombre": "ALBERTINA HARINA 000 X 25 KG",
       "familia": "GENERAL",
-      "hay": true,
-      "tope": 71
+      "hay": false
     },
     {
       "id": "art_csv_15",
       "nombre": "ALMENDRA USA  X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 26
+      "tope": 24
     },
     {
       "id": "art_csv_17",
@@ -136,7 +135,7 @@
       "nombre": "ARRAYANES RELLENO SABOR DULCE DE LECHE X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 5
+      "tope": 4
     },
     {
       "id": "art_1791553005726",
@@ -150,7 +149,7 @@
       "nombre": "AZUCAR COMUN PACK X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 144
+      "tope": 140
     },
     {
       "id": "art_csv_29",
@@ -240,7 +239,7 @@
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 388
+      "tope": 386
     },
     {
       "id": "art_1791037599145",
@@ -356,7 +355,7 @@
       "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 131
+      "tope": 129
     },
     {
       "id": "art_csv_64",
@@ -390,7 +389,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 93
+      "tope": 84
     },
     {
       "id": "art_csv_73",
@@ -507,7 +506,7 @@
       "nombre": "CAYFAR TOMATE TRITURADO X 8 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 194
+      "tope": 193
     },
     {
       "id": "art_csv_92",
@@ -535,7 +534,7 @@
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 174
+      "tope": 172
     },
     {
       "id": "art_csv_96",
@@ -591,14 +590,14 @@
       "nombre": "CHI EME- 2 S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 292
+      "tope": 290
     },
     {
       "id": "art_csv_103",
       "nombre": "CHI EME- B BLANCO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 95
+      "tope": 94
     },
     {
       "id": "art_csv_104",
@@ -723,7 +722,7 @@
       "nombre": "DANICA MARGARINA MASA PRIMOR VEGETAL X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 274
+      "tope": 268
     },
     {
       "id": "art_lista_121",
@@ -779,7 +778,7 @@
       "nombre": "DEWEY MERMELADA DE MEMBRILLO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 177
+      "tope": 176
     },
     {
       "id": "art_csv_129",
@@ -793,7 +792,7 @@
       "nombre": "DOBLE VIA SAL ENTREFINA X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 192
+      "tope": 191
     },
     {
       "id": "art_csv_132",
@@ -814,7 +813,7 @@
       "nombre": "DOS ANCLAS SAL FINA X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 5
+      "tope": 3
     },
     {
       "id": "art_csv_135",
@@ -874,28 +873,29 @@
       "id": "art_csv_145",
       "nombre": "EL MUNDO DULCE DE LECHE ALFAJORERO X 10 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true,
+      "tope": 10
     },
     {
       "id": "art_csv_146",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO BALDE X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 1
+      "tope": 21
     },
     {
       "id": "art_csv_147",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 48
+      "tope": 97
     },
     {
       "id": "art_csv_148",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 4 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 5
+      "tope": 25
     },
     {
       "id": "art_csv_149",
@@ -923,7 +923,7 @@
       "nombre": "EMETH AZUCAR NEGRA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 118
+      "tope": 117
     },
     {
       "id": "art_lista_154",
@@ -1369,7 +1369,7 @@
       "nombre": "LANFIELD DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 2
+      "tope": 51
     },
     {
       "id": "art_csv_227",
@@ -1390,14 +1390,14 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 216
+      "tope": 215
     },
     {
       "id": "art_csv_230",
       "nombre": "LEDEVIT CREMA CHANTILLY X 4.7 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 16
+      "tope": 15
     },
     {
       "id": "art_csv_231",
@@ -1644,7 +1644,7 @@
       "nombre": "LODISER ALPINO TABLETA SEMIAMARGO X 0,500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 104
+      "tope": 102
     },
     {
       "id": "art_csv_265",
@@ -1658,7 +1658,7 @@
       "nombre": "LUGO MUZZARELLA PLANCHA PIEDRA X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 13
+      "tope": 9
     },
     {
       "id": "art_csv_266",
@@ -1705,14 +1705,14 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 30
+      "tope": 23
     },
     {
       "id": "art_csv_271",
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 73
+      "tope": 61
     },
     {
       "id": "art_csv_272",
@@ -1740,7 +1740,7 @@
       "nombre": "MASTER BAKERY PAN DE QUESO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 23
+      "tope": 21
     },
     {
       "id": "art_csv_276",
@@ -1914,7 +1914,7 @@
       "nombre": "MILKAUT CREMA PROFESIONAL AL  44%  BALDE X 5 LT",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 28
+      "tope": 27
     },
     {
       "id": "art_1792431165931",
@@ -1961,7 +1961,7 @@
       "nombre": "MILKAUT QUESO CREMA CREMATTO POUCH X 3.5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 21
+      "tope": 20
     },
     {
       "id": "art_csv_309",
@@ -2037,14 +2037,15 @@
       "id": "art_1795605269582",
       "nombre": "MUNDO LANFIELD X 4 KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true,
+      "tope": 20
     },
     {
       "id": "art_csv_320",
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 47
+      "tope": 45
     },
     {
       "id": "art_csv_321",
@@ -2086,7 +2087,7 @@
       "nombre": "NUECES ENTERAS EXTRA LIGHT X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 70
+      "tope": 69
     },
     {
       "id": "art_csv_330",
@@ -2550,7 +2551,7 @@
       "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT SEMIAMARGO X 0.800 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 144
+      "tope": 129
     },
     {
       "id": "art_1793189392458",
@@ -2590,7 +2591,7 @@
       "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 122
+      "tope": 121
     },
     {
       "id": "art_1788115971998",
@@ -2695,7 +2696,7 @@
       "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 50
+      "tope": 48
     },
     {
       "id": "art_csv_428",
@@ -2709,14 +2710,14 @@
       "nombre": "SEGUNDA COLONIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 137
+      "tope": 127
     },
     {
       "id": "art_csv_431",
       "nombre": "SEGUNDA COLONIA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 10
+      "tope": 8
     },
     {
       "id": "art_csv_429",
@@ -2744,7 +2745,7 @@
       "nombre": "SILVIA LECHE LARGA VIDA X 1 LT",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 280
+      "tope": 274
     },
     {
       "id": "art_csv_435",
@@ -3034,7 +3035,7 @@
       "nombre": "VICTORIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 46
+      "tope": 45
     },
     {
       "id": "art_csv_483",
