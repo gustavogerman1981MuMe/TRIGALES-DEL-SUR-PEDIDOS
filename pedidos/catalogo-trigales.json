@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T17:20:02.655Z",
+  "generado": "2026-11-26T17:50:32.666Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1283,7 +1283,7 @@
       "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 21
+      "tope": 20
     },
     {
       "id": "art_csv_215",
@@ -1649,7 +1649,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 99
+      "tope": 98
     },
     {
       "id": "art_csv_267",
@@ -1703,7 +1703,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 10
+      "tope": 8
     },
     {
       "id": "art_csv_271",
@@ -2659,7 +2659,7 @@
       "nombre": "SALVITA MORRON",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 18
+      "tope": 16
     },
     {
       "id": "art_csv_423",
