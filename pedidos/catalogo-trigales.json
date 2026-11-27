@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T17:05:20.846Z",
+  "generado": "2026-11-27T17:36:08.903Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -387,7 +387,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 65
+      "tope": 64
     },
     {
       "id": "art_csv_73",
@@ -401,7 +401,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS HOJALDRADAS X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 46
+      "tope": 45
     },
     {
       "id": "art_csv_71",
@@ -524,14 +524,14 @@
       "nombre": "CHACABUCO HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 366
+      "tope": 365
     },
     {
       "id": "art_csv_95",
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 159
+      "tope": 157
     },
     {
       "id": "art_csv_96",
@@ -650,7 +650,7 @@
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 63
+      "tope": 58
     },
     {
       "id": "art_csv_115",
@@ -919,7 +919,7 @@
       "nombre": "EMETH AZUCAR NEGRA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 117
+      "tope": 116
     },
     {
       "id": "art_lista_154",
@@ -1086,7 +1086,7 @@
       "nombre": "EMETH EXTRACTO DE MALTA X 6 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 16
+      "tope": 15
     },
     {
       "id": "art_csv_199",
@@ -1281,7 +1281,7 @@
       "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 15
+      "tope": 14
     },
     {
       "id": "art_csv_215",
@@ -1357,14 +1357,14 @@
       "nombre": "LAGOMARSINO SALVADO X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 25
+      "tope": 24
     },
     {
       "id": "art_csv_225",
       "nombre": "LANFIELD DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 48
+      "tope": 47
     },
     {
       "id": "art_csv_227",
@@ -1440,7 +1440,7 @@
       "nombre": "LEDEVIT CREMA VAINILLA X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 60
+      "tope": 58
     },
     {
       "id": "art_csv_238",
@@ -1646,7 +1646,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 81
+      "tope": 76
     },
     {
       "id": "art_csv_267",
@@ -1700,7 +1700,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 120
+      "tope": 119
     },
     {
       "id": "art_csv_271",
@@ -1714,7 +1714,7 @@
       "nombre": "MARIMIL RICOTA X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 25
+      "tope": 23
     },
     {
       "id": "art_csv_273",
@@ -1763,7 +1763,7 @@
       "nombre": "MAYANA EXTRACTO DE MALTA X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 9
+      "tope": 10
     },
     {
       "id": "art_csv_279",
@@ -1874,7 +1874,7 @@
       "nombre": "MILKAUT CHEDDAR 48 FETAS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 21
+      "tope": 20
     },
     {
       "id": "art_csv_295",
@@ -2413,7 +2413,7 @@
       "nombre": "PAPELERA FONDO PIZZERO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 20
+      "tope": 19
     },
     {
       "id": "art_csv_379",
