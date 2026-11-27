@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T12:32:42.661Z",
+  "generado": "2026-11-27T13:03:12.389Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -347,7 +347,7 @@
       "nombre": "CALSA LEUDEX LEVADURA X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 153
+      "tope": 148
     },
     {
       "id": "art_csv_63",
@@ -387,7 +387,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 70
+      "tope": 69
     },
     {
       "id": "art_csv_73",
@@ -789,7 +789,7 @@
       "nombre": "DOBLE VIA SAL ENTREFINA X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 161
+      "tope": 158
     },
     {
       "id": "art_csv_132",
@@ -857,7 +857,7 @@
       "nombre": "EL ALJIBE  JAMON 266 X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 120
+      "tope": 117
     },
     {
       "id": "art_csv_143",
@@ -1324,7 +1324,7 @@
       "nombre": "LA TARANTELLA TYBO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 342
+      "tope": 339
     },
     {
       "id": "art_csv_219",
@@ -1344,8 +1344,7 @@
       "id": "art_csv_222",
       "nombre": "LAGOMARSINO HARINA CARLOS CASARES 0000 X 25",
       "familia": "GENERAL",
-      "hay": true,
-      "tope": 10
+      "hay": false
     },
     {
       "id": "art_csv_223",
@@ -1387,14 +1386,14 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 199
+      "tope": 198
     },
     {
       "id": "art_csv_230",
       "nombre": "LEDEVIT CREMA CHANTILLY X 4.7 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 15
+      "tope": 14
     },
     {
       "id": "art_csv_231",
@@ -1648,7 +1647,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 92
+      "tope": 90
     },
     {
       "id": "art_csv_267",
@@ -1701,8 +1700,7 @@
       "id": "art_csv_270",
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
-      "hay": true,
-      "tope": 2
+      "hay": false
     },
     {
       "id": "art_csv_271",
@@ -1716,7 +1714,7 @@
       "nombre": "MARIMIL RICOTA X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 38
+      "tope": 33
     },
     {
       "id": "art_csv_273",
@@ -2548,7 +2546,7 @@
       "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT SEMIAMARGO X 0.800 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 122
+      "tope": 121
     },
     {
       "id": "art_1793189392458",
@@ -2707,7 +2705,7 @@
       "nombre": "SEGUNDA COLONIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 99
+      "tope": 92
     },
     {
       "id": "art_csv_431",
