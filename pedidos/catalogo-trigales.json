@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-26T19:52:32.392Z",
+  "generado": "2026-11-27T11:15:11.154Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -156,7 +156,7 @@
       "nombre": "AZUCAR COMUN X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 19
+      "tope": 17
     },
     {
       "id": "art_csv_30",
@@ -388,7 +388,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 76
+      "tope": 74
     },
     {
       "id": "art_csv_73",
@@ -525,14 +525,14 @@
       "nombre": "CHACABUCO HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 228
+      "tope": 368
     },
     {
       "id": "art_csv_95",
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 150
+      "tope": 170
     },
     {
       "id": "art_csv_96",
@@ -790,7 +790,7 @@
       "nombre": "DOBLE VIA SAL ENTREFINA X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 181
+      "tope": 160
     },
     {
       "id": "art_csv_132",
@@ -1360,7 +1360,7 @@
       "nombre": "LAGOMARSINO SALVADO X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 26
+      "tope": 25
     },
     {
       "id": "art_csv_225",
@@ -1710,7 +1710,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 57
+      "tope": 33
     },
     {
       "id": "art_csv_272",
@@ -1931,7 +1931,7 @@
       "nombre": "MILKAUT LECHE ENTERA X 1LT",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 138
+      "tope": 114
     },
     {
       "id": "art_csv_305",
@@ -2085,7 +2085,7 @@
       "nombre": "NUECES ENTERAS EXTRA LIGHT X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 63
+      "tope": 61
     },
     {
       "id": "art_csv_330",
@@ -2549,7 +2549,7 @@
       "nombre": "PURATOS BAÑO DE REPOSTERIA CARAT SEMIAMARGO X 0.800 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 127
+      "tope": 122
     },
     {
       "id": "art_1793189392458",
@@ -2714,8 +2714,7 @@
       "id": "art_csv_431",
       "nombre": "SEGUNDA COLONIA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
-      "hay": true,
-      "tope": 3
+      "hay": false
     },
     {
       "id": "art_csv_429",
@@ -2939,10 +2938,25 @@
       "tope": 44
     },
     {
+      "id": "art_1795776857085",
+      "nombre": "UAILE ANIS EN GRANO X 25 KG",
+      "familia": "GENERAL",
+      "hay": true,
+      "tope": 25
+    },
+    {
+      "id": "art_1795776728365",
+      "nombre": "UAILE ANIS EN GRANO X 5 KG",
+      "familia": "GENERAL",
+      "hay": true,
+      "tope": 5
+    },
+    {
       "id": "art_csv_18",
       "nombre": "UAILE ANIS EN GRANO X KG",
       "familia": "GENERAL",
-      "hay": false
+      "hay": true,
+      "tope": 10
     },
     {
       "id": "art_csv_469",
@@ -2956,7 +2970,7 @@
       "nombre": "UAILE AZUCAR IMPALPABLE X 1O KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 40
+      "tope": 39
     },
     {
       "id": "art_csv_471",
@@ -2970,7 +2984,7 @@
       "nombre": "UAILE AZUCAR NEGRA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 26
+      "tope": 25
     },
     {
       "id": "art_csv_461",
