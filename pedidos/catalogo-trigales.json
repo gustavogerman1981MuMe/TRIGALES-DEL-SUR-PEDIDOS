@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T18:37:18.563Z",
+  "generado": "2026-11-27T19:28:30.702Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -1177,7 +1177,7 @@
       "nombre": "FINCA DE SANTIAGO TOMATE TRITURADO SACHET X 2 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 102
+      "tope": 101
     },
     {
       "id": "art_csv_188",
@@ -2054,7 +2054,7 @@
       "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 100
+      "tope": 98
     },
     {
       "id": "art_csv_324",
@@ -2068,7 +2068,7 @@
       "nombre": "NATURA ACEITE DE GIRASOL X 5 LT",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 40
+      "tope": 39
     },
     {
       "id": "art_csv_327",
