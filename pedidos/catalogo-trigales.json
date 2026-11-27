@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T14:34:42.370Z",
+  "generado": "2026-11-27T15:05:12.670Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -45,7 +45,7 @@
       "nombre": "AGUILA DROPS SEMIAMARGO  X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 49
+      "tope": 48
     },
     {
       "id": "art_csv_6",
@@ -189,7 +189,7 @@
       "nombre": "BARI FRUTA ESCURRIDA X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 21
+      "tope": 20
     },
     {
       "id": "art_csv_37",
@@ -238,7 +238,7 @@
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 384
+      "tope": 383
     },
     {
       "id": "art_1791037599145",
@@ -354,7 +354,7 @@
       "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 95
+      "tope": 94
     },
     {
       "id": "art_csv_64",
@@ -524,7 +524,7 @@
       "nombre": "CHACABUCO HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 368
+      "tope": 367
     },
     {
       "id": "art_csv_95",
@@ -650,7 +650,7 @@
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 66
+      "tope": 65
     },
     {
       "id": "art_csv_115",
@@ -1177,7 +1177,7 @@
       "nombre": "FINCA DE SANTIAGO TOMATE TRITURADO SACHET X 2 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 103
+      "tope": 102
     },
     {
       "id": "art_csv_188",
@@ -1191,7 +1191,7 @@
       "nombre": "FRUTOS MENDOCINOS ACEITE DE GIRASOL X 5 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 259
+      "tope": 258
     },
     {
       "id": "art_csv_191",
@@ -1535,7 +1535,7 @@
       "nombre": "LEOPARDO LONGANIZA X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 14
+      "tope": 13
     },
     {
       "id": "art_1787598090761",
@@ -1646,7 +1646,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 86
+      "tope": 85
     },
     {
       "id": "art_csv_267",
@@ -1713,7 +1713,7 @@
       "nombre": "MARIMIL RICOTA X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 33
+      "tope": 32
     },
     {
       "id": "art_csv_273",
@@ -1976,7 +1976,7 @@
       "nombre": "MIX NAVIDEÑO  ALMENDRA-NUEZ-CAJU",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 12
+      "tope": 11
     },
     {
       "id": "art_1793900943515",
@@ -2082,6 +2082,12 @@
       "familia": "GENERAL",
       "hay": true,
       "tope": 60
+    },
+    {
+      "id": "art_1795791682530",
+      "nombre": "NUECES PARTIDAS EXTRA LIGHT X 1 KG",
+      "familia": "GENERAL",
+      "hay": false
     },
     {
       "id": "art_csv_330",
@@ -2959,7 +2965,7 @@
       "nombre": "UAILE AZUCAR IMPALPABLE X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 39
+      "tope": 37
     },
     {
       "id": "art_csv_470",
