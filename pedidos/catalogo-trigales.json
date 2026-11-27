@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T13:33:42.384Z",
+  "generado": "2026-11-27T14:04:12.365Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -231,7 +231,7 @@
       "nombre": "BLANCURA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 232
+      "tope": 227
     },
     {
       "id": "art_csv_43",
@@ -387,7 +387,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 69
+      "tope": 67
     },
     {
       "id": "art_csv_73",
@@ -531,7 +531,7 @@
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 163
+      "tope": 161
     },
     {
       "id": "art_csv_96",
@@ -601,7 +601,7 @@
       "nombre": "CHI EME- JO S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 251
+      "tope": 250
     },
     {
       "id": "art_csv_106",
@@ -650,7 +650,7 @@
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 74
+      "tope": 71
     },
     {
       "id": "art_csv_115",
@@ -698,14 +698,14 @@
       "nombre": "DANICA LEVADURA FRESCA X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 44
+      "tope": 43
     },
     {
       "id": "art_lista_118",
       "nombre": "DANICA MARGARINA HOJALDRE PRIMOR X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 616
+      "tope": 614
     },
     {
       "id": "art_lista_119",
@@ -1324,7 +1324,7 @@
       "nombre": "LA TARANTELLA TYBO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 339
+      "tope": 335
     },
     {
       "id": "art_csv_219",
@@ -1365,7 +1365,7 @@
       "nombre": "LANFIELD DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 50
+      "tope": 49
     },
     {
       "id": "art_csv_227",
@@ -1393,7 +1393,7 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 4.7 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 14
+      "tope": 12
     },
     {
       "id": "art_csv_231",
@@ -1441,7 +1441,7 @@
       "nombre": "LEDEVIT CREMA VAINILLA X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 64
+      "tope": 63
     },
     {
       "id": "art_csv_238",
@@ -1707,7 +1707,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 20
+      "tope": 12
     },
     {
       "id": "art_csv_272",
@@ -2705,7 +2705,7 @@
       "nombre": "SEGUNDA COLONIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 92
+      "tope": 90
     },
     {
       "id": "art_csv_431",
@@ -2739,7 +2739,7 @@
       "nombre": "SILVIA LECHE LARGA VIDA X 1 LT",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 274
+      "tope": 270
     },
     {
       "id": "art_csv_435",
@@ -2863,7 +2863,7 @@
       "nombre": "TAXONERA JALEA FANTASIA X 14 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 44
+      "tope": 43
     },
     {
       "id": "art_csv_452",
