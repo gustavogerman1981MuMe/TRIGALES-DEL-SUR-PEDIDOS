@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T12:02:11.442Z",
+  "generado": "2026-11-27T12:32:42.661Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -100,7 +100,7 @@
       "nombre": "ALMENDRA USA  X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 21
+      "tope": 16
     },
     {
       "id": "art_csv_17",
@@ -155,7 +155,7 @@
       "nombre": "AZUCAR COMUN X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 17
+      "tope": 16
     },
     {
       "id": "art_csv_30",
@@ -387,7 +387,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 74
+      "tope": 70
     },
     {
       "id": "art_csv_73",
@@ -503,7 +503,7 @@
       "nombre": "CAYFAR TOMATE TRITURADO X 8 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 184
+      "tope": 183
     },
     {
       "id": "art_csv_92",
@@ -531,7 +531,7 @@
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 167
+      "tope": 163
     },
     {
       "id": "art_csv_96",
@@ -650,7 +650,7 @@
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 76
+      "tope": 74
     },
     {
       "id": "art_csv_115",
@@ -705,21 +705,21 @@
       "nombre": "DANICA MARGARINA HOJALDRE PRIMOR X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 618
+      "tope": 616
     },
     {
       "id": "art_lista_119",
       "nombre": "DANICA MARGARINA MASA MANTERINA X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 51
+      "tope": 50
     },
     {
       "id": "art_lista_120",
       "nombre": "DANICA MARGARINA MASA PRIMOR VEGETAL X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 266
+      "tope": 264
     },
     {
       "id": "art_lista_121",
@@ -768,7 +768,7 @@
       "nombre": "DEWEY MERMELADA DE BATATAX 10KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 6
+      "tope": 5
     },
     {
       "id": "art_csv_128",
@@ -789,7 +789,7 @@
       "nombre": "DOBLE VIA SAL ENTREFINA X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 160
+      "tope": 161
     },
     {
       "id": "art_csv_132",
@@ -1206,7 +1206,7 @@
       "nombre": "GELBRIX JALEA FANTASIA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 55
+      "tope": 54
     },
     {
       "id": "art_csv_197",
@@ -1366,7 +1366,7 @@
       "nombre": "LANFIELD DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 51
+      "tope": 50
     },
     {
       "id": "art_csv_227",
@@ -1435,7 +1435,7 @@
       "nombre": "LEDEVIT CREMA VAINILA X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 74
+      "tope": 73
     },
     {
       "id": "art_csv_237",
@@ -1890,7 +1890,7 @@
       "nombre": "MILKAUT CHEDDAR POUCH X 3.5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 7
+      "tope": 6
     },
     {
       "id": "art_csv_298",
@@ -2049,21 +2049,21 @@
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 16
+      "tope": 15
     },
     {
       "id": "art_csv_323",
       "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 107
+      "tope": 106
     },
     {
       "id": "art_csv_324",
       "nombre": "MUUUME MUZZARELLA PLANCHA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 10
+      "tope": 8
     },
     {
       "id": "art_1795532341827",
@@ -2423,7 +2423,7 @@
       "nombre": "PAPELERA LAMINAS FOLEX DE 20 X 25 X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 24
+      "tope": 21
     },
     {
       "id": "art_csv_381",
@@ -2602,7 +2602,7 @@
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 124
+      "tope": 123
     },
     {
       "id": "art_csv_410",
@@ -2707,7 +2707,7 @@
       "nombre": "SEGUNDA COLONIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 116
+      "tope": 99
     },
     {
       "id": "art_csv_431",
