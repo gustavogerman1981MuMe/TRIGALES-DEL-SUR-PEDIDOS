@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T14:04:12.365Z",
+  "generado": "2026-11-27T14:34:42.370Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -182,7 +182,7 @@
       "nombre": "BARI CEREZA X 3.1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 130
+      "tope": 128
     },
     {
       "id": "art_csv_36",
@@ -231,7 +231,7 @@
       "nombre": "BLANCURA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 227
+      "tope": 225
     },
     {
       "id": "art_csv_43",
@@ -442,14 +442,14 @@
       "nombre": "CAVIWA MANI CROCANTE CON CHOCOLATE X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 23
+      "tope": 21
     },
     {
       "id": "art_csv_82",
       "nombre": "CAVIWA MANI CROCANTE X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 29
+      "tope": 27
     },
     {
       "id": "art_csv_84",
@@ -489,7 +489,7 @@
       "nombre": "CAYFAR MERMERLADA DE MEMBRILLO X 10KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 84
+      "tope": 83
     },
     {
       "id": "art_csv_89",
@@ -503,7 +503,7 @@
       "nombre": "CAYFAR TOMATE TRITURADO X 8 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 183
+      "tope": 182
     },
     {
       "id": "art_csv_92",
@@ -531,7 +531,7 @@
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 161
+      "tope": 160
     },
     {
       "id": "art_csv_96",
@@ -615,14 +615,14 @@
       "nombre": "CHI M2 - G DROPS S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 51
+      "tope": 49
     },
     {
       "id": "art_csv_108",
       "nombre": "CHOCLO GRANO AMARILLO X 0,800 GR",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 115
+      "tope": 109
     },
     {
       "id": "art_csv_109",
@@ -650,7 +650,7 @@
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 71
+      "tope": 66
     },
     {
       "id": "art_csv_115",
@@ -697,8 +697,7 @@
       "id": "art_lista_117",
       "nombre": "DANICA LEVADURA FRESCA X 500 GS",
       "familia": "GENERAL",
-      "hay": true,
-      "tope": 43
+      "hay": false
     },
     {
       "id": "art_lista_118",
@@ -823,7 +822,7 @@
       "nombre": "EGRAMAR ELEVOL MARGARINA HOJALDRE X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 151
+      "tope": 143
     },
     {
       "id": "art_csv_137",
@@ -969,7 +968,7 @@
       "nombre": "EMETH COLORANTE ROJO X 1 LITRO",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 20
+      "tope": 19
     },
     {
       "id": "art_lista_160",
@@ -1400,7 +1399,7 @@
       "nombre": "LEDEVIT CREMA CHOCOLATE X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 7
+      "tope": 6
     },
     {
       "id": "art_csv_232",
@@ -1441,7 +1440,7 @@
       "nombre": "LEDEVIT CREMA VAINILLA X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 63
+      "tope": 62
     },
     {
       "id": "art_csv_238",
@@ -1647,7 +1646,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 90
+      "tope": 86
     },
     {
       "id": "art_csv_267",
@@ -1673,7 +1672,7 @@
       "nombre": "LUGO QUESO AZUL",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 12
+      "tope": 9
     },
     {
       "id": "art_1791201550463",
@@ -1707,7 +1706,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 12
+      "tope": 11
     },
     {
       "id": "art_csv_272",
@@ -1742,7 +1741,7 @@
       "nombre": "MAYANA BICARBONATO DE AMONIO X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 62
+      "tope": 60
     },
     {
       "id": "art_csv_278",
@@ -2040,7 +2039,7 @@
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 45
+      "tope": 44
     },
     {
       "id": "art_csv_321",
@@ -2579,7 +2578,7 @@
       "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 90
+      "tope": 89
     },
     {
       "id": "art_csv_408",
@@ -2593,21 +2592,21 @@
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN PLACA X 2 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 184
+      "tope": 174
     },
     {
       "id": "art_csv_409",
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 123
+      "tope": 119
     },
     {
       "id": "art_csv_410",
       "nombre": "RDC MARGARINA MASA BELTRAN X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 119
+      "tope": 118
     },
     {
       "id": "art_csv_411",
@@ -2967,7 +2966,7 @@
       "nombre": "UAILE AZUCAR IMPALPABLE X 1O KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 39
+      "tope": 37
     },
     {
       "id": "art_csv_471",
