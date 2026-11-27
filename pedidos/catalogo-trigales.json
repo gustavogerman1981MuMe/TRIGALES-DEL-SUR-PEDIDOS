@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T15:05:12.670Z",
+  "generado": "2026-11-27T15:44:52.165Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -17,7 +17,7 @@
       "nombre": "AGUILA BOMBON SEMI/AMARGO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 67
+      "tope": 66
     },
     {
       "id": "art_csv_11",
@@ -387,7 +387,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 67
+      "tope": 66
     },
     {
       "id": "art_csv_73",
@@ -856,7 +856,7 @@
       "nombre": "EL ALJIBE  JAMON 266 X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 117
+      "tope": 113
     },
     {
       "id": "art_csv_143",
@@ -1295,7 +1295,7 @@
       "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 26
+      "tope": 25
     },
     {
       "id": "art_csv_216",
@@ -1323,7 +1323,7 @@
       "nombre": "LA TARANTELLA TYBO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 335
+      "tope": 331
     },
     {
       "id": "art_csv_219",
@@ -1392,7 +1392,7 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 4.7 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 12
+      "tope": 13
     },
     {
       "id": "art_csv_231",
@@ -1706,14 +1706,14 @@
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 11
+      "tope": 9
     },
     {
       "id": "art_csv_272",
       "nombre": "MARIMIL RICOTA X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 32
+      "tope": 31
     },
     {
       "id": "art_csv_273",
@@ -2081,7 +2081,7 @@
       "nombre": "NUECES ENTERAS EXTRA LIGHT X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 60
+      "tope": 59
     },
     {
       "id": "art_1795791682530",
@@ -2509,7 +2509,7 @@
       "nombre": "PASAS DE UVA X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 12
+      "tope": 11
     },
     {
       "id": "art_csv_393",
@@ -2710,7 +2710,7 @@
       "nombre": "SEGUNDA COLONIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 90
+      "tope": 92
     },
     {
       "id": "art_csv_431",
