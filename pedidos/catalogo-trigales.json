@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T13:03:12.389Z",
+  "generado": "2026-11-27T13:33:42.384Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -354,7 +354,7 @@
       "nombre": "CALSA LEVADURA VIRGEN X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 97
+      "tope": 95
     },
     {
       "id": "art_csv_64",
@@ -496,7 +496,7 @@
       "nombre": "CAYFAR TOMATE BOTELLA X 900 GR",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 16
+      "tope": 15
     },
     {
       "id": "art_csv_90",
@@ -850,7 +850,7 @@
       "nombre": "EGRAMAR MARGARINA MASA ORO SACHET X 0.5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 49
+      "tope": 48
     },
     {
       "id": "art_csv_142",
@@ -1379,14 +1379,14 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 53
+      "tope": 52
     },
     {
       "id": "art_csv_229",
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 198
+      "tope": 196
     },
     {
       "id": "art_csv_230",
@@ -1707,7 +1707,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 21
+      "tope": 20
     },
     {
       "id": "art_csv_272",
@@ -2586,7 +2586,7 @@
       "nombre": "RAMGRAS GRASA REFINADA X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 120
+      "tope": 119
     },
     {
       "id": "art_1788115971998",
@@ -2656,7 +2656,7 @@
       "nombre": "SALVITA MORRON",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 64
+      "tope": 63
     },
     {
       "id": "art_csv_423",
@@ -2932,7 +2932,7 @@
       "nombre": "UAILE ALMIDON DE MAIZ X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 44
+      "tope": 42
     },
     {
       "id": "art_1795776857085",
