@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T17:36:08.903Z",
+  "generado": "2026-11-27T18:07:08.895Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -148,7 +148,7 @@
       "nombre": "AZUCAR COMUN PACK X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 125
+      "tope": 124
     },
     {
       "id": "art_csv_29",
@@ -650,7 +650,7 @@
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 58
+      "tope": 50
     },
     {
       "id": "art_csv_115",
@@ -1233,7 +1233,7 @@
       "nombre": "INTY MANTECA X 500 GR",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 4
+      "tope": 2
     },
     {
       "id": "art_csv_208",
@@ -1392,7 +1392,7 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 4.7 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 12
+      "tope": 11
     },
     {
       "id": "art_csv_231",
@@ -1639,7 +1639,7 @@
       "nombre": "LODISER ALPINO TABLETA SEMIAMARGO X 0,500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 102
+      "tope": 100
     },
     {
       "id": "art_csv_265",
@@ -1700,7 +1700,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 119
+      "tope": 113
     },
     {
       "id": "art_csv_271",
@@ -1895,7 +1895,7 @@
       "nombre": "MILKAUT CREMA 330 CC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 29
+      "tope": 27
     },
     {
       "id": "art_csv_299",
@@ -2040,7 +2040,7 @@
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 43
+      "tope": 42
     },
     {
       "id": "art_csv_321",
@@ -2309,7 +2309,7 @@
       "nombre": "PAPELERA BOLSA DE ARRANQUE 50 X 70",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 47
+      "tope": 41
     },
     {
       "id": "art_csv_365",
@@ -2662,7 +2662,7 @@
       "nombre": "SALVITA MORRON",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 63
+      "tope": 62
     },
     {
       "id": "art_csv_423",
@@ -2848,7 +2848,7 @@
       "nombre": "TAXONERA GUINDA ROJAS X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 130
+      "tope": 129
     },
     {
       "id": "art_csv_448",
@@ -3057,7 +3057,7 @@
       "nombre": "VINAGRE X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 13
+      "tope": 12
     }
   ],
   "ofertas": [
