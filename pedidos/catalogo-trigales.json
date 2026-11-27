@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T18:07:08.895Z",
+  "generado": "2026-11-27T18:37:18.563Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -148,7 +148,7 @@
       "nombre": "AZUCAR COMUN PACK X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 124
+      "tope": 123
     },
     {
       "id": "art_csv_29",
@@ -224,7 +224,7 @@
       "nombre": "BARI MERMELADA DE MEMBRILLO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 11
+      "tope": 10
     },
     {
       "id": "art_csv_42",
@@ -387,7 +387,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 64
+      "tope": 62
     },
     {
       "id": "art_csv_73",
@@ -1261,7 +1261,7 @@
       "nombre": "JULIAN ACEITUNAS VERDE DESCAROZADA X 4 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 9
+      "tope": 8
     },
     {
       "id": "art_csv_212",
@@ -1881,7 +1881,7 @@
       "nombre": "MILKAUT CHEDDAR DOYPACK X 1.5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 5
+      "tope": 4
     },
     {
       "id": "art_csv_297",
@@ -2585,7 +2585,7 @@
       "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 89
+      "tope": 88
     },
     {
       "id": "art_csv_408",
@@ -2613,7 +2613,7 @@
       "nombre": "RDC MARGARINA MASA BELTRAN X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 118
+      "tope": 114
     },
     {
       "id": "art_csv_411",
@@ -2627,7 +2627,7 @@
       "nombre": "REGITECA FILOMENA HOJALDRE X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 56
+      "tope": 52
     },
     {
       "id": "art_1787875043846",
@@ -2697,7 +2697,7 @@
       "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 39
+      "tope": 38
     },
     {
       "id": "art_csv_428",
