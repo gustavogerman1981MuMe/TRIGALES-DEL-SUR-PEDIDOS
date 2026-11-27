@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-27T11:15:11.154Z",
+  "generado": "2026-11-27T12:02:11.442Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -114,7 +114,7 @@
       "nombre": "ARGENFRUT MICRO CEREAL BLANCO X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 60
+      "tope": 59
     },
     {
       "id": "art_csv_22",
@@ -134,8 +134,7 @@
       "id": "art_1789125724382",
       "nombre": "ARRAYANES RELLENO SABOR DULCE DE LECHE X 10 KG",
       "familia": "GENERAL",
-      "hay": true,
-      "tope": 4
+      "hay": false
     },
     {
       "id": "art_1791553005726",
@@ -149,7 +148,7 @@
       "nombre": "AZUCAR COMUN PACK X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 129
+      "tope": 127
     },
     {
       "id": "art_csv_29",
@@ -183,7 +182,7 @@
       "nombre": "BARI CEREZA X 3.1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 131
+      "tope": 130
     },
     {
       "id": "art_csv_36",
@@ -375,7 +374,7 @@
       "nombre": "CALSA PREMEZCLA PAN DE QUESO X 2 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 66
+      "tope": 65
     },
     {
       "id": "art_csv_70",
@@ -402,7 +401,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS HOJALDRADAS X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 49
+      "tope": 48
     },
     {
       "id": "art_csv_71",
@@ -483,14 +482,14 @@
       "nombre": "CAYFAR MERMELADA DE MEMBRILLO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 17
+      "tope": 16
     },
     {
       "id": "art_1790350029830",
       "nombre": "CAYFAR MERMERLADA DE MEMBRILLO X 10KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 86
+      "tope": 84
     },
     {
       "id": "art_csv_89",
@@ -504,7 +503,7 @@
       "nombre": "CAYFAR TOMATE TRITURADO X 8 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 190
+      "tope": 184
     },
     {
       "id": "art_csv_92",
@@ -532,7 +531,7 @@
       "nombre": "CHACABUCO HARINA 0000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 170
+      "tope": 167
     },
     {
       "id": "art_csv_96",
@@ -616,7 +615,7 @@
       "nombre": "CHI M2 - G DROPS S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 58
+      "tope": 51
     },
     {
       "id": "art_csv_108",
@@ -630,14 +629,14 @@
       "nombre": "CLUCELAT MANTECA X 2,5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 156
+      "tope": 155
     },
     {
       "id": "art_csv_111",
       "nombre": "COCO RALLADO F X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 135
+      "tope": 134
     },
     {
       "id": "art_1792673553644",
@@ -699,7 +698,7 @@
       "nombre": "DANICA LEVADURA FRESCA X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 47
+      "tope": 44
     },
     {
       "id": "art_lista_118",
@@ -713,7 +712,7 @@
       "nombre": "DANICA MARGARINA MASA MANTERINA X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 55
+      "tope": 51
     },
     {
       "id": "art_lista_120",
@@ -727,7 +726,7 @@
       "nombre": "DANICA MAYONESA ORIGINAL",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 392
+      "tope": 384
     },
     {
       "id": "art_1792190950457",
@@ -748,7 +747,7 @@
       "nombre": "DEWEY AZUCAR IMPALPABLE HOLRAY X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 76
+      "tope": 74
     },
     {
       "id": "art_csv_124",
@@ -824,7 +823,7 @@
       "nombre": "EGRAMAR ELEVOL MARGARINA HOJALDRE X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 155
+      "tope": 151
     },
     {
       "id": "art_csv_137",
@@ -900,7 +899,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 8
+      "tope": 7
     },
     {
       "id": "art_lista_151",
@@ -949,7 +948,7 @@
       "nombre": "EMETH COLORANTE AMARILLO X 2 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 43
+      "tope": 42
     },
     {
       "id": "art_lista_158",
@@ -1039,7 +1038,7 @@
       "nombre": "EMETH ESENCIA MANTECA X 5 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 107
+      "tope": 106
     },
     {
       "id": "art_lista_170",
@@ -1053,7 +1052,7 @@
       "nombre": "EMETH ESENCIA PAN DULCE X 1 LITRO",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 77
+      "tope": 75
     },
     {
       "id": "art_lista_172",
@@ -1081,7 +1080,7 @@
       "nombre": "EMETH ESENCIA VAINILLA X 5 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 84
+      "tope": 83
     },
     {
       "id": "art_lista_176",
@@ -1123,7 +1122,7 @@
       "nombre": "EMETH MERMELADA DE MEMBRILLO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 96
+      "tope": 95
     },
     {
       "id": "art_lista_180",
@@ -1283,14 +1282,14 @@
       "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 20
+      "tope": 15
     },
     {
       "id": "art_csv_215",
       "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 2 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 44
+      "tope": 43
     },
     {
       "id": "art_csv_213",
@@ -1339,7 +1338,7 @@
       "nombre": "LAGOMARSINO HARINA CARLOS CASARES 000 X 25",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 481
+      "tope": 465
     },
     {
       "id": "art_csv_222",
@@ -1381,14 +1380,14 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 55
+      "tope": 53
     },
     {
       "id": "art_csv_229",
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 202
+      "tope": 199
     },
     {
       "id": "art_csv_230",
@@ -1491,7 +1490,7 @@
       "nombre": "LEDEVIT PREMEZCLA CREMA PASTELERA X 250 GR",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 38
+      "tope": 32
     },
     {
       "id": "art_csv_244",
@@ -1649,7 +1648,7 @@
       "nombre": "LUGO MUZZARELLA CILINDRO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 94
+      "tope": 92
     },
     {
       "id": "art_csv_267",
@@ -1703,21 +1702,21 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 4
+      "tope": 2
     },
     {
       "id": "art_csv_271",
       "nombre": "MAPLE DE HUEVO NUMERO 2",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 33
+      "tope": 21
     },
     {
       "id": "art_csv_272",
       "nombre": "MARIMIL RICOTA X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 42
+      "tope": 38
     },
     {
       "id": "art_csv_273",
@@ -2050,14 +2049,14 @@
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 18
+      "tope": 16
     },
     {
       "id": "art_csv_323",
       "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 111
+      "tope": 107
     },
     {
       "id": "art_csv_324",
@@ -2085,7 +2084,7 @@
       "nombre": "NUECES ENTERAS EXTRA LIGHT X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 61
+      "tope": 60
     },
     {
       "id": "art_csv_330",
@@ -2514,7 +2513,7 @@
       "nombre": "PASAS DE UVA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 5
+      "tope": 4
     },
     {
       "id": "art_1787492078727",
@@ -2569,7 +2568,7 @@
       "nombre": "PURATOS PREMEZCLA (BUDIN) TEGRAL SATIN VAINILLA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 8
+      "tope": 5
     },
     {
       "id": "art_csv_407",
@@ -2582,7 +2581,7 @@
       "nombre": "RAMGRAS GRASA REFINADA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 93
+      "tope": 90
     },
     {
       "id": "art_csv_408",
@@ -2603,7 +2602,7 @@
       "nombre": "RDC MARGARINA HOJALDRE BELTRAN X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 128
+      "tope": 124
     },
     {
       "id": "art_csv_410",
@@ -2624,7 +2623,7 @@
       "nombre": "REGITECA FILOMENA HOJALDRE X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 64
+      "tope": 56
     },
     {
       "id": "art_1787875043846",
@@ -2652,14 +2651,14 @@
       "nombre": "REGITECA MATILDA GRASA PRIMER JUGO X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 10
+      "tope": 9
     },
     {
       "id": "art_csv_422",
       "nombre": "SALVITA MORRON",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 4
+      "tope": 64
     },
     {
       "id": "art_csv_423",
@@ -2673,7 +2672,7 @@
       "nombre": "SAN IGNACIO DULCE DE LECHE PARA SEMBRAR X 1O KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 7
+      "tope": 6
     },
     {
       "id": "art_csv_425",
@@ -2694,7 +2693,7 @@
       "nombre": "SANTA MARIA DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 45
+      "tope": 39
     },
     {
       "id": "art_csv_428",
@@ -2866,7 +2865,7 @@
       "nombre": "TAXONERA JALEA FANTASIA X 14 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 45
+      "tope": 44
     },
     {
       "id": "art_csv_452",
@@ -2956,7 +2955,7 @@
       "nombre": "UAILE ANIS EN GRANO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 10
+      "tope": 8
     },
     {
       "id": "art_csv_469",
@@ -3047,7 +3046,7 @@
       "nombre": "VICTORIA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 44
+      "tope": 43
     },
     {
       "id": "art_csv_483",
@@ -3065,7 +3064,7 @@
       "desdeCuantos": 5,
       "texto": "LLEVANDO 5 UNIDADES O MAS",
       "hasta": "2026-11-15",
-      "hay": true,
+      "hay": false,
       "vencida": true
     },
     {
