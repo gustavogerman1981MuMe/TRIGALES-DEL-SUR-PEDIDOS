@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-28T11:00:08.910Z",
+  "generado": "2026-11-28T11:30:30.426Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -148,7 +148,7 @@
       "nombre": "AZUCAR COMUN PACK X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 123
+      "tope": 120
     },
     {
       "id": "art_csv_29",
@@ -196,7 +196,7 @@
       "nombre": "BARI FRUTA ESCURRIDA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 13
+      "tope": 12
     },
     {
       "id": "art_csv_38",
@@ -224,28 +224,28 @@
       "nombre": "BARI MERMELADA DE MEMBRILLO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 10
+      "tope": 9
     },
     {
       "id": "art_csv_42",
       "nombre": "BLANCURA HARINA 000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 224
+      "tope": 210
     },
     {
       "id": "art_csv_43",
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 380
+      "tope": 370
     },
     {
       "id": "art_1791037599145",
       "nombre": "BOLSA ARPILLERA",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 17
+      "tope": 13
     },
     {
       "id": "art_1790942045002",
@@ -414,7 +414,7 @@
       "nombre": "CAMPOS LARGOS ACEITE X 4 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 52
+      "tope": 51
     },
     {
       "id": "art_csv_76",
@@ -449,14 +449,14 @@
       "nombre": "CAVIWA MANI CROCANTE X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 27
+      "tope": 25
     },
     {
       "id": "art_csv_84",
       "nombre": "CAVIWA MANI FILETEADO X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 27
+      "tope": 26
     },
     {
       "id": "art_csv_85",
@@ -503,7 +503,7 @@
       "nombre": "CAYFAR TOMATE TRITURADO X 8 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 181
+      "tope": 175
     },
     {
       "id": "art_csv_92",
@@ -566,14 +566,14 @@
       "nombre": "CHI DIBA BLANCO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 114
+      "tope": 104
     },
     {
       "id": "art_csv_101",
       "nombre": "CHI DISA SEMIAMARGO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 54
+      "tope": 49
     },
     {
       "id": "art_1789394321012",
@@ -601,7 +601,7 @@
       "nombre": "CHI EME- JO S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 250
+      "tope": 249
     },
     {
       "id": "art_csv_106",
@@ -615,7 +615,7 @@
       "nombre": "CHI M2 - G DROPS S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 49
+      "tope": 48
     },
     {
       "id": "art_csv_108",
@@ -629,14 +629,14 @@
       "nombre": "CLUCELAT MANTECA X 2,5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 155
+      "tope": 153
     },
     {
       "id": "art_csv_111",
       "nombre": "COCO RALLADO F X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 133
+      "tope": 130
     },
     {
       "id": "art_1792673553644",
@@ -650,7 +650,7 @@
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 50
+      "tope": 46
     },
     {
       "id": "art_csv_115",
@@ -746,14 +746,14 @@
       "nombre": "DEWEY AZUCAR IMPALPABLE HOLRAY X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 74
+      "tope": 73
     },
     {
       "id": "art_csv_124",
       "nombre": "DEWEY AZUCAR NEGRA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 103
+      "tope": 102
     },
     {
       "id": "art_csv_127",
@@ -877,7 +877,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO BALDE X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 19
+      "tope": 18
     },
     {
       "id": "art_csv_147",
@@ -891,14 +891,14 @@
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 4 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 23
+      "tope": 21
     },
     {
       "id": "art_csv_149",
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 6
+      "tope": 5
     },
     {
       "id": "art_lista_151",
@@ -1010,7 +1010,7 @@
       "nombre": "EMETH ESENCIA COCO X 1 LITRO",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 170
+      "tope": 169
     },
     {
       "id": "art_lista_166",
@@ -1037,7 +1037,7 @@
       "nombre": "EMETH ESENCIA MANTECA X 5 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 106
+      "tope": 105
     },
     {
       "id": "art_lista_170",
@@ -1051,7 +1051,7 @@
       "nombre": "EMETH ESENCIA PAN DULCE X 1 LITRO",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 74
+      "tope": 73
     },
     {
       "id": "art_lista_172",
@@ -1079,7 +1079,7 @@
       "nombre": "EMETH ESENCIA VAINILLA X 5 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 83
+      "tope": 82
     },
     {
       "id": "art_lista_176",
@@ -1268,7 +1268,7 @@
       "nombre": "JULIAN ACEITUNAS VERDE EN RODAJAS ESPECIAL X 4 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 6
+      "tope": 5
     },
     {
       "id": "art_csv_211",
@@ -1357,7 +1357,7 @@
       "nombre": "LAGOMARSINO SALVADO X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 24
+      "tope": 23
     },
     {
       "id": "art_csv_225",
@@ -1385,7 +1385,7 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 189
+      "tope": 183
     },
     {
       "id": "art_csv_230",
@@ -1433,7 +1433,7 @@
       "nombre": "LEDEVIT CREMA VAINILA X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 71
+      "tope": 67
     },
     {
       "id": "art_csv_237",
@@ -1447,7 +1447,7 @@
       "nombre": "LEDEVIT CREMA VAINILLA X 4,7 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 30
+      "tope": 28
     },
     {
       "id": "art_csv_239",
@@ -1495,7 +1495,7 @@
       "nombre": "LEDEVIT PREMEZCLA CREMA PASTELERA X 4 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 20
+      "tope": 18
     },
     {
       "id": "art_csv_245",
@@ -1700,7 +1700,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 113
+      "tope": 99
     },
     {
       "id": "art_csv_271",
@@ -2040,7 +2040,7 @@
       "nombre": "MUUUME DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 42
+      "tope": 39
     },
     {
       "id": "art_csv_321",
@@ -2082,7 +2082,7 @@
       "nombre": "NUECES ENTERAS EXTRA LIGHT X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 58
+      "tope": 57
     },
     {
       "id": "art_1795791682530",
@@ -2095,7 +2095,7 @@
       "nombre": "ORESTE SALSA EN BIDON X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 23
+      "tope": 22
     },
     {
       "id": "art_csv_331",
@@ -2358,7 +2358,7 @@
       "nombre": "PAPELERA CAJAS PARA PIZZA X 50 UNIDADES",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 67
+      "tope": 66
     },
     {
       "id": "art_csv_372",
@@ -2634,7 +2634,7 @@
       "nombre": "REGITECA FILOMENA MASA X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 6
+      "tope": 5
     },
     {
       "id": "art_1787874894968",
@@ -2662,7 +2662,7 @@
       "nombre": "SALVITA MORRON",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 62
+      "tope": 56
     },
     {
       "id": "art_csv_423",
