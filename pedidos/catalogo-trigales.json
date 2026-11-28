@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-28T12:01:00.710Z",
+  "generado": "2026-11-28T12:31:30.697Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -128,7 +128,7 @@
       "nombre": "ARGENFRUT MICRO CEREAL NEGRO LECHE X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 58
+      "tope": 57
     },
     {
       "id": "art_1789125724382",
@@ -155,7 +155,7 @@
       "nombre": "AZUCAR COMUN X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 16
+      "tope": 14
     },
     {
       "id": "art_csv_30",
@@ -387,7 +387,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 62
+      "tope": 61
     },
     {
       "id": "art_csv_73",
@@ -435,7 +435,7 @@
       "nombre": "CAVIWA GRANA DE MANI X 1KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 53
+      "tope": 54
     },
     {
       "id": "art_csv_83",
@@ -449,14 +449,14 @@
       "nombre": "CAVIWA MANI CROCANTE X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 25
+      "tope": 82
     },
     {
       "id": "art_csv_84",
       "nombre": "CAVIWA MANI FILETEADO X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 26
+      "tope": 25
     },
     {
       "id": "art_csv_85",
@@ -475,7 +475,7 @@
       "nombre": "CAYFAR MERMELADA DE BATATA X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 85
+      "tope": 83
     },
     {
       "id": "art_csv_88",
@@ -587,7 +587,7 @@
       "nombre": "CHI EME- 2 S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 288
+      "tope": 287
     },
     {
       "id": "art_csv_103",
@@ -636,7 +636,7 @@
       "nombre": "COCO RALLADO F X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 130
+      "tope": 129
     },
     {
       "id": "art_1792673553644",
@@ -650,7 +650,7 @@
       "nombre": "CORDOBEZA LEVADURA X 5OO GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 46
+      "tope": 45
     },
     {
       "id": "art_csv_115",
@@ -718,7 +718,7 @@
       "nombre": "DANICA MARGARINA MASA PRIMOR VEGETAL X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 264
+      "tope": 263
     },
     {
       "id": "art_lista_121",
@@ -1072,7 +1072,7 @@
       "nombre": "EMETH ESENCIA VAINILLA X 2 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 99
+      "tope": 98
     },
     {
       "id": "art_lista_175",
@@ -1364,7 +1364,7 @@
       "nombre": "LANFIELD DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 47
+      "tope": 45
     },
     {
       "id": "art_csv_227",
@@ -1378,14 +1378,14 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 46
+      "tope": 43
     },
     {
       "id": "art_csv_229",
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 181
+      "tope": 179
     },
     {
       "id": "art_csv_230",
@@ -1399,7 +1399,7 @@
       "nombre": "LEDEVIT CREMA CHOCOLATE X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 6
+      "tope": 5
     },
     {
       "id": "art_csv_232",
@@ -1433,7 +1433,7 @@
       "nombre": "LEDEVIT CREMA VAINILA X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 67
+      "tope": 65
     },
     {
       "id": "art_csv_237",
@@ -1495,7 +1495,7 @@
       "nombre": "LEDEVIT PREMEZCLA CREMA PASTELERA X 4 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 18
+      "tope": 17
     },
     {
       "id": "art_csv_245",
@@ -2745,7 +2745,7 @@
       "nombre": "SILVIA LECHE LARGA VIDA X 1 LT",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 270
+      "tope": 234
     },
     {
       "id": "art_csv_435",
@@ -2938,7 +2938,7 @@
       "nombre": "UAILE ALMIDON DE MAIZ X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 41
+      "tope": 40
     },
     {
       "id": "art_1795776857085",
@@ -2966,7 +2966,7 @@
       "nombre": "UAILE AZUCAR IMPALPABLE X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 35
+      "tope": 34
     },
     {
       "id": "art_csv_470",
