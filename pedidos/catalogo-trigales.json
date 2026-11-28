@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-28T11:30:30.426Z",
+  "generado": "2026-11-28T12:01:00.710Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -100,7 +100,7 @@
       "nombre": "ALMENDRA USA  X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 16
+      "tope": 15
     },
     {
       "id": "art_csv_17",
@@ -148,7 +148,7 @@
       "nombre": "AZUCAR COMUN PACK X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 120
+      "tope": 118
     },
     {
       "id": "art_csv_29",
@@ -401,7 +401,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS HOJALDRADAS X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 45
+      "tope": 42
     },
     {
       "id": "art_csv_71",
@@ -566,7 +566,7 @@
       "nombre": "CHI DIBA BLANCO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 104
+      "tope": 109
     },
     {
       "id": "art_csv_101",
@@ -587,21 +587,21 @@
       "nombre": "CHI EME- 2 S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 289
+      "tope": 288
     },
     {
       "id": "art_csv_103",
       "nombre": "CHI EME- B BLANCO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 88
+      "tope": 86
     },
     {
       "id": "art_csv_104",
       "nombre": "CHI EME- JO S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 249
+      "tope": 245
     },
     {
       "id": "art_csv_106",
@@ -615,7 +615,7 @@
       "nombre": "CHI M2 - G DROPS S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 48
+      "tope": 46
     },
     {
       "id": "art_csv_108",
@@ -704,7 +704,7 @@
       "nombre": "DANICA MARGARINA HOJALDRE PRIMOR X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 614
+      "tope": 613
     },
     {
       "id": "art_lista_119",
@@ -753,7 +753,7 @@
       "nombre": "DEWEY AZUCAR NEGRA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 102
+      "tope": 101
     },
     {
       "id": "art_csv_127",
@@ -870,7 +870,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE ALFAJORERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 9
+      "tope": 8
     },
     {
       "id": "art_csv_146",
@@ -884,7 +884,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 97
+      "tope": 96
     },
     {
       "id": "art_csv_148",
@@ -898,7 +898,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 5
+      "tope": 6
     },
     {
       "id": "art_lista_151",
@@ -1107,7 +1107,7 @@
       "nombre": "EMETH JALEA FANTASIA X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 88
+      "tope": 87
     },
     {
       "id": "art_csv_206",
@@ -1149,7 +1149,7 @@
       "nombre": "FAINALIND X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 6
+      "tope": 5
     },
     {
       "id": "art_csv_184",
@@ -1357,7 +1357,7 @@
       "nombre": "LAGOMARSINO SALVADO X 20 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 23
+      "tope": 22
     },
     {
       "id": "art_csv_225",
@@ -1378,21 +1378,21 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 49
+      "tope": 46
     },
     {
       "id": "art_csv_229",
       "nombre": "LEDEVIT CREMA CHANTILLY X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 183
+      "tope": 181
     },
     {
       "id": "art_csv_230",
       "nombre": "LEDEVIT CREMA CHANTILLY X 4.7 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 11
+      "tope": 10
     },
     {
       "id": "art_csv_231",
@@ -1474,7 +1474,7 @@
       "nombre": "LEDEVIT DULCE DE LECHE REPOSTERO X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 25
+      "tope": 24
     },
     {
       "id": "art_1791978604769",
@@ -1735,7 +1735,7 @@
       "nombre": "MASTER BAKERY PAN DE QUESO X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 21
+      "tope": 20
     },
     {
       "id": "art_csv_276",
@@ -2731,7 +2731,7 @@
       "nombre": "SEMILLAS MIX X 5 K",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 8
+      "tope": 7
     },
     {
       "id": "art_csv_433",
