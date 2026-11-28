@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado": "2026-11-28T12:31:30.697Z",
+  "generado": "2026-11-28T13:02:00.708Z",
   "negocio": "Trigales del Sur",
   "telefono": "",
   "conPrecio": false,
@@ -189,7 +189,7 @@
       "nombre": "BARI FRUTA ESCURRIDA X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 20
+      "tope": 19
     },
     {
       "id": "art_csv_37",
@@ -238,7 +238,7 @@
       "nombre": "BLANCURA HARINA 0000 X 25 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 370
+      "tope": 368
     },
     {
       "id": "art_1791037599145",
@@ -347,7 +347,7 @@
       "nombre": "CALSA LEUDEX LEVADURA X 500 GS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 148
+      "tope": 146
     },
     {
       "id": "art_csv_63",
@@ -361,7 +361,7 @@
       "nombre": "CALSA MAX FN X 1.5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 4
+      "tope": 3
     },
     {
       "id": "art_csv_65",
@@ -387,7 +387,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS CRIOLLA X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 61
+      "tope": 60
     },
     {
       "id": "art_csv_73",
@@ -401,7 +401,7 @@
       "nombre": "CAMI TAPAS DE EMPANADAS HOJALDRADAS X 5 DOC",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 42
+      "tope": 40
     },
     {
       "id": "art_csv_71",
@@ -475,7 +475,7 @@
       "nombre": "CAYFAR MERMELADA DE BATATA X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 83
+      "tope": 82
     },
     {
       "id": "art_csv_88",
@@ -496,7 +496,7 @@
       "nombre": "CAYFAR TOMATE BOTELLA X 900 GR",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 15
+      "tope": 13
     },
     {
       "id": "art_csv_90",
@@ -587,7 +587,7 @@
       "nombre": "CHI EME- 2 S/A X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 287
+      "tope": 285
     },
     {
       "id": "art_csv_103",
@@ -760,7 +760,7 @@
       "nombre": "DEWEY IMPALPABLE TALCO X 1KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 67
+      "tope": 66
     },
     {
       "id": "art_csv_125",
@@ -877,7 +877,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO BALDE X 10 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 18
+      "tope": 17
     },
     {
       "id": "art_csv_147",
@@ -891,7 +891,7 @@
       "nombre": "EL MUNDO DULCE DE LECHE REPOSTERO X 4 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 21
+      "tope": 20
     },
     {
       "id": "art_csv_149",
@@ -1191,7 +1191,7 @@
       "nombre": "FRUTOS MENDOCINOS ACEITE DE GIRASOL X 5 LITROS",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 258
+      "tope": 257
     },
     {
       "id": "art_csv_191",
@@ -1226,7 +1226,7 @@
       "nombre": "INTY MANTECA X 2.5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 68
+      "tope": 67
     },
     {
       "id": "art_csv_205",
@@ -1288,7 +1288,7 @@
       "nombre": "JULIAN ACEITUNAS VERDE NUMERO 2 X 2 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 42
+      "tope": 41
     },
     {
       "id": "art_csv_213",
@@ -1378,7 +1378,7 @@
       "nombre": "LEDEVIT CREMA CHANTILLY X 0.500 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 43
+      "tope": 39
     },
     {
       "id": "art_csv_229",
@@ -1447,7 +1447,7 @@
       "nombre": "LEDEVIT CREMA VAINILLA X 4,7 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 28
+      "tope": 27
     },
     {
       "id": "art_csv_239",
@@ -1700,7 +1700,7 @@
       "nombre": "MAPLE DE HUEVO NUMERO 1",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 99
+      "tope": 94
     },
     {
       "id": "art_csv_271",
@@ -2054,7 +2054,7 @@
       "nombre": "MUUUME MUZZARELLA CILINDRO X KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 98
+      "tope": 83
     },
     {
       "id": "art_csv_324",
@@ -2358,7 +2358,7 @@
       "nombre": "PAPELERA CAJAS PARA PIZZA X 50 UNIDADES",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 66
+      "tope": 65
     },
     {
       "id": "art_csv_372",
@@ -2613,7 +2613,7 @@
       "nombre": "RDC MARGARINA MASA BELTRAN X 5 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 114
+      "tope": 113
     },
     {
       "id": "art_csv_411",
@@ -2662,7 +2662,7 @@
       "nombre": "SALVITA MORRON",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 56
+      "tope": 54
     },
     {
       "id": "art_csv_423",
@@ -2848,7 +2848,7 @@
       "nombre": "TAXONERA GUINDA ROJAS X 1 KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 129
+      "tope": 128
     },
     {
       "id": "art_csv_448",
@@ -2973,7 +2973,7 @@
       "nombre": "UAILE AZUCAR IMPALPABLE X 1O KG",
       "familia": "GENERAL",
       "hay": true,
-      "tope": 37
+      "tope": 36
     },
     {
       "id": "art_csv_471",
